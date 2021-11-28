@@ -5,6 +5,7 @@ mkdir "$TMP"
 cp app.js atom.xml diff.js index.html "$TMP"
 git checkout --orphan gh-pages
 mv "$TMP"/* .
+git add app.js atom.xml diff.js index.html
 git commit -am "Deploy new layer"
 git push --force -u origin gh-pages
 git checkout master
