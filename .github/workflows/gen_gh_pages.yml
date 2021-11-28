@@ -1,0 +1,35 @@
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+name: Generate diff.telethon.dev
+jobs:
+  build:
+    name: Scrape
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: >
+        pip install --upgrade pip setuptools wheel
+        pip install -r requirements.txt
+
+    - name: Scrape jons
+      run: python get-all-tl.py
+
+    - name: Commit and push changes.
+      run: |
+          git checkout master
+
+          git config --global user.email "johnprestonmail@gmail.com"
+          git config --global user.name "GitHub Action <John Preston>"
+
+          bash deploy.sh
