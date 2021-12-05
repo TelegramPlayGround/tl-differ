@@ -12,7 +12,7 @@ mv "$TMP"/* .
 ls
 git config --global user.email "johnprestonmail@gmail.com"
 git config --global user.name "GitHub Action <John Preston>"
-git add diff.js atom.xml diffs.js diff.html diff.css -f
+git add schemes/ diff.js atom.xml diffs.js diff.html diff.css -f
 # the below lines were copied from
 # https://github.com/LonamiWebs/Telethon/blob/master/update-docs.sh
 git commit -am "TLDiffer: Deploy new layer"

@@ -233,7 +233,7 @@ def gen_index():
 
     return deltas
 
-def gen_rss(deltas):
+def gen_rss(fqdn_, deltas):
     last = None
     rev = 1
     for delta in sorted(deltas, key=lambda d: d['date']):
@@ -254,8 +254,8 @@ def gen_rss(deltas):
         <title>Layer {delta['layer'] or '???'}{revision}</title>
         <published>{date}</published>
         <updated>{date}</updated>
-        <link href="https://diff.telethon.dev/" type="text/html"/>
-        <id>https://diff.telethon.dev/{delta['date']}</id>
+        <link href="{fqdn_}/schemes/{delta['date']}.tl" type="text/html"/>
+        <id>{fqdn_}/{delta['date']}</id>
         <content type="html">&lt;p&gt;{added} added, {removed} removed, {changed} changed&lt;/p&gt;</content>
         <author><name>TL Differ Team</name></author>
     </entry>
@@ -271,16 +271,18 @@ def main():
         fd.write(repr(json.dumps(deltas, separators=(',', ':'), sort_keys=True)))
         fd.write(');\n')
 
+    fqdn_ = os.environ.get("FQDN", "https://diff.telethon.dev")
+
     now = datetime.datetime.now(datetime.timezone.utc)
     with open('atom.xml', 'w') as fd:
         fd.write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>Type Language Differ</title>
-	<link href="https://diff.telethon.dev/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://diff.telethon.dev/"/>
+	<link href="{fqdn_}/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="{fqdn_}/"/>
     <updated>{now.isoformat()}</updated>
-    <id>https://diff.telethon.dev/atom.xml</id>''')
-        for entry in gen_rss(deltas):
+    <id>{fqdn_}/atom.xml</id>''')
+        for entry in gen_rss(fqdn_, deltas):
             fd.write(entry)
         fd.write('</feed>')
 
