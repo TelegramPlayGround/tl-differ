@@ -22,11 +22,11 @@ greatly reduce bloat.
 
 ## Structure
 
-### `index.html`
+### `diff.html`
 
 This is the front-end, and is just the skeleton and outfit of the application.
 
-### `app.js`
+### `diff.js`
 
 This has the logic to calculate the difference between any two layers, working
 with their deltas, and updating the frontend.
