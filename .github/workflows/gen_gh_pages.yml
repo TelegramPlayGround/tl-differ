@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-name: Generate diff.telethon.dev
+name: Generate TeleThon Docs
 jobs:
   build:
     name: Scrape
@@ -15,7 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.8'
+        python-version: "3.8"
 
     - name: Scrape jons
       run: python get_all_tl.py
