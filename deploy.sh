@@ -13,6 +13,8 @@ git commit -am "TLDiffer: Deploy new layer"
 curpath=$(pwd)
 git clone https://github.com/LonamiWebs/Telethon /tmp/docgen/
 cd /tmp/docgen/
+rm telethon_generator/data/api.tl
+wget "https://raw.githubusercontent.com/SpEcHiDe/Telethon/f2a366c70e21ca02ea612e3f82fd1b6462bb8005/telethon_generator/data/api.tl" -O telethon_generator/data/api.tl
 python setup.py gen docs
 rm -rf /tmp/docs
 mv docs/ /tmp/docs
