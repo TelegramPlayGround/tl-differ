@@ -18,7 +18,7 @@ jobs:
         python-version: '3.8'
 
     - name: Scrape jons
-      run: python get-all-tl.py
+      run: python get_all_tl.py
 
     - name: Commit and push changes.
       run: |

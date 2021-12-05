@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- 
+  // THIS IS A FORK OF
+  \\ https://github.com/Lonami/tl-differ //
+  // modified to suit my needs
+  &copy; <b>Lonami</b>
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <!--
+        The above 3 meta tags *must* come first in the head;
+        any other head content must come *after* these tags
+    -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Online Type Language differ to aid Telegram developers determine the changeset between TL layers">
+    <title>TL Differ</title>
+    <!--
+        site_verification property must be present,
+        but could be empty (no IVBot-side verification for now?)
+    -->
+    <meta property="tg:site_verification" content="UseTGxBot (for Telegram)" />
+
+    <link rel="stylesheet" href="./diff.css" type="text/css" />
+
+    <link rel="alternate" href="./atom.xml" title="Type Language Differ" type="application/atom+xml" />
+</head>
+
+<body>
+    <main>
+        <div class="intro">
+            <h1>Type Language Differ</h1>
+            <p>Welcome to the online
+                <a href="https://core.telegram.org/mtproto/TL">Type Language</a>
+                <a href="https://en.wikipedia.org/wiki/File_comparison">differ</a>!</p>
+
+            <p>This page is meant to be used to assist Telegram developers to easily see the biggest changes between different TL layers. These layers are what describes Telegram's API. Different things in the layers, different things you can do.</p>
+
+            <p>Note: the TL layer is from <code>tdesktop</code>, which doesn't always accurately represent what a certain layer has, but it's good enough.</p>
+
+            <p>Under the "Changed" section, fields with red background were removed, and fields with green background were added. If it changed, you will see "red → green".</p>
+
+            <p>To begin, select from which layer up to which layer you would like to see the changes.</p>
+
+            <p>You can subscribe to the <a href="./atom.xml">RSS feed</a> for updates on new layers, or <a href="https://github.com/lonami/tl-differ">contribute
+      to the repository</a> with the code used to build this site.</p>
+
+            <p>Calculate diff
+                <label for="select_from">from</label> <select id="select_from" onchange="change_select_to()"></select>
+                <label for="select_to">to</label> <select id="select_to" onchange="change_select_from()"></select>
+                <br>
+                <input type="checkbox" id="merge-layers" name="merge-layers" onchange="change_used_diff(event)" checked>
+                <label class="info" title="Telegram sometimes publishes updates to a layer without increasing the layer number. By default (checked), only the most recent version of a layer is shown, but you can uncheck this to show all the known revisions of a layer."
+                    for="merge-layers">Show only the most recent version for a layer (?)</label>
+            </p>
+
+            <h2>Difference Statistics</h2>
+            <table id="stats">
+                <thead>
+                    <tr>
+                        <th scope="col">Kind</th>
+                        <th scope="col"><a href="#added_div">Added</a></th>
+                        <th scope="col"><a href="#removed_div">Removed</a></th>
+                        <th scope="col"><a href="#changed_div">Changed</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Types</th>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Functions</th>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="div_diff" class="diff">
+            <div id="added_div" class="added">
+                <h2>Added</h2>
+                <div id="added_types_div">
+                    <h3>Types <button onclick="toggle_expand(event)">Expand/collapse all</button></h3>
+                    <ul id="added_types"></ul>
+                </div>
+                <div id="added_functions_div">
+                    <h3>Functions <button onclick="toggle_expand(event)">Expand/collapse all</button></h3>
+                    <ul id="added_functions"></ul>
+                </div>
+            </div>
+            <div id="removed_div" class="removed">
+                <h2>Removed</h2>
+                <div id="removed_types_div">
+                    <h3>Types <button onclick="toggle_expand(event)">Expand/collapse all</button></h3>
+                    <ul id="removed_types"></ul>
+                </div>
+                <div id="removed_functions_div">
+                    <h3>Functions <button onclick="toggle_expand(event)">Expand/collapse all</button></h3>
+                    <ul id="removed_functions"></ul>
+                </div>
+            </div>
+            <div id="changed_div" class="changed">
+                <h2>Changed</h2>
+                <div id="changed_types_div">
+                    <h3>Types <button onclick="toggle_expand(event)">Expand/collapse all</button></h3>
+                    <ul id="changed_types"></ul>
+                </div>
+                <div id="changed_functions_div">
+                    <h3>Functions <button onclick="toggle_expand(event)">Expand/collapse all</button></h3>
+                    <ul id="changed_functions"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="./diffs.js"></script>
+    <script type="text/javascript" src="./diff.js"></script>
+</body>
+
+</html>

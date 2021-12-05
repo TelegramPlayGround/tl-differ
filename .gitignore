@@ -1,4 +1,6 @@
 tdesktop/
 schemes/
 atom.xml
-diff.js
+diffs.js
+__pycache__/
+

@@ -266,7 +266,7 @@ def main():
     extract()
     load_tl()
     deltas = gen_index()
-    with open('diff.js', 'w') as fd:
+    with open('diffs.js', 'w') as fd:
         fd.write('DIFF=JSON.parse(')
         fd.write(repr(json.dumps(deltas, separators=(',', ':'), sort_keys=True)))
         fd.write(');\n')
