@@ -6,6 +6,8 @@ mkdir "$TMP"
 cp diff.js atom.xml diffs.js diff.html diff.css "$TMP"
 git checkout --orphan gh-pages
 mv "$TMP"/* .
+git config --global user.email "johnprestonmail@gmail.com"
+git config --global user.name "GitHub Action <John Preston>"
 git add diff.js atom.xml diffs.js diff.html diff.css -f
 # the below lines were copied from
 # https://github.com/LonamiWebs/Telethon/blob/master/update-docs.sh
@@ -24,6 +26,8 @@ cd docs
 # there's probably better ways but we know none has spaces
 rm -rf $(ls /tmp/docs)
 mv /tmp/docs/* .
+git config --global user.email "totufals@hotmail.com"
+git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
 git commit --amend -m "DocGen: Update documentation"
 git push --force -u origin gh-pages

@@ -23,8 +23,4 @@ jobs:
     - name: Commit and push changes.
       run: |
           git checkout master
-
-          git config --global user.email "johnprestonmail@gmail.com"
-          git config --global user.name "GitHub Action <John Preston>"
-
           bash deploy.sh
