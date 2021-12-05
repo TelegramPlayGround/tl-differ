@@ -6,7 +6,7 @@ TMP=/tmp/tldiff
 rm -rf "$TMP"
 mkdir "$TMP"
 cp diff.js atom.xml diffs.js diff.html diff.css "$TMP"
-git branch -D gh-pages
+# git branch -D gh-pages
 git checkout --orphan gh-pages
 mv "$TMP"/* .
 ls
