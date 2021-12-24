@@ -45,7 +45,8 @@ git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
 cd /tmp/docgen/
 # rm compiler/api/source/main_api.tl
 # cp ${curpath}/schemes/${cimmot}.tl telethon_generator/data/api.tl
-python setup.py generate --all
+python setup.py install
+python setup.py generate --docs
 cd docs
 sudo apt install -y pandoc latexmk
 pip install -r requirements.txt
