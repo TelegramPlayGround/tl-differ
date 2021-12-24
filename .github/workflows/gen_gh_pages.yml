@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-name: Generate TeleThon Docs
+name: Generate TeleThon / PyroGram Docs
 jobs:
   build:
     name: Scrape
