@@ -54,7 +54,6 @@ mv build/html /tmp/pydocs
 cd ${curpath}
 mkdir -p pyrogram
 cd pyrogram
-rm -rf $(ls /tmp/pydocs)
 mv /tmp/pydocs/* .
 git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
