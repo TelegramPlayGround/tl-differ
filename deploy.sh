@@ -57,9 +57,10 @@ cd ${curpath}
 mkdir -p pyrogram
 cd pyrogram
 mv /tmp/pydocs/* .
+touch ../.nojekyll  # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+git add ../.nojekyll
 git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
-touch ../.nojekyll  # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
 git add . -A
 git commit -m "DocGen: Update documentation"
 rm -rf /tmp/docgen
