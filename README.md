@@ -12,7 +12,7 @@ simply opening `index.html` in your web browser of choice.
 To "compile" the site, you must run the following Python script:
 
 ```sh
-python get-all-tl.py
+python get_all_tl.py
 ```
 
 This will clone or update the [`tdesktop`] repository, checkout each revision

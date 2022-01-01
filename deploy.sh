@@ -23,7 +23,7 @@ git commit -am "TLDiffer: Deploy new layer"
 
 curpath=$(pwd)
 
-git clone https://github.com/TelgramMtProto/Telethon /tmp/docgen/
+git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
 cd /tmp/docgen/
 git checkout rotcev
 python setup.py gen docs
@@ -40,10 +40,8 @@ git add constructors/ types/ methods/ index.html js/search.js css/ img/
 git commit -m "DocGen: Update documentation"
 rm -rf /tmp/docgen
 
-git clone https://github.com/TelgramMtProto/pyrogram /tmp/docgen/
+git clone https://github.com/TelegramPlayGround/pyrogram /tmp/docgen/
 cd /tmp/docgen/
-# rm compiler/api/source/main_api.tl
-# cp ${curpath}/schemes/${cimmot}.tl telethon_generator/data/api.tl
 python setup.py install
 python setup.py generate --api
 python setup.py generate --docs
