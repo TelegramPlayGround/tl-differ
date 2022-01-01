@@ -23,10 +23,9 @@ git commit -am "TLDiffer: Deploy new layer"
 
 curpath=$(pwd)
 
-git clone https://github.com/LonamiWebs/Telethon /tmp/docgen/
+git clone https://github.com/TelgramMtProto/Telethon /tmp/docgen/
 cd /tmp/docgen/
-rm telethon_generator/data/api.tl
-cp ${curpath}/schemes/${cimmot}.tl telethon_generator/data/api.tl
+git checkout rotcev
 python setup.py gen docs
 rm -rf /tmp/docs
 mv docs/ /tmp/docs
@@ -41,7 +40,7 @@ git add constructors/ types/ methods/ index.html js/search.js css/ img/
 git commit -m "DocGen: Update documentation"
 rm -rf /tmp/docgen
 
-git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
+git clone https://github.com/TelgramMtProto/pyrogram /tmp/docgen/
 cd /tmp/docgen/
 # rm compiler/api/source/main_api.tl
 # cp ${curpath}/schemes/${cimmot}.tl telethon_generator/data/api.tl
@@ -60,7 +59,7 @@ cd pyrogram
 mv /tmp/pydocs/* .
 git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
-touch .nojekyll  # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+touch ../.nojekyll  # https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
 git add . -A
 git commit -m "DocGen: Update documentation"
 rm -rf /tmp/docgen
