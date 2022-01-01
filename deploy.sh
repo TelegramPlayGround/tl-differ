@@ -13,7 +13,7 @@ mv "$TMP"/* .
 ls
 git config --global user.email "johnprestonmail@gmail.com"
 git config --global user.name "GitHub Action <John Preston>"
-cimmot="main"
+cimmot="64d108c6160716bdf999e98f78a8d50117ba88a0"
 wget "https://github.com/SpEcHiDe/telegram-bot-api-spec/raw/${cimmot}/mtproto.tl" -O schemes/${cimmot}.tl
 git add schemes/ diff.js atom.xml diffs.js diff.html diff.css -f
 # the below lines were copied from
