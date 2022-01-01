@@ -45,6 +45,7 @@ cd /tmp/docgen/
 # rm compiler/api/source/main_api.tl
 # cp ${curpath}/schemes/${cimmot}.tl telethon_generator/data/api.tl
 python setup.py install
+python setup.py generate --api
 python setup.py generate --docs
 cd docs
 sudo apt install -y pandoc latexmk
