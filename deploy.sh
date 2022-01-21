@@ -23,23 +23,6 @@ git commit -am "TLDiffer: Deploy new layer"
 
 curpath=$(pwd)
 
-git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
-cd /tmp/docgen/
-git checkout rotcev
-python setup.py gen docs
-rm -rf /tmp/docs
-mv docs/ /tmp/docs
-cd ${curpath}
-mkdir -p telethon
-cd telethon
-rm -rf $(ls /tmp/docs)
-mv /tmp/docs/* .
-git config --global user.email "totufals@hotmail.com"
-git config --global user.name "GitHub Action <Lonami Exo>"
-git add constructors/ types/ methods/ index.html js/search.js css/ img/
-git commit -m "DocGen: Update documentation"
-rm -rf /tmp/docgen
-
 git clone https://github.com/TelegramPlayGround/pyrogram /tmp/docgen/
 cd /tmp/docgen/
 python setup.py install
@@ -61,6 +44,33 @@ git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
 git add . -A
 git commit -m "DocGen: Update documentation"
+rm -rf /tmp/docgen
+
+git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
+cd /tmp/docgen/
+git checkout rotcev
+python setup.py install
+python setup.py gen docs
+rm -rf /tmp/docs
+mv docs/ /tmp/docs
+pip install sphinx_rtd_theme sphinx_tabs
+cd readthedocs
+make html
+rm -rf /tmp/telethonrtd
+mv _build/html /tmp/telethonrtd
+cd ${curpath}
+mkdir -p telethon/advanced
+cd telethon/advanced
+rm -rf $(ls /tmp/docs)
+mv /tmp/docs/* .
+git config --global user.email "totufals@hotmail.com"
+git config --global user.name "GitHub Action <Lonami Exo>"
+git add constructors/ types/ methods/ index.html js/search.js css/ img/
+git commit -m "DocGen: Update TL documentation"
+cd ..
+mv /tmp/telethonrtd/* .
+git add . -A
+git commit -m "DocGen: Update RTD"
 rm -rf /tmp/docgen
 
 git push --force -u origin gh-pages
