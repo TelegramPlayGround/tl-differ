@@ -13,10 +13,10 @@ mv "$TMP"/* .
 ls
 git config --global user.email "johnprestonmail@gmail.com"
 git config --global user.name "GitHub Action <John Preston>"
-cimmot="64d108c6160716bdf999e98f78a8d50117ba88a0"
-wget "https://github.com/SpEcHiDe/telegram-bot-api-spec/raw/${cimmot}/mtproto.tl" -O schemes/${cimmot}.tl
+wget "https://github.com/TelegramPlayGround/tg-api-spec-s/raw/data/tdesktop.tl" -O schemes/latest.tl
 rm README.md deploy.sh get_all_tl.py
-git add schemes/ diff.js atom.xml diffs.js diff.html diff.css README.md deploy.sh get_all_tl.py -Af
+mv moin.html index.html
+git add schemes/ diff.js atom.xml diffs.js diff.html index.html diff.css README.md deploy.sh get_all_tl.py -Af
 # the below lines were copied from
 # https://github.com/LonamiWebs/Telethon/blob/master/update-docs.sh
 git commit -am "TLDiffer: Deploy new layer"
