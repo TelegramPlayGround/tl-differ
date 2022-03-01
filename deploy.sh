@@ -23,7 +23,7 @@ git commit -am "TLDiffer: Deploy new layer"
 
 curpath=$(pwd)
 
-git clone https://github.com/TelegramPlayGround/pyrogram /tmp/docgen/
+git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
 cd /tmp/docgen/
 python setup.py install
 python setup.py generate --api
