@@ -2,6 +2,7 @@ const select_from = document.getElementById('select_from');
 const select_to = document.getElementById('select_to');
 const div_diff = document.getElementById('div_diff');
 const stats = document.getElementById('stats');
+const stats_caption = document.getElementById("stats_caption");
 
 const added_types = document.getElementById('added_types');
 const added_functions = document.getElementById('added_functions');
@@ -23,9 +24,9 @@ const changed_functions_div = document.getElementById('changed_functions_div');
 const collapsed_diff = [];
 for (const layer of DIFF) {
     const cdl = collapsed_diff.length;
-    if (cdl === 0
-            || collapsed_diff[cdl - 1].layer === null
-            || collapsed_diff[cdl - 1].layer !== layer.layer) {
+    if (cdl === 0 ||
+        collapsed_diff[cdl - 1].layer === null ||
+        collapsed_diff[cdl - 1].layer !== layer.layer) {
         collapsed_diff.push(layer); // first or different
     } else {
         collapsed_diff[cdl - 1] = layer; // replace same layer (keep latest)
@@ -37,9 +38,9 @@ let used_diff = collapsed_diff;
 const get_url_query_param = param =>
     (
         (window.location.href.split("?")[1] || "")
-            .split("&")
-            .map(part => part.split("="))
-            .find(kv => kv[0] == param) || []
+        .split("&")
+        .map(part => part.split("="))
+        .find(kv => kv[0] == param) || []
     )[1] || null;
 
 function change_used_diff(event) {
@@ -157,15 +158,13 @@ function append_li_migrate(ul, from, to, name) {
     const li = document.createElement('li');
     if (name !== undefined) {
         li.appendChild(document.createTextNode(`${name} `));
-    }
-    {
+    } {
         const span = document.createElement('span');
         span.className = 'old';
         span.appendChild(document.createTextNode(from));
         li.appendChild(span);
     }
-    li.appendChild(document.createTextNode(' → '));
-    {
+    li.appendChild(document.createTextNode(' → ')); {
         const span = document.createElement('span');
         span.className = 'new';
         span.appendChild(document.createTextNode(to));
@@ -194,8 +193,7 @@ function extend_list(list, items) {
         }
         for (arg of item.fields) {
             append_li(ul, `${arg.name}:${arg.type}`);
-        }
-        {
+        } {
             append_li(`= ${item.type}`);
         }
         details.appendChild(ul);
@@ -263,14 +261,14 @@ function extend_change_list(list, items) {
         // figure out removed items
         for (arg of item.before.fields) {
             if (!new_args.hasOwnProperty(arg.name)) {
-                append_li(ul, {class: 'old', value: `${arg.name}:${arg.type}`});
+                append_li(ul, { class: 'old', value: `${arg.name}:${arg.type}` });
             }
         }
 
         // figure out new items
         for (arg of item.after.fields) {
             if (!old_args.hasOwnProperty(arg.name)) {
-                append_li(ul, {class: 'new', value: `${arg.name}:${arg.type}`});
+                append_li(ul, { class: 'new', value: `${arg.name}:${arg.type}` });
             }
         }
 
@@ -341,7 +339,7 @@ function set_td_text(tr, index, object) {
 }
 
 function fill_stats(diff) {
-    const tbody = stats.children[1];
+    const tbody = stats.children[2];
     const ty = tbody.children[0];
     const fn = tbody.children[1];
 
@@ -376,9 +374,9 @@ function load_diff() {
         }
     }
     const diff = {
-        added: {types: {}, functions: {}},
-        removed: {types: {}, functions: {}},
-        changed: {types: {}, functions: {}}
+        added: { types: {}, functions: {} },
+        removed: { types: {}, functions: {} },
+        changed: { types: {}, functions: {} }
     };
     for (let i = from_idx + 1; i <= to_idx; ++i) {
         const layer = DIFF[i];
@@ -388,6 +386,8 @@ function load_diff() {
         update_removed(layer, diff, 'functions');
         update_changed(layer, diff, 'types');
         update_changed(layer, diff, 'functions');
+        diff["date"] = layer.date;
+        diff["layer"] = layer.layer;
     }
 
     empty_diff_lists();
@@ -404,6 +404,7 @@ function load_diff() {
     set_visible_ty_fn(changed_div, changed_types_div, changed_functions_div, diff.changed);
 
     fill_stats(diff);
+    stats_caption.innerHTML = "<a href='schemes/" + diff.date + ".tl'>Download TL File</a>";
     div_diff.style.display = '';
 }
 
@@ -413,3 +414,70 @@ select_to.addEventListener('change', load_diff);
 
 fill_select_boxes(get_url_query_param('from'), get_url_query_param('to'));
 load_diff();
+
+
+function search_first_type(ppok, srqyr) {
+    let avr = {
+        "functions": [],
+        "types": []
+    };
+    let available_types = [
+        "functions",
+        "types"
+    ];
+    for (let idiff in ppok) {
+        let diff = ppok[idiff];
+        let layer_no = diff["layer"];
+        let layer_date = diff["date"];
+        let added = diff["added"];
+        for (let iitrtr in available_types) {
+            let itrtr = available_types[iitrtr];
+            for (let soka in added[itrtr]) {
+                let addfunction = added[itrtr][soka];
+                let functionid = addfunction["id"];
+                let functionname = addfunction["name"]; // .toLowerCase();
+
+                if (
+                    (
+                        // srqyr.indexOf(functionid) > -1 ||
+                        // srqyr.indexOf(functionname) > -1
+                        srqyr == functionname ||
+                        srqyr == functionid
+                    )
+                    /*&&
+                    (
+                        // TODO :(
+                        avr[itrtr].indexOf(soka) 
+                    ) */
+                ) {
+                    // console.log(addfunction);
+                    addfunction["layer"] = layer_no;
+                    addfunction["date"] = layer_date;
+                    addfunction["diffindex"] = {
+                        "L": idiff,
+                        "O": soka
+                    };
+                    avr[itrtr].push(addfunction);
+                }
+            }
+        }
+    }
+    if (avr.functions.length > 0) {
+        return avr.functions[0];
+    }
+    if (avr.types.length > 0) {
+        return avr.types[0];
+    }
+    return avr;
+}
+
+function html_search_change(evt) {
+    let cbml = document.getElementById("merge-layers")
+    used_diff = cbml.checked ? collapsed_diff : DIFF;
+    let vsar = search_first_type(used_diff, evt.target.value);
+    if (vsar.diffindex !== undefined) {
+        select_to.selectedIndex = vsar.diffindex.L;
+        select_from.selectedIndex = vsar.diffindex.L - 2;
+        load_diff();
+    }
+}

@@ -57,8 +57,21 @@
                     for="merge-layers">Show only the most recent version for a layer (?)</label>
             </p>
 
+            <p>
+                <label for="inp" class="inp">
+                    <input type="text" onChange="html_search_change(event)" placeholder="">
+                    <span class="label">
+                        Find out the Layer in which, a particular type was added
+                    </span>
+                    <span class="focus-bg"></span>
+                </label>
+            </p>
+
             <h2>Difference Statistics</h2>
             <table id="stats">
+                <caption id="stats_caption">
+                    <!-- this blank initially -->
+                </caption>
                 <thead>
                     <tr>
                         <th scope="col">Kind</th>
