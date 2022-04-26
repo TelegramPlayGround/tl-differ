@@ -25,15 +25,15 @@ curpath=$(pwd)
 
 git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
 cd /tmp/docgen/
-python setup.py install
-python setup.py generate --api
-python setup.py generate --docs
-cd docs
 sudo apt install -y pandoc latexmk
-pip install -r requirements.txt
-pip install sphinx_tabs
+make clean
+make venv
+pip install --upgrade pip
+pip install tox sphinx_tabs
+make api
+make docs
 make html
-mv build/html /tmp/pydocs
+mv /tmp/docgen/docs/build/html /tmp/pydocs
 cd ${curpath}
 mkdir -p pyrogram
 cd pyrogram
