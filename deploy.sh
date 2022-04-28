@@ -9,7 +9,7 @@ rm -rf "$TMP"
 mkdir "$TMP"
 cp diff.js atom.xml diffs.js diff.html diff.css "$TMP"
 current_date=$(date -R)
-git checkout gh-pages
+
 mv "$TMP"/* .
 ls
 git config --global user.email "johnprestonmail@gmail.com"
