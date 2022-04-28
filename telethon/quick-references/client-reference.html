@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Reference &mdash; Telethon 1.2.3.4 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Events Reference" href="events-reference.html" />
+    <link rel="prev" title="FAQ" href="faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                1.2.3.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Client Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telegramclient">TelegramClient</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#auth">Auth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base">Base</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#messages">Messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uploads">Uploads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#downloads">Downloads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dialogs">Dialogs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chats">Chats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parse-mode">Parse Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updates">Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bots">Bots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buttons">Buttons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#account">Account</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Client Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/quick-references/client-reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="client-reference">
+<span id="client-ref"></span><h1><a class="toc-backref" href="#id1">Client Reference</a><a class="headerlink" href="#client-reference" title="Permalink to this headline"></a></h1>
+<p>This page contains a summary of all the important methods and properties that
+you may need when using Telethon. They are sorted by relevance and are not in
+alphabetical order.</p>
+<p>You should use this page to learn about which methods are available, and
+if you need a usage example or further description of the arguments, be
+sure to follow the links.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#client-reference" id="id1">Client Reference</a></p>
+<ul>
+<li><p><a class="reference internal" href="#telegramclient" id="id2">TelegramClient</a></p>
+<ul>
+<li><p><a class="reference internal" href="#auth" id="id3">Auth</a></p></li>
+<li><p><a class="reference internal" href="#base" id="id4">Base</a></p></li>
+<li><p><a class="reference internal" href="#messages" id="id5">Messages</a></p></li>
+<li><p><a class="reference internal" href="#uploads" id="id6">Uploads</a></p></li>
+<li><p><a class="reference internal" href="#downloads" id="id7">Downloads</a></p></li>
+<li><p><a class="reference internal" href="#dialogs" id="id8">Dialogs</a></p></li>
+<li><p><a class="reference internal" href="#users" id="id9">Users</a></p></li>
+<li><p><a class="reference internal" href="#chats" id="id10">Chats</a></p></li>
+<li><p><a class="reference internal" href="#parse-mode" id="id11">Parse Mode</a></p></li>
+<li><p><a class="reference internal" href="#updates" id="id12">Updates</a></p></li>
+<li><p><a class="reference internal" href="#bots" id="id13">Bots</a></p></li>
+<li><p><a class="reference internal" href="#buttons" id="id14">Buttons</a></p></li>
+<li><p><a class="reference internal" href="#account" id="id15">Account</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="telegramclient">
+<h2><a class="toc-backref" href="#id2">TelegramClient</a><a class="headerlink" href="#telegramclient" title="Permalink to this headline"></a></h2>
+<p>This is a summary of the methods and
+properties you will find at <a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a>.</p>
+<section id="auth">
+<h3><a class="toc-backref" href="#id3">Auth</a><a class="headerlink" href="#auth" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a></p></td>
+<td><p>Starts the client (connects and logs in if necessary).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.send_code_request" title="telethon.client.auth.AuthMethods.send_code_request"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_code_request</span></code></a></p></td>
+<td><p>Sends the Telegram code needed to login to the given phone number.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.sign_in" title="telethon.client.auth.AuthMethods.sign_in"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign_in</span></code></a></p></td>
+<td><p>Logs in to Telegram to an existing user or bot account.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.qr_login" title="telethon.client.auth.AuthMethods.qr_login"><code class="xref py py-obj docutils literal notranslate"><span class="pre">qr_login</span></code></a></p></td>
+<td><p>Initiates the QR login procedure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.sign_up" title="telethon.client.auth.AuthMethods.sign_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sign_up</span></code></a></p></td>
+<td><p>Signs up to Telegram as a new user account.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.log_out" title="telethon.client.auth.AuthMethods.log_out"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_out</span></code></a></p></td>
+<td><p>Logs out Telegram and deletes the current <code class="docutils literal notranslate"><span class="pre">*.session</span></code> file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.edit_2fa" title="telethon.client.auth.AuthMethods.edit_2fa"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_2fa</span></code></a></p></td>
+<td><p>Changes the 2FA settings of the logged in user.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="base">
+<h3><a class="toc-backref" href="#id4">Base</a><a class="headerlink" href="#base" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.connect" title="telethon.client.telegrambaseclient.TelegramBaseClient.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a></p></td>
+<td><p>Connects to Telegram.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a></p></td>
+<td><p>Disconnects from Telegram.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.is_connected" title="telethon.client.telegrambaseclient.TelegramBaseClient.is_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code></a></p></td>
+<td><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user has connected.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnected" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnected</span></code></a></p></td>
+<td><p>Property with a <code class="docutils literal notranslate"><span class="pre">Future</span></code> that resolves upon disconnection.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.loop" title="telethon.client.telegrambaseclient.TelegramBaseClient.loop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loop</span></code></a></p></td>
+<td><p>Property with the <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> event loop used by this client.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.set_proxy" title="telethon.client.telegrambaseclient.TelegramBaseClient.set_proxy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_proxy</span></code></a></p></td>
+<td><p>Changes the proxy which will be used on next (re)connection.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="messages">
+<h3><a class="toc-backref" href="#id5">Messages</a><a class="headerlink" href="#messages" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message</span></code></a></p></td>
+<td><p>Sends a message to the specified user, chat or channel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.edit_message" title="telethon.client.messages.MessageMethods.edit_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_message</span></code></a></p></td>
+<td><p>Edits the given message to change its text or media.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.delete_messages" title="telethon.client.messages.MessageMethods.delete_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_messages</span></code></a></p></td>
+<td><p>Deletes the given messages, optionally &quot;for everyone&quot;.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.forward_messages" title="telethon.client.messages.MessageMethods.forward_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward_messages</span></code></a></p></td>
+<td><p>Forwards the given messages to the specified entity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_messages</span></code></a></p></td>
+<td><p>Iterator over the messages for the given chat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.get_messages" title="telethon.client.messages.MessageMethods.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_messages</span></code></a></p></td>
+<td><p>Same as <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_messages()</span></code></a>, but returns a <a class="reference internal" href="../modules/helpers.html#telethon.helpers.TotalList" title="telethon.helpers.TotalList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalList</span></code></a> instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.pin_message" title="telethon.client.messages.MessageMethods.pin_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin_message</span></code></a></p></td>
+<td><p>Pins a message in a chat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.unpin_message" title="telethon.client.messages.MessageMethods.unpin_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unpin_message</span></code></a></p></td>
+<td><p>Unpins a message in a chat.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_read_acknowledge" title="telethon.client.messages.MessageMethods.send_read_acknowledge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_read_acknowledge</span></code></a></p></td>
+<td><p>Marks messages as read and optionally clears mentions.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="uploads">
+<h3><a class="toc-backref" href="#id6">Uploads</a><a class="headerlink" href="#uploads" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_file</span></code></a></p></td>
+<td><p>Sends message with the given file to the specified entity.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.upload_file" title="telethon.client.uploads.UploadMethods.upload_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">upload_file</span></code></a></p></td>
+<td><p>Uploads a file to Telegram's servers, without sending it.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="downloads">
+<h3><a class="toc-backref" href="#id7">Downloads</a><a class="headerlink" href="#downloads" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_media" title="telethon.client.downloads.DownloadMethods.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_media</span></code></a></p></td>
+<td><p>Downloads the given media from a message object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_profile_photo" title="telethon.client.downloads.DownloadMethods.download_profile_photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_profile_photo</span></code></a></p></td>
+<td><p>Downloads the profile photo from the given user, chat or channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_file" title="telethon.client.downloads.DownloadMethods.download_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_file</span></code></a></p></td>
+<td><p>Low-level method to download files from their input location.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.iter_download" title="telethon.client.downloads.DownloadMethods.iter_download"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_download</span></code></a></p></td>
+<td><p>Iterates over a file download, yielding chunks of the file.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dialogs">
+<h3><a class="toc-backref" href="#id8">Dialogs</a><a class="headerlink" href="#dialogs" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_dialogs</span></code></a></p></td>
+<td><p>Iterator over the dialogs (open conversations/subscribed channels).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.get_dialogs" title="telethon.client.dialogs.DialogMethods.get_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_dialogs</span></code></a></p></td>
+<td><p>Same as <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_dialogs()</span></code></a>, but returns a <a class="reference internal" href="../modules/helpers.html#telethon.helpers.TotalList" title="telethon.helpers.TotalList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalList</span></code></a> instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.edit_folder" title="telethon.client.dialogs.DialogMethods.edit_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_folder</span></code></a></p></td>
+<td><p>Edits the folder used by one or more dialogs to archive them.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_drafts" title="telethon.client.dialogs.DialogMethods.iter_drafts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_drafts</span></code></a></p></td>
+<td><p>Iterator over draft messages.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.get_drafts" title="telethon.client.dialogs.DialogMethods.get_drafts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_drafts</span></code></a></p></td>
+<td><p>Same as <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_drafts" title="telethon.client.dialogs.DialogMethods.iter_drafts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_drafts()</span></code></a>, but returns a list instead.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.delete_dialog" title="telethon.client.dialogs.DialogMethods.delete_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete_dialog</span></code></a></p></td>
+<td><p>Deletes a dialog (leaves a chat or channel).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation</span></code></a></p></td>
+<td><p>Creates a <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation" title="telethon.tl.custom.conversation.Conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code></a> with the given entity.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="users">
+<h3><a class="toc-backref" href="#id9">Users</a><a class="headerlink" href="#users" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_me" title="telethon.client.users.UserMethods.get_me"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_me</span></code></a></p></td>
+<td><p>Gets &quot;me&quot;, the current <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a> who is logged in.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.is_bot" title="telethon.client.users.UserMethods.is_bot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_bot</span></code></a></p></td>
+<td><p>Return <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the signed-in user is a bot, <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a> otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.is_user_authorized" title="telethon.client.users.UserMethods.is_user_authorized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_user_authorized</span></code></a></p></td>
+<td><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user is authorized (logged in).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_entity" title="telethon.client.users.UserMethods.get_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entity</span></code></a></p></td>
+<td><p>Turns the given entity into a valid Telegram <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>, <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_entity</span></code></a></p></td>
+<td><p>Turns the given entity into its input entity version.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_peer_id" title="telethon.client.users.UserMethods.get_peer_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_peer_id</span></code></a></p></td>
+<td><p>Gets the ID for the given entity.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chats">
+<h3><a class="toc-backref" href="#id10">Chats</a><a class="headerlink" href="#chats" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_participants" title="telethon.client.chats.ChatMethods.iter_participants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_participants</span></code></a></p></td>
+<td><p>Iterator over the participants belonging to the specified chat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_participants" title="telethon.client.chats.ChatMethods.get_participants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_participants</span></code></a></p></td>
+<td><p>Same as <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_participants" title="telethon.client.chats.ChatMethods.iter_participants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_participants()</span></code></a>, but returns a <a class="reference internal" href="../modules/helpers.html#telethon.helpers.TotalList" title="telethon.helpers.TotalList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalList</span></code></a> instead.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.kick_participant" title="telethon.client.chats.ChatMethods.kick_participant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kick_participant</span></code></a></p></td>
+<td><p>Kicks a user from a chat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_admin_log" title="telethon.client.chats.ChatMethods.iter_admin_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_admin_log</span></code></a></p></td>
+<td><p>Iterator over the admin log for the specified channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_admin_log" title="telethon.client.chats.ChatMethods.get_admin_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_admin_log</span></code></a></p></td>
+<td><p>Same as <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_admin_log" title="telethon.client.chats.ChatMethods.iter_admin_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_admin_log()</span></code></a>, but returns a <code class="docutils literal notranslate"><span class="pre">list</span></code> instead.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_profile_photos" title="telethon.client.chats.ChatMethods.iter_profile_photos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_profile_photos</span></code></a></p></td>
+<td><p>Iterator over a user's profile photos or a chat's photos.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_profile_photos" title="telethon.client.chats.ChatMethods.get_profile_photos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_profile_photos</span></code></a></p></td>
+<td><p>Same as <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_profile_photos" title="telethon.client.chats.ChatMethods.iter_profile_photos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_profile_photos()</span></code></a>, but returns a <a class="reference internal" href="../modules/helpers.html#telethon.helpers.TotalList" title="telethon.helpers.TotalList"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TotalList</span></code></a> instead.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_admin" title="telethon.client.chats.ChatMethods.edit_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_admin</span></code></a></p></td>
+<td><p>Edits admin permissions for someone in a chat.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_permissions" title="telethon.client.chats.ChatMethods.edit_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit_permissions</span></code></a></p></td>
+<td><p>Edits user restrictions in a chat.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_permissions" title="telethon.client.chats.ChatMethods.get_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_permissions</span></code></a></p></td>
+<td><p>Fetches the permissions of a user in a specific chat or channel or get Default Restricted Rights of Chat or Channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_stats" title="telethon.client.chats.ChatMethods.get_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stats</span></code></a></p></td>
+<td><p>Retrieves statistics from the given megagroup or broadcast channel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.action" title="telethon.client.chats.ChatMethods.action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action</span></code></a></p></td>
+<td><p>Returns a context-manager object to represent a &quot;chat action&quot;.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="parse-mode">
+<h3><a class="toc-backref" href="#id11">Parse Mode</a><a class="headerlink" href="#parse-mode" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.messageparse.MessageParseMethods.parse_mode" title="telethon.client.messageparse.MessageParseMethods.parse_mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_mode</span></code></a></p></td>
+<td><p>This property is the default parse mode used when sending messages.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="updates">
+<h3><a class="toc-backref" href="#id12">Updates</a><a class="headerlink" href="#updates" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.on" title="telethon.client.updates.UpdateMethods.on"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on</span></code></a></p></td>
+<td><p>Decorator used to <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.add_event_handler" title="telethon.client.updates.UpdateMethods.add_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_event_handler</span></code></a> more conveniently.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_until_disconnected</span></code></a></p></td>
+<td><p>Runs the event loop until the library is disconnected.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.add_event_handler" title="telethon.client.updates.UpdateMethods.add_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_event_handler</span></code></a></p></td>
+<td><p>Registers a new event handler callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.remove_event_handler" title="telethon.client.updates.UpdateMethods.remove_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_event_handler</span></code></a></p></td>
+<td><p>Inverse operation of <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.add_event_handler" title="telethon.client.updates.UpdateMethods.add_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_event_handler()</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.list_event_handlers" title="telethon.client.updates.UpdateMethods.list_event_handlers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_event_handlers</span></code></a></p></td>
+<td><p>Lists all registered event handlers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.catch_up" title="telethon.client.updates.UpdateMethods.catch_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">catch_up</span></code></a></p></td>
+<td><p>&quot;Catches up&quot; on the missed updates while the client was offline.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.set_receive_updates" title="telethon.client.updates.UpdateMethods.set_receive_updates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_receive_updates</span></code></a></p></td>
+<td><p>Change the value of <code class="xref py py-obj docutils literal notranslate"><span class="pre">receive_updates</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bots">
+<h3><a class="toc-backref" href="#id13">Bots</a><a class="headerlink" href="#bots" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inline_query</span></code></a></p></td>
+<td><p>Makes an inline query to the specified bot (<code class="docutils literal notranslate"><span class="pre">&#64;vote</span> <span class="pre">New</span> <span class="pre">Poll</span></code>).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="buttons">
+<h3><a class="toc-backref" href="#id14">Buttons</a><a class="headerlink" href="#buttons" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.buttons.ButtonMethods.build_reply_markup" title="telethon.client.buttons.ButtonMethods.build_reply_markup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_reply_markup</span></code></a></p></td>
+<td><p>Builds a <a class="reference external" href="https://tl.telethon.dev/?q=ReplyInlineMarkup">ReplyInlineMarkup</a> or <a class="reference external" href="https://tl.telethon.dev/?q=ReplyKeyboardMarkup">ReplyKeyboardMarkup</a> for the given buttons.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="account">
+<h3><a class="toc-backref" href="#id15">Account</a><a class="headerlink" href="#account" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.account.AccountMethods.takeout" title="telethon.client.account.AccountMethods.takeout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">takeout</span></code></a></p></td>
+<td><p>Returns a <a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a> which calls methods behind a takeout session.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/client.html#telethon.client.account.AccountMethods.end_takeout" title="telethon.client.account.AccountMethods.end_takeout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">end_takeout</span></code></a></p></td>
+<td><p>Finishes the current takeout session.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="faq.html" class="btn btn-neutral float-left" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="events-reference.html" class="btn btn-neutral float-right" title="Events Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

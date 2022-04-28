@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPC Errors &mdash; Telethon 1.2.3.4 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HTTP Bot API vs MTProto" href="botapi-vs-mtproto.html" />
+    <link rel="prev" title="The Full API" href="full-api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                1.2.3.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="full-api.html">The Full API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">RPC Errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#base-errors">Base Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-errors">Common Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avoiding-limits">Avoiding Limits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>RPC Errors</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/concepts/errors.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rpc-errors">
+<span id="id1"></span><h1>RPC Errors<a class="headerlink" href="#rpc-errors" title="Permalink to this headline"></a></h1>
+<p>RPC stands for Remote Procedure Call, and when the library raises
+a <code class="docutils literal notranslate"><span class="pre">RPCError</span></code>, it’s because you have invoked some of the API
+methods incorrectly (wrong parameters, wrong permissions, or even
+something went wrong on Telegram’s server).</p>
+<p>You should import the errors from <code class="docutils literal notranslate"><span class="pre">telethon.errors</span></code> like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">takeout</span><span class="p">()</span> <span class="k">as</span> <span class="n">takeout</span><span class="p">:</span>
+        <span class="o">...</span>
+
+<span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TakeoutInitDelayError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="c1">#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ here we except TAKEOUT_INIT_DELAY</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Must wait&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="s1">&#39;before takeout&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There isn’t any official list of all possible RPC errors, so the
+<a class="reference external" href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list of known errors</a> is provided on a best-effort basis. When new methods
+are available, the list may be lacking since we simply don’t know what errors
+can raise from them.</p>
+<p>Once we do find out about a new error and what causes it, the list is
+updated, so if you see an error without a specific class, do report it
+(and what method caused it)!.</p>
+<p>This list is used to generate documentation for the <a class="reference external" href="https://tl.telethon.dev/">raw API page</a>.
+For example, if we want to know what errors can occur from
+<a class="reference external" href="https://tl.telethon.dev/methods/messages/send_message.html">messages.sendMessage</a> we can simply navigate to its raw API page
+and find it has 24 known RPC errors at the time of writing.</p>
+<section id="base-errors">
+<h2>Base Errors<a class="headerlink" href="#base-errors" title="Permalink to this headline"></a></h2>
+<p>All the “base” errors are listed in <a class="reference internal" href="../modules/errors.html#telethon-errors"><span class="std std-ref">API Errors</span></a>.
+Any other more specific error will be a subclass of these.</p>
+<p>If the library isn’t aware of a specific error just yet, it will instead
+raise one of these superclasses. This means you may find stuff like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>telethon.errors.rpcbaseerrors.BadRequestError: RPCError 400: MESSAGE_POLL_CLOSED (caused by SendVoteRequest)
+</pre></div>
+</div>
+<p>If you do, make sure to open an issue or send a pull request to update the
+<a class="reference external" href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list of known errors</a>.</p>
+</section>
+<section id="common-errors">
+<h2>Common Errors<a class="headerlink" href="#common-errors" title="Permalink to this headline"></a></h2>
+<p>These are some of the errors you may normally need to deal with:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloodWaitError</span></code> (420), the same request was repeated many times.
+Must wait <code class="docutils literal notranslate"><span class="pre">.seconds</span></code> (you can access this attribute). For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_messages</span><span class="p">(</span><span class="n">chat</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">messages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">FloodWaitError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Have to sleep&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span> <span class="s1">&#39;seconds&#39;</span><span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SessionPasswordNeededError</span></code>, if you have setup two-steps
+verification on Telegram and are trying to sign in.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FilePartMissingError</span></code>, if you have tried to upload an empty file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ChatAdminRequiredError</span></code>, you don’t have permissions to perform
+said operation on a chat or channel. Try avoiding filters, i.e. when
+searching messages.</p></li>
+</ul>
+<p>The generic classes for different error codes are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">InvalidDCError</span></code> (303), the request must be repeated on another DC.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BadRequestError</span></code> (400), the request contained errors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UnauthorizedError</span></code> (401), the user is not authorized yet.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ForbiddenError</span></code> (403), privacy violation error.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NotFoundError</span></code> (404), make sure you’re invoking <code class="docutils literal notranslate"><span class="pre">Request</span></code>‘s!</p></li>
+</ul>
+<p>If the error is not recognised, it will only be an <code class="docutils literal notranslate"><span class="pre">RPCError</span></code>.</p>
+<p>You can refer to all errors from Python through the <code class="docutils literal notranslate"><span class="pre">telethon.errors</span></code>
+module. If you don’t know what attributes they have, try printing their
+dir (like <code class="docutils literal notranslate"><span class="pre">print(dir(e))</span></code>).</p>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h2>
+<p>Some of the errors carry additional data in them. When they look like
+<code class="docutils literal notranslate"><span class="pre">EMAIL_UNCONFIRMED_X</span></code>, the <code class="docutils literal notranslate"><span class="pre">_X</span></code> value will be accessible from the
+error instance. The current list of errors that do this is the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EmailUnconfirmedError</span></code> has <code class="docutils literal notranslate"><span class="pre">.code_length</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FileMigrateError</span></code> has <code class="docutils literal notranslate"><span class="pre">.new_dc</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FilePartMissingError</span></code> has <code class="docutils literal notranslate"><span class="pre">.which</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloodTestPhoneWaitError</span></code> has <code class="docutils literal notranslate"><span class="pre">.seconds</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FloodWaitError</span></code> has <code class="docutils literal notranslate"><span class="pre">.seconds</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">InterdcCallErrorError</span></code> has <code class="docutils literal notranslate"><span class="pre">.dc</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">InterdcCallRichErrorError</span></code> has <code class="docutils literal notranslate"><span class="pre">.dc</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NetworkMigrateError</span></code> has <code class="docutils literal notranslate"><span class="pre">.new_dc</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PhoneMigrateError</span></code> has <code class="docutils literal notranslate"><span class="pre">.new_dc</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SlowModeWaitError</span></code> has <code class="docutils literal notranslate"><span class="pre">.seconds</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TakeoutInitDelayError</span></code> has <code class="docutils literal notranslate"><span class="pre">.seconds</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UserMigrateError</span></code> has <code class="docutils literal notranslate"><span class="pre">.new_dc</span></code>.</p></li>
+</ul>
+</section>
+<section id="avoiding-limits">
+<h2>Avoiding Limits<a class="headerlink" href="#avoiding-limits" title="Permalink to this headline"></a></h2>
+<p>Don’t spam. You won’t get <code class="docutils literal notranslate"><span class="pre">FloodWaitError</span></code> or your account banned or
+deleted if you use the library <em>for legit use cases</em>. Make cool tools.
+Don’t spam! Nobody knows the exact limits for all requests since they
+depend on a lot of factors, so don’t bother asking.</p>
+<p>Still, if you do have a legit use case and still get those errors, the
+library will automatically sleep when they are smaller than 60 seconds
+by default. You can set different “auto-sleep” thresholds:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">flood_sleep_threshold</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Don&#39;t auto-sleep</span>
+<span class="n">client</span><span class="o">.</span><span class="n">flood_sleep_threshold</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>  <span class="c1"># Sleep always</span>
+</pre></div>
+</div>
+<p>You can also except it and act as you prefer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.errors</span> <span class="kn">import</span> <span class="n">FloodWaitError</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="o">...</span>
+<span class="k">except</span> <span class="n">FloodWaitError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Flood waited for&#39;</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="n">seconds</span><span class="p">)</span>
+    <span class="n">quit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>VoIP numbers are very limited, and some countries are more limited too.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="full-api.html" class="btn btn-neutral float-left" title="The Full API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="botapi-vs-mtproto.html" class="btn btn-neutral float-right" title="HTTP Bot API vs MTProto" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

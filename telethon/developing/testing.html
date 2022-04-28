@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tests &mdash; Telethon 1.2.3.4 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Understanding the Type Language" href="understanding-the-type-language.html" />
+    <link rel="prev" title="Coding Style" href="coding-style.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                1.2.3.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding-style.html">Coding Style</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#brief-introduction-to-pytest">Brief Introduction to Pytest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#brief-introduction-to-tox">Brief Introduction to Tox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#brief-introduction-to-pytest-cov">Brief Introduction to Pytest-cov</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Tests</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developing/testing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tests">
+<h1>Tests<a class="headerlink" href="#tests" title="Permalink to this headline"></a></h1>
+<p>Telethon uses <a class="reference external" href="https://pytest.org/">Pytest</a>, for testing, <a class="reference external" href="https://tox.readthedocs.io/en/latest/">Tox</a> for environment setup, and
+<a class="reference external" href="https://pypi.org/project/pytest-asyncio/">pytest-asyncio</a> and <a class="reference external" href="https://pytest-cov.readthedocs.io/en/latest/">pytest-cov</a> for asyncio and
+<a class="reference external" href="https://coverage.readthedocs.io/">coverage</a> integration.</p>
+<p>While reading the full documentation for these is probably a good idea, there
+is a lot to read, so a brief summary of these tools is provided below for
+convienience.</p>
+<section id="brief-introduction-to-pytest">
+<h2>Brief Introduction to Pytest<a class="headerlink" href="#brief-introduction-to-pytest" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://pytest.org/">Pytest</a> is a tool for discovering and running python
+tests, as well as allowing modular reuse of test setup code using fixtures.</p>
+<p>Most Pytest tests will look something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">module</span> <span class="kn">import</span> <span class="n">my_thing</span><span class="p">,</span> <span class="n">my_other_thing</span>
+
+<span class="k">def</span> <span class="nf">test_my_thing</span><span class="p">(</span><span class="n">fixture</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">my_thing</span><span class="p">(</span><span class="n">fixture</span><span class="p">)</span> <span class="o">==</span> <span class="mi">42</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">asyncio</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">test_my_thing</span><span class="p">(</span><span class="n">event_loop</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="k">await</span> <span class="n">my_other_thing</span><span class="p">(</span><span class="n">loop</span><span class="o">=</span><span class="n">event_loop</span><span class="p">)</span> <span class="o">==</span> <span class="mi">42</span>
+</pre></div>
+</div>
+<p>Note here:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>The test imports one specific function. The role of unit tests is to test
+that the implementation of some unit, like a function or class, works.
+It’s role is not so much to test that components interact well with each
+other. I/O, such as connecting to remote servers, should be avoided. This
+helps with quickly identifying the source of an error, finding silent
+breakage, and makes it easier to cover all possible code paths.</p>
+<p>System or integration tests can also be useful, but are currently out of
+scope of Telethon’s automated testing.</p>
+</li>
+<li><p>A function <code class="docutils literal notranslate"><span class="pre">test_my_thing</span></code> is declared. Pytest searches for files
+starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code>, classes starting with <code class="docutils literal notranslate"><span class="pre">Test</span></code> and executes any
+functions or methods starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code> it finds.</p></li>
+<li><p>The function is declared with a parameter <code class="docutils literal notranslate"><span class="pre">fixture</span></code>. Fixtures are used to
+request things required to run the test, such as temporary directories,
+free TCP ports, Connections, etc. Fixtures are declared by simply adding
+the fixture name as parameter. A full list of available fixtures can be
+found with the <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--fixtures</span></code> command.</p></li>
+<li><p>The test uses a simple <code class="docutils literal notranslate"><span class="pre">assert</span></code> to test some condition is valid.  Pytest
+uses some magic to ensure that the errors from this are readable and easy
+to debug.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pytest.mark.asyncio</span></code> fixture is provided by <code class="docutils literal notranslate"><span class="pre">pytest-asyncio</span></code>. It
+starts a loop and executes a test function as coroutine. This should be
+used for testing asyncio code. It also declares the <code class="docutils literal notranslate"><span class="pre">event_loop</span></code>
+fixture, which will request an <code class="docutils literal notranslate"><span class="pre">asyncio</span></code> event loop.</p></li>
+</ol>
+</div></blockquote>
+</section>
+<section id="brief-introduction-to-tox">
+<h2>Brief Introduction to Tox<a class="headerlink" href="#brief-introduction-to-tox" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://tox.readthedocs.io/en/latest/">Tox</a> is a tool for automated setup
+of virtual environments for testing. While the tests can be run directly by
+just running <code class="docutils literal notranslate"><span class="pre">pytest</span></code>, this only tests one specific python version in your
+existing environment, which will not catch e.g. undeclared dependencies, or
+version incompatabilities.</p>
+<p>Tox environments are declared in the <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> file. The default
+environments, declared at the top, can be simply run with <code class="docutils literal notranslate"><span class="pre">tox</span></code>. The option
+<code class="docutils literal notranslate"><span class="pre">tox</span> <span class="pre">-e</span> <span class="pre">py36,flake</span></code> can be used to request specific environments to be run.</p>
+</section>
+<section id="brief-introduction-to-pytest-cov">
+<h2>Brief Introduction to Pytest-cov<a class="headerlink" href="#brief-introduction-to-pytest-cov" title="Permalink to this headline"></a></h2>
+<p>Coverage is a useful metric for testing. It measures the lines of code and
+branches that are exercised by the tests. The higher the coverage, the more
+likely it is that any coding errors will be caught by the tests.</p>
+<p>A brief coverage report can be generated with the <code class="docutils literal notranslate"><span class="pre">--cov</span></code> option to <code class="docutils literal notranslate"><span class="pre">tox</span></code>,
+which will be passed on to <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. Additionally, the very useful HTML
+report can be generated with <code class="docutils literal notranslate"><span class="pre">--cov</span> <span class="pre">--cov-report=html</span></code>, which contains a
+browsable copy of the source code, annotated with coverage information for each
+line.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="coding-style.html" class="btn btn-neutral float-left" title="Coding Style" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="understanding-the-type-language.html" class="btn btn-neutral float-right" title="Understanding the Type Language" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

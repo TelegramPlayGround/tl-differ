@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signing In &mdash; Telethon 1.2.3.4 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quick-Start" href="quick-start.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                1.2.3.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Signing In</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#editing-the-code">Editing the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Signing In</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signing-in-as-a-bot-account">Signing In as a Bot Account</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signing-in-behind-a-proxy">Signing In behind a Proxy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-mtproto-proxies">Using MTProto Proxies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Signing In</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/basic/signing-in.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="signing-in">
+<span id="id1"></span><h1>Signing In<a class="headerlink" href="#signing-in" title="Permalink to this headline"></a></h1>
+<p>Before working with Telegram’s API, you need to get your own API ID and hash:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://my.telegram.org/">Login to your Telegram account</a> with the
+phone number of the developer account to use.</p></li>
+<li><p>Click under API Development tools.</p></li>
+<li><p>A <em>Create new application</em> window will appear. Fill in your application
+details. There is no need to enter any <em>URL</em>, and only the first two
+fields (<em>App title</em> and <em>Short name</em>) can currently be changed later.</p></li>
+<li><p>Click on <em>Create application</em> at the end. Remember that your
+<strong>API hash is secret</strong> and Telegram won’t let you revoke it.
+Don’t post it anywhere!</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This API ID and hash is the one used by <em>your application</em>, not your
+phone number. You can use this API ID and hash with <em>any</em> phone number
+or even for bot accounts.</p>
+</div>
+<section id="editing-the-code">
+<h2>Editing the Code<a class="headerlink" href="#editing-the-code" title="Permalink to this headline"></a></h2>
+<p>This is a little introduction for those new to Python programming in general.</p>
+<p>We will write our code inside <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, so you can use any text
+editor that you like. To run the code, use <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">hello.py</span></code> from
+the terminal.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Don’t call your script <code class="docutils literal notranslate"><span class="pre">telethon.py</span></code>! Python will try to import
+the client from there and it will fail with an error such as
+“ImportError: cannot import name ‘TelegramClient’ …”.</p>
+</div>
+</section>
+<section id="id2">
+<h2>Signing In<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>We can finally write some code to log into our account!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+
+<span class="c1"># Use your own values from my.telegram.org</span>
+<span class="n">api_id</span> <span class="o">=</span> <span class="mi">12345</span>
+<span class="n">api_hash</span> <span class="o">=</span> <span class="s1">&#39;0123456789abcdef0123456789abcdef&#39;</span>
+
+<span class="c1"># The first parameter is the .session file name (absolute paths allowed)</span>
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">&#39;anon&#39;</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello, myself!&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In the first line, we import the class name so we can create an instance
+of the client. Then, we define variables to store our API ID and hash
+conveniently.</p>
+<p>At last, we create a new <a class="reference internal" href="../modules/client.html#telethon.client.telegramclient.TelegramClient" title="telethon.client.telegramclient.TelegramClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TelegramClient</span></code></a>
+instance and call it <code class="docutils literal notranslate"><span class="pre">client</span></code>. We can now use the client variable
+for anything that we want, such as sending a message to ourselves.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since Telethon is an asynchronous library, you need to <code class="docutils literal notranslate"><span class="pre">await</span></code>
+coroutine functions to have them run (or otherwise, run the loop
+until they are complete). In this tiny example, we don’t bother
+making an <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span> <span class="pre">main()</span></code>.</p>
+<p>See <a class="reference internal" href="../concepts/asyncio.html#mastering-asyncio"><span class="std std-ref">Mastering asyncio</span></a> to find out more.</p>
+</div>
+<p>Using a <code class="docutils literal notranslate"><span class="pre">with</span></code> block is the preferred way to use the library. It will
+automatically <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start()</span></code></a> the client,
+logging or signing up if necessary.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">.session</span></code> file already existed, it will not login
+again, so be aware of this if you move or rename the file!</p>
+</section>
+<section id="signing-in-as-a-bot-account">
+<h2>Signing In as a Bot Account<a class="headerlink" href="#signing-in-as-a-bot-account" title="Permalink to this headline"></a></h2>
+<p>You can also use Telethon for your bots (normal bot accounts, not users).
+You will still need an API ID and hash, but the process is very similar:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+
+<span class="n">api_id</span> <span class="o">=</span> <span class="mi">12345</span>
+<span class="n">api_hash</span> <span class="o">=</span> <span class="s1">&#39;0123456789abcdef0123456789abcdef&#39;</span>
+<span class="n">bot_token</span> <span class="o">=</span> <span class="s1">&#39;12345:0123456789abcdef0123456789abcdef&#39;</span>
+
+<span class="c1"># We have to manually call &quot;start&quot; if we want an explicit bot token</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">&#39;bot&#39;</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="n">bot_token</span><span class="p">)</span>
+
+<span class="c1"># But then we can use the client instance as usual</span>
+<span class="k">with</span> <span class="n">bot</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>To get a bot account, you need to talk
+with <a class="reference external" href="https://t.me/BotFather">&#64;BotFather</a>.</p>
+</section>
+<section id="signing-in-behind-a-proxy">
+<h2>Signing In behind a Proxy<a class="headerlink" href="#signing-in-behind-a-proxy" title="Permalink to this headline"></a></h2>
+<p>If you need to use a proxy to access Telegram,
+you will need to either:</p>
+<ul class="simple">
+<li><p>For Python &gt;= 3.6 : <a class="reference external" href="https://github.com/romis2012/python-socks#installation">install python-socks[asyncio]</a></p></li>
+<li><p>For Python &lt;= 3.5 : <a class="reference external" href="https://github.com/Anorov/PySocks#installation">install PySocks</a></p></li>
+</ul>
+<p>and then change</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TelegramClient</span><span class="p">(</span><span class="s1">&#39;anon&#39;</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TelegramClient</span><span class="p">(</span><span class="s1">&#39;anon&#39;</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">,</span> <span class="n">proxy</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;socks5&quot;</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">4444</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>(of course, replacing the protocol, IP and port with the protocol, IP and port of the proxy).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">proxy=</span></code> argument should be a dict (or tuple, for backwards compatibility),
+consisting of parameters described <a class="reference external" href="https://github.com/Anorov/PySocks#usage-1">in PySocks usage</a>.</p>
+<p>The allowed values for the argument <code class="docutils literal notranslate"><span class="pre">proxy_type</span></code> are:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>For Python &lt;= 3.5:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">socks.SOCKS5</span></code> or <code class="docutils literal notranslate"><span class="pre">'socks5'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socks.SOCKS4</span></code> or <code class="docutils literal notranslate"><span class="pre">'socks4'</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">socks.HTTP</span></code> or <code class="docutils literal notranslate"><span class="pre">'http'</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Python &gt;= 3.6:</dt><dd><ul>
+<li><p>All of the above</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python_socks.ProxyType.SOCKS5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python_socks.ProxyType.SOCKS4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python_socks.ProxyType.HTTP</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">proxy</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;proxy_type&#39;</span><span class="p">:</span> <span class="s1">&#39;socks5&#39;</span><span class="p">,</span> <span class="c1"># (mandatory) protocol to use (see above)</span>
+    <span class="s1">&#39;addr&#39;</span><span class="p">:</span> <span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span>      <span class="c1"># (mandatory) proxy IP address</span>
+    <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">5555</span><span class="p">,</span>           <span class="c1"># (mandatory) proxy port number</span>
+    <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span>      <span class="c1"># (optional) username if the proxy requires auth</span>
+    <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>      <span class="c1"># (optional) password if the proxy requires auth</span>
+    <span class="s1">&#39;rdns&#39;</span><span class="p">:</span> <span class="kc">True</span>            <span class="c1"># (optional) whether to use remote or local resolve, default remote</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For backwards compatibility with <code class="docutils literal notranslate"><span class="pre">PySocks</span></code> the following format
+is possible (but discouraged):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">proxy</span> <span class="o">=</span> <span class="p">(</span><span class="n">socks</span><span class="o">.</span><span class="n">SOCKS5</span><span class="p">,</span> <span class="s1">&#39;1.1.1.1&#39;</span><span class="p">,</span> <span class="mi">5555</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="using-mtproto-proxies">
+<h2>Using MTProto Proxies<a class="headerlink" href="#using-mtproto-proxies" title="Permalink to this headline"></a></h2>
+<p>MTProto Proxies are Telegram’s alternative to normal proxies,
+and work a bit differently. The following protocols are available:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ConnectionTcpMTProxyAbridged</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ConnectionTcpMTProxyIntermediate</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ConnectionTcpMTProxyRandomizedIntermediate</span></code> (preferred)</p></li>
+</ul>
+<p>For now, you need to manually specify these special connection modes
+if you want to use a MTProto Proxy. Your code would look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">connection</span>
+<span class="c1">#   we need to change the connection ^^^^^^^^^^</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span>
+    <span class="s1">&#39;anon&#39;</span><span class="p">,</span>
+    <span class="n">api_id</span><span class="p">,</span>
+    <span class="n">api_hash</span><span class="p">,</span>
+
+    <span class="c1"># Use one of the available connection modes.</span>
+    <span class="c1"># Normally, this one works with most proxies.</span>
+    <span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="o">.</span><span class="n">ConnectionTcpMTProxyRandomizedIntermediate</span><span class="p">,</span>
+
+    <span class="c1"># Then, pass the proxy details as a tuple:</span>
+    <span class="c1">#     (host name, port, proxy secret)</span>
+    <span class="c1">#</span>
+    <span class="c1"># If the proxy has no secret, the secret must be:</span>
+    <span class="c1">#     &#39;00000000000000000000000000000000&#39;</span>
+    <span class="n">proxy</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;mtproxy.example.com&#39;</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>In future updates, we may make it easier to use MTProto Proxies
+(such as avoiding the need to manually pass <code class="docutils literal notranslate"><span class="pre">connection=</span></code>).</p>
+<p>In short, the same code above but without comments to make it clearer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">connection</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span>
+    <span class="s1">&#39;anon&#39;</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">,</span>
+    <span class="n">connection</span><span class="o">=</span><span class="n">connection</span><span class="o">.</span><span class="n">ConnectionTcpMTProxyRandomizedIntermediate</span><span class="p">,</span>
+    <span class="n">proxy</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;mtproxy.example.com&#39;</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="s1">&#39;secret&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="quick-start.html" class="btn btn-neutral float-right" title="Quick-Start" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telegram API in Other Languages &mdash; Telethon 1.2.3.4 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog (Version History)" href="../misc/changelog.html" />
+    <link rel="prev" title="Tips for Porting the Project" href="tips-for-porting-the-project.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                1.2.3.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Telegram API in Other Languages</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/developing/telegram-api-in-other-languages.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="telegram-api-in-other-languages">
+<h1>Telegram API in Other Languages<a class="headerlink" href="#telegram-api-in-other-languages" title="Permalink to this headline"></a></h1>
+<p>Telethon was made for <strong>Python</strong>, and it has inspired other libraries such as
+<a class="reference external" href="https://github.com/gram-js/gramjs">gramjs</a> (JavaScript) and <a class="reference external" href="https://github.com/Lonami/grammers">grammers</a> (Rust). But there is a lot more beyond
+those, made independently by different developers.</p>
+<p>If you’re looking for something like Telethon but in a different programming
+language, head over to <a class="reference external" href="https://github.com/LonamiWebs/Telethon/wiki/Telegram-API-in-Other-Languages">Telegram API in Other Languages in the official wiki</a>
+for a (mostly) up-to-date list.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tips-for-porting-the-project.html" class="btn btn-neutral float-left" title="Tips for Porting the Project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../misc/changelog.html" class="btn btn-neutral float-right" title="Changelog (Version History)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

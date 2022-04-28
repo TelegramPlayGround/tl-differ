@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objects Reference &mdash; Telethon 1.2.3.4 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="String-based Debugging" href="../concepts/strings.html" />
+    <link rel="prev" title="Events Reference" href="events-reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                1.2.3.4
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events-reference.html">Events Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Objects Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#chatgetter">ChatGetter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sendergetter">SenderGetter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#message">Message</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#properties">Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file">File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conversation">Conversation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adminlogevent">AdminLogEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#button">Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inlineresult">InlineResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dialog">Dialog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#draft">Draft</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utils">Utils</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Objects Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/quick-references/objects-reference.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="objects-reference">
+<h1><a class="toc-backref" href="#id1">Objects Reference</a><a class="headerlink" href="#objects-reference" title="Permalink to this headline"></a></h1>
+<p>This is the quick reference for those objects returned by client methods
+or other useful modules that the library has to offer. They are kept in
+a separate page to help finding and discovering them.</p>
+<p>Remember that this page only shows properties and methods,
+<strong>not attributes</strong>. Make sure to open the full documentation
+to find out about the attributes.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#objects-reference" id="id1">Objects Reference</a></p>
+<ul>
+<li><p><a class="reference internal" href="#chatgetter" id="id2">ChatGetter</a></p></li>
+<li><p><a class="reference internal" href="#sendergetter" id="id3">SenderGetter</a></p></li>
+<li><p><a class="reference internal" href="#message" id="id4">Message</a></p>
+<ul>
+<li><p><a class="reference internal" href="#properties" id="id5">Properties</a></p></li>
+<li><p><a class="reference internal" href="#methods" id="id6">Methods</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#file" id="id7">File</a></p></li>
+<li><p><a class="reference internal" href="#conversation" id="id8">Conversation</a></p></li>
+<li><p><a class="reference internal" href="#adminlogevent" id="id9">AdminLogEvent</a></p></li>
+<li><p><a class="reference internal" href="#button" id="id10">Button</a></p></li>
+<li><p><a class="reference internal" href="#inlineresult" id="id11">InlineResult</a></p></li>
+<li><p><a class="reference internal" href="#dialog" id="id12">Dialog</a></p></li>
+<li><p><a class="reference internal" href="#draft" id="id13">Draft</a></p></li>
+<li><p><a class="reference internal" href="#utils" id="id14">Utils</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="chatgetter">
+<h2><a class="toc-backref" href="#id2">ChatGetter</a><a class="headerlink" href="#chatgetter" title="Permalink to this headline"></a></h2>
+<p>All events base <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>,
+and some of the objects below do too, so it’s important to know its methods.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.chat" title="telethon.tl.custom.chatgetter.ChatGetter.chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat</span></code></a></p></td>
+<td><p>Returns the <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>, <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> where this object belongs to.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.input_chat" title="telethon.tl.custom.chatgetter.ChatGetter.input_chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_chat</span></code></a></p></td>
+<td><p>This <a class="reference external" href="https://tl.telethon.dev/?q=InputPeer">InputPeer</a> is the input version of the chat where the message was sent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.chat_id" title="telethon.tl.custom.chatgetter.ChatGetter.chat_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_id</span></code></a></p></td>
+<td><p>Returns the marked chat integer ID.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.is_private" title="telethon.tl.custom.chatgetter.ChatGetter.is_private"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_private</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message was sent as a private message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.is_group" title="telethon.tl.custom.chatgetter.ChatGetter.is_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_group</span></code></a></p></td>
+<td><p>True if the message was sent on a group or megagroup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.is_channel" title="telethon.tl.custom.chatgetter.ChatGetter.is_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_channel</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message was sent on a megagroup or channel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.get_chat" title="telethon.tl.custom.chatgetter.ChatGetter.get_chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chat</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.chat" title="telethon.tl.custom.chatgetter.ChatGetter.chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat</span></code></a>, but will make an API call to find the chat unless it's already cached.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.get_input_chat" title="telethon.tl.custom.chatgetter.ChatGetter.get_input_chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_chat</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.input_chat" title="telethon.tl.custom.chatgetter.ChatGetter.input_chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_chat</span></code></a>, but will make an API call to find the input chat unless it's already cached.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sendergetter">
+<h2><a class="toc-backref" href="#id3">SenderGetter</a><a class="headerlink" href="#sendergetter" title="Permalink to this headline"></a></h2>
+<p>Similar to <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>, a
+<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter" title="telethon.tl.custom.sendergetter.SenderGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code></a> is the same,
+but it works for senders instead.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.sender" title="telethon.tl.custom.sendergetter.SenderGetter.sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sender</span></code></a></p></td>
+<td><p>Returns the <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> that sent this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.input_sender" title="telethon.tl.custom.sendergetter.SenderGetter.input_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_sender</span></code></a></p></td>
+<td><p>This <a class="reference external" href="https://tl.telethon.dev/?q=InputPeer">InputPeer</a> is the input version of the user/channel who sent the message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.sender_id" title="telethon.tl.custom.sendergetter.SenderGetter.sender_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sender_id</span></code></a></p></td>
+<td><p>Returns the marked sender integer ID, if present.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.get_sender" title="telethon.tl.custom.sendergetter.SenderGetter.get_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sender</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.sender" title="telethon.tl.custom.sendergetter.SenderGetter.sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sender</span></code></a>, but will make an API call to find the sender unless it's already cached.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.get_input_sender" title="telethon.tl.custom.sendergetter.SenderGetter.get_input_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_sender</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.input_sender" title="telethon.tl.custom.sendergetter.SenderGetter.input_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_sender</span></code></a>, but will make an API call to find the input sender unless it's already cached.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="message">
+<h2><a class="toc-backref" href="#id4">Message</a><a class="headerlink" href="#message" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> type is very important, mostly because we are working
+with a library for a <em>messaging</em> platform, so messages are widely used:
+in events, when fetching history, replies, etc.</p>
+<p>It bases <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a> and
+<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter" title="telethon.tl.custom.sendergetter.SenderGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code></a>.</p>
+<section id="properties">
+<h3><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We document <em>custom properties</em> here, not all the attributes of the
+<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> (which is the information Telegram actually returns).</p>
+</div>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.text" title="telethon.tl.custom.message.Message.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code></a></p></td>
+<td><p>The message text, formatted using the client's default parse mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.raw_text" title="telethon.tl.custom.message.Message.raw_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_text</span></code></a></p></td>
+<td><p>The raw message text, ignoring any formatting.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.is_reply" title="telethon.tl.custom.message.Message.is_reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_reply</span></code></a></p></td>
+<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message is a reply to some other message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.forward" title="telethon.tl.custom.message.Message.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a></p></td>
+<td><p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a> information if this message is a forwarded message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.buttons" title="telethon.tl.custom.message.Message.buttons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buttons</span></code></a></p></td>
+<td><p>Returns a list of lists of <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.messagebutton.MessageButton" title="telethon.tl.custom.messagebutton.MessageButton"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageButton</span></code></a>, if any.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.button_count" title="telethon.tl.custom.message.Message.button_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">button_count</span></code></a></p></td>
+<td><p>Returns the total button count (sum of all <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.buttons" title="telethon.tl.custom.message.Message.buttons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buttons</span></code></a> rows).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.file" title="telethon.tl.custom.message.Message.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file</span></code></a></p></td>
+<td><p>Returns a <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File" title="telethon.tl.custom.file.File"><code class="xref py py-obj docutils literal notranslate"><span class="pre">File</span></code></a> wrapping the <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.photo" title="telethon.tl.custom.message.Message.photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">photo</span></code></a> or <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.document" title="telethon.tl.custom.message.Message.document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">document</span></code></a> in this message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.photo" title="telethon.tl.custom.message.Message.photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">photo</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Photo">Photo</a> media in this message, if any.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.document" title="telethon.tl.custom.message.Message.document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">document</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if any.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.web_preview" title="telethon.tl.custom.message.Message.web_preview"><code class="xref py py-obj docutils literal notranslate"><span class="pre">web_preview</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=WebPage">WebPage</a> media in this message, if any.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.audio" title="telethon.tl.custom.message.Message.audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">audio</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if it's an audio file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.voice" title="telethon.tl.custom.message.Message.voice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">voice</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if it's a voice note.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.video" title="telethon.tl.custom.message.Message.video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">video</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if it's a video.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.video_note" title="telethon.tl.custom.message.Message.video_note"><code class="xref py py-obj docutils literal notranslate"><span class="pre">video_note</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if it's a video note.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.gif" title="telethon.tl.custom.message.Message.gif"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gif</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if it's a &quot;gif&quot;.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.sticker" title="telethon.tl.custom.message.Message.sticker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sticker</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> media in this message, if it's a sticker.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.contact" title="telethon.tl.custom.message.Message.contact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contact</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=MessageMediaContact">MessageMediaContact</a> in this message, if it's a contact.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.game" title="telethon.tl.custom.message.Message.game"><code class="xref py py-obj docutils literal notranslate"><span class="pre">game</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=Game">Game</a> media in this message, if it's a game.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.geo" title="telethon.tl.custom.message.Message.geo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geo</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=GeoPoint">GeoPoint</a> media in this message, if it has a location.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.invoice" title="telethon.tl.custom.message.Message.invoice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invoice</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=MessageMediaInvoice">MessageMediaInvoice</a> in this message, if it's an invoice.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.poll" title="telethon.tl.custom.message.Message.poll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poll</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=MessageMediaPoll">MessageMediaPoll</a> in this message, if it's a poll.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.venue" title="telethon.tl.custom.message.Message.venue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">venue</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=MessageMediaVenue">MessageMediaVenue</a> in this message, if it's a venue.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.action_entities" title="telethon.tl.custom.message.Message.action_entities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action_entities</span></code></a></p></td>
+<td><p>Returns a list of entities that took part in this action.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.via_bot" title="telethon.tl.custom.message.Message.via_bot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_bot</span></code></a></p></td>
+<td><p>The bot <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a> if the message was sent via said bot.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.via_input_bot" title="telethon.tl.custom.message.Message.via_input_bot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_input_bot</span></code></a></p></td>
+<td><p>Returns the input variant of <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.via_bot" title="telethon.tl.custom.message.Message.via_bot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_bot</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.client" title="telethon.tl.custom.message.Message.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client</span></code></a></p></td>
+<td><p>Returns the <a class="reference internal" href="../modules/client.html#telethon.client.telegramclient.TelegramClient" title="telethon.client.telegramclient.TelegramClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TelegramClient</span></code></a> that <em>patched</em> this message.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods">
+<h3><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.respond" title="telethon.tl.custom.message.Message.respond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">respond</span></code></a></p></td>
+<td><p>Responds to the message (not as a reply).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.reply" title="telethon.tl.custom.message.Message.reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reply</span></code></a></p></td>
+<td><p>Replies to the message (as a reply).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.forward_to" title="telethon.tl.custom.message.Message.forward_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward_to</span></code></a></p></td>
+<td><p>Forwards the message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.edit" title="telethon.tl.custom.message.Message.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit</span></code></a></p></td>
+<td><p>Edits the message iff it's outgoing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.delete" title="telethon.tl.custom.message.Message.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
+<td><p>Deletes the message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_reply_message" title="telethon.tl.custom.message.Message.get_reply_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_reply_message</span></code></a></p></td>
+<td><p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> that this message is replying to, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.click" title="telethon.tl.custom.message.Message.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">click</span></code></a></p></td>
+<td><p>Calls <a class="reference external" href="https://tl.telethon.dev/?q=SendVote">SendVote</a> with the specified poll option or <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.messagebutton.MessageButton.click" title="telethon.tl.custom.messagebutton.MessageButton.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">button.click</span></code></a> on the specified button.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.mark_read" title="telethon.tl.custom.message.Message.mark_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mark_read</span></code></a></p></td>
+<td><p>Marks the message as read.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.pin" title="telethon.tl.custom.message.Message.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin</span></code></a></p></td>
+<td><p>Pins the message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.download_media" title="telethon.tl.custom.message.Message.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_media</span></code></a></p></td>
+<td><p>Downloads the media contained in the message, if any.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_entities_text" title="telethon.tl.custom.message.Message.get_entities_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entities_text</span></code></a></p></td>
+<td><p>Returns a list of <code class="docutils literal notranslate"><span class="pre">(markup</span> <span class="pre">entity,</span> <span class="pre">inner</span> <span class="pre">text)</span></code> (like bold or italics).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_buttons" title="telethon.tl.custom.message.Message.get_buttons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_buttons</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.buttons" title="telethon.tl.custom.message.Message.buttons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buttons</span></code></a> when that property fails (this is rarely needed).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="file">
+<h2><a class="toc-backref" href="#id7">File</a><a class="headerlink" href="#file" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File" title="telethon.tl.custom.file.File"><code class="xref py py-obj docutils literal notranslate"><span class="pre">File</span></code></a> type is a wrapper object
+returned by <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.file" title="telethon.tl.custom.message.Message.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.file</span></code></a>,
+and you can use it to easily access a document’s attributes, such as
+its name, bot-API style file ID, etc.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.id" title="telethon.tl.custom.file.File.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
+<td><p>The bot-API style <code class="docutils literal notranslate"><span class="pre">file_id</span></code> representing this file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.name" title="telethon.tl.custom.file.File.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p>The file name of this document.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.ext" title="telethon.tl.custom.file.File.ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ext</span></code></a></p></td>
+<td><p>The extension from the mime type of this file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.mime_type" title="telethon.tl.custom.file.File.mime_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mime_type</span></code></a></p></td>
+<td><p>The mime-type of this file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.width" title="telethon.tl.custom.file.File.width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code></a></p></td>
+<td><p>The width in pixels of this media if it's a photo or a video.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.height" title="telethon.tl.custom.file.File.height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">height</span></code></a></p></td>
+<td><p>The height in pixels of this media if it's a photo or a video.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.size" title="telethon.tl.custom.file.File.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
+<td><p>The size in bytes of this file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.duration" title="telethon.tl.custom.file.File.duration"><code class="xref py py-obj docutils literal notranslate"><span class="pre">duration</span></code></a></p></td>
+<td><p>The duration in seconds of the audio or video.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.title" title="telethon.tl.custom.file.File.title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code></a></p></td>
+<td><p>The title of the song.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.performer" title="telethon.tl.custom.file.File.performer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">performer</span></code></a></p></td>
+<td><p>The performer of the song.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.emoji" title="telethon.tl.custom.file.File.emoji"><code class="xref py py-obj docutils literal notranslate"><span class="pre">emoji</span></code></a></p></td>
+<td><p>A string with all emoji that represent the current sticker.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.sticker_set" title="telethon.tl.custom.file.File.sticker_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sticker_set</span></code></a></p></td>
+<td><p>The <a class="reference external" href="https://tl.telethon.dev/?q=InputStickerSet">InputStickerSet</a> to which the sticker file belongs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conversation">
+<h2><a class="toc-backref" href="#id8">Conversation</a><a class="headerlink" href="#conversation" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation" title="telethon.tl.custom.conversation.Conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code></a> object
+is returned by the <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code></a> method to easily
+send and receive responses like a normal conversation.</p>
+<p>It bases <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.send_message" title="telethon.tl.custom.conversation.Conversation.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message</span></code></a></p></td>
+<td><p>Sends a message in the context of this conversation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.send_file" title="telethon.tl.custom.conversation.Conversation.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_file</span></code></a></p></td>
+<td><p>Sends a file in the context of this conversation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.mark_read" title="telethon.tl.custom.conversation.Conversation.mark_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mark_read</span></code></a></p></td>
+<td><p>Marks as read the latest received message if <code class="docutils literal notranslate"><span class="pre">message</span> <span class="pre">is</span> <span class="pre">None</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.get_response" title="telethon.tl.custom.conversation.Conversation.get_response"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_response</span></code></a></p></td>
+<td><p>Gets the next message that responds to a previous one.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.get_reply" title="telethon.tl.custom.conversation.Conversation.get_reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_reply</span></code></a></p></td>
+<td><p>Gets the next message that explicitly replies to a previous one.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.get_edit" title="telethon.tl.custom.conversation.Conversation.get_edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_edit</span></code></a></p></td>
+<td><p>Awaits for an edit after the last message to arrive.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.wait_read" title="telethon.tl.custom.conversation.Conversation.wait_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wait_read</span></code></a></p></td>
+<td><p>Awaits for the sent message to be marked as read.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.wait_event" title="telethon.tl.custom.conversation.Conversation.wait_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">wait_event</span></code></a></p></td>
+<td><p>Waits for a custom event to occur.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.cancel" title="telethon.tl.custom.conversation.Conversation.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cancel</span></code></a></p></td>
+<td><p>Cancels the current conversation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.cancel_all" title="telethon.tl.custom.conversation.Conversation.cancel_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cancel_all</span></code></a></p></td>
+<td><p>Calls <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.cancel" title="telethon.tl.custom.conversation.Conversation.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cancel</span></code></a> on <em>all</em> conversations in this chat.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="adminlogevent">
+<h2><a class="toc-backref" href="#id9">AdminLogEvent</a><a class="headerlink" href="#adminlogevent" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent" title="telethon.tl.custom.adminlogevent.AdminLogEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AdminLogEvent</span></code></a> object
+is returned by the <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_admin_log" title="telethon.client.chats.ChatMethods.iter_admin_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_admin_log()</span></code></a> method to easily iterate
+over past “events” (deleted messages, edits, title changes, leaving members…)</p>
+<p>These are all the properties you can find in it:</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.id" title="telethon.tl.custom.adminlogevent.AdminLogEvent.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
+<td><p>The ID of this event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.date" title="telethon.tl.custom.adminlogevent.AdminLogEvent.date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date</span></code></a></p></td>
+<td><p>The date when this event occurred.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.user_id" title="telethon.tl.custom.adminlogevent.AdminLogEvent.user_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user_id</span></code></a></p></td>
+<td><p>The ID of the user that triggered this event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.action" title="telethon.tl.custom.adminlogevent.AdminLogEvent.action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">action</span></code></a></p></td>
+<td><p>The original <a class="reference external" href="https://tl.telethon.dev/?q=ChannelAdminLogEventAction">ChannelAdminLogEventAction</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.old" title="telethon.tl.custom.adminlogevent.AdminLogEvent.old"><code class="xref py py-obj docutils literal notranslate"><span class="pre">old</span></code></a></p></td>
+<td><p>The old value from the event.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.new" title="telethon.tl.custom.adminlogevent.AdminLogEvent.new"><code class="xref py py-obj docutils literal notranslate"><span class="pre">new</span></code></a></p></td>
+<td><p>The new value present in the event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_about" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_about"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_about</span></code></a></p></td>
+<td><p>Whether the channel's about was changed or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_title" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_title</span></code></a></p></td>
+<td><p>Whether the channel's title was changed or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_username" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_username"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_username</span></code></a></p></td>
+<td><p>Whether the channel's username was changed or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_photo" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_photo</span></code></a></p></td>
+<td><p>Whether the channel's photo was changed or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_sticker_set" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_sticker_set"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_sticker_set</span></code></a></p></td>
+<td><p>Whether the channel's sticker set was changed or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_message" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_message</span></code></a></p></td>
+<td><p>Whether a message in this channel was edited or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.deleted_message" title="telethon.tl.custom.adminlogevent.AdminLogEvent.deleted_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deleted_message</span></code></a></p></td>
+<td><p>Whether a message in this channel was deleted or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_admin" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_admin</span></code></a></p></td>
+<td><p>Whether the permissions for an admin in this channel changed or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_restrictions" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_restrictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_restrictions</span></code></a></p></td>
+<td><p>Whether a message in this channel was edited or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_invites" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_invites"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_invites</span></code></a></p></td>
+<td><p>Whether the invites in the channel were toggled or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.joined" title="telethon.tl.custom.adminlogevent.AdminLogEvent.joined"><code class="xref py py-obj docutils literal notranslate"><span class="pre">joined</span></code></a></p></td>
+<td><p>Whether <code class="xref py py-obj docutils literal notranslate"><span class="pre">user</span></code> joined through the channel's public username or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.joined_invite" title="telethon.tl.custom.adminlogevent.AdminLogEvent.joined_invite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">joined_invite</span></code></a></p></td>
+<td><p>Whether a new user joined through an invite link to the channel or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.left" title="telethon.tl.custom.adminlogevent.AdminLogEvent.left"><code class="xref py py-obj docutils literal notranslate"><span class="pre">left</span></code></a></p></td>
+<td><p>Whether <code class="xref py py-obj docutils literal notranslate"><span class="pre">user</span></code> left the channel or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_hide_history" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_hide_history"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_hide_history</span></code></a></p></td>
+<td><p>Whether hiding the previous message history for new members in the channel was toggled or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_signatures" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_signatures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_signatures</span></code></a></p></td>
+<td><p>Whether the message signatures in the channel were toggled or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_pin" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_pin</span></code></a></p></td>
+<td><p>Whether a new message in this channel was pinned or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.changed_default_banned_rights" title="telethon.tl.custom.adminlogevent.AdminLogEvent.changed_default_banned_rights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">changed_default_banned_rights</span></code></a></p></td>
+<td><p>Whether the default banned rights were changed or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.stopped_poll" title="telethon.tl.custom.adminlogevent.AdminLogEvent.stopped_poll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stopped_poll</span></code></a></p></td>
+<td><p>Whether a poll was stopped or not.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="button">
+<h2><a class="toc-backref" href="#id10">Button</a><a class="headerlink" href="#button" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button" title="telethon.tl.custom.button.Button"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Button</span></code></a> class is used when you login
+as a bot account to send messages with reply markup, such as inline buttons
+or custom keyboards.</p>
+<p>These are the static methods you can use to create instances of the markup:</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.inline" title="telethon.tl.custom.button.Button.inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inline</span></code></a></p></td>
+<td><p>Creates a new inline button with some payload data in it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.switch_inline" title="telethon.tl.custom.button.Button.switch_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">switch_inline</span></code></a></p></td>
+<td><p>Creates a new inline button to switch to inline query.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.url" title="telethon.tl.custom.button.Button.url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url</span></code></a></p></td>
+<td><p>Creates a new inline button to open the desired URL on click.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.auth" title="telethon.tl.custom.button.Button.auth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">auth</span></code></a></p></td>
+<td><p>Creates a new inline button to authorize the user at the given URL.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.text" title="telethon.tl.custom.button.Button.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code></a></p></td>
+<td><p>Creates a new keyboard button with the given text.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.request_location" title="telethon.tl.custom.button.Button.request_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">request_location</span></code></a></p></td>
+<td><p>Creates a new keyboard button to request the user's location on click.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.request_phone" title="telethon.tl.custom.button.Button.request_phone"><code class="xref py py-obj docutils literal notranslate"><span class="pre">request_phone</span></code></a></p></td>
+<td><p>Creates a new keyboard button to request the user's phone on click.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.request_poll" title="telethon.tl.custom.button.Button.request_poll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">request_poll</span></code></a></p></td>
+<td><p>Creates a new keyboard button to request the user to create a poll.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.clear" title="telethon.tl.custom.button.Button.clear"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear</span></code></a></p></td>
+<td><p>Clears all keyboard buttons after sending a message with this markup.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.force_reply" title="telethon.tl.custom.button.Button.force_reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">force_reply</span></code></a></p></td>
+<td><p>Forces a reply to the message with this markup.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inlineresult">
+<h2><a class="toc-backref" href="#id11">InlineResult</a><a class="headerlink" href="#inlineresult" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult" title="telethon.tl.custom.inlineresult.InlineResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineResult</span></code></a> object
+is returned inside a list by the <a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query()</span></code></a> method to make an inline
+query to a bot that supports being used in inline mode, such as
+<a class="reference external" href="https://t.me/like">&#64;like</a>.</p>
+<p>Note that the list returned is in fact a <em>subclass</em> of a list called
+<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresults.InlineResults" title="telethon.tl.custom.inlineresults.InlineResults"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineResults</span></code></a>, which,
+in addition of being a list (iterator, indexed access, etc.), has extra
+attributes and methods.</p>
+<p>These are the constants for the types, properties and methods you
+can find the individual results:</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.ARTICLE" title="telethon.tl.custom.inlineresult.InlineResult.ARTICLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ARTICLE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.PHOTO" title="telethon.tl.custom.inlineresult.InlineResult.PHOTO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PHOTO</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.GIF" title="telethon.tl.custom.inlineresult.InlineResult.GIF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GIF</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.VIDEO" title="telethon.tl.custom.inlineresult.InlineResult.VIDEO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VIDEO</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.VIDEO_GIF" title="telethon.tl.custom.inlineresult.InlineResult.VIDEO_GIF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VIDEO_GIF</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.AUDIO" title="telethon.tl.custom.inlineresult.InlineResult.AUDIO"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AUDIO</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.DOCUMENT" title="telethon.tl.custom.inlineresult.InlineResult.DOCUMENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DOCUMENT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.LOCATION" title="telethon.tl.custom.inlineresult.InlineResult.LOCATION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LOCATION</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.VENUE" title="telethon.tl.custom.inlineresult.InlineResult.VENUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VENUE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.CONTACT" title="telethon.tl.custom.inlineresult.InlineResult.CONTACT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CONTACT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.GAME" title="telethon.tl.custom.inlineresult.InlineResult.GAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GAME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.type" title="telethon.tl.custom.inlineresult.InlineResult.type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a></p></td>
+<td><p>The always-present type of this result.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.message" title="telethon.tl.custom.inlineresult.InlineResult.message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message</span></code></a></p></td>
+<td><p>The always-present <a class="reference external" href="https://tl.telethon.dev/?q=BotInlineMessage">BotInlineMessage</a> that will be sent if <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.click" title="telethon.tl.custom.inlineresult.InlineResult.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">click</span></code></a> is called on this result.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.title" title="telethon.tl.custom.inlineresult.InlineResult.title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">title</span></code></a></p></td>
+<td><p>The title for this inline result.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.description" title="telethon.tl.custom.inlineresult.InlineResult.description"><code class="xref py py-obj docutils literal notranslate"><span class="pre">description</span></code></a></p></td>
+<td><p>The description for this inline result.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.url" title="telethon.tl.custom.inlineresult.InlineResult.url"><code class="xref py py-obj docutils literal notranslate"><span class="pre">url</span></code></a></p></td>
+<td><p>The URL present in this inline results.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.photo" title="telethon.tl.custom.inlineresult.InlineResult.photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">photo</span></code></a></p></td>
+<td><p>Returns either the <a class="reference external" href="https://tl.telethon.dev/?q=WebDocument">WebDocument</a> thumbnail for normal results or the <a class="reference external" href="https://tl.telethon.dev/?q=Photo">Photo</a> for media results.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.document" title="telethon.tl.custom.inlineresult.InlineResult.document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">document</span></code></a></p></td>
+<td><p>Returns either the <a class="reference external" href="https://tl.telethon.dev/?q=WebDocument">WebDocument</a> content for normal results or the <a class="reference external" href="https://tl.telethon.dev/?q=Document">Document</a> for media results.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.click" title="telethon.tl.custom.inlineresult.InlineResult.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">click</span></code></a></p></td>
+<td><p>Clicks this result and sends the associated <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.message" title="telethon.tl.custom.inlineresult.InlineResult.message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message</span></code></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult.download_media" title="telethon.tl.custom.inlineresult.InlineResult.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_media</span></code></a></p></td>
+<td><p>Downloads the media in this result (if there is a document, the document will be downloaded; otherwise, the photo will if present).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dialog">
+<h2><a class="toc-backref" href="#id12">Dialog</a><a class="headerlink" href="#dialog" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog" title="telethon.tl.custom.dialog.Dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog</span></code></a> object is returned when
+you call <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a>.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog.send_message" title="telethon.tl.custom.dialog.Dialog.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message</span></code></a></p></td>
+<td><p>Sends a message to this dialog.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog.archive" title="telethon.tl.custom.dialog.Dialog.archive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">archive</span></code></a></p></td>
+<td><p>Archives (or un-archives) this dialog.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog.delete" title="telethon.tl.custom.dialog.Dialog.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
+<td><p>Deletes the dialog from your dialog list.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="draft">
+<h2><a class="toc-backref" href="#id13">Draft</a><a class="headerlink" href="#draft" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft" title="telethon.tl.custom.draft.Draft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draft</span></code></a> object is returned when
+you call <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_drafts" title="telethon.client.dialogs.DialogMethods.iter_drafts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_drafts()</span></code></a>.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.entity" title="telethon.tl.custom.draft.Draft.entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entity</span></code></a></p></td>
+<td><p>The entity that belongs to this dialog (user, chat or channel).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.input_entity" title="telethon.tl.custom.draft.Draft.input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_entity</span></code></a></p></td>
+<td><p>Input version of the entity.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.get_entity" title="telethon.tl.custom.draft.Draft.get_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_entity</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.entity" title="telethon.tl.custom.draft.Draft.entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entity</span></code></a> but will make an API call if necessary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.get_input_entity" title="telethon.tl.custom.draft.Draft.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_entity</span></code></a></p></td>
+<td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.input_entity" title="telethon.tl.custom.draft.Draft.input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_entity</span></code></a> but will make an API call if necessary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.text" title="telethon.tl.custom.draft.Draft.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code></a></p></td>
+<td><p>The markdown text contained in the draft.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.raw_text" title="telethon.tl.custom.draft.Draft.raw_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_text</span></code></a></p></td>
+<td><p>The raw (text without formatting) contained in the draft.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.is_empty" title="telethon.tl.custom.draft.Draft.is_empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_empty</span></code></a></p></td>
+<td><p>Convenience bool to determine if the draft is empty or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.set_message" title="telethon.tl.custom.draft.Draft.set_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_message</span></code></a></p></td>
+<td><p>Changes the draft message on the Telegram servers.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.send" title="telethon.tl.custom.draft.Draft.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a></p></td>
+<td><p>Sends the contents of this draft to the dialog.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.delete" title="telethon.tl.custom.draft.Draft.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
+<td><p>Deletes this draft, and returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> on success.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="utils">
+<h2><a class="toc-backref" href="#id14">Utils</a><a class="headerlink" href="#utils" title="Permalink to this headline"></a></h2>
+<p>The <a class="reference internal" href="../modules/utils.html#module-telethon.utils" title="telethon.utils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils</span></code></a> module has plenty of methods that make using the
+library a lot easier. Only the interesting ones will be listed here.</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.get_display_name" title="telethon.utils.get_display_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_display_name</span></code></a></p></td>
+<td><p>Gets the display name for the given <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>, <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.get_extension" title="telethon.utils.get_extension"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_extension</span></code></a></p></td>
+<td><p>Gets the corresponding extension for any Telegram media.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.get_inner_text" title="telethon.utils.get_inner_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_inner_text</span></code></a></p></td>
+<td><p>Gets the inner text that's surrounded by the given entities.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.get_peer_id" title="telethon.utils.get_peer_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_peer_id</span></code></a></p></td>
+<td><p>Convert the given peer into its marked ID by default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.resolve_id" title="telethon.utils.resolve_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_id</span></code></a></p></td>
+<td><p>Given a marked ID, returns the original ID and its <a class="reference external" href="https://tl.telethon.dev/?q=Peer">Peer</a> type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.pack_bot_file_id" title="telethon.utils.pack_bot_file_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pack_bot_file_id</span></code></a></p></td>
+<td><p>Inverse operation for <a class="reference internal" href="../modules/utils.html#telethon.utils.resolve_bot_file_id" title="telethon.utils.resolve_bot_file_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_bot_file_id</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.resolve_bot_file_id" title="telethon.utils.resolve_bot_file_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_bot_file_id</span></code></a></p></td>
+<td><p>Given a Bot API-style <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.id" title="telethon.tl.custom.file.File.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_id</span></code></a>, returns the media it represents.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.resolve_invite_link" title="telethon.utils.resolve_invite_link"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resolve_invite_link</span></code></a></p></td>
+<td><p>Resolves the given invite link.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="events-reference.html" class="btn btn-neutral float-left" title="Events Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../concepts/strings.html" class="btn btn-neutral float-right" title="String-based Debugging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
