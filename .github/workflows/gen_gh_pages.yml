@@ -23,18 +23,23 @@ jobs:
       with:
         python-version: "3.8"
 
-    - name: Scrape jons
+    - name: preparations
       run: |
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/86f6ad99ffe5a1a8d523d280951ca527e16a05af/get_all_tl.py
+          export CH="dccf09b51679b3575bcdfaf378ac5e37135a0c09"
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/get_all_tl.py
+          rm index.html diff.html diff.css diff.js
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/moin.html -O index.html
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/diff.html -O diff.html
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/diff.css -O diff.css
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/diff.js -O diff.js
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/deploy.sh -O deploy.sh
+
+
+    - name: lonami_TL_scrapper
+      run: |
           python get_all_tl.py
 
-    - name: Commit and push changes.
+    - name: telethon_pyrogram_docs_generator
       run: |
           git checkout gh-pages
-          rm index.html diff.html diff.css diff.js
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/86f6ad99ffe5a1a8d523d280951ca527e16a05af/moin.html -O index.html
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/86f6ad99ffe5a1a8d523d280951ca527e16a05af/diff.html -O diff.html
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/86f6ad99ffe5a1a8d523d280951ca527e16a05af/diff.css -O diff.css
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/86f6ad99ffe5a1a8d523d280951ca527e16a05af/diff.js -O diff.js
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/86f6ad99ffe5a1a8d523d280951ca527e16a05af/deploy.sh -O deploy.sh
           bash deploy.sh
