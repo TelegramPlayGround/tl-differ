@@ -25,14 +25,14 @@ jobs:
 
     - name: Scrape jons
       run: |
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/6cd20f3e0cbd49b8d93c387874ead35cfe9adba0/get_all_tl.py
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/get_all_tl.py
           python get_all_tl.py
 
     - name: Commit and push changes.
       run: |
           git checkout gh-pages
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/6cd20f3e0cbd49b8d93c387874ead35cfe9adba0/diff.html
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/6cd20f3e0cbd49b8d93c387874ead35cfe9adba0/diff.css
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/6cd20f3e0cbd49b8d93c387874ead35cfe9adba0/diff.js
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/6cd20f3e0cbd49b8d93c387874ead35cfe9adba0/deploy.sh
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/diff.html
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/diff.css
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/diff.js
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/deploy.sh
           bash deploy.sh
