@@ -3,12 +3,13 @@ set -e
 set -x
 IFS="
 "
+TZ="Asia/Kolkata"
 TMP=/tmp/tldiff
 rm -rf "$TMP"
 mkdir "$TMP"
 cp diff.js atom.xml diffs.js diff.html diff.css "$TMP"
-# git branch -D gh-pages
-git checkout --orphan gh-pages
+current_date=$(date -R)
+git checkout gh-pages
 mv "$TMP"/* .
 ls
 git config --global user.email "johnprestonmail@gmail.com"
@@ -19,7 +20,7 @@ mv moin.html index.html
 git add schemes/ diff.js atom.xml diffs.js diff.html index.html diff.css README.md deploy.sh get_all_tl.py -Af
 # the below lines were copied from
 # https://github.com/LonamiWebs/Telethon/blob/master/update-docs.sh
-git commit -am "TLDiffer: Deploy new layer"
+git commit -am "${current_date} TLDiffer: Deploy new layer"
 
 curpath=$(pwd)
 
@@ -42,7 +43,7 @@ git add ../.nojekyll
 git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
 git add . -A
-git commit -m "DocGen: Update documentation"
+git commit -m "${current_date} DocGen: Update documentation"
 rm -rf /tmp/docgen
 
 git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
@@ -65,12 +66,12 @@ mv /tmp/docs/* .
 git config --global user.email "totufals@hotmail.com"
 git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
-git commit -m "DocGen: Update TL documentation"
+git commit -m "${current_date} DocGen: Update TL documentation"
 cd ..
 mv /tmp/telethonrtd/* .
 git add . -A
-git commit -m "DocGen: Update RTD"
+git commit -m "${current_date} DocGen: Update RTD"
 rm -rf /tmp/docgen
 
-git push --force -u origin gh-pages
+git push -u origin gh-pages
 git checkout master
