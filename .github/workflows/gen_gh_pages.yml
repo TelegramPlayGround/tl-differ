@@ -31,6 +31,7 @@ jobs:
     - name: Commit and push changes.
       run: |
           git checkout gh-pages
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/moin.html -O index.html
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/diff.html
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/diff.css
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/ee3d8e06a19d3b920dca47c5283271e56c8632d1/diff.js
