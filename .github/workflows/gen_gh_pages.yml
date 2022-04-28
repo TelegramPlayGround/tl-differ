@@ -26,13 +26,14 @@ jobs:
     - name: preparations
       run: |
           export CH="6288f3773fb4edef445ff284e29d3bf9361af4c5"
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/get_all_tl.py
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/get_all_tl.py -O get_all_tl.py
           rm index.html diff.html diff.css diff.js
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/moin.html -O index.html
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/diff.html -O diff.html
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/diff.css -O diff.css
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/diff.js -O diff.js
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/deploy.sh -O deploy.sh
+      
 
 
     - name: lonami_TL_scrapper
@@ -42,4 +43,9 @@ jobs:
     - name: telethon_pyrogram_docs_generator
       run: |
           git checkout gh-pages
+          rm -rf .github get_all_tl.py .gitignore 
           bash deploy.sh
+
+
+
+
