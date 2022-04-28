@@ -1,0 +1,29 @@
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  workflow_dispatch: {} # Allow manually kicking off builds
+  schedule:
+    - cron:  '0 */5 * * *'
+name: Generate TeleThon / PyroGram Docs
+jobs:
+  build:
+    name: Scrape
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+
+    - name: Scrape jons
+      run: python get_all_tl.py
+
+    - name: Commit and push changes.
+      run: |
+          git checkout master
+          bash deploy.sh
