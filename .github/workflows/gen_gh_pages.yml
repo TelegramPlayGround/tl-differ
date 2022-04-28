@@ -25,16 +25,16 @@ jobs:
 
     - name: Scrape jons
       run: |
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/37a0cefd1f2ee97de9a058ce1dd1878ef5456a04/get_all_tl.py
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/80c0f3d1fc091cea6b31ca8cd8bd8ee5f6e364e5/get_all_tl.py
           python get_all_tl.py
 
     - name: Commit and push changes.
       run: |
           git checkout gh-pages
           rm index.html diff.html diff.css diff.js
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/37a0cefd1f2ee97de9a058ce1dd1878ef5456a04/moin.html -O index.html
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/37a0cefd1f2ee97de9a058ce1dd1878ef5456a04/diff.html -O diff.html
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/37a0cefd1f2ee97de9a058ce1dd1878ef5456a04/diff.css -O diff.css
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/37a0cefd1f2ee97de9a058ce1dd1878ef5456a04/diff.js -O diff.js
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/37a0cefd1f2ee97de9a058ce1dd1878ef5456a04/deploy.sh -O deploy.sh
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/80c0f3d1fc091cea6b31ca8cd8bd8ee5f6e364e5/moin.html -O index.html
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/80c0f3d1fc091cea6b31ca8cd8bd8ee5f6e364e5/diff.html -O diff.html
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/80c0f3d1fc091cea6b31ca8cd8bd8ee5f6e364e5/diff.css -O diff.css
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/80c0f3d1fc091cea6b31ca8cd8bd8ee5f6e364e5/diff.js -O diff.js
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/80c0f3d1fc091cea6b31ca8cd8bd8ee5f6e364e5/deploy.sh -O deploy.sh
           bash deploy.sh
