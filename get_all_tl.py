@@ -195,7 +195,8 @@ def load_tl():
             try:
                 tl[int(tl_path.stem)] = Scheme(fd.read())
             except ValueError:
-                tl[tl_path.stem] = Scheme(fd.read())
+                pass
+                # tl[tl_path.stem] = Scheme(fd.read())
 
 
 def gen_index():
