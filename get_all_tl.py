@@ -185,7 +185,10 @@ def extract():
 def load_tl():
     for tl_path in schemes.glob('*.tl'):
         with tl_path.open(encoding='utf-8') as fd:
-            tl[int(tl_path.stem)] = Scheme(fd.read())
+	    try:
+                tl[int(tl_path.stem)] = Scheme(fd.read())
+	    except ValueError:
+		tl[tl_path.stem] = Scheme(fd.read())
 
 def gen_index():
     deltas = []
