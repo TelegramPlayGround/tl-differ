@@ -69,4 +69,3 @@ git commit -m "${current_date} DocGen: Update TL documentation"
 rm -rf /tmp/docgen
 
 git push -u origin gh-pages
-git checkout master
