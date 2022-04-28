@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChannelAdminLogEventAction &mdash; Pyrogram Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="canonical" href="https://docs.pyrogram.org/telegram/base/channel-admin-log-event-action.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ChannelAdminLogEventsFilter" href="channel-admin-log-events-filter.html" />
+    <link rel="prev" title="ChannelAdminLogEvent" href="channel-admin-log-event.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Pyrogram
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/install.html">Install Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../start/setup.html">Project Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/auth.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/invoking.html">Invoking Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/updates.html">Handling Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/examples/index.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/client.html">Pyrogram Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/methods/index.html">Available Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/types/index.html">Available Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bound-methods/index.html">Bound Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/enums/index.html">Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/handlers.html">Update Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/errors/index.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/filters.html">Update Filters</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/use-filters.html">Using Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/create-filters.html">Creating Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/more-on-updates.html">More on Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/client-settings.html">Client Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/speedups.html">Speedups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/text-formatting.html">Text Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/synchronous.html">Synchronous Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/smart-plugins.html">Smart Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/storage-engines.html">Storage Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/serializing.html">Object Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/proxy.html">Proxy Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/scheduling.html">Scheduling Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/mtproto-vs-botapi.html">MTProto vs. Bot API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/advanced-usage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/voice-calls.html">Voice Calls</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support Pyrogram</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Raw Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Raw Base</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pyrogram</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Raw Base</a> &raquo;</li>
+      <li>ChannelAdminLogEventAction</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="channeladminlogeventaction">
+<h1>ChannelAdminLogEventAction<a class="headerlink" href="#channeladminlogeventaction" title="Permalink to this headline"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyrogram.raw.base.ChannelAdminLogEventAction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyrogram.raw.base.</span></span><span class="sig-name descname"><span class="pre">ChannelAdminLogEventAction</span></span><a class="headerlink" href="#pyrogram.raw.base.ChannelAdminLogEventAction" title="Permalink to this definition"></a></dt>
+<dd><p>This base type has 36 constructors available.</p>
+<dl>
+<dt>Constructors:</dt><dd><table class="hlist"><tr><td><ul class="simple">
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-about.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeAbout" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeAbout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeAbout</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-available-reactions.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeAvailableReactions" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeAvailableReactions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeAvailableReactions</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-history-ttl.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeHistoryTTL" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeHistoryTTL"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeHistoryTTL</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-linked-chat.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeLinkedChat" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeLinkedChat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeLinkedChat</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-location.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeLocation" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeLocation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeLocation</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-photo.html#pyrogram.raw.types.ChannelAdminLogEventActionChangePhoto" title="pyrogram.raw.types.ChannelAdminLogEventActionChangePhoto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangePhoto</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-sticker-set.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeStickerSet" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeStickerSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeStickerSet</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-title.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeTitle" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeTitle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeTitle</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-change-username.html#pyrogram.raw.types.ChannelAdminLogEventActionChangeUsername" title="pyrogram.raw.types.ChannelAdminLogEventActionChangeUsername"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionChangeUsername</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-default-banned-rights.html#pyrogram.raw.types.ChannelAdminLogEventActionDefaultBannedRights" title="pyrogram.raw.types.ChannelAdminLogEventActionDefaultBannedRights"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionDefaultBannedRights</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-delete-message.html#pyrogram.raw.types.ChannelAdminLogEventActionDeleteMessage" title="pyrogram.raw.types.ChannelAdminLogEventActionDeleteMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionDeleteMessage</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-discard-group-call.html#pyrogram.raw.types.ChannelAdminLogEventActionDiscardGroupCall" title="pyrogram.raw.types.ChannelAdminLogEventActionDiscardGroupCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionDiscardGroupCall</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-edit-message.html#pyrogram.raw.types.ChannelAdminLogEventActionEditMessage" title="pyrogram.raw.types.ChannelAdminLogEventActionEditMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionEditMessage</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-exported-invite-delete.html#pyrogram.raw.types.ChannelAdminLogEventActionExportedInviteDelete" title="pyrogram.raw.types.ChannelAdminLogEventActionExportedInviteDelete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionExportedInviteDelete</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-exported-invite-edit.html#pyrogram.raw.types.ChannelAdminLogEventActionExportedInviteEdit" title="pyrogram.raw.types.ChannelAdminLogEventActionExportedInviteEdit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionExportedInviteEdit</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-exported-invite-revoke.html#pyrogram.raw.types.ChannelAdminLogEventActionExportedInviteRevoke" title="pyrogram.raw.types.ChannelAdminLogEventActionExportedInviteRevoke"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionExportedInviteRevoke</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-invite.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantInvite" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantInvite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantInvite</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-join.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantJoin" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantJoin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantJoin</span></code></a></p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-join-by-invite.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantJoinByInvite" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantJoinByInvite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantJoinByInvite</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-join-by-request.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantJoinByRequest" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantJoinByRequest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantJoinByRequest</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-leave.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantLeave" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantLeave"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantLeave</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-mute.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantMute" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantMute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantMute</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-toggle-admin.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantToggleAdmin" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantToggleAdmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantToggleAdmin</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-toggle-ban.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantToggleBan" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantToggleBan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantToggleBan</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-unmute.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantUnmute" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantUnmute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantUnmute</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-participant-volume.html#pyrogram.raw.types.ChannelAdminLogEventActionParticipantVolume" title="pyrogram.raw.types.ChannelAdminLogEventActionParticipantVolume"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionParticipantVolume</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-send-message.html#pyrogram.raw.types.ChannelAdminLogEventActionSendMessage" title="pyrogram.raw.types.ChannelAdminLogEventActionSendMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionSendMessage</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-start-group-call.html#pyrogram.raw.types.ChannelAdminLogEventActionStartGroupCall" title="pyrogram.raw.types.ChannelAdminLogEventActionStartGroupCall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionStartGroupCall</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-stop-poll.html#pyrogram.raw.types.ChannelAdminLogEventActionStopPoll" title="pyrogram.raw.types.ChannelAdminLogEventActionStopPoll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionStopPoll</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-toggle-group-call-setting.html#pyrogram.raw.types.ChannelAdminLogEventActionToggleGroupCallSetting" title="pyrogram.raw.types.ChannelAdminLogEventActionToggleGroupCallSetting"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionToggleGroupCallSetting</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-toggle-invites.html#pyrogram.raw.types.ChannelAdminLogEventActionToggleInvites" title="pyrogram.raw.types.ChannelAdminLogEventActionToggleInvites"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionToggleInvites</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-toggle-no-forwards.html#pyrogram.raw.types.ChannelAdminLogEventActionToggleNoForwards" title="pyrogram.raw.types.ChannelAdminLogEventActionToggleNoForwards"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionToggleNoForwards</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-toggle-pre-history-hidden.html#pyrogram.raw.types.ChannelAdminLogEventActionTogglePreHistoryHidden" title="pyrogram.raw.types.ChannelAdminLogEventActionTogglePreHistoryHidden"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionTogglePreHistoryHidden</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-toggle-signatures.html#pyrogram.raw.types.ChannelAdminLogEventActionToggleSignatures" title="pyrogram.raw.types.ChannelAdminLogEventActionToggleSignatures"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionToggleSignatures</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-toggle-slow-mode.html#pyrogram.raw.types.ChannelAdminLogEventActionToggleSlowMode" title="pyrogram.raw.types.ChannelAdminLogEventActionToggleSlowMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionToggleSlowMode</span></code></a></p></li>
+<li><p><a class="reference internal" href="../types/channel-admin-log-event-action-update-pinned.html#pyrogram.raw.types.ChannelAdminLogEventActionUpdatePinned" title="pyrogram.raw.types.ChannelAdminLogEventActionUpdatePinned"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChannelAdminLogEventActionUpdatePinned</span></code></a></p></li>
+</ul>
+</td></tr></table>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="channel-admin-log-event.html" class="btn btn-neutral float-left" title="ChannelAdminLogEvent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="channel-admin-log-events-filter.html" class="btn btn-neutral float-right" title="ChannelAdminLogEventsFilter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
