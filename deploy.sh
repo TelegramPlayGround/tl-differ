@@ -55,18 +55,17 @@ make html
 rm -rf /tmp/telethonrtd
 mv _build/html /tmp/telethonrtd
 cd ${curpath}
-mkdir -p telethon/advanced
-cd telethon/advanced
-rm -rf $(ls /tmp/docs)
-mv /tmp/docs/* .
+rm -rf telethon
+mv /tmp/telethonrtd telethon
+cd telethon
+git add . -A
+git commit -m "${current_date} DocGen: Update RTD"
+mv /tmp/docs advanced
+cd advanced
 git config --global user.email "totufals@hotmail.com"
 git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
 git commit -m "${current_date} DocGen: Update TL documentation"
-cd ..
-mv /tmp/telethonrtd/* .
-git add . -A
-git commit -m "${current_date} DocGen: Update RTD"
 rm -rf /tmp/docgen
 
 git push -u origin gh-pages
