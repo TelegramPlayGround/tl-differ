@@ -26,6 +26,7 @@ in_dev_branch = False
 if not schemes.is_dir():
     schemes.mkdir(parents=True)
 
+
 def in_dir(which):
     def wrapper(function):
         @functools.wraps(function)
@@ -58,6 +59,7 @@ class Field:
 
     def __repr__(self):
         return f'{self.name}:{self.type}'
+
 
 class Definition:
     def __init__(self, line, *, function):
@@ -95,8 +97,10 @@ class Definition:
 
     def __repr__(self):
         id_part = f'#{self.id:x}' if self.id is not None else ''
-        field_part = (' '.join(map(repr, self.fields)) + ' ') if self.fields else ''
+        field_part = (' '.join(map(repr, self.fields)) +
+                      ' ') if self.fields else ''
         return f"{self.name}{id_part} {field_part}= {self.type};"
+
 
 class Scheme:
     def __init__(self, contents='// LAYER 0'):
@@ -125,11 +129,13 @@ class Scheme:
     def __repr__(self):
         return '\n'.join(map(repr, self.definitions.values()))
 
+
 def ensure_dev_branch():
     global in_dev_branch
     if not in_dev_branch:
         run(('git', 'checkout', 'dev', '--force'))
         in_dev_branch = True
+
 
 @in_dir(tdesktop)
 def pull():
@@ -182,13 +188,15 @@ def extract():
                 fout.write(data)
                 tl[date] = Scheme(data.decode('utf-8'))
 
+
 def load_tl():
     for tl_path in schemes.glob('*.tl'):
         with tl_path.open(encoding='utf-8') as fd:
-	    try:
+            try:
                 tl[int(tl_path.stem)] = Scheme(fd.read())
-	    except ValueError:
-		tl[tl_path.stem] = Scheme(fd.read())
+            except ValueError:
+                tl[tl_path.stem] = Scheme(fd.read())
+
 
 def gen_index():
     deltas = []
@@ -236,11 +244,13 @@ def gen_index():
 
     return deltas
 
+
 def gen_rss(fqdn_, deltas):
     last = None
     rev = 1
     for delta in sorted(deltas, key=lambda d: d['date']):
-        date = datetime.datetime.fromtimestamp(delta['date'], datetime.timezone.utc).isoformat()
+        date = datetime.datetime.fromtimestamp(
+            delta['date'], datetime.timezone.utc).isoformat()
         if delta['layer'] == last:
             rev += 1
             revision = f' Revision {rev}'
@@ -250,8 +260,10 @@ def gen_rss(fqdn_, deltas):
             revision = ''
 
         added = len(delta['added']['types']) + len(delta['added']['functions'])
-        removed = len(delta['removed']['types']) + len(delta['removed']['functions'])
-        changed = len(delta['changed']['types']) + len(delta['changed']['functions'])
+        removed = len(delta['removed']['types']) + \
+            len(delta['removed']['functions'])
+        changed = len(delta['changed']['types']) + \
+            len(delta['changed']['functions'])
 
         yield f'''<entry xml:lang="en">
         <title>Layer {delta['layer'] or '???'}{revision}</title>
@@ -263,6 +275,7 @@ def gen_rss(fqdn_, deltas):
         <author><name>TL Differ Team</name></author>
     </entry>
 '''
+
 
 def main():
     pull()
@@ -288,6 +301,7 @@ def main():
         for entry in gen_rss(fqdn_, deltas):
             fd.write(entry)
         fd.write('</feed>')
+
 
 if __name__ == '__main__':
     main()
