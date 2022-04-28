@@ -34,6 +34,7 @@ make api
 make docs
 mv /tmp/docgen/docs/build/html /tmp/pydocs
 cd ${curpath}
+rm -rf pyrogram
 mv /tmp/pydocs pyrogram
 
 git config --global user.name "GitHub Action <Dan>"
