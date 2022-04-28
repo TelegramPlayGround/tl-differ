@@ -25,7 +25,7 @@ jobs:
 
     - name: Scrape jons
       run: |
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/fb96db7448862111533601ced7d796603f83a736/get_all_tl.py
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/master/get_all_tl.py
           python get_all_tl.py
 
     - name: Commit and push changes.
@@ -34,5 +34,5 @@ jobs:
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/master/diff.html
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/master/diff.css
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/master/diff.js
-          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/fb96db7448862111533601ced7d796603f83a736/deploy.sh
+          wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/master/deploy.sh
           bash deploy.sh
