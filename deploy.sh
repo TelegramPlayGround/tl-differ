@@ -32,7 +32,6 @@ pip install --upgrade pip
 pip install tox sphinx_tabs
 make api
 make docs
-make html
 mv /tmp/docgen/docs/build/html /tmp/pydocs
 cd ${curpath}
 mkdir -p pyrogram
