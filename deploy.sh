@@ -59,14 +59,14 @@ cd ${curpath}
 rm -rf telethon
 mv /tmp/telethonrtd telethon
 cd telethon
-git add . -A
-git commit -m "${current_date} DocGen: Update RTD"
 mv /tmp/docs advanced
 cd advanced
 git config --global user.email "totufals@hotmail.com"
 git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
-git commit -m "${current_date} DocGen: Update TL documentation"
+cd ..
+git add . -A
+git commit -m "${current_date} DocGen: Update TeLethoN documentation"
 rm -rf /tmp/docgen
 
 git push -u origin gh-pages
