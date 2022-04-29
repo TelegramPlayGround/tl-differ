@@ -25,7 +25,7 @@ jobs:
 
     - name: preparations
       run: |
-          export CH="6288f3773fb4edef445ff284e29d3bf9361af4c5"
+          export CH="19030411cc793fc86ca17484fbf4608707682272"
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/get_all_tl.py -O get_all_tl.py
           rm index.html diff.html diff.css diff.js
           wget https://raw.githubusercontent.com/TelegramPlayGround/tl-differ/${CH}/moin.html -O index.html
