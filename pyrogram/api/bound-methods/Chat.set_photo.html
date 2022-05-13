@@ -164,12 +164,31 @@
 </pre></div>
 </div>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">chat</span><span class="o">.</span><span class="n">set_photo</span><span class="p">(</span><span class="s2">&quot;photo.png&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set chat photo using a local file</span>
+<span class="k">await</span> <span class="n">chat</span><span class="o">.</span><span class="n">set_photo</span><span class="p">(</span><span class="n">photo</span><span class="o">=</span><span class="s2">&quot;photo.jpg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set chat photo using an existing Photo file_id</span>
+<span class="k">await</span> <span class="n">chat</span><span class="o">.</span><span class="n">set_photo</span><span class="p">(</span><span class="n">photo</span><span class="o">=</span><span class="n">photo</span><span class="o">.</span><span class="n">file_id</span><span class="p">)</span>
+
+
+<span class="c1"># Set chat video using a local file</span>
+<span class="k">await</span> <span class="n">chat</span><span class="o">.</span><span class="n">set_photo</span><span class="p">(</span><span class="n">video</span><span class="o">=</span><span class="s2">&quot;video.mp4&quot;</span><span class="p">)</span>
+
+<span class="c1"># Set chat photo using an existing Video file_id</span>
+<span class="k">await</span> <span class="n">chat</span><span class="o">.</span><span class="n">set_photo</span><span class="p">(</span><span class="n">video</span><span class="o">=</span><span class="n">video</span><span class="o">.</span><span class="n">file_id</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>photo</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>) – New chat photo. You can pass a <a class="reference internal" href="../types/Photo.html#pyrogram.types.Photo" title="pyrogram.types.Photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Photo</span></code></a> id or a file path to upload a new photo.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>photo</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">BinaryIO</span></code>, <em>optional</em>) – New chat photo. You can pass a <a class="reference internal" href="../types/Photo.html#pyrogram.types.Photo" title="pyrogram.types.Photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Photo</span></code></a> file_id, a file path to upload a new photo
+from your local machine or a binary file-like object with its attribute
+“.name” set for in-memory uploads.</p></li>
+<li><p><strong>video</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">BinaryIO</span></code>, <em>optional</em>) – New chat video. You can pass a <a class="reference internal" href="../types/Video.html#pyrogram.types.Video" title="pyrogram.types.Video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Video</span></code></a> file_id, a file path to upload a new video
+from your local machine or a binary file-like object with its attribute
+“.name” set for in-memory uploads.</p></li>
+<li><p><strong>video_start_ts</strong> (<code class="docutils literal notranslate"><span class="pre">float</span></code>, <em>optional</em>) – The timestamp in seconds of the video frame to use as photo profile preview.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> – True on success.</p>

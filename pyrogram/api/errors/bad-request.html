@@ -161,7 +161,7 @@
 <td><p>Emoji are not allowed in custom administrator titles</p></td>
 </tr>
 <tr class="row-odd"><td><p>ADMIN_RANK_INVALID</p></td>
-<td><p>The custom administrator title is invalid or is longer than 16 characters</p></td>
+<td><p>The custom administrator title is invalid or too long</p></td>
 </tr>
 <tr class="row-even"><td><p>ALBUM_PHOTOS_TOO_MANY</p></td>
 <td><p>Too many photos were included in the album</p></td>
@@ -254,7 +254,7 @@
 <td><p>The request can only be used with a channel</p></td>
 </tr>
 <tr class="row-even"><td><p>BUTTON_DATA_INVALID</p></td>
-<td><p>The button callback data contains invalid data or exceeds 64 bytes</p></td>
+<td><p>The button callback data is invalid or too large</p></td>
 </tr>
 <tr class="row-odd"><td><p>BUTTON_TYPE_INVALID</p></td>
 <td><p>The type of one of the buttons you provided is invalid</p></td>
@@ -296,7 +296,7 @@
 <td><p>The channel/supergroup is not accessible</p></td>
 </tr>
 <tr class="row-even"><td><p>CHANNEL_TOO_LARGE</p></td>
-<td><p>The channel is too large to be deleted; this error is issued when trying to delete channels with more than 1000 members (subject to change)</p></td>
+<td><p>The channel is too large</p></td>
 </tr>
 <tr class="row-odd"><td><p>CHAT_ABOUT_NOT_MODIFIED</p></td>
 <td><p>The chat about text was not modified because you tried to edit it using the same content</p></td>
@@ -476,13 +476,13 @@
 <td><p>The file is in Data Center No. {value}</p></td>
 </tr>
 <tr class="row-even"><td><p>FILE_PARTS_INVALID</p></td>
-<td><p>Invalid number of parts. The value is not between 1 and 4000</p></td>
+<td><p>Invalid number of parts.</p></td>
 </tr>
 <tr class="row-odd"><td><p>FILE_PART_EMPTY</p></td>
 <td><p>The file part sent is empty</p></td>
 </tr>
 <tr class="row-even"><td><p>FILE_PART_INVALID</p></td>
-<td><p>The file part number is invalid. The value is not between 0 and 3999</p></td>
+<td><p>The file part number is invalid.</p></td>
 </tr>
 <tr class="row-odd"><td><p>FILE_PART_LENGTH_INVALID</p></td>
 <td><p>The length of a file part is invalid</p></td>
@@ -491,10 +491,10 @@
 <td><p>The part size is different from the size of one of the previous parts in the same file</p></td>
 </tr>
 <tr class="row-odd"><td><p>FILE_PART_SIZE_INVALID</p></td>
-<td><p>512 KB cannot be evenly divided by part_size</p></td>
+<td><p>The file part size is invalid</p></td>
 </tr>
 <tr class="row-even"><td><p>FILE_PART_TOO_BIG</p></td>
-<td><p>The size limit (512 KB) for the content of the file part has been exceeded</p></td>
+<td><p>The size limit for the content of the file part has been exceeded</p></td>
 </tr>
 <tr class="row-odd"><td><p>FILE_PART_X_MISSING</p></td>
 <td><p>Part {value} of the file is missing from storage</p></td>
@@ -635,7 +635,7 @@
 <td><p>The file’s checksum did not match the md5_checksum parameter</p></td>
 </tr>
 <tr class="row-odd"><td><p>MEDIA_CAPTION_TOO_LONG</p></td>
-<td><p>The media caption is longer than 1024 characters</p></td>
+<td><p>The media caption is too long</p></td>
 </tr>
 <tr class="row-even"><td><p>MEDIA_EMPTY</p></td>
 <td><p>The media you tried to send is invalid</p></td>
@@ -677,7 +677,7 @@
 <td><p>You can’t interact with a closed poll</p></td>
 </tr>
 <tr class="row-odd"><td><p>MESSAGE_TOO_LONG</p></td>
-<td><p>The message text is over 4096 characters</p></td>
+<td><p>The message text is too long</p></td>
 </tr>
 <tr class="row-even"><td><p>METHOD_INVALID</p></td>
 <td><p>The API method is invalid and cannot be used</p></td>
@@ -824,7 +824,7 @@
 <td><p>The photo dimensions are invalid</p></td>
 </tr>
 <tr class="row-even"><td><p>PHOTO_SAVE_FILE_INVALID</p></td>
-<td><p>The photo you tried to send cannot be saved by Telegram. A reason may be that it exceeds 10 MB. Try resizing it locally</p></td>
+<td><p>The photo you tried to send cannot be saved by Telegram</p></td>
 </tr>
 <tr class="row-odd"><td><p>PHOTO_THUMB_URL_EMPTY</p></td>
 <td><p>The photo thumb URL is empty</p></td>
@@ -953,13 +953,13 @@
 <td><p>You cannot schedule a message until the person comes online if their privacy does not show this information</p></td>
 </tr>
 <tr class="row-odd"><td><p>SCHEDULE_TOO_MUCH</p></td>
-<td><p>You cannot schedule more than 100 messages in this chat</p></td>
+<td><p>You tried to schedule too many messages in this chat</p></td>
 </tr>
 <tr class="row-even"><td><p>SEARCH_QUERY_EMPTY</p></td>
 <td><p>The search query is empty</p></td>
 </tr>
 <tr class="row-odd"><td><p>SECONDS_INVALID</p></td>
-<td><p>The seconds interval is invalid, for slow mode try with 0 (off), 10, 30, 60 (1m), 300 (5m), 900 (15m) or 3600 (1h)</p></td>
+<td><p>The seconds interval is invalid</p></td>
 </tr>
 <tr class="row-even"><td><p>SEND_MESSAGE_MEDIA_INVALID</p></td>
 <td><p>The message media is invalid</p></td>

@@ -155,7 +155,7 @@ The following shows how to catch the exception in your code and wait the require
     <span class="k">try</span><span class="p">:</span>
         <span class="o">...</span>  <span class="c1"># Your code</span>
     <span class="k">except</span> <span class="n">FloodWait</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Wait &quot;x&quot; seconds before continuing</span>
+        <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>  <span class="c1"># Wait &quot;value&quot; seconds before continuing</span>
 <span class="o">...</span>
 </pre></div>
 </div>
