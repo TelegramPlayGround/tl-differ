@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
-set -x
+set +ex
 IFS="
 "
 TZ="Asia/Kolkata"
