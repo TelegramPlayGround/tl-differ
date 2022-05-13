@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
-set -x
+set +ex
 IFS="
 "
 TZ="Asia/Kolkata"
@@ -19,7 +18,7 @@ wget "https://github.com/TelegramPlayGround/tg-api-spec-s/raw/data/tdesktop.tl" 
 git add schemes/ diff.js atom.xml diffs.js diff.html index.html diff.css -Af
 # the below lines were copied from
 # https://github.com/LonamiWebs/Telethon/blob/master/update-docs.sh
-git commit -am "${current_date} TLDiffer: Deploy new layer"
+git commit -am "${current_date} TLDiffer: Deploy new layer" > /dev/null 2>&1
 
 curpath=$(pwd)
 
@@ -40,7 +39,7 @@ mv /tmp/pydocs pyrogram
 git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
 git add . -A
-git commit -m "${current_date} DocGen: Update documentation"
+git commit -m "${current_date} DocGen: Update documentation" > /dev/null 2>&1
 rm -rf /tmp/docgen
 
 git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
@@ -66,7 +65,7 @@ git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
 cd ..
 git add . -A
-git commit -m "${current_date} DocGen: Update TeLethoN documentation"
+git commit -m "${current_date} DocGen: Update TeLethoN documentation" > /dev/null 2>&1
 rm -rf /tmp/docgen
 
 git push -u origin gh-pages
