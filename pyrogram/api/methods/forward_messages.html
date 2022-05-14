@@ -199,8 +199,7 @@ For a contact that exists in your Telegram address book you can use his phone nu
 <li><p><strong>from_chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the source chat where the original message was sent.
 For your personal cloud (Saved Messages) you can simply use “me” or “self”.
 For a contact that exists in your Telegram address book you can use his phone number (str).</p></li>
-<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>) – A list of Message identifiers in the chat specified in <em>from_chat_id</em> or a single message id.
-Iterators and Generators are also accepted.</p></li>
+<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>) – A list of Message identifiers in the chat specified in <em>from_chat_id</em> or a single message id.</p></li>
 <li><p><strong>disable_notification</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
 Users will receive a notification with no sound.</p></li>
 <li><p><strong>schedule_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – Date when the message will be automatically sent.</p></li>
@@ -208,9 +207,8 @@ Users will receive a notification with no sound.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> | List of <a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> – In case <em>message_ids</em> was an
-integer, the single forwarded message is returned, otherwise, in case <em>message_ids</em> was an iterable,
-the returned value will be a list of messages, even if such iterable contained just a single element.</p>
+<dd class="field-even"><p><a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> | List of <a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> – In case <em>message_ids</em> was not
+a list, a single message is returned, otherwise a list of messages is returned.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>

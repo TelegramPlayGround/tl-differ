@@ -197,10 +197,10 @@
 <li><p><strong>chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
 For your personal cloud (Saved Messages) you can simply use “me” or “self”.
 For a contact that exists in your Telegram address book you can use his phone number (str).</p></li>
-<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">iterable</span></code>, <em>optional</em>) – Pass a single message identifier or a list of message ids (as integers) to get the content of the
-message themselves. Iterators and Generators are also accepted.</p></li>
-<li><p><strong>reply_to_message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">iterable</span></code>, <em>optional</em>) – Pass a single message identifier or a list of message ids (as integers) to get the content of
-the previous message you replied to using this message. Iterators and Generators are also accepted.
+<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Pass a single message identifier or a list of message ids (as integers) to get the content of the
+message themselves.</p></li>
+<li><p><strong>reply_to_message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Pass a single message identifier or a list of message ids (as integers) to get the content of
+the previous message you replied to using this message.
 If <em>message_ids</em> is set, this argument will be ignored.</p></li>
 <li><p><strong>replies</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The number of subsequent replies to get for each message.
 Pass 0 for no reply at all or -1 for unlimited replies.
@@ -208,9 +208,8 @@ Defaults to 1.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> | List of <a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> – In case <em>message_ids</em> was an
-integer, the single requested message is returned, otherwise, in case <em>message_ids</em> was an iterable, the
-returned value will be a list of messages, even if such iterable contained just a single element.</p>
+<dd class="field-even"><p><a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> | List of <a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> – In case <em>message_ids</em> was not
+a list, a single message is returned, otherwise a list of messages is returned.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>

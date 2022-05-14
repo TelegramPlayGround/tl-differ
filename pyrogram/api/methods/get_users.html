@@ -157,14 +157,12 @@
 You can retrieve up to 200 users at once.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>user_ids</strong> (<code class="docutils literal notranslate"><span class="pre">iterable</span></code>) – A list of User identifiers (id or username) or a single user id/username.
-For a contact that exists in your Telegram address book you can use his phone number (str).
-Iterators and Generators are also accepted.</p>
+<dd class="field-odd"><p><strong>user_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">str</span></code>) – A list of User identifiers (id or username) or a single user id/username.
+For a contact that exists in your Telegram address book you can use his phone number (str).</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="../types/User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a> | List of <a class="reference internal" href="../types/User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a> – In case <em>user_ids</em> was an integer or
-string the single requested user is returned, otherwise, in case <em>user_ids</em> was an iterable a list of users
-is returned, even if the iterable contained one item only.</p>
+<dd class="field-even"><p><a class="reference internal" href="../types/User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a> | List of <a class="reference internal" href="../types/User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a> – In case <em>user_ids</em> was not a list,
+a single user is returned, otherwise a list of users is returned.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>

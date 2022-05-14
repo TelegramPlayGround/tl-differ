@@ -196,8 +196,7 @@
 <li><p><strong>chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
 For your personal cloud (Saved Messages) you can simply use “me” or “self”.
 For a contact that exists in your Telegram address book you can use his phone number (str).</p></li>
-<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">Iterable[int]</span></code>) – A list of Message identifiers to delete (integers) or a single message id.
-Iterators and Generators are also accepted.</p></li>
+<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>) – A list of Message identifiers to delete (integers) or a single message id.</p></li>
 <li><p><strong>revoke</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Deletes messages on both parts.
 This is only for private cloud chats and normal groups, messages on
 channels and supergroups are always revoked (i.e.: deleted for everyone).
@@ -205,7 +204,7 @@ Defaults to True.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">bool</span></code> – True on success, False otherwise.</p>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">int</span></code> – Amount of affected messages</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
