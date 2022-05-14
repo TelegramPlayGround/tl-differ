@@ -64,8 +64,8 @@ git config --global user.email "totufals@hotmail.com"
 git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
 cd ..
-rm -rf ../tdesktop/ > /dev/null 2>&1
-git add ../tdesktop/ > /dev/null 2>&1
+rm -rf ../tdesktop/ ../deploy.sh > /dev/null 2>&1
+git add ../tdesktop/ ../deploy.sh -A > /dev/null 2>&1
 git add . -A
 git status
 git commit -m "${current_date} DocGen: Update TeLethoN documentation" > /dev/null 2>&1
