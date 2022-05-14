@@ -11,6 +11,11 @@ current_date=$(date -R)
 
 mv "$TMP"/* .
 ls
+
+rm -rf tdesktop/ deploy.sh > /dev/null 2>&1
+git add tdesktop/ deploy.sh -A > /dev/null 2>&1
+
+
 git config --global user.email "johnprestonmail@gmail.com"
 git config --global user.name "GitHub Action <John Preston>"
 wget "https://github.com/TelegramPlayGround/tg-api-spec-s/raw/data/tdesktop.tl" -O schemes/latest.tl
@@ -38,6 +43,7 @@ mv /tmp/pydocs pyrogram
 
 git config --global user.name "GitHub Action <Dan>"
 git config --global user.email "14043624+delivrance@users.noreply.github.com"
+rm -rf pyrogram/.doctrees/
 git add . -A
 git commit -m "${current_date} DocGen: Update documentation" > /dev/null 2>&1
 rm -rf /tmp/docgen
@@ -64,8 +70,6 @@ git config --global user.email "totufals@hotmail.com"
 git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
 cd ..
-rm -rf ../tdesktop/ ../deploy.sh > /dev/null 2>&1
-git add ../tdesktop/ ../deploy.sh -A > /dev/null 2>&1
 git add . -A
 git status
 git commit -m "${current_date} DocGen: Update TeLethoN documentation" > /dev/null 2>&1
