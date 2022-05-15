@@ -158,7 +158,11 @@
 <p>If you want to run a single client, you can use Client’s bound method <a class="reference internal" href="run.html#pyrogram.Client.run" title="pyrogram.Client.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>clients</strong> (List of <a class="reference internal" href="../client.html#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Client</span></code></a>) – A list of client objects to run.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clients</strong> (List of <a class="reference internal" href="../client.html#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Client</span></code></a>) – A list of client objects to run.</p></li>
+<li><p><strong>sequential</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Pass True to run clients sequentially.
+Defaults to False (run clients concurrently)</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Example</p>

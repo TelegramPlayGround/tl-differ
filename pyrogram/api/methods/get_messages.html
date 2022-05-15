@@ -197,9 +197,9 @@
 <li><p><strong>chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
 For your personal cloud (Saved Messages) you can simply use “me” or “self”.
 For a contact that exists in your Telegram address book you can use his phone number (str).</p></li>
-<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Pass a single message identifier or a list of message ids (as integers) to get the content of the
+<li><p><strong>message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | Iterable of <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Pass a single message identifier or an iterable of message ids (as integers) to get the content of the
 message themselves.</p></li>
-<li><p><strong>reply_to_message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | List of <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Pass a single message identifier or a list of message ids (as integers) to get the content of
+<li><p><strong>reply_to_message_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | Iterable of <code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Pass a single message identifier or an iterable of message ids (as integers) to get the content of
 the previous message you replied to using this message.
 If <em>message_ids</em> is set, this argument will be ignored.</p></li>
 <li><p><strong>replies</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The number of subsequent replies to get for each message.
