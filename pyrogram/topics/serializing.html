@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -127,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="object-serialization">
-<h1>Object Serialization<a class="headerlink" href="#object-serialization" title="Permalink to this headline"></a></h1>
+<h1>Object Serialization<a class="headerlink" href="#object-serialization" title="Permalink to this heading"></a></h1>
 <p>Serializing means converting a Pyrogram object, which exists as Python class instance, to a text string that can be
 easily shared and stored anywhere. Pyrogram provides two formats for serializing its objects: one good looking for
 humans and another more compact for machines that is able to recover the original structures.</p>
@@ -140,7 +141,7 @@ humans and another more compact for machines that is able to recover the origina
 </div>
 <hr class="docutils" />
 <section id="for-humans-str-obj">
-<h2>For Humans - str(obj)<a class="headerlink" href="#for-humans-str-obj" title="Permalink to this headline"></a></h2>
+<h2>For Humans - str(obj)<a class="headerlink" href="#for-humans-str-obj" title="Permalink to this heading"></a></h2>
 <p>If you want a nicely formatted, human readable JSON representation of any object in the API you can use <code class="docutils literal notranslate"><span class="pre">str(obj)</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 
@@ -156,7 +157,7 @@ have done that above just to show you how to explicitly convert a Pyrogram objec
 </div>
 </section>
 <section id="for-machines-repr-obj">
-<h2>For Machines - repr(obj)<a class="headerlink" href="#for-machines-repr-obj" title="Permalink to this headline"></a></h2>
+<h2>For Machines - repr(obj)<a class="headerlink" href="#for-machines-repr-obj" title="Permalink to this heading"></a></h2>
 <p>If you want to share or store objects for future references in a more compact way, you can use <code class="docutils literal notranslate"><span class="pre">repr(obj)</span></code>. While
 still pretty much readable, this format is not intended for humans. The advantage of this format is that once you
 serialize your object, you can use <code class="docutils literal notranslate"><span class="pre">eval()</span></code> to get back the original structure; just make sure to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pyrogram</span></code>,

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -128,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="synchronous-usage">
-<h1>Synchronous Usage<a class="headerlink" href="#synchronous-usage" title="Permalink to this headline"></a></h1>
+<h1>Synchronous Usage<a class="headerlink" href="#synchronous-usage" title="Permalink to this heading"></a></h1>
 <p>Pyrogram is an asynchronous framework and as such is subject to the asynchronous rules. It can, however, run in
 synchronous mode (also known as non-asynchronous or sync/non-async for short). This mode exists mainly as a convenience
 way for invoking methods without the need of <code class="docutils literal notranslate"><span class="pre">async</span></code>/<code class="docutils literal notranslate"><span class="pre">await</span></code> keywords and the extra boilerplate, but <strong>it’s not the
@@ -151,7 +152,7 @@ will make the program run erratically.</p>
 </div>
 <hr class="docutils" />
 <section id="synchronous-invocations">
-<h2>Synchronous Invocations<a class="headerlink" href="#synchronous-invocations" title="Permalink to this headline"></a></h2>
+<h2>Synchronous Invocations<a class="headerlink" href="#synchronous-invocations" title="Permalink to this heading"></a></h2>
 <p>The following is a standard example of running asynchronous functions with Python’s asyncio.
 Pyrogram is being used inside the main function with its asynchronous interface.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
@@ -180,7 +181,7 @@ As you can see, the non-async example becomes less cluttered.</p>
 </div>
 </section>
 <section id="synchronous-handlers">
-<h2>Synchronous handlers<a class="headerlink" href="#synchronous-handlers" title="Permalink to this headline"></a></h2>
+<h2>Synchronous handlers<a class="headerlink" href="#synchronous-handlers" title="Permalink to this heading"></a></h2>
 <p>You can also have synchronous handlers; you only need to define the callback function without using <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code> and
 invoke API methods by not placing <code class="docutils literal notranslate"><span class="pre">await</span></code> in front of them. Mixing <code class="docutils literal notranslate"><span class="pre">def</span></code> and <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code> handlers together is also
 possible.</p>
@@ -195,7 +196,7 @@ possible.</p>
 </div>
 </section>
 <section id="uvloop-usage">
-<h2>uvloop usage<a class="headerlink" href="#uvloop-usage" title="Permalink to this headline"></a></h2>
+<h2>uvloop usage<a class="headerlink" href="#uvloop-usage" title="Permalink to this heading"></a></h2>
 <p>When using Pyrogram in its synchronous mode combined with uvloop, you need to call <code class="docutils literal notranslate"><span class="pre">uvloop.install()</span></code> before importing
 Pyrogram.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">uvloop</span>

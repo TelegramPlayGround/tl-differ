@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -129,7 +130,7 @@
            <div itemprop="articleBody">
              
   <section id="creating-filters">
-<h1>Creating Filters<a class="headerlink" href="#creating-filters" title="Permalink to this headline"></a></h1>
+<h1>Creating Filters<a class="headerlink" href="#creating-filters" title="Permalink to this heading"></a></h1>
 <p>Pyrogram already provides lots of built-in <a class="reference internal" href="../api/filters.html#module-pyrogram.filters" title="pyrogram.filters"><code class="xref py py-class docutils literal notranslate"><span class="pre">filters</span></code></a> to work with, but in case you can’t find a
 specific one for your needs or want to build a custom filter by yourself you can use
 <a class="reference internal" href="../api/filters.html#pyrogram.filters.create" title="pyrogram.filters.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filters.create()</span></code></a>.</p>
@@ -144,7 +145,7 @@ specific one for your needs or want to build a custom filter by yourself you can
 </div>
 <hr class="docutils" />
 <section id="custom-filters">
-<h2>Custom Filters<a class="headerlink" href="#custom-filters" title="Permalink to this headline"></a></h2>
+<h2>Custom Filters<a class="headerlink" href="#custom-filters" title="Permalink to this heading"></a></h2>
 <p>An example to demonstrate how custom filters work is to show how to create and use one for the
 <a class="reference internal" href="../api/handlers.html#pyrogram.handlers.CallbackQueryHandler" title="pyrogram.handlers.CallbackQueryHandler"><code class="xref py py-class docutils literal notranslate"><span class="pre">CallbackQueryHandler</span></code></a>. Note that callback queries updates are only received by bots as result
 of a user pressing an inline button attached to the bot’s message; create and <a class="reference internal" href="../start/auth.html"><span class="doc">authorize your bot</span></a>,
@@ -163,7 +164,7 @@ button:</p>
 </div>
 </section>
 <section id="basic-filters">
-<h2>Basic Filters<a class="headerlink" href="#basic-filters" title="Permalink to this headline"></a></h2>
+<h2>Basic Filters<a class="headerlink" href="#basic-filters" title="Permalink to this heading"></a></h2>
 <p>For this basic filter we will be using only the first parameter of <a class="reference internal" href="../api/filters.html#pyrogram.filters.create" title="pyrogram.filters.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a>.</p>
 <p>The heart of a filter is its callback function, which accepts three arguments <em>(self, client, update)</em> and returns
 either <code class="docutils literal notranslate"><span class="pre">True</span></code>, in case you want the update to pass the filter or <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
@@ -186,7 +187,7 @@ queries containing “pyrogram” as data:</p>
 </div>
 </section>
 <section id="filters-with-arguments">
-<h2>Filters with Arguments<a class="headerlink" href="#filters-with-arguments" title="Permalink to this headline"></a></h2>
+<h2>Filters with Arguments<a class="headerlink" href="#filters-with-arguments" title="Permalink to this heading"></a></h2>
 <p>A more flexible filter would be one that accepts “pyrogram” or any other string as argument at usage time.
 A dynamic filter like this will make use of named arguments for the <a class="reference internal" href="../api/filters.html#pyrogram.filters.create" title="pyrogram.filters.create"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create()</span></code></a> method and the
 first argument of the callback function, which is a reference to the filter object itself holding the extra data passed
@@ -210,7 +211,7 @@ via named arguments.</p>
 </div>
 </section>
 <section id="method-calls-inside-filters">
-<h2>Method Calls Inside Filters<a class="headerlink" href="#method-calls-inside-filters" title="Permalink to this headline"></a></h2>
+<h2>Method Calls Inside Filters<a class="headerlink" href="#method-calls-inside-filters" title="Permalink to this heading"></a></h2>
 <p>The missing piece we haven’t covered yet is the second argument of a filter callback function, namely, the <code class="docutils literal notranslate"><span class="pre">client</span></code>
 argument. This is a reference to the <a class="reference internal" href="../api/client.html#pyrogram.Client" title="pyrogram.Client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Client</span></code></a> instance that is running the filter and it is useful in
 case you would like to make some API calls before deciding whether the filter should allow the update or not:</p>

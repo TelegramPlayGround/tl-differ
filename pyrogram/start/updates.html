@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -131,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="handling-updates">
-<h1>Handling Updates<a class="headerlink" href="#handling-updates" title="Permalink to this headline"></a></h1>
+<h1>Handling Updates<a class="headerlink" href="#handling-updates" title="Permalink to this heading"></a></h1>
 <p><a class="reference internal" href="invoking.html"><span class="doc">Invoking API methods</span></a> sequentially is one way to use Pyrogram. This page deals with Telegram updates
 and how to handle new incoming messages or other events in Pyrogram.</p>
 <div class="contents local topic" id="contents">
@@ -143,7 +144,7 @@ and how to handle new incoming messages or other events in Pyrogram.</p>
 </div>
 <hr class="docutils" />
 <section id="defining-updates">
-<h2>Defining Updates<a class="headerlink" href="#defining-updates" title="Permalink to this headline"></a></h2>
+<h2>Defining Updates<a class="headerlink" href="#defining-updates" title="Permalink to this heading"></a></h2>
 <p>Updates are events that happen in your Telegram account (incoming messages, new members join,
 bot button presses, etc.), which are meant to notify you about a new specific state that has changed. These updates are
 handled by registering one or more callback functions in your app using <a class="reference internal" href="../api/handlers.html"><span class="doc">Handlers</span></a>.</p>
@@ -151,12 +152,12 @@ handled by registering one or more callback functions in your app using <a class
 function will be called back by the framework and its body executed.</p>
 </section>
 <section id="registering-a-handler">
-<h2>Registering a Handler<a class="headerlink" href="#registering-a-handler" title="Permalink to this headline"></a></h2>
+<h2>Registering a Handler<a class="headerlink" href="#registering-a-handler" title="Permalink to this heading"></a></h2>
 <p>To explain how handlers work let’s examine the one which will be in charge for handling <a class="reference internal" href="../api/types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-class docutils literal notranslate"><span class="pre">Message</span></code></a>
 updates coming from all around your chats. Every other kind of handler shares the same setup logic and you should not
 have troubles settings them up once you learn from this section.</p>
 <section id="using-decorators">
-<h3>Using Decorators<a class="headerlink" href="#using-decorators" title="Permalink to this headline"></a></h3>
+<h3>Using Decorators<a class="headerlink" href="#using-decorators" title="Permalink to this heading"></a></h3>
 <p>The most elegant way to register a message handler is by using the <a class="reference internal" href="../api/decorators.html#pyrogram.Client.on_message" title="pyrogram.Client.on_message"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_message()</span></code></a> decorator:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
 
@@ -178,7 +179,7 @@ Its purpose here is simply to automatically <a class="reference internal" href="
 for updates and <a class="reference internal" href="../api/methods/stop.html#pyrogram.Client.stop" title="pyrogram.Client.stop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stop()</span></code></a> it once you hit <code class="docutils literal notranslate"><span class="pre">CTRL+C</span></code>.</p>
 </section>
 <section id="using-add-handler">
-<h3>Using add_handler()<a class="headerlink" href="#using-add-handler" title="Permalink to this headline"></a></h3>
+<h3>Using add_handler()<a class="headerlink" href="#using-add-handler" title="Permalink to this heading"></a></h3>
 <p>The <a class="reference internal" href="../api/methods/add_handler.html#pyrogram.Client.add_handler" title="pyrogram.Client.add_handler"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_handler()</span></code></a> method takes any handler instance that wraps around your defined callback
 function and registers it in your Client. It is useful in case you want to programmatically add handlers.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -128,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="advanced-usage">
-<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline"></a></h1>
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading"></a></h1>
 <p>Pyrogram’s API – which consists of well documented <a class="reference internal" href="../api/methods/index.html"><span class="doc">methods</span></a> and
 <a class="reference internal" href="../api/types/index.html"><span class="doc">types</span></a> – exists to provide an easier interface to the more complex Telegram API.</p>
 <p>In this section, you’ll be shown the alternative way of communicating with Telegram using Pyrogram: the main “raw”
@@ -143,7 +144,7 @@ Telegram API with its functions and types.</p>
 </div>
 <hr class="docutils" />
 <section id="telegram-raw-api">
-<h2>Telegram Raw API<a class="headerlink" href="#telegram-raw-api" title="Permalink to this headline"></a></h2>
+<h2>Telegram Raw API<a class="headerlink" href="#telegram-raw-api" title="Permalink to this heading"></a></h2>
 <p>If you can’t find a high-level method for your needs or if you want complete, low-level access to the whole
 Telegram API, you have to use the raw <a class="reference internal" href="../telegram/functions/index.html#module-pyrogram.raw.functions" title="pyrogram.raw.functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functions</span></code></a> and <a class="reference internal" href="../telegram/types/index.html#module-pyrogram.raw.types" title="pyrogram.raw.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a>.</p>
 <p>As already hinted, raw functions and types can be less convenient. This section will therefore explain some pitfalls to
@@ -154,7 +155,7 @@ take into consideration when working with the raw API.</p>
 </div>
 </section>
 <section id="invoking-functions">
-<h2>Invoking Functions<a class="headerlink" href="#invoking-functions" title="Permalink to this headline"></a></h2>
+<h2>Invoking Functions<a class="headerlink" href="#invoking-functions" title="Permalink to this heading"></a></h2>
 <p>Unlike the <a class="reference internal" href="../api/methods/index.html"><span class="doc">methods</span></a> found in Pyrogram’s API, which can be called in the usual simple way,
 functions to be invoked from the raw Telegram API have a different way of usage.</p>
 <p>First of all, both <a class="reference internal" href="../telegram/functions/index.html"><span class="doc">raw functions</span></a> and <a class="reference internal" href="../telegram/types/index.html"><span class="doc">raw types</span></a>
@@ -210,7 +211,7 @@ Client class and pass the function object you created.</p>
 </ul>
 </section>
 <section id="chat-ids">
-<h2>Chat IDs<a class="headerlink" href="#chat-ids" title="Permalink to this headline"></a></h2>
+<h2>Chat IDs<a class="headerlink" href="#chat-ids" title="Permalink to this heading"></a></h2>
 <p>The way Telegram works makes it not possible to directly send a message to a user or a chat by using their IDs only.
 Instead, a pair of <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> wrapped in a so called <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> is always needed. Pyrogram allows
 sending messages with IDs only thanks to cached access hashes.</p>

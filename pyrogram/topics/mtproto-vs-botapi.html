@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -128,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="mtproto-vs-bot-api">
-<h1>MTProto vs. Bot API<a class="headerlink" href="#mtproto-vs-bot-api" title="Permalink to this headline"></a></h1>
+<h1>MTProto vs. Bot API<a class="headerlink" href="#mtproto-vs-bot-api" title="Permalink to this heading"></a></h1>
 <p>Pyrogram is a framework written from the ground up that acts as a fully-fledged Telegram client based on the MTProto
 API. This means that Pyrogram is able to execute any official client and bot API action and more. This page will
 therefore show you why Pyrogram might be a better choice for your project by comparing the two APIs, but first, let’s
@@ -143,7 +144,7 @@ make it clear what actually is the MTProto and the Bot API.</p>
 </div>
 <hr class="docutils" />
 <section id="what-is-the-mtproto-api">
-<h2>What is the MTProto API?<a class="headerlink" href="#what-is-the-mtproto-api" title="Permalink to this headline"></a></h2>
+<h2>What is the MTProto API?<a class="headerlink" href="#what-is-the-mtproto-api" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://core.telegram.org/mtproto">MTProto</a>, took alone, is the name of the custom-made, open and encrypted communication protocol created by Telegram
 itself — it’s the only protocol used to exchange information between a client and the actual Telegram servers.</p>
 <p>The MTProto API on the other hand, is what people for convenience call the main Telegram API in order to distinguish it
@@ -153,7 +154,7 @@ delivered using UDP, TCP or even HTTP as transport-layer protocol. Clients that 
 Pyrogram, implement all these details.</p>
 </section>
 <section id="what-is-the-bot-api">
-<h2>What is the Bot API?<a class="headerlink" href="#what-is-the-bot-api" title="Permalink to this headline"></a></h2>
+<h2>What is the Bot API?<a class="headerlink" href="#what-is-the-bot-api" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://core.telegram.org/bots/api">Bot API</a> is an HTTP(S) interface for building normal bots using a sub-set of the main Telegram API. Bots are
 special accounts that are authorized via tokens instead of phone numbers. The Bot API is built yet again on top of the
 main Telegram API, but runs on an intermediate server application that in turn communicates with the actual Telegram
@@ -163,7 +164,7 @@ servers using MTProto.</p>
 </figure>
 </section>
 <section id="advantages-of-the-mtproto-api">
-<h2>Advantages of the MTProto API<a class="headerlink" href="#advantages-of-the-mtproto-api" title="Permalink to this headline"></a></h2>
+<h2>Advantages of the MTProto API<a class="headerlink" href="#advantages-of-the-mtproto-api" title="Permalink to this heading"></a></h2>
 <p>Here is a non-exhaustive list of all the advantages in using MTProto-based libraries – such as Pyrogram – instead of
 the official HTTP Bot API. Using Pyrogram you can:</p>
 <table class="hlist"><tr><td><ul class="simple">

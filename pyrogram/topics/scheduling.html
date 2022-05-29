@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -130,7 +131,7 @@
            <div itemprop="articleBody">
              
   <section id="scheduling-tasks">
-<h1>Scheduling Tasks<a class="headerlink" href="#scheduling-tasks" title="Permalink to this headline"></a></h1>
+<h1>Scheduling Tasks<a class="headerlink" href="#scheduling-tasks" title="Permalink to this heading"></a></h1>
 <p>Scheduling tasks means executing one or more functions periodically at pre-defined intervals or after a delay. This is
 useful, for example, to send recurring messages to specific chats or users.</p>
 <p>This page will show examples on how to integrate Pyrogram with <code class="docutils literal notranslate"><span class="pre">apscheduler</span></code> in both asynchronous and
@@ -143,13 +144,13 @@ non-asynchronous contexts. For more detailed information, you can visit and lear
 </div>
 <hr class="docutils" />
 <section id="using-apscheduler">
-<h2>Using apscheduler<a class="headerlink" href="#using-apscheduler" title="Permalink to this headline"></a></h2>
+<h2>Using apscheduler<a class="headerlink" href="#using-apscheduler" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Install with <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">apscheduler</span></code></p></li>
 <li><p>Documentation: <a class="reference external" href="https://apscheduler.readthedocs.io">https://apscheduler.readthedocs.io</a></p></li>
 </ul>
 <section id="asynchronously">
-<h3>Asynchronously<a class="headerlink" href="#asynchronously" title="Permalink to this headline"></a></h3>
+<h3>Asynchronously<a class="headerlink" href="#asynchronously" title="Permalink to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">apscheduler.schedulers.asyncio</span> <span class="kn">import</span> <span class="n">AsyncIOScheduler</span>
 
 <span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -170,7 +171,7 @@ non-asynchronous contexts. For more detailed information, you can visit and lear
 </div>
 </section>
 <section id="non-asynchronously">
-<h3>Non-Asynchronously<a class="headerlink" href="#non-asynchronously" title="Permalink to this headline"></a></h3>
+<h3>Non-Asynchronously<a class="headerlink" href="#non-asynchronously" title="Permalink to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">apscheduler.schedulers.background</span> <span class="kn">import</span> <span class="n">BackgroundScheduler</span>
 
 <span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>

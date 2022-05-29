@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -131,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="more-on-updates">
-<h1>More on Updates<a class="headerlink" href="#more-on-updates" title="Permalink to this headline"></a></h1>
+<h1>More on Updates<a class="headerlink" href="#more-on-updates" title="Permalink to this heading"></a></h1>
 <p>Here we’ll show some advanced usages when working with <a class="reference internal" href="../start/updates.html"><span class="doc">update handlers</span></a> and
 <a class="reference internal" href="use-filters.html"><span class="doc">filters</span></a>.</p>
 <div class="contents local topic" id="contents">
@@ -143,7 +144,7 @@
 </div>
 <hr class="docutils" />
 <section id="handler-groups">
-<h2>Handler Groups<a class="headerlink" href="#handler-groups" title="Permalink to this headline"></a></h2>
+<h2>Handler Groups<a class="headerlink" href="#handler-groups" title="Permalink to this heading"></a></h2>
 <p>If you register handlers with overlapping (conflicting) filters, only the first one is executed and any other handler
 will be ignored. This is intended by design.</p>
 <p>In order to handle the very same update more than once, you have to register your handler in a different dispatching
@@ -179,7 +180,7 @@ texts (<code class="docutils literal notranslate"><span class="pre">filters.text
 </div>
 </section>
 <section id="update-propagation">
-<h2>Update propagation<a class="headerlink" href="#update-propagation" title="Permalink to this headline"></a></h2>
+<h2>Update propagation<a class="headerlink" href="#update-propagation" title="Permalink to this heading"></a></h2>
 <p>Registering multiple handlers, each in a different group, becomes useful when you want to handle the same update more
 than once. Any incoming update will be sequentially processed by all of your registered functions by respecting the
 groups priority policy described above. Even in case any handler raises an unhandled exception, Pyrogram will still
@@ -207,7 +208,7 @@ Exception: Unhandled exception!
 </pre></div>
 </div>
 <section id="stop-propagation">
-<h3>Stop Propagation<a class="headerlink" href="#stop-propagation" title="Permalink to this headline"></a></h3>
+<h3>Stop Propagation<a class="headerlink" href="#stop-propagation" title="Permalink to this heading"></a></h3>
 <p>In order to prevent further propagation of an update in the dispatching phase, you can do <em>one</em> of the following:</p>
 <ul class="simple">
 <li><p>Call the update’s bound-method <code class="docutils literal notranslate"><span class="pre">.stop_propagation()</span></code> (preferred way).</p></li>
@@ -264,7 +265,7 @@ propagation was stopped earlier. The output of both (equivalent) examples will b
 </div>
 </section>
 <section id="continue-propagation">
-<h3>Continue Propagation<a class="headerlink" href="#continue-propagation" title="Permalink to this headline"></a></h3>
+<h3>Continue Propagation<a class="headerlink" href="#continue-propagation" title="Permalink to this heading"></a></h3>
 <p>As opposed to <a class="reference external" href="#stop-propagation">stopping the update propagation</a> and also as an alternative to the
 <a class="reference external" href="#handler-groups">handler groups</a>, you can signal the internal dispatcher to continue the update propagation within
 <strong>the same group</strong> despite having conflicting filters in the next registered handler. This allows you to register

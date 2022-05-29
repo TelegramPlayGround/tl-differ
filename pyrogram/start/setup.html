@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -127,7 +128,7 @@
            <div itemprop="articleBody">
              
   <section id="project-setup">
-<h1>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline"></a></h1>
+<h1>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this heading"></a></h1>
 <p>We have just <a class="reference internal" href="../intro/install.html"><span class="doc">installed Pyrogram</span></a>. In this page we’ll discuss what you need to do in order to set up a
 project with the framework.</p>
 <div class="contents local topic" id="contents">
@@ -139,7 +140,7 @@ project with the framework.</p>
 </div>
 <hr class="docutils" />
 <section id="api-key">
-<h2>API Key<a class="headerlink" href="#api-key" title="Permalink to this headline"></a></h2>
+<h2>API Key<a class="headerlink" href="#api-key" title="Permalink to this heading"></a></h2>
 <p>The first step requires you to obtain a valid Telegram API key (api_id and api_hash pair):</p>
 <ol class="arabic simple">
 <li><p>Visit <a class="reference external" href="https://my.telegram.org/apps">https://my.telegram.org/apps</a> and log in with your Telegram account.</p></li>
@@ -153,7 +154,7 @@ This means that you are able to authorize multiple users or bots with a single A
 </div>
 </section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
 <p>Having the API key from the previous step in handy, we can now begin to configure a Pyrogram project: pass your API key to Pyrogram by using the <em>api_id</em> and <em>api_hash</em> parameters of the Client class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
 

@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -130,7 +131,7 @@
            <div itemprop="articleBody">
              
   <section id="error-handling">
-<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline"></a></h1>
+<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading"></a></h1>
 <p>Errors can be correctly handled with <code class="docutils literal notranslate"><span class="pre">try...except</span></code> blocks in order to control the behaviour of your application.
 Pyrogram errors all live inside the <code class="docutils literal notranslate"><span class="pre">errors</span></code> package:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">errors</span>
@@ -148,7 +149,7 @@ Pyrogram errors all live inside the <code class="docutils literal notranslate"><
 </div>
 <hr class="docutils" />
 <section id="rpcerror">
-<h2>RPCError<a class="headerlink" href="#rpcerror" title="Permalink to this headline"></a></h2>
+<h2>RPCError<a class="headerlink" href="#rpcerror" title="Permalink to this heading"></a></h2>
 <p>The father of all errors is named <code class="docutils literal notranslate"><span class="pre">RPCError</span></code> and is able to catch all Telegram API related errors.
 This error is raised every time a method call against Telegram’s API was unsuccessful.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram.errors</span> <span class="kn">import</span> <span class="n">RPCError</span>
@@ -161,7 +162,7 @@ traceback), because it makes it impossible to understand what went wrong.</p>
 </div>
 </section>
 <section id="error-categories">
-<h2>Error Categories<a class="headerlink" href="#error-categories" title="Permalink to this headline"></a></h2>
+<h2>Error Categories<a class="headerlink" href="#error-categories" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">RPCError</span></code> packs together all the possible errors Telegram could raise, but to make things tidier, Pyrogram
 provides categories of errors, which are named after the common HTTP errors and are subclass-ed from the <code class="docutils literal notranslate"><span class="pre">RPCError</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram.errors</span> <span class="kn">import</span> <span class="n">BadRequest</span><span class="p">,</span> <span class="n">Forbidden</span><span class="p">,</span> <span class="o">...</span>
@@ -178,7 +179,7 @@ provides categories of errors, which are named after the common HTTP errors and 
 </ul>
 </section>
 <section id="single-errors">
-<h2>Single Errors<a class="headerlink" href="#single-errors" title="Permalink to this headline"></a></h2>
+<h2>Single Errors<a class="headerlink" href="#single-errors" title="Permalink to this heading"></a></h2>
 <p>For a fine-grained control over every single error, Pyrogram does also expose errors that deal each with a specific
 issue. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram.errors</span> <span class="kn">import</span> <span class="n">FloodWait</span>
@@ -215,13 +216,13 @@ issue. For example:</p>
 </ul>
 </section>
 <section id="unknown-errors">
-<h2>Unknown Errors<a class="headerlink" href="#unknown-errors" title="Permalink to this headline"></a></h2>
+<h2>Unknown Errors<a class="headerlink" href="#unknown-errors" title="Permalink to this heading"></a></h2>
 <p>In case Pyrogram does not know anything about a specific error yet, it raises a generic error from its known category,
 for example, an unknown error with error code <code class="docutils literal notranslate"><span class="pre">400</span></code>, will be raised as a <code class="docutils literal notranslate"><span class="pre">BadRequest</span></code>. This way you can catch the
 whole category of errors and be sure to also handle these unknown errors.</p>
 </section>
 <section id="errors-with-values">
-<h2>Errors with Values<a class="headerlink" href="#errors-with-values" title="Permalink to this headline"></a></h2>
+<h2>Errors with Values<a class="headerlink" href="#errors-with-values" title="Permalink to this heading"></a></h2>
 <p>Exception objects may also contain some informative values. For example, <code class="docutils literal notranslate"><span class="pre">FloodWait</span></code> holds the amount of seconds you
 have to wait before you can try again, some other errors contain the DC number on which the request must be repeated on.
 The value is stored in the <code class="docutils literal notranslate"><span class="pre">value</span></code> attribute of the exception object:</p>

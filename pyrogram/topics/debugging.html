@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -128,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="debugging">
-<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline"></a></h1>
+<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading"></a></h1>
 <p>When working with the API, chances are you’ll stumble upon bugs, get stuck and start wondering how to continue. Nothing
 to actually worry about since Pyrogram provides some commodities to help you in this.</p>
 <div class="contents local topic" id="contents">
@@ -141,7 +142,7 @@ to actually worry about since Pyrogram provides some commodities to help you in 
 </div>
 <hr class="docutils" />
 <section id="caveman-debugging">
-<h2>Caveman Debugging<a class="headerlink" href="#caveman-debugging" title="Permalink to this headline"></a></h2>
+<h2>Caveman Debugging<a class="headerlink" href="#caveman-debugging" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p><em>The most effective debugging tool is still careful thought, coupled with judiciously placed print statements.</em></p>
 <p class="attribution">—Brian Kernighan, “Unix for Beginners” (1979)</p>
@@ -183,7 +184,7 @@ an insight of all its inner details.</p>
 keeps going until we are left with base data types only, such as <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, etc.</p>
 </section>
 <section id="accessing-attributes">
-<h2>Accessing Attributes<a class="headerlink" href="#accessing-attributes" title="Permalink to this headline"></a></h2>
+<h2>Accessing Attributes<a class="headerlink" href="#accessing-attributes" title="Permalink to this heading"></a></h2>
 <p>Even though you see a JSON output, it doesn’t mean we are dealing with dictionaries; in fact, all Pyrogram types are
 fully-fledged Python objects and the correct way to access any attribute of them is by using the dot notation <code class="docutils literal notranslate"><span class="pre">.</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">photo</span> <span class="o">=</span> <span class="n">me</span><span class="o">.</span><span class="n">photo</span>
@@ -201,7 +202,7 @@ fully-fledged Python objects and the correct way to access any attribute of them
 </div>
 </section>
 <section id="checking-an-object-s-type">
-<h2>Checking an Object’s Type<a class="headerlink" href="#checking-an-object-s-type" title="Permalink to this headline"></a></h2>
+<h2>Checking an Object’s Type<a class="headerlink" href="#checking-an-object-s-type" title="Permalink to this heading"></a></h2>
 <p>Another thing worth talking about is how to tell and check for an object’s type.</p>
 <p>As you noticed already, when printing an object you’ll see the special attribute <code class="docutils literal notranslate"><span class="pre">&quot;_&quot;</span></code>. This is just a visual thing
 useful to show humans the object type, but doesn’t really exist anywhere; any attempt in accessing it will lead to an

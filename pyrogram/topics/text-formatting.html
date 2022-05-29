@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -130,7 +131,7 @@
            <div itemprop="articleBody">
              
   <section id="text-formatting">
-<h1>Text Formatting<a class="headerlink" href="#text-formatting" title="Permalink to this headline"></a></h1>
+<h1>Text Formatting<a class="headerlink" href="#text-formatting" title="Permalink to this heading"></a></h1>
 <p>Pyrogram uses a custom Markdown dialect for text formatting which adds some unique features that make writing styled
 texts easier in both Markdown and HTML. You can send sophisticated text messages and media captions using a
 variety of decorations that can also be nested in order to combine multiple styles together.</p>
@@ -146,7 +147,7 @@ variety of decorations that can also be nested in order to combine multiple styl
 </div>
 <hr class="docutils" />
 <section id="basic-styles">
-<h2>Basic Styles<a class="headerlink" href="#basic-styles" title="Permalink to this headline"></a></h2>
+<h2>Basic Styles<a class="headerlink" href="#basic-styles" title="Permalink to this heading"></a></h2>
 <p>When formatting your messages, you can choose between Markdown-style, HTML-style or both (default). The following is a
 list of the basic styles currently supported by Pyrogram.</p>
 <ul>
@@ -167,7 +168,7 @@ list of the basic styles currently supported by Pyrogram.</p>
 </ul>
 </section>
 <section id="markdown-style">
-<h2>Markdown Style<a class="headerlink" href="#markdown-style" title="Permalink to this headline"></a></h2>
+<h2>Markdown Style<a class="headerlink" href="#markdown-style" title="Permalink to this heading"></a></h2>
 <p>To strictly use this mode, pass <a class="reference internal" href="../api/enums/ParseMode.html#pyrogram.enums.ParseMode.MARKDOWN" title="pyrogram.enums.ParseMode.MARKDOWN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MARKDOWN</span></code></a> to the <em>parse_mode</em> parameter when using
 <a class="reference internal" href="../api/methods/send_message.html#pyrogram.Client.send_message" title="pyrogram.Client.send_message"><code class="xref py py-meth docutils literal notranslate"><span class="pre">send_message()</span></code></a>. Use the following syntax in your message:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>**bold**
@@ -217,7 +218,7 @@ pre-formatted
 </div>
 </section>
 <section id="html-style">
-<h2>HTML Style<a class="headerlink" href="#html-style" title="Permalink to this headline"></a></h2>
+<h2>HTML Style<a class="headerlink" href="#html-style" title="Permalink to this heading"></a></h2>
 <p>To strictly use this mode, pass <code class="xref py py-obj docutils literal notranslate"><span class="pre">HTML</span></code> to the <em>parse_mode</em> parameter when using
 <a class="reference internal" href="../api/methods/send_message.html#pyrogram.Client.send_message" title="pyrogram.Client.send_message"><code class="xref py py-meth docutils literal notranslate"><span class="pre">send_message()</span></code></a>. The following tags are currently supported:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;b&gt;bold&lt;/b&gt;, &lt;strong&gt;bold&lt;/strong&gt;
@@ -284,7 +285,7 @@ snippet to quickly escape those characters:</p>
 </div>
 </section>
 <section id="different-styles">
-<h2>Different Styles<a class="headerlink" href="#different-styles" title="Permalink to this headline"></a></h2>
+<h2>Different Styles<a class="headerlink" href="#different-styles" title="Permalink to this heading"></a></h2>
 <p>By default, when ignoring the <em>parse_mode</em> parameter, both Markdown and HTML styles are enabled together.
 This means you can combine together both syntaxes in the same text:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">,</span> <span class="s2">&quot;**bold**, &lt;i&gt;italic&lt;/i&gt;&quot;</span><span class="p">)</span>
@@ -320,7 +321,7 @@ The text will be sent as-is.</p>
 </div></blockquote>
 </section>
 <section id="nested-and-overlapping-entities">
-<h2>Nested and Overlapping Entities<a class="headerlink" href="#nested-and-overlapping-entities" title="Permalink to this headline"></a></h2>
+<h2>Nested and Overlapping Entities<a class="headerlink" href="#nested-and-overlapping-entities" title="Permalink to this heading"></a></h2>
 <p>You can also style texts with more than one decoration at once by nesting entities together. For example, you can send
 a text message with both <span class="bold-underline">bold and underline</span> styles, or a text that has both <span class="strike-italic">italic and
 strike</span> styles, and you can still combine both Markdown and HTML together.</p>

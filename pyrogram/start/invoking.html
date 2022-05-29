@@ -16,6 +16,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
@@ -131,7 +132,7 @@
            <div itemprop="articleBody">
              
   <section id="invoking-methods">
-<h1>Invoking Methods<a class="headerlink" href="#invoking-methods" title="Permalink to this headline"></a></h1>
+<h1>Invoking Methods<a class="headerlink" href="#invoking-methods" title="Permalink to this heading"></a></h1>
 <p>At this point, we have successfully <a class="reference internal" href="../intro/install.html"><span class="doc">installed Pyrogram</span></a> and <a class="reference internal" href="auth.html"><span class="doc">authorized</span></a> our
 account; we are now aiming towards the core of the framework.</p>
 <div class="contents local topic" id="contents">
@@ -144,7 +145,7 @@ account; we are now aiming towards the core of the framework.</p>
 </div>
 <hr class="docutils" />
 <section id="basic-usage">
-<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline"></a></h2>
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h2>
 <p>Making API calls with Pyrogram is very simple. Here’s a basic example we are going to examine step by step:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
 
@@ -160,7 +161,7 @@ account; we are now aiming towards the core of the framework.</p>
 </pre></div>
 </div>
 <section id="step-by-step">
-<h3>Step-by-step<a class="headerlink" href="#step-by-step" title="Permalink to this headline"></a></h3>
+<h3>Step-by-step<a class="headerlink" href="#step-by-step" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Let’s begin by importing the Client class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -191,7 +192,7 @@ method.</p>
 </section>
 </section>
 <section id="context-manager">
-<h2>Context Manager<a class="headerlink" href="#context-manager" title="Permalink to this headline"></a></h2>
+<h2>Context Manager<a class="headerlink" href="#context-manager" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> statement starts a context manager, which is used as a shortcut for starting, executing and stopping
 the Client, asynchronously. It does so by automatically calling <a class="reference internal" href="../api/methods/start.html#pyrogram.Client.start" title="pyrogram.Client.start"><code class="xref py py-meth docutils literal notranslate"><span class="pre">start()</span></code></a> and
 <a class="reference internal" href="../api/methods/stop.html#pyrogram.Client.stop" title="pyrogram.Client.stop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stop()</span></code></a> in a more convenient way which also gracefully stops the client, even in case of
@@ -213,7 +214,7 @@ unhandled exceptions in your code.</p>
 </div>
 </section>
 <section id="using-asyncio-run">
-<h2>Using asyncio.run()<a class="headerlink" href="#using-asyncio-run" title="Permalink to this headline"></a></h2>
+<h2>Using asyncio.run()<a class="headerlink" href="#using-asyncio-run" title="Permalink to this heading"></a></h2>
 <p>Alternatively to the <a class="reference internal" href="../api/methods/run.html#pyrogram.Client.run" title="pyrogram.Client.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> method, you can use Python’s <code class="docutils literal notranslate"><span class="pre">asyncio.run()</span></code> to execute the main
 function, with one little caveat: the Client instance (and possibly other asyncio resources you are going to use) must
 be instantiated inside the main function.</p>
