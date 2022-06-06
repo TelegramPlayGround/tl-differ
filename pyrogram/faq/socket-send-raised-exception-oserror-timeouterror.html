@@ -145,9 +145,10 @@
              
   <section id="socket-send-raised-exception-oserror-timeouterror">
 <h1>socket.send() raised exception, OSError(), TimeoutError()<a class="headerlink" href="#socket-send-raised-exception-oserror-timeouterror" title="Permalink to this heading"></a></h1>
-<p>If you get this error chances are you are blocking the event loop for too long, most likely due to an improper use of
-non-asynchronous or threaded operations which may lead to blocking code that prevents the event loop from running
-properly.</p>
+<p>If you get this error chances are you or Telegram ended up with a slow or inconsistent network connection, which
+triggers internal timeouts due to data not being sent/received in time. Another reason could be because you are blocking
+the event loop for too long, most likely due to an improper use of non-asynchronous or threaded operations which may
+lead to blocking code that prevents the event loop from running properly.</p>
 <p>You can consider the following:</p>
 <ul class="simple">
 <li><p>Use Pyrogram asynchronously in its intended way.</p></li>
