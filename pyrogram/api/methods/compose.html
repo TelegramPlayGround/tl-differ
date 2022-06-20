@@ -172,13 +172,15 @@ Defaults to False (run clients concurrently)</p></li>
 
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">app1</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;account1&quot;</span><span class="p">)</span>
-    <span class="n">app2</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;account2&quot;</span><span class="p">)</span>
-    <span class="n">app3</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;account3&quot;</span><span class="p">)</span>
+    <span class="n">apps</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;account1&quot;</span><span class="p">),</span>
+        <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;account2&quot;</span><span class="p">),</span>
+        <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;account3&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
 
     <span class="o">...</span>
 
-    <span class="k">await</span> <span class="n">compose</span><span class="p">([</span><span class="n">app1</span><span class="p">,</span> <span class="n">app2</span><span class="p">,</span> <span class="n">app3</span><span class="p">])</span>
+    <span class="k">await</span> <span class="n">compose</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span>
 
 
 <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
