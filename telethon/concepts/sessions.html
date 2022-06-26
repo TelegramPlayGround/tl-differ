@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -134,7 +135,7 @@
            <div itemprop="articleBody">
              
   <section id="session-files">
-<span id="sessions"></span><h1><a class="toc-backref" href="#id1">Session Files</a><a class="headerlink" href="#session-files" title="Permalink to this headline"></a></h1>
+<span id="sessions"></span><h1><a class="toc-backref" href="#id1">Session Files</a><a class="headerlink" href="#session-files" title="Permalink to this heading"></a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -151,7 +152,7 @@
 <p>They are an important part for the library to be efficient, such as caching
 and handling your authorization key (or you would have to login every time!).</p>
 <section id="what-are-sessions">
-<h2><a class="toc-backref" href="#id2">What are Sessions?</a><a class="headerlink" href="#what-are-sessions" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">What are Sessions?</a><a class="headerlink" href="#what-are-sessions" title="Permalink to this heading"></a></h2>
 <p>The first parameter you pass to the constructor of the
 <a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a> is
 the <code class="docutils literal notranslate"><span class="pre">session</span></code>, and defaults to be the session name (or full path). That is,
@@ -179,7 +180,7 @@ file, so that you can quickly access them by username or phone number.</p>
 by setting <code class="docutils literal notranslate"><span class="pre">client.session.save_entities</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
 </section>
 <section id="different-session-storage">
-<h2><a class="toc-backref" href="#id3">Different Session Storage</a><a class="headerlink" href="#different-session-storage" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">Different Session Storage</a><a class="headerlink" href="#different-session-storage" title="Permalink to this heading"></a></h2>
 <p>If you don’t want to use the default SQLite session storage, you can also
 use one of the other implementations or implement your own storage.</p>
 <p>While it’s often not the case, it’s possible that SQLite is slow enough to
@@ -228,7 +229,7 @@ stores the current session in a MongoDB database.</p></li>
 </ul>
 </section>
 <section id="creating-your-own-storage">
-<h2><a class="toc-backref" href="#id4">Creating your Own Storage</a><a class="headerlink" href="#creating-your-own-storage" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">Creating your Own Storage</a><a class="headerlink" href="#creating-your-own-storage" title="Permalink to this heading"></a></h2>
 <p>The easiest way to create your own storage implementation is to use
 <a class="reference internal" href="../modules/sessions.html#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MemorySession</span></code></a> as the base and check out how
 <a class="reference internal" href="../modules/sessions.html#telethon.sessions.sqlite.SQLiteSession" title="telethon.sessions.sqlite.SQLiteSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SQLiteSession</span></code></a> or one of the community-maintained
@@ -238,7 +239,7 @@ implementations work. You can find the relevant Python files under the
 community-maintained session implementation list above with a pull request.</p>
 </section>
 <section id="string-sessions">
-<h2><a class="toc-backref" href="#id5">String Sessions</a><a class="headerlink" href="#string-sessions" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">String Sessions</a><a class="headerlink" href="#string-sessions" title="Permalink to this heading"></a></h2>
 <p><a class="reference internal" href="../modules/sessions.html#telethon.sessions.string.StringSession" title="telethon.sessions.string.StringSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringSession</span></code></a> are a convenient way to embed your
 login credentials directly into your code for extremely easy portability,
 since all they take is a string to be able to login without asking for your

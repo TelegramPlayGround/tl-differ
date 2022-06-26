@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -128,19 +129,19 @@
            <div itemprop="articleBody">
              
   <section id="connection-modes">
-<span id="telethon-network"></span><h1>Connection Modes<a class="headerlink" href="#connection-modes" title="Permalink to this headline"></a></h1>
+<span id="telethon-network"></span><h1>Connection Modes<a class="headerlink" href="#connection-modes" title="Permalink to this heading"></a></h1>
 <p>The only part about network that you should worry about are
 the different connection modes, which are the following:</p>
 <span class="target" id="module-telethon.network.connection.tcpfull"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpfull.ConnectionTcpFull">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpfull.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpFull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.ConnectionTcpFull" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.Connection</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
 <p>Default Telegram mode. Sends 12 additional bytes and
 needs to calculate the CRC value of the packet itself.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpfull.ConnectionTcpFull.packet_codec">
 <span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpfull.ConnectionTcpFull.packet_codec" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec" title="telethon.network.connection.tcpfull.FullPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.tcpfull.FullPacketCodec</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec" title="telethon.network.connection.tcpfull.FullPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullPacketCodec</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -148,7 +149,7 @@ needs to calculate the CRC value of the packet itself.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpfull.FullPacketCodec">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpfull.</span></span><span class="sig-name descname"><span class="pre">FullPacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.FullPacketCodec" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.PacketCodec</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpfull.FullPacketCodec.encode_packet">
 <span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.FullPacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
@@ -172,7 +173,7 @@ needs to calculate the CRC value of the packet itself.</p>
 <span class="target" id="module-telethon.network.connection.tcpabridged"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpabridged.</span></span><span class="sig-name descname"><span class="pre">AbridgedPacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.PacketCodec</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec.encode_packet">
 <span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
@@ -201,14 +202,14 @@ needs to calculate the CRC value of the packet itself.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.ConnectionTcpAbridged">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpabridged.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpAbridged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.Connection</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
 <p>This is the mode with the lowest overhead, as it will
 only require 1 byte if the packet length is less than
 508 bytes (127 &lt;&lt; 2, which is very common).</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.ConnectionTcpAbridged.packet_codec">
 <span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged.packet_codec" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.tcpabridged.AbridgedPacketCodec</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbridgedPacketCodec</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -216,13 +217,13 @@ only require 1 byte if the packet length is less than
 <span class="target" id="module-telethon.network.connection.tcpintermediate"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpintermediate.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpIntermediate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.Connection</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
 <p>Intermediate mode between <code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpFull</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpAbridged</span></code>.
 Always sends 4 extra bytes for the packet length.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate.packet_codec">
 <span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate.packet_codec" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.tcpintermediate.IntermediatePacketCodec</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntermediatePacketCodec</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -230,7 +231,7 @@ Always sends 4 extra bytes for the packet length.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpintermediate.</span></span><span class="sig-name descname"><span class="pre">IntermediatePacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.PacketCodec</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec.encode_packet">
 <span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
@@ -259,7 +260,7 @@ Always sends 4 extra bytes for the packet length.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpintermediate.</span></span><span class="sig-name descname"><span class="pre">RandomizedIntermediatePacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.tcpintermediate.IntermediatePacketCodec</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntermediatePacketCodec</span></code></a></p>
 <p>Data packets are aligned to 4bytes. This codec adds random bytes of size
 from 0 to 3 bytes, which are ignored by decoder.</p>
 <dl class="py method">
@@ -290,7 +291,7 @@ from 0 to 3 bytes, which are ignored by decoder.</p>
 <span class="target" id="module-telethon.network.connection.tcpobfuscated"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpobfuscated.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpObfuscated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.ObfuscatedConnection</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObfuscatedConnection</span></code></p>
 <p>Mode that Telegram defines as “obfuscated2”. Encodes the packet
 just like <code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpAbridged</span></code>, but encrypts every message with
 a randomly generated key using the AES-CTR mode so the packets are
@@ -298,13 +299,13 @@ harder to discern.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.obfuscated_io">
 <span class="sig-name descname"><span class="pre">obfuscated_io</span></span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.obfuscated_io" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO" title="telethon.network.connection.tcpobfuscated.ObfuscatedIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.tcpobfuscated.ObfuscatedIO</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO" title="telethon.network.connection.tcpobfuscated.ObfuscatedIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObfuscatedIO</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.packet_codec">
 <span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.packet_codec" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.tcpabridged.AbridgedPacketCodec</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbridgedPacketCodec</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -344,7 +345,7 @@ harder to discern.</p>
 <span class="target" id="module-telethon.network.connection.http"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.http.ConnectionHttp">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.http.</span></span><span class="sig-name descname"><span class="pre">ConnectionHttp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.ConnectionHttp" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.Connection</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.network.connection.http.ConnectionHttp.connect">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.ConnectionHttp.connect" title="Permalink to this definition"></a></dt>
@@ -354,7 +355,7 @@ harder to discern.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.network.connection.http.ConnectionHttp.packet_codec">
 <span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.http.ConnectionHttp.packet_codec" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec" title="telethon.network.connection.http.HttpPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.http.HttpPacketCodec</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec" title="telethon.network.connection.http.HttpPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpPacketCodec</span></code></a></p>
 </dd></dl>
 
 </dd></dl>
@@ -362,7 +363,7 @@ harder to discern.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.http.</span></span><span class="sig-name descname"><span class="pre">HttpPacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.network.connection.connection.PacketCodec</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec.encode_packet">
 <span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec.encode_packet" title="Permalink to this definition"></a></dt>

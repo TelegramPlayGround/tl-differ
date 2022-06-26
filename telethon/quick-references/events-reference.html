@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -140,7 +141,7 @@
            <div itemprop="articleBody">
              
   <section id="events-reference">
-<h1><a class="toc-backref" href="#id1">Events Reference</a><a class="headerlink" href="#events-reference" title="Permalink to this headline"></a></h1>
+<h1><a class="toc-backref" href="#id1">Events Reference</a><a class="headerlink" href="#events-reference" title="Permalink to this heading"></a></h1>
 <p>Here you will find a quick summary of all the methods
 and properties that you can access when working with events.</p>
 <p>You can access the client that creates this event by doing
@@ -172,7 +173,7 @@ if you don’t know what this means or the implications of it.</p>
 </ul>
 </div>
 <section id="newmessage">
-<h2><a class="toc-backref" href="#id2">NewMessage</a><a class="headerlink" href="#newmessage" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">NewMessage</a><a class="headerlink" href="#newmessage" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a new text message or a message with media arrives.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -190,13 +191,13 @@ them. Please see the full documentation for examples.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a>.</p>
 </section>
 <section id="messageedited">
-<h2><a class="toc-backref" href="#id3">MessageEdited</a><a class="headerlink" href="#messageedited" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">MessageEdited</a><a class="headerlink" href="#messageedited" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a message is edited. Just like <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a>, you should treat
 this event as a <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.messageedited.MessageEdited" title="telethon.events.messageedited.MessageEdited"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEdited</span></code></a>.</p>
 </section>
 <section id="messagedeleted">
-<h2><a class="toc-backref" href="#id4">MessageDeleted</a><a class="headerlink" href="#messagedeleted" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">MessageDeleted</a><a class="headerlink" href="#messagedeleted" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a message is deleted. Note that this event isn’t 100%
 reliable, since Telegram doesn’t always notify the clients that a message
 was deleted.</p>
@@ -205,7 +206,7 @@ was deleted.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.messagedeleted.MessageDeleted" title="telethon.events.messagedeleted.MessageDeleted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageDeleted</span></code></a>.</p>
 </section>
 <section id="messageread">
-<h2><a class="toc-backref" href="#id5">MessageRead</a><a class="headerlink" href="#messageread" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">MessageRead</a><a class="headerlink" href="#messageread" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever one or more messages are read in a chat.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead" title="telethon.events.messageread.MessageRead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageRead</span></code></a>.</p>
 <table class="autosummary longtable docutils align-default">
@@ -230,7 +231,7 @@ was deleted.</p>
 </table>
 </section>
 <section id="chataction">
-<h2><a class="toc-backref" href="#id6">ChatAction</a><a class="headerlink" href="#chataction" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6">ChatAction</a><a class="headerlink" href="#chataction" title="Permalink to this heading"></a></h2>
 <p>Occurs on certain chat actions, such as chat title changes,
 user join or leaves, pinned messages, photo changes, etc.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction" title="telethon.events.chataction.ChatAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatAction</span></code></a>.</p>
@@ -298,7 +299,7 @@ user join or leaves, pinned messages, photo changes, etc.</p>
 </table>
 </section>
 <section id="userupdate">
-<h2><a class="toc-backref" href="#id7">UserUpdate</a><a class="headerlink" href="#userupdate" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id7">UserUpdate</a><a class="headerlink" href="#userupdate" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a user goes online, starts typing, etc.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate" title="telethon.events.userupdate.UserUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UserUpdate</span></code></a>.</p>
 <table class="autosummary longtable docutils align-default">
@@ -380,7 +381,7 @@ user join or leaves, pinned messages, photo changes, etc.</p>
 </table>
 </section>
 <section id="callbackquery">
-<h2><a class="toc-backref" href="#id8">CallbackQuery</a><a class="headerlink" href="#callbackquery" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id8">CallbackQuery</a><a class="headerlink" href="#callbackquery" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you sign in as a bot and a user
 clicks one of the inline buttons on your messages.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a>.</p>
@@ -427,7 +428,7 @@ clicks one of the inline buttons on your messages.</p>
 </table>
 </section>
 <section id="inlinequery">
-<h2><a class="toc-backref" href="#id9">InlineQuery</a><a class="headerlink" href="#inlinequery" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id9">InlineQuery</a><a class="headerlink" href="#inlinequery" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you sign in as a bot and a user
 sends an inline query such as <code class="docutils literal notranslate"><span class="pre">&#64;bot</span> <span class="pre">query</span></code>.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery" title="telethon.events.inlinequery.InlineQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineQuery</span></code></a>.</p>
@@ -459,7 +460,7 @@ sends an inline query such as <code class="docutils literal notranslate"><span c
 </table>
 </section>
 <section id="album">
-<h2><a class="toc-backref" href="#id10">Album</a><a class="headerlink" href="#album" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id10">Album</a><a class="headerlink" href="#album" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you receive an entire album.</p>
 <p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Album</span></code></a>.</p>
 <table class="autosummary longtable docutils align-default">
@@ -511,7 +512,7 @@ sends an inline query such as <code class="docutils literal notranslate"><span c
 </table>
 </section>
 <section id="raw">
-<h2><a class="toc-backref" href="#id11">Raw</a><a class="headerlink" href="#raw" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id11">Raw</a><a class="headerlink" href="#raw" title="Permalink to this heading"></a></h2>
 <p>Raw events are not actual events. Instead, they are the raw
 <a class="reference external" href="https://tl.telethon.dev/?q=Update">Update</a> object that Telegram sends. You normally shouldn’t
 need these.</p>

@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -128,7 +129,7 @@
            <div itemprop="articleBody">
              
   <section id="api-errors">
-<span id="telethon-errors"></span><h1>API Errors<a class="headerlink" href="#api-errors" title="Permalink to this headline"></a></h1>
+<span id="telethon-errors"></span><h1>API Errors<a class="headerlink" href="#api-errors" title="Permalink to this heading"></a></h1>
 <p>These are the base errors that Telegram’s API may raise.</p>
 <p>See <a class="reference internal" href="../concepts/errors.html#rpc-errors"><span class="std std-ref">RPC Errors</span></a> for a more in-depth explanation on how to handle all
 known possible errors and learning to determine what a method may raise.</p>
@@ -167,7 +168,7 @@ known possible errors and learning to determine what a method may raise.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.CdnFileTamperedError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">CdnFileTamperedError</span></span><a class="headerlink" href="#telethon.errors.common.CdnFileTamperedError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.common.SecurityError" title="telethon.errors.common.SecurityError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.common.SecurityError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.common.SecurityError" title="telethon.errors.common.SecurityError"><code class="xref py py-class docutils literal notranslate"><span class="pre">SecurityError</span></code></a></p>
 <p>Occurs when there’s a hash mismatch between the decrypted CDN file
 and its expected hash.</p>
 </dd></dl>
@@ -261,7 +262,7 @@ when trying to read a TLObject with an invalid constructor code.</p>
 <span class="target" id="module-telethon.errors.rpcbaseerrors"></span><dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.AuthKeyError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">AuthKeyError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.AuthKeyError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>Errors related to invalid authorization key, like
 AUTH_KEY_DUPLICATED which can cause the connection to fail.</p>
 <dl class="py attribute">
@@ -279,7 +280,7 @@ AUTH_KEY_DUPLICATED which can cause the connection to fail.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.BadRequestError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">BadRequestError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.BadRequestError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>The query contains errors. In the event that a request was created
 using a form and contains user generated data, the user should be
 notified that the data must be corrected before the query is repeated.</p>
@@ -298,13 +299,13 @@ notified that the data must be corrected before the query is repeated.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.BotTimeout">
 <span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">BotTimeout</span></span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.BotTimeout" title="Permalink to this definition"></a></dt>
-<dd><p>alias of <a class="reference internal" href="#telethon.errors.rpcbaseerrors.TimedOutError" title="telethon.errors.rpcbaseerrors.TimedOutError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.TimedOutError</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="#telethon.errors.rpcbaseerrors.TimedOutError" title="telethon.errors.rpcbaseerrors.TimedOutError"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimedOutError</span></code></a></p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.FloodError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">FloodError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.FloodError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>The maximum allowed number of attempts to invoke the given method
 with the given input parameters has been exceeded. For example, in an
 attempt to request a large number of text messages (SMS) for the same
@@ -324,7 +325,7 @@ phone number.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.ForbiddenError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">ForbiddenError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.ForbiddenError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>Privacy violation. For example, an attempt to write a message to
 someone who has blacklisted the current user.</p>
 <dl class="py attribute">
@@ -342,7 +343,7 @@ someone who has blacklisted the current user.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.InvalidDCError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">InvalidDCError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.InvalidDCError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>The request must be repeated, but directed to a different data center.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.InvalidDCError.code">
@@ -359,7 +360,7 @@ someone who has blacklisted the current user.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.NotFoundError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">NotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.NotFoundError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>An attempt to invoke a non-existent object, such as a method.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.NotFoundError.code">
@@ -405,7 +406,7 @@ someone who has blacklisted the current user.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.ServerError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">ServerError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.ServerError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>An internal server error occurred while a request was being processed
 for example, there was a disruption while accessing a database or file
 storage.</p>
@@ -424,7 +425,7 @@ storage.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.TimedOutError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">TimedOutError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.TimedOutError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>Clicking the inline buttons of bots that never (or take to long to)
 call <code class="docutils literal notranslate"><span class="pre">answerCallbackQuery</span></code> will result in this “special” RPCError.</p>
 <dl class="py attribute">
@@ -442,7 +443,7 @@ call <code class="docutils literal notranslate"><span class="pre">answerCallback
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.UnauthorizedError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">UnauthorizedError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.UnauthorizedError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.errors.rpcbaseerrors.RPCError</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError" title="telethon.errors.rpcbaseerrors.RPCError"><code class="xref py py-class docutils literal notranslate"><span class="pre">RPCError</span></code></a></p>
 <p>There was an unauthorized attempt to use functionality available only
 to authorized users.</p>
 <dl class="py attribute">

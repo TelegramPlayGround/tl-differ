@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -136,9 +137,9 @@
            <div itemprop="articleBody">
              
   <section id="updates-in-depth">
-<h1>Updates in Depth<a class="headerlink" href="#updates-in-depth" title="Permalink to this headline"></a></h1>
+<h1>Updates in Depth<a class="headerlink" href="#updates-in-depth" title="Permalink to this heading"></a></h1>
 <section id="properties-vs-methods">
-<h2>Properties vs. Methods<a class="headerlink" href="#properties-vs-methods" title="Permalink to this headline"></a></h2>
+<h2>Properties vs. Methods<a class="headerlink" href="#properties-vs-methods" title="Permalink to this heading"></a></h2>
 <p>The event shown above acts just like a <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom.Message</span></code></a>, which means you
 can access all the properties it has, like <code class="docutils literal notranslate"><span class="pre">.sender</span></code>.</p>
 <p><strong>However</strong> events are different to other methods in the client, like
@@ -168,7 +169,7 @@ methods (<code class="xref py py-obj docutils literal notranslate"><span class="
 and you should use methods in events for these properties that may need network.</p>
 </section>
 <section id="events-without-the-client">
-<h2>Events Without the client<a class="headerlink" href="#events-without-the-client" title="Permalink to this headline"></a></h2>
+<h2>Events Without the client<a class="headerlink" href="#events-without-the-client" title="Permalink to this heading"></a></h2>
 <p>The code of your application starts getting big, so you decide to
 separate the handlers into different files. But how can you access
 the client from these files? You don’t need to! Just <a class="reference internal" href="../modules/events.html#telethon.events.register" title="telethon.events.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.register</span></code></a> them:</p>
@@ -203,7 +204,7 @@ client (or clients) where they should be added to:</p>
 then add it to many clients without re-declaring the event.</p>
 </section>
 <section id="events-without-decorators">
-<h2>Events Without Decorators<a class="headerlink" href="#events-without-decorators" title="Permalink to this headline"></a></h2>
+<h2>Events Without Decorators<a class="headerlink" href="#events-without-decorators" title="Permalink to this heading"></a></h2>
 <p>If for any reason you don’t want to use <a class="reference internal" href="../modules/events.html#telethon.events.register" title="telethon.events.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.register</span></code></a>,
 you can explicitly pass the event handler to use to the mentioned
 <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.add_event_handler" title="telethon.client.updates.UpdateMethods.add_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.add_event_handler</span></code></a>:</p>
@@ -230,7 +231,7 @@ before, since that’s the point of using such method at all.</p>
 </div>
 </section>
 <section id="stopping-propagation-of-updates">
-<h2>Stopping Propagation of Updates<a class="headerlink" href="#stopping-propagation-of-updates" title="Permalink to this headline"></a></h2>
+<h2>Stopping Propagation of Updates<a class="headerlink" href="#stopping-propagation-of-updates" title="Permalink to this heading"></a></h2>
 <p>There might be cases when an event handler is supposed to be used solitary and
 it makes no sense to process any other handlers in the chain. For this case,
 it is possible to raise a <a class="reference internal" href="../modules/events.html#telethon.events.StopPropagation" title="telethon.events.StopPropagation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.StopPropagation</span></code></a> exception which
@@ -256,7 +257,7 @@ will cause the propagation of the update through your handlers to stop:</p>
 the methods reference.</p>
 </section>
 <section id="understanding-asyncio">
-<h2>Understanding asyncio<a class="headerlink" href="#understanding-asyncio" title="Permalink to this headline"></a></h2>
+<h2>Understanding asyncio<a class="headerlink" href="#understanding-asyncio" title="Permalink to this heading"></a></h2>
 <p>With <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>, the library has several tasks running in the background.
 One task is used for sending requests, another task is used to receive them,
 and a third one is used to handle updates.</p>
@@ -302,7 +303,7 @@ also be ran while the loop is running, so you can do this:</p>
 </div>
 </section>
 <section id="sequential-updates">
-<h2>Sequential Updates<a class="headerlink" href="#sequential-updates" title="Permalink to this headline"></a></h2>
+<h2>Sequential Updates<a class="headerlink" href="#sequential-updates" title="Permalink to this heading"></a></h2>
 <p>If you need to process updates sequentially (i.e. not in parallel),
 you should set <code class="docutils literal notranslate"><span class="pre">sequential_updates=True</span></code> when creating the client:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">sequential_updates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>

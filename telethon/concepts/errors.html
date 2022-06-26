@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -134,7 +135,7 @@
            <div itemprop="articleBody">
              
   <section id="rpc-errors">
-<span id="id1"></span><h1>RPC Errors<a class="headerlink" href="#rpc-errors" title="Permalink to this headline"></a></h1>
+<span id="id1"></span><h1>RPC Errors<a class="headerlink" href="#rpc-errors" title="Permalink to this heading"></a></h1>
 <p>RPC stands for Remote Procedure Call, and when the library raises
 a <code class="docutils literal notranslate"><span class="pre">RPCError</span></code>, it’s because you have invoked some of the API
 methods incorrectly (wrong parameters, wrong permissions, or even
@@ -163,7 +164,7 @@ For example, if we want to know what errors can occur from
 <a class="reference external" href="https://tl.telethon.dev/methods/messages/send_message.html">messages.sendMessage</a> we can simply navigate to its raw API page
 and find it has 24 known RPC errors at the time of writing.</p>
 <section id="base-errors">
-<h2>Base Errors<a class="headerlink" href="#base-errors" title="Permalink to this headline"></a></h2>
+<h2>Base Errors<a class="headerlink" href="#base-errors" title="Permalink to this heading"></a></h2>
 <p>All the “base” errors are listed in <a class="reference internal" href="../modules/errors.html#telethon-errors"><span class="std std-ref">API Errors</span></a>.
 Any other more specific error will be a subclass of these.</p>
 <p>If the library isn’t aware of a specific error just yet, it will instead
@@ -175,7 +176,7 @@ raise one of these superclasses. This means you may find stuff like this:</p>
 <a class="reference external" href="https://github.com/LonamiWebs/Telethon/blob/master/telethon_generator/data/errors.csv">list of known errors</a>.</p>
 </section>
 <section id="common-errors">
-<h2>Common Errors<a class="headerlink" href="#common-errors" title="Permalink to this headline"></a></h2>
+<h2>Common Errors<a class="headerlink" href="#common-errors" title="Permalink to this heading"></a></h2>
 <p>These are some of the errors you may normally need to deal with:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">FloodWaitError</span></code> (420), the same request was repeated many times.
@@ -213,7 +214,7 @@ module. If you don’t know what attributes they have, try printing their
 dir (like <code class="docutils literal notranslate"><span class="pre">print(dir(e))</span></code>).</p>
 </section>
 <section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h2>
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading"></a></h2>
 <p>Some of the errors carry additional data in them. When they look like
 <code class="docutils literal notranslate"><span class="pre">EMAIL_UNCONFIRMED_X</span></code>, the <code class="docutils literal notranslate"><span class="pre">_X</span></code> value will be accessible from the
 error instance. The current list of errors that do this is the following:</p>
@@ -233,7 +234,7 @@ error instance. The current list of errors that do this is the following:</p>
 </ul>
 </section>
 <section id="avoiding-limits">
-<h2>Avoiding Limits<a class="headerlink" href="#avoiding-limits" title="Permalink to this headline"></a></h2>
+<h2>Avoiding Limits<a class="headerlink" href="#avoiding-limits" title="Permalink to this heading"></a></h2>
 <p>Don’t spam. You won’t get <code class="docutils literal notranslate"><span class="pre">FloodWaitError</span></code> or your account banned or
 deleted if you use the library <em>for legit use cases</em>. Make cool tools.
 Don’t spam! Nobody knows the exact limits for all requests since they

@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -140,7 +141,7 @@
            <div itemprop="articleBody">
              
   <section id="http-bot-api-vs-mtproto">
-<span id="botapi"></span><h1><a class="toc-backref" href="#id1">HTTP Bot API vs MTProto</a><a class="headerlink" href="#http-bot-api-vs-mtproto" title="Permalink to this headline"></a></h1>
+<span id="botapi"></span><h1><a class="toc-backref" href="#id1">HTTP Bot API vs MTProto</a><a class="headerlink" href="#http-bot-api-vs-mtproto" title="Permalink to this heading"></a></h1>
 <p>Telethon is more than just another viable alternative when developing bots
 for Telegram. If you haven’t decided which wrapper library for bots to use
 yet, using Telethon from the beginning may save you some headaches later.</p>
@@ -165,7 +166,7 @@ yet, using Telethon from the beginning may save you some headaches later.</p>
 </ul>
 </div>
 <section id="what-is-bot-api">
-<h2><a class="toc-backref" href="#id2">What is Bot API?</a><a class="headerlink" href="#what-is-bot-api" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">What is Bot API?</a><a class="headerlink" href="#what-is-bot-api" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference external" href="https://core.telegram.org/bots/api">Telegram Bot API</a>, also known as HTTP Bot API and from now on referred
 to as simply “Bot API” is Telegram’s official way for developers to control
 their own Telegram bots. Quoting their main page:</p>
@@ -179,7 +180,7 @@ building bots for Telegram.</p>
 MTProto calls through <a class="reference external" href="https://core.telegram.org/tdlib">tdlib</a>, their bot backend.</p>
 </section>
 <section id="what-is-mtproto">
-<h2><a class="toc-backref" href="#id3">What is MTProto?</a><a class="headerlink" href="#what-is-mtproto" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">What is MTProto?</a><a class="headerlink" href="#what-is-mtproto" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://core.telegram.org/mtproto">MTProto</a> is Telegram’s own protocol to communicate with their API when you
 connect to their servers.</p>
 <p>Telethon is an alternative MTProto-based backend written entirely in Python
@@ -190,7 +191,7 @@ communicate directly with Telegram’s API (which is not the HTTP bot API).</p>
 <p>When we talk about MTProto, we often mean “MTProto-based clients”.</p>
 </section>
 <section id="advantages-of-mtproto-over-bot-api">
-<h2><a class="toc-backref" href="#id4">Advantages of MTProto over Bot API</a><a class="headerlink" href="#advantages-of-mtproto-over-bot-api" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">Advantages of MTProto over Bot API</a><a class="headerlink" href="#advantages-of-mtproto-over-bot-api" title="Permalink to this heading"></a></h2>
 <p>MTProto clients (like Telethon) connect directly to Telegram’s servers,
 which means there is no HTTP connection, no “polling” or “web hooks”. This
 means <strong>less overhead</strong>, since the protocol used between you and the server
@@ -209,7 +210,7 @@ check out the wiki page <a class="reference external" href="https://github.com/L
 and up-to-date list of differences.</p>
 </section>
 <section id="migrating-from-bot-api-to-telethon">
-<h2><a class="toc-backref" href="#id5">Migrating from Bot API to Telethon</a><a class="headerlink" href="#migrating-from-bot-api-to-telethon" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5">Migrating from Bot API to Telethon</a><a class="headerlink" href="#migrating-from-bot-api-to-telethon" title="Permalink to this heading"></a></h2>
 <p>It doesn’t matter if you wrote your bot with <a class="reference external" href="https://pypi.org/project/requests/">requests</a> and you were
 making API requests manually, or if you used a wrapper library like
 <a class="reference external" href="https://python-telegram-bot.readthedocs.io">python-telegram-bot</a> or <a class="reference external" href="https://github.com/eternnoir/pyTelegramBotAPI">pyTelegramBotAPI</a>. It’s never too late to
@@ -219,7 +220,7 @@ migrate to Telethon!</p>
 asynchronous library.</p>
 <p>Next, we will see some examples from the most popular libraries.</p>
 <section id="migrating-from-python-telegram-bot">
-<h3><a class="toc-backref" href="#id6">Migrating from python-telegram-bot</a><a class="headerlink" href="#migrating-from-python-telegram-bot" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id6">Migrating from python-telegram-bot</a><a class="headerlink" href="#migrating-from-python-telegram-bot" title="Permalink to this heading"></a></h3>
 <p>Let’s take their <a class="reference external" href="https://github.com/python-telegram-bot/python-telegram-bot/blob/master/examples/echobot.py">echobot.py</a> example and shorten it a bit:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Updater</span><span class="p">,</span> <span class="n">CommandHandler</span><span class="p">,</span> <span class="n">MessageHandler</span><span class="p">,</span> <span class="n">Filters</span>
 
@@ -280,7 +281,7 @@ asynchronous library.</p>
 </ul>
 </section>
 <section id="migrating-from-pytelegrambotapi">
-<h3><a class="toc-backref" href="#id7">Migrating from pyTelegramBotAPI</a><a class="headerlink" href="#migrating-from-pytelegrambotapi" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id7">Migrating from pyTelegramBotAPI</a><a class="headerlink" href="#migrating-from-pytelegrambotapi" title="Permalink to this heading"></a></h3>
 <p>Let’s show another echobot from their README:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">telebot</span>
 
@@ -321,7 +322,7 @@ Note that the <code class="docutils literal notranslate"><span class="pre">event
 </ul>
 </section>
 <section id="migrating-from-aiogram">
-<h3><a class="toc-backref" href="#id8">Migrating from aiogram</a><a class="headerlink" href="#migrating-from-aiogram" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id8">Migrating from aiogram</a><a class="headerlink" href="#migrating-from-aiogram" title="Permalink to this heading"></a></h3>
 <p>From their GitHub:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiogram</span> <span class="kn">import</span> <span class="n">Bot</span><span class="p">,</span> <span class="n">Dispatcher</span><span class="p">,</span> <span class="n">executor</span><span class="p">,</span> <span class="n">types</span>
 
@@ -384,7 +385,7 @@ photos, documents, audios, etc. are all the same!</p></li>
 </ul>
 </section>
 <section id="migrating-from-dumbot">
-<h3><a class="toc-backref" href="#id9">Migrating from dumbot</a><a class="headerlink" href="#migrating-from-dumbot" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">Migrating from dumbot</a><a class="headerlink" href="#migrating-from-dumbot" title="Permalink to this heading"></a></h3>
 <p>Showcasing their subclassing example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dumbot</span> <span class="kn">import</span> <span class="n">Bot</span>
 

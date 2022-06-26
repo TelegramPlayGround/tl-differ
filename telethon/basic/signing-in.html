@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -135,7 +136,7 @@
            <div itemprop="articleBody">
              
   <section id="signing-in">
-<span id="id1"></span><h1>Signing In<a class="headerlink" href="#signing-in" title="Permalink to this headline"></a></h1>
+<span id="id1"></span><h1>Signing In<a class="headerlink" href="#signing-in" title="Permalink to this heading"></a></h1>
 <p>Before working with Telegram’s API, you need to get your own API ID and hash:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://my.telegram.org/">Login to your Telegram account</a> with the
@@ -155,7 +156,7 @@ phone number. You can use this API ID and hash with <em>any</em> phone number
 or even for bot accounts.</p>
 </div>
 <section id="editing-the-code">
-<h2>Editing the Code<a class="headerlink" href="#editing-the-code" title="Permalink to this headline"></a></h2>
+<h2>Editing the Code<a class="headerlink" href="#editing-the-code" title="Permalink to this heading"></a></h2>
 <p>This is a little introduction for those new to Python programming in general.</p>
 <p>We will write our code inside <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>, so you can use any text
 editor that you like. To run the code, use <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">hello.py</span></code> from
@@ -168,7 +169,7 @@ the client from there and it will fail with an error such as
 </div>
 </section>
 <section id="id2">
-<h2>Signing In<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<h2>Signing In<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
 <p>We can finally write some code to log into our account!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
 
@@ -202,7 +203,7 @@ logging or signing up if necessary.</p>
 again, so be aware of this if you move or rename the file!</p>
 </section>
 <section id="signing-in-as-a-bot-account">
-<h2>Signing In as a Bot Account<a class="headerlink" href="#signing-in-as-a-bot-account" title="Permalink to this headline"></a></h2>
+<h2>Signing In as a Bot Account<a class="headerlink" href="#signing-in-as-a-bot-account" title="Permalink to this heading"></a></h2>
 <p>You can also use Telethon for your bots (normal bot accounts, not users).
 You will still need an API ID and hash, but the process is very similar:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
@@ -223,7 +224,7 @@ You will still need an API ID and hash, but the process is very similar:</p>
 with <a class="reference external" href="https://t.me/BotFather">&#64;BotFather</a>.</p>
 </section>
 <section id="signing-in-behind-a-proxy">
-<h2>Signing In behind a Proxy<a class="headerlink" href="#signing-in-behind-a-proxy" title="Permalink to this headline"></a></h2>
+<h2>Signing In behind a Proxy<a class="headerlink" href="#signing-in-behind-a-proxy" title="Permalink to this heading"></a></h2>
 <p>If you need to use a proxy to access Telegram,
 you will need to either:</p>
 <ul class="simple">
@@ -281,7 +282,7 @@ is possible (but discouraged):</p>
 </div>
 </section>
 <section id="using-mtproto-proxies">
-<h2>Using MTProto Proxies<a class="headerlink" href="#using-mtproto-proxies" title="Permalink to this headline"></a></h2>
+<h2>Using MTProto Proxies<a class="headerlink" href="#using-mtproto-proxies" title="Permalink to this heading"></a></h2>
 <p>MTProto Proxies are Telegram’s alternative to normal proxies,
 and work a bit differently. The following protocols are available:</p>
 <ul class="simple">

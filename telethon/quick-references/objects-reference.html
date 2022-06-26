@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -145,7 +146,7 @@
            <div itemprop="articleBody">
              
   <section id="objects-reference">
-<h1><a class="toc-backref" href="#id1">Objects Reference</a><a class="headerlink" href="#objects-reference" title="Permalink to this headline"></a></h1>
+<h1><a class="toc-backref" href="#id1">Objects Reference</a><a class="headerlink" href="#objects-reference" title="Permalink to this heading"></a></h1>
 <p>This is the quick reference for those objects returned by client methods
 or other useful modules that the library has to offer. They are kept in
 a separate page to help finding and discovering them.</p>
@@ -178,7 +179,7 @@ to find out about the attributes.</p>
 </ul>
 </div>
 <section id="chatgetter">
-<h2><a class="toc-backref" href="#id2">ChatGetter</a><a class="headerlink" href="#chatgetter" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id2">ChatGetter</a><a class="headerlink" href="#chatgetter" title="Permalink to this heading"></a></h2>
 <p>All events base <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>,
 and some of the objects below do too, so it’s important to know its methods.</p>
 <table class="autosummary longtable docutils align-default">
@@ -215,7 +216,7 @@ and some of the objects below do too, so it’s important to know its methods.</
 </table>
 </section>
 <section id="sendergetter">
-<h2><a class="toc-backref" href="#id3">SenderGetter</a><a class="headerlink" href="#sendergetter" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id3">SenderGetter</a><a class="headerlink" href="#sendergetter" title="Permalink to this heading"></a></h2>
 <p>Similar to <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>, a
 <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter" title="telethon.tl.custom.sendergetter.SenderGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code></a> is the same,
 but it works for senders instead.</p>
@@ -244,14 +245,14 @@ but it works for senders instead.</p>
 </table>
 </section>
 <section id="message">
-<h2><a class="toc-backref" href="#id4">Message</a><a class="headerlink" href="#message" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id4">Message</a><a class="headerlink" href="#message" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> type is very important, mostly because we are working
 with a library for a <em>messaging</em> platform, so messages are widely used:
 in events, when fetching history, replies, etc.</p>
 <p>It bases <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a> and
 <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter" title="telethon.tl.custom.sendergetter.SenderGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code></a>.</p>
 <section id="properties">
-<h3><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We document <em>custom properties</em> here, not all the attributes of the
@@ -345,7 +346,7 @@ in events, when fetching history, replies, etc.</p>
 </table>
 </section>
 <section id="methods">
-<h3><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -393,7 +394,7 @@ in events, when fetching history, replies, etc.</p>
 </section>
 </section>
 <section id="file">
-<h2><a class="toc-backref" href="#id7">File</a><a class="headerlink" href="#file" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id7">File</a><a class="headerlink" href="#file" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File" title="telethon.tl.custom.file.File"><code class="xref py py-obj docutils literal notranslate"><span class="pre">File</span></code></a> type is a wrapper object
 returned by <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.file" title="telethon.tl.custom.message.Message.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.file</span></code></a>,
 and you can use it to easily access a document’s attributes, such as
@@ -444,7 +445,7 @@ its name, bot-API style file ID, etc.</p>
 </table>
 </section>
 <section id="conversation">
-<h2><a class="toc-backref" href="#id8">Conversation</a><a class="headerlink" href="#conversation" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id8">Conversation</a><a class="headerlink" href="#conversation" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation" title="telethon.tl.custom.conversation.Conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code></a> object
 is returned by the <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code></a> method to easily
 send and receive responses like a normal conversation.</p>
@@ -489,7 +490,7 @@ send and receive responses like a normal conversation.</p>
 </table>
 </section>
 <section id="adminlogevent">
-<h2><a class="toc-backref" href="#id9">AdminLogEvent</a><a class="headerlink" href="#adminlogevent" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id9">AdminLogEvent</a><a class="headerlink" href="#adminlogevent" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent" title="telethon.tl.custom.adminlogevent.AdminLogEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AdminLogEvent</span></code></a> object
 is returned by the <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_admin_log" title="telethon.client.chats.ChatMethods.iter_admin_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_admin_log()</span></code></a> method to easily iterate
 over past “events” (deleted messages, edits, title changes, leaving members…)</p>
@@ -576,7 +577,7 @@ over past “events” (deleted messages, edits, title changes, leaving members�
 </table>
 </section>
 <section id="button">
-<h2><a class="toc-backref" href="#id10">Button</a><a class="headerlink" href="#button" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id10">Button</a><a class="headerlink" href="#button" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button" title="telethon.tl.custom.button.Button"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Button</span></code></a> class is used when you login
 as a bot account to send messages with reply markup, such as inline buttons
 or custom keyboards.</p>
@@ -621,7 +622,7 @@ or custom keyboards.</p>
 </table>
 </section>
 <section id="inlineresult">
-<h2><a class="toc-backref" href="#id11">InlineResult</a><a class="headerlink" href="#inlineresult" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id11">InlineResult</a><a class="headerlink" href="#inlineresult" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlineresult.InlineResult" title="telethon.tl.custom.inlineresult.InlineResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineResult</span></code></a> object
 is returned inside a list by the <a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query()</span></code></a> method to make an inline
 query to a bot that supports being used in inline mode, such as
@@ -702,7 +703,7 @@ can find the individual results:</p>
 </table>
 </section>
 <section id="dialog">
-<h2><a class="toc-backref" href="#id12">Dialog</a><a class="headerlink" href="#dialog" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id12">Dialog</a><a class="headerlink" href="#dialog" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog" title="telethon.tl.custom.dialog.Dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog</span></code></a> object is returned when
 you call <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a>.</p>
 <table class="autosummary longtable docutils align-default">
@@ -724,7 +725,7 @@ you call <a class="reference internal" href="../modules/client.html#telethon.cli
 </table>
 </section>
 <section id="draft">
-<h2><a class="toc-backref" href="#id13">Draft</a><a class="headerlink" href="#draft" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id13">Draft</a><a class="headerlink" href="#draft" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft" title="telethon.tl.custom.draft.Draft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draft</span></code></a> object is returned when
 you call <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_drafts" title="telethon.client.dialogs.DialogMethods.iter_drafts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_drafts()</span></code></a>.</p>
 <table class="autosummary longtable docutils align-default">
@@ -767,7 +768,7 @@ you call <a class="reference internal" href="../modules/client.html#telethon.cli
 </table>
 </section>
 <section id="utils">
-<h2><a class="toc-backref" href="#id14">Utils</a><a class="headerlink" href="#utils" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id14">Utils</a><a class="headerlink" href="#utils" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/utils.html#module-telethon.utils" title="telethon.utils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils</span></code></a> module has plenty of methods that make using the
 library a lot easier. Only the interesting ones will be listed here.</p>
 <table class="autosummary longtable docutils align-default">

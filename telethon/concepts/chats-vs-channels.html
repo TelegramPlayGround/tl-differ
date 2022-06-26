@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -134,13 +135,13 @@
            <div itemprop="articleBody">
              
   <section id="chats-vs-channels">
-<span id="chats-channels"></span><h1>Chats vs Channels<a class="headerlink" href="#chats-vs-channels" title="Permalink to this headline"></a></h1>
+<span id="chats-channels"></span><h1>Chats vs Channels<a class="headerlink" href="#chats-vs-channels" title="Permalink to this heading"></a></h1>
 <p>Telegram’s raw API can get very confusing sometimes, in particular when it
 comes to talking about “chats”, “channels”, “groups”, “megagroups”, and all
 those concepts.</p>
 <p>This section will try to explain what each of these concepts are.</p>
 <section id="chats">
-<h2>Chats<a class="headerlink" href="#chats" title="Permalink to this headline"></a></h2>
+<h2>Chats<a class="headerlink" href="#chats" title="Permalink to this heading"></a></h2>
 <p>A <code class="docutils literal notranslate"><span class="pre">Chat</span></code> can be used to talk about either the common “subclass” that both
 chats and channels share, or the concrete <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> type.</p>
 <p>Technically, both <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> and <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> are a form of the <a class="reference external" href="https://tl.telethon.dev/types/chat.html">Chat type</a>.</p>
@@ -155,7 +156,7 @@ ID might be something like <code class="xref py py-obj docutils literal notransl
 talking about a <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a>.</p>
 </section>
 <section id="channels">
-<h2>Channels<a class="headerlink" href="#channels" title="Permalink to this headline"></a></h2>
+<h2>Channels<a class="headerlink" href="#channels" title="Permalink to this heading"></a></h2>
 <p>Official applications create a <em>broadcast</em> channel when you create a new
 channel (used to broadcast messages, only administrators can post messages).</p>
 <p>Official applications implicitly <em>migrate</em> an <em>existing</em> <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> to a
@@ -183,7 +184,7 @@ will see <code class="xref py py-obj docutils literal notranslate"><span class="
 <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a>.</p>
 </section>
 <section id="converting-ids">
-<h2>Converting IDs<a class="headerlink" href="#converting-ids" title="Permalink to this headline"></a></h2>
+<h2>Converting IDs<a class="headerlink" href="#converting-ids" title="Permalink to this heading"></a></h2>
 <p>You can convert between the “marked” identifiers (prefixed with a minus sign)
 and the real ones with <code class="docutils literal notranslate"><span class="pre">utils.resolve_id</span></code>. It will return a tuple with the
 real ID, and the peer type (the class):</p>
@@ -217,7 +218,7 @@ refers to a <a class="reference external" href="https://tl.telethon.dev/?q=User"
 </div>
 </section>
 <section id="a-note-on-raw-api">
-<h2>A note on raw API<a class="headerlink" href="#a-note-on-raw-api" title="Permalink to this headline"></a></h2>
+<h2>A note on raw API<a class="headerlink" href="#a-note-on-raw-api" title="Permalink to this heading"></a></h2>
 <p>Certain methods only work on a <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a>, and some others only work on a
 <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> (and these may only work in broadcast, or megagroup). Your code
 likely knows what it’s working with, so it shouldn’t be too much of an issue.</p>

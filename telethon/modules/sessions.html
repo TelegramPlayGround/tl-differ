@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -128,12 +129,12 @@
            <div itemprop="articleBody">
              
   <section id="sessions">
-<span id="telethon-sessions"></span><h1>Sessions<a class="headerlink" href="#sessions" title="Permalink to this headline"></a></h1>
+<span id="telethon-sessions"></span><h1>Sessions<a class="headerlink" href="#sessions" title="Permalink to this heading"></a></h1>
 <p>These are the different built-in session storage that you may subclass.</p>
 <span class="target" id="module-telethon.sessions.abstract"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.sessions.abstract.Session">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.abstract.</span></span><span class="sig-name descname"><span class="pre">Session</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.sessions.abstract.Session.__weakref__">
 <span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.__weakref__" title="Permalink to this definition"></a></dt>
@@ -269,7 +270,7 @@ or <a class="reference external" href="https://docs.python.org/3/library/constan
 <span class="target" id="module-telethon.sessions.memory"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.memory.</span></span><span class="sig-name descname"><span class="pre">MemorySession</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.abstract.Session" title="telethon.sessions.abstract.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.sessions.abstract.Session</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.abstract.Session" title="telethon.sessions.abstract.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a></p>
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.auth_key">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auth_key</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.auth_key" title="Permalink to this definition"></a></dt>
@@ -407,7 +408,7 @@ or <a class="reference external" href="https://docs.python.org/3/library/constan
 <span class="target" id="module-telethon.sessions.sqlite"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.sqlite.</span></span><span class="sig-name descname"><span class="pre">SQLiteSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.sessions.memory.MemorySession</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemorySession</span></code></a></p>
 <p>This session contains the required information to login into your
 Telegram account. NEVER give the saved session file to anyone, since
 they would gain instant access to all your messages and contacts.</p>
@@ -533,7 +534,7 @@ or <a class="reference external" href="https://docs.python.org/3/library/constan
 <span class="target" id="module-telethon.sessions.string"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.sessions.string.StringSession">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.string.</span></span><span class="sig-name descname"><span class="pre">StringSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.string.StringSession" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-class docutils literal notranslate"><span class="pre">telethon.sessions.memory.MemorySession</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemorySession</span></code></a></p>
 <p>This session file can be easily saved and loaded as a string. According
 to the initial design, it contains only the data that is necessary for
 successful connection and authentication, so takeout ID is not stored.</p>
