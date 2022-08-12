@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>send_animation() &mdash; Pyrogram Documentation</title>
+  <title>get_custom_emoji_stickers() &mdash; Pyrogram Documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-    <link rel="canonical" href="https://docs.pyrogram.org/api/methods/send_animation.html"/>
+    <link rel="canonical" href="https://docs.pyrogram.org/api/methods/get_custom_emoji_stickers.html"/>
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,8 +23,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="send_voice()" href="send_voice.html" />
-    <link rel="prev" title="send_video()" href="send_video.html" /> 
+    <link rel="next" title="join_chat()" href="join_chat.html" />
+    <link rel="prev" title="get_discussion_replies_count()" href="get_discussion_replies_count.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -71,7 +71,7 @@
 <li class="toctree-l3"><a class="reference internal" href="send_document.html">send_document</a></li>
 <li class="toctree-l3"><a class="reference internal" href="send_sticker.html">send_sticker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="send_video.html">send_video</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">send_animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="send_animation.html">send_animation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="send_voice.html">send_voice</a></li>
 <li class="toctree-l3"><a class="reference internal" href="send_video_note.html">send_video_note</a></li>
 <li class="toctree-l3"><a class="reference internal" href="send_media_group.html">send_media_group</a></li>
@@ -109,7 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="get_discussion_message.html">get_discussion_message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_discussion_replies.html">get_discussion_replies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="get_discussion_replies_count.html">get_discussion_replies_count</a></li>
-<li class="toctree-l3"><a class="reference internal" href="get_custom_emoji_stickers.html">get_custom_emoji_stickers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">get_custom_emoji_stickers</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#chats">Chats</a></li>
@@ -177,7 +177,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Available Methods</a> &raquo;</li>
-      <li>send_animation()</li>
+      <li>get_custom_emoji_stickers()</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -186,85 +186,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="send-animation">
-<h1>send_animation()<a class="headerlink" href="#send-animation" title="Permalink to this heading"></a></h1>
+  <section id="get-custom-emoji-stickers">
+<h1>get_custom_emoji_stickers()<a class="headerlink" href="#get-custom-emoji-stickers" title="Permalink to this heading"></a></h1>
 <dl class="py method">
-<dt class="sig sig-object py" id="pyrogram.Client.send_animation">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">send_animation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.send_animation" title="Permalink to this definition"></a></dt>
-<dd><p>Send animation files (animation or H.264/MPEG-4 AVC video without sound).</p>
+<dt class="sig sig-object py" id="pyrogram.Client.get_custom_emoji_stickers">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">get_custom_emoji_stickers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.Client.get_custom_emoji_stickers" title="Permalink to this definition"></a></dt>
+<dd><p>Get information about custom emoji stickers by their identifiers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code>) – Unique identifier (int) or username (str) of the target chat.
-For your personal cloud (Saved Messages) you can simply use “me” or “self”.
-For a contact that exists in your Telegram address book you can use his phone number (str).</p></li>
-<li><p><strong>animation</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">BinaryIO</span></code>) – Animation to send.
-Pass a file_id as string to send an animation that exists on the Telegram servers,
-pass an HTTP URL as a string for Telegram to get an animation from the Internet,
-pass a file path as string to upload a new animation that exists on your local machine, or
-pass a binary file-like object with its attribute “.name” set for in-memory uploads.</p></li>
-<li><p><strong>caption</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Animation caption, 0-1024 characters.</p></li>
-<li><p><strong>unsave</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – By default, the server will save into your own collection any new animation you send.
-Pass True to automatically unsave the sent animation. Defaults to False.</p></li>
-<li><p><strong>parse_mode</strong> (<a class="reference internal" href="../enums/ParseMode.html#pyrogram.enums.ParseMode" title="pyrogram.enums.ParseMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParseMode</span></code></a>, <em>optional</em>) – By default, texts are parsed using both Markdown and HTML styles.
-You can combine both syntaxes together.</p></li>
-<li><p><strong>caption_entities</strong> (List of <a class="reference internal" href="../types/MessageEntity.html#pyrogram.types.MessageEntity" title="pyrogram.types.MessageEntity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEntity</span></code></a>) – List of special entities that appear in the caption, which can be specified instead of <em>parse_mode</em>.</p></li>
-<li><p><strong>duration</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Duration of sent animation in seconds.</p></li>
-<li><p><strong>width</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Animation width.</p></li>
-<li><p><strong>height</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Animation height.</p></li>
-<li><p><strong>thumb</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code> | <code class="docutils literal notranslate"><span class="pre">BinaryIO</span></code>, <em>optional</em>) – Thumbnail of the animation file sent.
-The thumbnail should be in JPEG format and less than 200 KB in size.
-A thumbnail’s width and height should not exceed 320 pixels.
-Thumbnails can’t be reused and can be only uploaded as a new file.</p></li>
-<li><p><strong>file_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – File name of the animation sent.
-Defaults to file’s path basename.</p></li>
-<li><p><strong>disable_notification</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Sends the message silently.
-Users will receive a notification with no sound.</p></li>
-<li><p><strong>reply_to_message_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – If the message is a reply, ID of the original message.</p></li>
-<li><p><strong>schedule_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – Date when the message will be automatically sent.</p></li>
-<li><p><strong>protect_content</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Protects the contents of the sent message from forwarding and saving.</p></li>
-<li><p><strong>reply_markup</strong> (<a class="reference internal" href="../types/InlineKeyboardMarkup.html#pyrogram.types.InlineKeyboardMarkup" title="pyrogram.types.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="../types/ReplyKeyboardMarkup.html#pyrogram.types.ReplyKeyboardMarkup" title="pyrogram.types.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="../types/ReplyKeyboardRemove.html#pyrogram.types.ReplyKeyboardRemove" title="pyrogram.types.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="../types/ForceReply.html#pyrogram.types.ForceReply" title="pyrogram.types.ForceReply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
-instructions to remove reply keyboard or to force a reply from the user.</p></li>
-<li><p><strong>progress</strong> (<code class="docutils literal notranslate"><span class="pre">Callable</span></code>, <em>optional</em>) – Pass a callback function to view the file transmission progress.
-The function must take <em>(current, total)</em> as positional arguments (look at Other Parameters below for a
-detailed description) and will be called back each time a new file chunk has been successfully
-transmitted.</p></li>
-<li><p><strong>progress_args</strong> (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments for the progress callback function.
-You can pass anything you need to be available in the progress callback scope; for example, a Message
-object or a Client instance in order to edit the message with the updated progress status.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>custom_emoji_ids</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – List of custom emoji identifiers.
+At most 200 custom emoji identifiers can be specified.</p>
 </dd>
-<dt class="field-even">Other Parameters</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><strong>current</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – The amount of bytes transmitted so far.</p></li>
-<li><p><strong>total</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – The total size of the file.</p></li>
-<li><p><strong>*args</strong> (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <em>optional</em>) – Extra custom arguments as defined in the <code class="docutils literal notranslate"><span class="pre">progress_args</span></code> parameter.
-You can either keep <code class="docutils literal notranslate"><span class="pre">*args</span></code> or add every single extra argument in your function signature.</p></li>
-</ul>
-</dd>
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> | <code class="docutils literal notranslate"><span class="pre">None</span></code> – On success, the sent animation message is returned, otherwise,
-in case the upload is deliberately stopped with <a class="reference internal" href="stop_transmission.html#pyrogram.Client.stop_transmission" title="pyrogram.Client.stop_transmission"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stop_transmission()</span></code></a>, None is
-returned.</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of <a class="reference internal" href="../types/Sticker.html#pyrogram.types.Sticker" title="pyrogram.types.Sticker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sticker</span></code></a> – On success, a list of sticker objects is returned.</p>
 </dd>
 </dl>
-<p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Send animation by uploading from local file</span>
-<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">send_animation</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">,</span> <span class="s2">&quot;animation.gif&quot;</span><span class="p">)</span>
-
-<span class="c1"># Add caption to the animation</span>
-<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">send_animation</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">,</span> <span class="s2">&quot;animation.gif&quot;</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;animation caption&quot;</span><span class="p">)</span>
-
-<span class="c1"># Unsave the animation once is sent</span>
-<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">send_animation</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">,</span> <span class="s2">&quot;animation.gif&quot;</span><span class="p">,</span> <span class="n">unsave</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Keep track of the progress while uploading</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">progress</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">total</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">current</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">total</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
-
-<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">send_animation</span><span class="p">(</span><span class="s2">&quot;me&quot;</span><span class="p">,</span> <span class="s2">&quot;animation.gif&quot;</span><span class="p">,</span> <span class="n">progress</span><span class="o">=</span><span class="n">progress</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
 </section>
@@ -273,8 +209,8 @@ returned.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="send_video.html" class="btn btn-neutral float-left" title="send_video()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="send_voice.html" class="btn btn-neutral float-right" title="send_voice()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="get_discussion_replies_count.html" class="btn btn-neutral float-left" title="get_discussion_replies_count()" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="join_chat.html" class="btn btn-neutral float-right" title="join_chat()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
