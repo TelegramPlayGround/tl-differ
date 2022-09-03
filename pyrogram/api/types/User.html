@@ -78,6 +78,7 @@
 <li class="toctree-l3"><a class="reference internal" href="ChatJoiner.html">ChatJoiner</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Dialog.html">Dialog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Restriction.html">Restriction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmojiStatus.html">EmojiStatus</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#messages-media">Messages &amp; Media</a></li>
@@ -181,6 +182,7 @@ See <em>restriction_reason</em> for details.</p></li>
 <li><p><strong>next_offline_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – Date when a user will automatically go offline. Only available in case status is <a class="reference internal" href="../enums/UserStatus.html#pyrogram.enums.UserStatus.ONLINE" title="pyrogram.enums.UserStatus.ONLINE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ONLINE</span></code></a>.</p></li>
 <li><p><strong>username</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – User’s or bot’s username.</p></li>
 <li><p><strong>language_code</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – IETF language tag of the user’s language.</p></li>
+<li><p><strong>emoji_status</strong> (<a class="reference internal" href="EmojiStatus.html#pyrogram.types.EmojiStatus" title="pyrogram.types.EmojiStatus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EmojiStatus</span></code></a>, <em>optional</em>) – Emoji status.</p></li>
 <li><p><strong>dc_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – User’s or bot’s assigned DC (data center). Available only in case the user has set a public profile photo.
 Note that this information is approximate; it is based on where Telegram stores a user profile pictures and
 does not by any means tell you the user location (i.e. a user might travel far away, but will still connect

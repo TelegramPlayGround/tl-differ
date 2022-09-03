@@ -4,11 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>payments.RequestRecurringPayment &mdash; Pyrogram Documentation</title>
+  <title>account.EmailVerified &mdash; Pyrogram Documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
-    <link rel="canonical" href="https://docs.pyrogram.org/telegram/functions/payments/request-recurring-payment.html"/>
+    <link rel="canonical" href="https://docs.pyrogram.org/telegram/types/account/email-verified.html"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,8 +23,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="payments.SendPaymentForm" href="send-payment-form.html" />
-    <link rel="prev" title="payments.GetSavedInfo" href="get-saved-info.html" /> 
+    <link rel="next" title="account.EmailVerifiedLogin" href="email-verified-login.html" />
+    <link rel="prev" title="account.ContentSettings" href="content-settings.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -95,8 +95,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Raw Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../types/index.html">Raw Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Raw Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../base/index.html">Raw Base</a></li>
 </ul>
 
@@ -114,9 +114,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">Raw Functions</a> &raquo;</li>
-          <li><a href="index.html">Payments</a> &raquo;</li>
-      <li>payments.RequestRecurringPayment</li>
+          <li><a href="../index.html">Raw Types</a> &raquo;</li>
+          <li><a href="index.html">Account</a> &raquo;</li>
+      <li>account.EmailVerified</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -125,31 +125,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="payments-requestrecurringpayment">
-<h1>payments.RequestRecurringPayment<a class="headerlink" href="#payments-requestrecurringpayment" title="Permalink to this heading"></a></h1>
+  <section id="account-emailverified">
+<h1>account.EmailVerified<a class="headerlink" href="#account-emailverified" title="Permalink to this heading"></a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="pyrogram.raw.functions.payments.RequestRecurringPayment">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyrogram.raw.functions.payments.</span></span><span class="sig-name descname"><span class="pre">RequestRecurringPayment</span></span><a class="headerlink" href="#pyrogram.raw.functions.payments.RequestRecurringPayment" title="Permalink to this definition"></a></dt>
-<dd><p>Telegram API method.</p>
+<dt class="sig sig-object py" id="pyrogram.raw.types.account.EmailVerified">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyrogram.raw.types.account.</span></span><span class="sig-name descname"><span class="pre">EmailVerified</span></span><a class="headerlink" href="#pyrogram.raw.types.account.EmailVerified" title="Permalink to this definition"></a></dt>
+<dd><p>This object is a constructor of the base type <a class="reference internal" href="../../base/account/email-verified.html#pyrogram.raw.base.account.EmailVerified" title="pyrogram.raw.base.account.EmailVerified"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EmailVerified</span></code></a>.</p>
 <dl class="simple">
 <dt>Details:</dt><dd><ul class="simple">
-<li><p>Layer: <code class="docutils literal notranslate"><span class="pre">144</span></code></p></li>
-<li><p>ID: <code class="docutils literal notranslate"><span class="pre">146E958D</span></code></p></li>
+<li><p>Layer: <code class="docutils literal notranslate"><span class="pre">145</span></code></p></li>
+<li><p>ID: <code class="docutils literal notranslate"><span class="pre">2B96CD1B</span></code></p></li>
 </ul>
 </dd>
 </dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>user_id</strong> – <a class="reference internal" href="../../base/input-user.html#pyrogram.raw.base.InputUser" title="pyrogram.raw.base.InputUser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputUser</span></code></a></p></li>
-<li><p><strong>recurring_init_charge</strong> – <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
-<li><p><strong>invoice_media</strong> – <a class="reference internal" href="../../base/input-media.html#pyrogram.raw.base.InputMedia" title="pyrogram.raw.base.InputMedia"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InputMedia</span></code></a></p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../base/updates.html#pyrogram.raw.base.Updates" title="pyrogram.raw.base.Updates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Updates</span></code></a></p>
+<dd class="field-odd"><p><strong>email</strong> – <code class="docutils literal notranslate"><span class="pre">str</span></code></p>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>This object can be returned by 1 method:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p><a class="reference internal" href="../../functions/account/verify-email.html#pyrogram.raw.functions.account.VerifyEmail" title="pyrogram.raw.functions.account.VerifyEmail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">account.VerifyEmail</span></code></a></p></li>
+</ul>
+</td><td><ul class="simple">
+</ul>
+</td></tr></table>
+</div>
 </dd></dl>
 
 </section>
@@ -158,8 +161,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="get-saved-info.html" class="btn btn-neutral float-left" title="payments.GetSavedInfo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="send-payment-form.html" class="btn btn-neutral float-right" title="payments.SendPaymentForm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="content-settings.html" class="btn btn-neutral float-left" title="account.ContentSettings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="email-verified-login.html" class="btn btn-neutral float-right" title="account.EmailVerifiedLogin" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

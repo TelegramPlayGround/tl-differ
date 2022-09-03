@@ -132,6 +132,10 @@
 <li class="toctree-l2"><a class="reference internal" href="account/authorizations.html">Authorizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="account/auto-download-settings.html">AutoDownloadSettings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="account/content-settings.html">ContentSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/email-verified.html">EmailVerified</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/email-verified-login.html">EmailVerifiedLogin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/emoji-statuses.html">EmojiStatuses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account/emoji-statuses-not-modified.html">EmojiStatusesNotModified</a></li>
 <li class="toctree-l2"><a class="reference internal" href="account/password.html">Password</a></li>
 <li class="toctree-l2"><a class="reference internal" href="account/password-input-settings.html">PasswordInputSettings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="account/password-settings.html">PasswordSettings</a></li>
@@ -169,8 +173,10 @@
 <li class="toctree-l2"><a class="reference internal" href="auth/sent-code.html">SentCode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-app.html">SentCodeTypeApp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-call.html">SentCodeTypeCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-email-code.html">SentCodeTypeEmailCode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-flash-call.html">SentCodeTypeFlashCall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-missed-call.html">SentCodeTypeMissedCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-set-up-email-required.html">SentCodeTypeSetUpEmailRequired</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type-sms.html">SentCodeTypeSms</a></li>
 </ul>
 </li>
@@ -266,6 +272,8 @@
 <li class="toctree-l2"><a class="reference internal" href="messages/messages-slice.html">MessagesSlice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="messages/peer-dialogs.html">PeerDialogs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="messages/peer-settings.html">PeerSettings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/reactions.html">Reactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messages/reactions-not-modified.html">ReactionsNotModified</a></li>
 <li class="toctree-l2"><a class="reference internal" href="messages/recent-stickers.html">RecentStickers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="messages/recent-stickers-not-modified.html">RecentStickersNotModified</a></li>
 <li class="toctree-l2"><a class="reference internal" href="messages/saved-gifs.html">SavedGifs</a></li>
@@ -488,6 +496,9 @@
 <li class="toctree-l1"><a class="reference internal" href="chat-participants-forbidden.html">ChatParticipantsForbidden</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chat-photo.html">ChatPhoto</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chat-photo-empty.html">ChatPhotoEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chat-reactions-all.html">ChatReactionsAll</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chat-reactions-none.html">ChatReactionsNone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chat-reactions-some.html">ChatReactionsSome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client-dh-inner-data.html">ClientDHInnerData</a></li>
 <li class="toctree-l1"><a class="reference internal" href="code-settings.html">CodeSettings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="config.html">Config</a></li>
@@ -522,10 +533,19 @@
 <li class="toctree-l1"><a class="reference internal" href="document-empty.html">DocumentEmpty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draft-message.html">DraftMessage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draft-message-empty.html">DraftMessageEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-verification-apple.html">EmailVerificationApple</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-verification-code.html">EmailVerificationCode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-verification-google.html">EmailVerificationGoogle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-verify-purpose-login-change.html">EmailVerifyPurposeLoginChange</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-verify-purpose-login-setup.html">EmailVerifyPurposeLoginSetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email-verify-purpose-passport.html">EmailVerifyPurposePassport</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emoji-keyword.html">EmojiKeyword</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emoji-keyword-deleted.html">EmojiKeywordDeleted</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emoji-keywords-difference.html">EmojiKeywordsDifference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emoji-language.html">EmojiLanguage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-status.html">EmojiStatus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-status-empty.html">EmojiStatusEmpty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-status-until.html">EmojiStatusUntil</a></li>
 <li class="toctree-l1"><a class="reference internal" href="emoji-url.html">EmojiURL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="encrypted-chat.html">EncryptedChat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="encrypted-chat-discarded.html">EncryptedChatDiscarded</a></li>
@@ -702,6 +722,8 @@
 <li class="toctree-l1"><a class="reference internal" href="input-sticker-set-animated-emoji.html">InputStickerSetAnimatedEmoji</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input-sticker-set-animated-emoji-animations.html">InputStickerSetAnimatedEmojiAnimations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input-sticker-set-dice.html">InputStickerSetDice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input-sticker-set-emoji-default-statuses.html">InputStickerSetEmojiDefaultStatuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="input-sticker-set-emoji-generic-animations.html">InputStickerSetEmojiGenericAnimations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input-sticker-set-empty.html">InputStickerSetEmpty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input-sticker-set-id.html">InputStickerSetID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="input-sticker-set-item.html">InputStickerSetItem</a></li>
@@ -941,6 +963,7 @@
 <li class="toctree-l1"><a class="reference internal" href="popular-contact.html">PopularContact</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-address.html">PostAddress</a></li>
 <li class="toctree-l1"><a class="reference internal" href="premium-gift-option.html">PremiumGiftOption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="premium-subscription-option.html">PremiumSubscriptionOption</a></li>
 <li class="toctree-l1"><a class="reference internal" href="privacy-key-added-by-phone.html">PrivacyKeyAddedByPhone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="privacy-key-chat-invite.html">PrivacyKeyChatInvite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="privacy-key-forwards.html">PrivacyKeyForwards</a></li>
@@ -959,6 +982,9 @@
 <li class="toctree-l1"><a class="reference internal" href="privacy-value-disallow-contacts.html">PrivacyValueDisallowContacts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="privacy-value-disallow-users.html">PrivacyValueDisallowUsers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reaction-count.html">ReactionCount</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction-custom-emoji.html">ReactionCustomEmoji</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction-emoji.html">ReactionEmoji</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reaction-empty.html">ReactionEmpty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="received-notify-message.html">ReceivedNotifyMessage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recent-me-url-chat.html">RecentMeUrlChat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recent-me-url-chat-invite.html">RecentMeUrlChatInvite</a></li>
@@ -1015,6 +1041,7 @@
 <li class="toctree-l1"><a class="reference internal" href="secure-value-type-rental-agreement.html">SecureValueTypeRentalAgreement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="secure-value-type-temporary-registration.html">SecureValueTypeTemporaryRegistration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="secure-value-type-utility-bill.html">SecureValueTypeUtilityBill</a></li>
+<li class="toctree-l1"><a class="reference internal" href="send-as-peer.html">SendAsPeer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-message-cancel-action.html">SendMessageCancelAction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-message-choose-contact-action.html">SendMessageChooseContactAction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="send-message-choose-sticker-action.html">SendMessageChooseStickerAction</a></li>
@@ -1142,6 +1169,7 @@
 <li class="toctree-l1"><a class="reference internal" href="update-message-poll.html">UpdateMessagePoll</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-message-poll-vote.html">UpdateMessagePollVote</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-message-reactions.html">UpdateMessageReactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-move-sticker-set-to-top.html">UpdateMoveStickerSetToTop</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-new-channel-message.html">UpdateNewChannelMessage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-new-encrypted-message.html">UpdateNewEncryptedMessage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-new-message.html">UpdateNewMessage</a></li>
@@ -1169,6 +1197,8 @@
 <li class="toctree-l1"><a class="reference internal" href="update-read-history-inbox.html">UpdateReadHistoryInbox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-read-history-outbox.html">UpdateReadHistoryOutbox</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-read-messages-contents.html">UpdateReadMessagesContents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-recent-emoji-statuses.html">UpdateRecentEmojiStatuses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-recent-reactions.html">UpdateRecentReactions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-recent-stickers.html">UpdateRecentStickers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-saved-gifs.html">UpdateSavedGifs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-saved-ringtones.html">UpdateSavedRingtones</a></li>
@@ -1181,6 +1211,7 @@
 <li class="toctree-l1"><a class="reference internal" href="update-sticker-sets-order.html">UpdateStickerSetsOrder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-theme.html">UpdateTheme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-transcribed-audio.html">UpdateTranscribedAudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="update-user-emoji-status.html">UpdateUserEmojiStatus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-user-name.html">UpdateUserName</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-user-phone.html">UpdateUserPhone</a></li>
 <li class="toctree-l1"><a class="reference internal" href="update-user-photo.html">UpdateUserPhoto</a></li>
