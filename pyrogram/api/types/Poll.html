@@ -180,7 +180,15 @@
 <li><p><strong>is_anonymous</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if the poll is anonymous</p></li>
 <li><p><strong>type</strong> (<a class="reference internal" href="../enums/PollType.html#pyrogram.enums.PollType" title="pyrogram.enums.PollType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PollType</span></code></a>, <em>optional</em>) – Poll type.</p></li>
 <li><p><strong>allows_multiple_answers</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if the poll allows multiple answers.</p></li>
-<li><p><strong>chosen_option</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Index of your chosen option (0-9), None in case you haven’t voted yet.</p></li>
+<li><p><strong>chosen_option_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – 0-based index of the chosen option), None in case of no vote yet.</p></li>
+<li><p><strong>correct_option_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – 0-based identifier of the correct answer option.
+Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to
+the private chat with the bot.</p></li>
+<li><p><strong>explanation</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll,
+0-200 characters.</p></li>
+<li><p><strong>explanation_entities</strong> (List of <a class="reference internal" href="MessageEntity.html#pyrogram.types.MessageEntity" title="pyrogram.types.MessageEntity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEntity</span></code></a>, <em>optional</em>) – Special entities like usernames, URLs, bot commands, etc. that appear in the explanation.</p></li>
+<li><p><strong>open_period</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Amount of time in seconds the poll will be active after creation.</p></li>
+<li><p><strong>close_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – Point in time when the poll will be automatically closed.</p></li>
 </ul>
 </dd>
 </dl>
