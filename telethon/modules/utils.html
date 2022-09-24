@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -97,7 +98,52 @@
 <li class="toctree-l1"><a class="reference internal" href="client.html">TelegramClient</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Update Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Custom package</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Utilities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.AsyncClassWrapper"><code class="docutils literal notranslate"><span class="pre">AsyncClassWrapper</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.utils.AsyncClassWrapper.__getattr__"><code class="docutils literal notranslate"><span class="pre">AsyncClassWrapper.__getattr__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.utils.AsyncClassWrapper.__weakref__"><code class="docutils literal notranslate"><span class="pre">AsyncClassWrapper.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.chunks"><code class="docutils literal notranslate"><span class="pre">chunks()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.decode_waveform"><code class="docutils literal notranslate"><span class="pre">decode_waveform()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.encode_waveform"><code class="docutils literal notranslate"><span class="pre">encode_waveform()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_appropriated_part_size"><code class="docutils literal notranslate"><span class="pre">get_appropriated_part_size()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_attributes"><code class="docutils literal notranslate"><span class="pre">get_attributes()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_display_name"><code class="docutils literal notranslate"><span class="pre">get_display_name()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_extension"><code class="docutils literal notranslate"><span class="pre">get_extension()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_inner_text"><code class="docutils literal notranslate"><span class="pre">get_inner_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_channel"><code class="docutils literal notranslate"><span class="pre">get_input_channel()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_chat_photo"><code class="docutils literal notranslate"><span class="pre">get_input_chat_photo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_dialog"><code class="docutils literal notranslate"><span class="pre">get_input_dialog()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_document"><code class="docutils literal notranslate"><span class="pre">get_input_document()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_geo"><code class="docutils literal notranslate"><span class="pre">get_input_geo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_group_call"><code class="docutils literal notranslate"><span class="pre">get_input_group_call()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_location"><code class="docutils literal notranslate"><span class="pre">get_input_location()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_media"><code class="docutils literal notranslate"><span class="pre">get_input_media()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_message"><code class="docutils literal notranslate"><span class="pre">get_input_message()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_peer"><code class="docutils literal notranslate"><span class="pre">get_input_peer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_photo"><code class="docutils literal notranslate"><span class="pre">get_input_photo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_input_user"><code class="docutils literal notranslate"><span class="pre">get_input_user()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_message_id"><code class="docutils literal notranslate"><span class="pre">get_message_id()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_peer"><code class="docutils literal notranslate"><span class="pre">get_peer()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.get_peer_id"><code class="docutils literal notranslate"><span class="pre">get_peer_id()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.is_audio"><code class="docutils literal notranslate"><span class="pre">is_audio()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.is_gif"><code class="docutils literal notranslate"><span class="pre">is_gif()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.is_image"><code class="docutils literal notranslate"><span class="pre">is_image()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.is_list_like"><code class="docutils literal notranslate"><span class="pre">is_list_like()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.is_video"><code class="docutils literal notranslate"><span class="pre">is_video()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.pack_bot_file_id"><code class="docutils literal notranslate"><span class="pre">pack_bot_file_id()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.parse_phone"><code class="docutils literal notranslate"><span class="pre">parse_phone()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.parse_username"><code class="docutils literal notranslate"><span class="pre">parse_username()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.resolve_bot_file_id"><code class="docutils literal notranslate"><span class="pre">resolve_bot_file_id()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.resolve_id"><code class="docutils literal notranslate"><span class="pre">resolve_id()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.resolve_inline_message_id"><code class="docutils literal notranslate"><span class="pre">resolve_inline_message_id()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.resolve_invite_link"><code class="docutils literal notranslate"><span class="pre">resolve_invite_link()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.sanitize_parse_mode"><code class="docutils literal notranslate"><span class="pre">sanitize_parse_mode()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.split_text"><code class="docutils literal notranslate"><span class="pre">split_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.utils.stripped_photo_to_jpg"><code class="docutils literal notranslate"><span class="pre">stripped_photo_to_jpg()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">API Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sessions.html">Sessions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Connection Modes</a></li>
@@ -131,9 +177,9 @@
   <section id="utilities">
 <span id="telethon-utils"></span><h1>Utilities<a class="headerlink" href="#utilities" title="Permalink to this heading"></a></h1>
 <p>These are the utilities that the library has to offer.</p>
-<span class="target" id="module-telethon.utils"></span><p>Utilities for working with the Telegram API itself (such as handy methods
+<p>Utilities for working with the Telegram API itself (such as handy methods
 to convert between an entity like a User, Chat, etc. into its Input version)</p>
-<dl class="py class">
+<span class="target" id="module-telethon.utils"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.utils.AsyncClassWrapper">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">AsyncClassWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapped</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.AsyncClassWrapper" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>

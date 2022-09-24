@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -100,7 +101,73 @@
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">API Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sessions.html">Sessions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Connection Modes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Connection Modes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpfull.ConnectionTcpFull"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpFull</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.ConnectionTcpFull.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpFull.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpAbridged</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpAbridged.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpIntermediate</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpIntermediate.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.obfuscated_io"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated.obfuscated_io</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.__weakref__"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.header"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.header</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.init_header"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.init_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.readexactly"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.readexactly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.write"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.http.ConnectionHttp"><code class="docutils literal notranslate"><span class="pre">ConnectionHttp</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.ConnectionHttp.connect"><code class="docutils literal notranslate"><span class="pre">ConnectionHttp.connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.ConnectionHttp.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionHttp.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
 </ul>
 

@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -100,7 +101,23 @@
 <li class="toctree-l1"><a class="reference internal" href="errors.html">API Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sessions.html">Sessions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Connection Modes</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Helpers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.TotalList"><code class="docutils literal notranslate"><span class="pre">TotalList</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.helpers.TotalList.__repr__"><code class="docutils literal notranslate"><span class="pre">TotalList.__repr__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.helpers.TotalList.__str__"><code class="docutils literal notranslate"><span class="pre">TotalList.__str__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.helpers.TotalList.__weakref__"><code class="docutils literal notranslate"><span class="pre">TotalList.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.add_surrogate"><code class="docutils literal notranslate"><span class="pre">add_surrogate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.del_surrogate"><code class="docutils literal notranslate"><span class="pre">del_surrogate()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.ensure_parent_dir_exists"><code class="docutils literal notranslate"><span class="pre">ensure_parent_dir_exists()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.generate_key_data_from_nonce"><code class="docutils literal notranslate"><span class="pre">generate_key_data_from_nonce()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.generate_random_long"><code class="docutils literal notranslate"><span class="pre">generate_random_long()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.retry_range"><code class="docutils literal notranslate"><span class="pre">retry_range()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.strip_text"><code class="docutils literal notranslate"><span class="pre">strip_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.helpers.within_surrogate"><code class="docutils literal notranslate"><span class="pre">within_surrogate()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -127,10 +144,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-telethon.helpers">
-<span id="helpers"></span><h1>Helpers<a class="headerlink" href="#module-telethon.helpers" title="Permalink to this heading"></a></h1>
+  <section id="helpers">
+<h1>Helpers<a class="headerlink" href="#helpers" title="Permalink to this heading"></a></h1>
 <p>Various helpers not related to the Telegram API itself</p>
-<dl class="py class">
+<span class="target" id="module-telethon.helpers"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.helpers.TotalList">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.helpers.</span></span><span class="sig-name descname"><span class="pre">TotalList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.helpers.TotalList" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a></p>

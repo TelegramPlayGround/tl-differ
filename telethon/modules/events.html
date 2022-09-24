@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -95,7 +96,94 @@
 <p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="client.html">TelegramClient</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Update Events</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Update Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.common.EventBuilder"><code class="docutils literal notranslate"><span class="pre">EventBuilder</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventBuilder.__weakref__"><code class="docutils literal notranslate"><span class="pre">EventBuilder.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventBuilder.build"><code class="docutils literal notranslate"><span class="pre">EventBuilder.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventBuilder.filter"><code class="docutils literal notranslate"><span class="pre">EventBuilder.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventBuilder.resolve"><code class="docutils literal notranslate"><span class="pre">EventBuilder.resolve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.common.EventCommon"><code class="docutils literal notranslate"><span class="pre">EventCommon</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventCommon.__str__"><code class="docutils literal notranslate"><span class="pre">EventCommon.__str__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventCommon.client"><code class="docutils literal notranslate"><span class="pre">EventCommon.client</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventCommon.stringify"><code class="docutils literal notranslate"><span class="pre">EventCommon.stringify()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.common.EventCommon.to_dict"><code class="docutils literal notranslate"><span class="pre">EventCommon.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.common.name_inner_event"><code class="docutils literal notranslate"><span class="pre">name_inner_event()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.newmessage.NewMessage"><code class="docutils literal notranslate"><span class="pre">NewMessage</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.newmessage.NewMessage.Event"><code class="docutils literal notranslate"><span class="pre">NewMessage.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.newmessage.NewMessage.build"><code class="docutils literal notranslate"><span class="pre">NewMessage.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.newmessage.NewMessage.filter"><code class="docutils literal notranslate"><span class="pre">NewMessage.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.chataction.ChatAction"><code class="docutils literal notranslate"><span class="pre">ChatAction</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.chataction.ChatAction.Event"><code class="docutils literal notranslate"><span class="pre">ChatAction.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.chataction.ChatAction.build"><code class="docutils literal notranslate"><span class="pre">ChatAction.build()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.userupdate.UserUpdate"><code class="docutils literal notranslate"><span class="pre">UserUpdate</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.userupdate.UserUpdate.Event"><code class="docutils literal notranslate"><span class="pre">UserUpdate.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.userupdate.UserUpdate.build"><code class="docutils literal notranslate"><span class="pre">UserUpdate.build()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.messageedited.MessageEdited"><code class="docutils literal notranslate"><span class="pre">MessageEdited</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messageedited.MessageEdited.Event"><code class="docutils literal notranslate"><span class="pre">MessageEdited.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messageedited.MessageEdited.build"><code class="docutils literal notranslate"><span class="pre">MessageEdited.build()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.messagedeleted.MessageDeleted"><code class="docutils literal notranslate"><span class="pre">MessageDeleted</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messagedeleted.MessageDeleted.Event"><code class="docutils literal notranslate"><span class="pre">MessageDeleted.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messagedeleted.MessageDeleted.build"><code class="docutils literal notranslate"><span class="pre">MessageDeleted.build()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.messageread.MessageRead"><code class="docutils literal notranslate"><span class="pre">MessageRead</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messageread.MessageRead.Event"><code class="docutils literal notranslate"><span class="pre">MessageRead.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messageread.MessageRead.build"><code class="docutils literal notranslate"><span class="pre">MessageRead.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.messageread.MessageRead.filter"><code class="docutils literal notranslate"><span class="pre">MessageRead.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery"><code class="docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event"><code class="docutils literal notranslate"><span class="pre">CallbackQuery.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.build"><code class="docutils literal notranslate"><span class="pre">CallbackQuery.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.filter"><code class="docutils literal notranslate"><span class="pre">CallbackQuery.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.inlinequery.InlineQuery"><code class="docutils literal notranslate"><span class="pre">InlineQuery</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.inlinequery.InlineQuery.Event"><code class="docutils literal notranslate"><span class="pre">InlineQuery.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.inlinequery.InlineQuery.build"><code class="docutils literal notranslate"><span class="pre">InlineQuery.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.inlinequery.InlineQuery.filter"><code class="docutils literal notranslate"><span class="pre">InlineQuery.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.album.Album"><code class="docutils literal notranslate"><span class="pre">Album</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.album.Album.Event"><code class="docutils literal notranslate"><span class="pre">Album.Event</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.album.Album.build"><code class="docutils literal notranslate"><span class="pre">Album.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.album.Album.filter"><code class="docutils literal notranslate"><span class="pre">Album.filter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.album.AlbumHack"><code class="docutils literal notranslate"><span class="pre">AlbumHack</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.album.AlbumHack.__weakref__"><code class="docutils literal notranslate"><span class="pre">AlbumHack.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.album.AlbumHack.deliver_event"><code class="docutils literal notranslate"><span class="pre">AlbumHack.deliver_event()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.album.AlbumHack.extend"><code class="docutils literal notranslate"><span class="pre">AlbumHack.extend()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.raw.Raw"><code class="docutils literal notranslate"><span class="pre">Raw</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.raw.Raw.build"><code class="docutils literal notranslate"><span class="pre">Raw.build()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.raw.Raw.filter"><code class="docutils literal notranslate"><span class="pre">Raw.filter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.raw.Raw.resolve"><code class="docutils literal notranslate"><span class="pre">Raw.resolve()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.StopPropagation"><code class="docutils literal notranslate"><span class="pre">StopPropagation</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.events.StopPropagation.__weakref__"><code class="docutils literal notranslate"><span class="pre">StopPropagation.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.is_handler"><code class="docutils literal notranslate"><span class="pre">is_handler()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.list"><code class="docutils literal notranslate"><span class="pre">list()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.events.unregister"><code class="docutils literal notranslate"><span class="pre">unregister()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Custom package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors.html">API Errors</a></li>

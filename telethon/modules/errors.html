@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -98,7 +99,97 @@
 <li class="toctree-l1"><a class="reference internal" href="events.html">Update Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Custom package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API Errors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.AlreadyInConversationError"><code class="docutils literal notranslate"><span class="pre">AlreadyInConversationError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.AlreadyInConversationError.__weakref__"><code class="docutils literal notranslate"><span class="pre">AlreadyInConversationError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.BadMessageError"><code class="docutils literal notranslate"><span class="pre">BadMessageError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.BadMessageError.ErrorMessages"><code class="docutils literal notranslate"><span class="pre">BadMessageError.ErrorMessages</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.BadMessageError.__weakref__"><code class="docutils literal notranslate"><span class="pre">BadMessageError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.CdnFileTamperedError"><code class="docutils literal notranslate"><span class="pre">CdnFileTamperedError</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.InvalidBufferError"><code class="docutils literal notranslate"><span class="pre">InvalidBufferError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.InvalidBufferError.__weakref__"><code class="docutils literal notranslate"><span class="pre">InvalidBufferError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.InvalidChecksumError"><code class="docutils literal notranslate"><span class="pre">InvalidChecksumError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.InvalidChecksumError.__weakref__"><code class="docutils literal notranslate"><span class="pre">InvalidChecksumError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.MultiError"><code class="docutils literal notranslate"><span class="pre">MultiError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.MultiError.__new__"><code class="docutils literal notranslate"><span class="pre">MultiError.__new__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.MultiError.__weakref__"><code class="docutils literal notranslate"><span class="pre">MultiError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.ReadCancelledError"><code class="docutils literal notranslate"><span class="pre">ReadCancelledError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.ReadCancelledError.__weakref__"><code class="docutils literal notranslate"><span class="pre">ReadCancelledError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.SecurityError"><code class="docutils literal notranslate"><span class="pre">SecurityError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.SecurityError.__weakref__"><code class="docutils literal notranslate"><span class="pre">SecurityError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.common.TypeNotFoundError"><code class="docutils literal notranslate"><span class="pre">TypeNotFoundError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.common.TypeNotFoundError.__weakref__"><code class="docutils literal notranslate"><span class="pre">TypeNotFoundError.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.AuthKeyError"><code class="docutils literal notranslate"><span class="pre">AuthKeyError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.AuthKeyError.code"><code class="docutils literal notranslate"><span class="pre">AuthKeyError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.AuthKeyError.message"><code class="docutils literal notranslate"><span class="pre">AuthKeyError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.BadRequestError"><code class="docutils literal notranslate"><span class="pre">BadRequestError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.BadRequestError.code"><code class="docutils literal notranslate"><span class="pre">BadRequestError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.BadRequestError.message"><code class="docutils literal notranslate"><span class="pre">BadRequestError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.BotTimeout"><code class="docutils literal notranslate"><span class="pre">BotTimeout</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.FloodError"><code class="docutils literal notranslate"><span class="pre">FloodError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.FloodError.code"><code class="docutils literal notranslate"><span class="pre">FloodError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.FloodError.message"><code class="docutils literal notranslate"><span class="pre">FloodError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.ForbiddenError"><code class="docutils literal notranslate"><span class="pre">ForbiddenError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.ForbiddenError.code"><code class="docutils literal notranslate"><span class="pre">ForbiddenError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.ForbiddenError.message"><code class="docutils literal notranslate"><span class="pre">ForbiddenError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.InvalidDCError"><code class="docutils literal notranslate"><span class="pre">InvalidDCError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.InvalidDCError.code"><code class="docutils literal notranslate"><span class="pre">InvalidDCError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.InvalidDCError.message"><code class="docutils literal notranslate"><span class="pre">InvalidDCError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.NotFoundError"><code class="docutils literal notranslate"><span class="pre">NotFoundError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.NotFoundError.code"><code class="docutils literal notranslate"><span class="pre">NotFoundError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.NotFoundError.message"><code class="docutils literal notranslate"><span class="pre">NotFoundError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError"><code class="docutils literal notranslate"><span class="pre">RPCError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError.__reduce__"><code class="docutils literal notranslate"><span class="pre">RPCError.__reduce__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError.__weakref__"><code class="docutils literal notranslate"><span class="pre">RPCError.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError.code"><code class="docutils literal notranslate"><span class="pre">RPCError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.RPCError.message"><code class="docutils literal notranslate"><span class="pre">RPCError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.ServerError"><code class="docutils literal notranslate"><span class="pre">ServerError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.ServerError.code"><code class="docutils literal notranslate"><span class="pre">ServerError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.ServerError.message"><code class="docutils literal notranslate"><span class="pre">ServerError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.TimedOutError"><code class="docutils literal notranslate"><span class="pre">TimedOutError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.TimedOutError.code"><code class="docutils literal notranslate"><span class="pre">TimedOutError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.TimedOutError.message"><code class="docutils literal notranslate"><span class="pre">TimedOutError.message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.UnauthorizedError"><code class="docutils literal notranslate"><span class="pre">UnauthorizedError</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.UnauthorizedError.code"><code class="docutils literal notranslate"><span class="pre">UnauthorizedError.code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.errors.rpcbaseerrors.UnauthorizedError.message"><code class="docutils literal notranslate"><span class="pre">UnauthorizedError.message</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="sessions.html">Sessions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="network.html">Connection Modes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
@@ -133,8 +224,8 @@
 <p>These are the base errors that Telegram’s API may raise.</p>
 <p>See <a class="reference internal" href="../concepts/errors.html#rpc-errors"><span class="std std-ref">RPC Errors</span></a> for a more in-depth explanation on how to handle all
 known possible errors and learning to determine what a method may raise.</p>
-<span class="target" id="module-telethon.errors.common"></span><p>Errors not related to the Telegram API itself</p>
-<dl class="py exception">
+<p>Errors not related to the Telegram API itself</p>
+<span class="target" id="module-telethon.errors.common"></span><dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.AlreadyInConversationError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">AlreadyInConversationError</span></span><a class="headerlink" href="#telethon.errors.common.AlreadyInConversationError" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>

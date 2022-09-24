@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -94,7 +95,142 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">TelegramClient</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TelegramClient</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.telegramclient.TelegramClient"><code class="docutils literal notranslate"><span class="pre">TelegramClient</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.__call__"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.__call__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.__version__"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.__version__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.__weakref__"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.connect"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.disconnect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.disconnected"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.disconnected</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.flood_sleep_threshold"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.flood_sleep_threshold</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.is_connected"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.is_connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.loop"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.loop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.telegrambaseclient.TelegramBaseClient.set_proxy"><code class="docutils literal notranslate"><span class="pre">TelegramBaseClient.set_proxy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.account.AccountMethods"><code class="docutils literal notranslate"><span class="pre">AccountMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.account.AccountMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">AccountMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.account.AccountMethods.end_takeout"><code class="docutils literal notranslate"><span class="pre">AccountMethods.end_takeout()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.account.AccountMethods.takeout"><code class="docutils literal notranslate"><span class="pre">AccountMethods.takeout()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.auth.AuthMethods"><code class="docutils literal notranslate"><span class="pre">AuthMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.__aenter__"><code class="docutils literal notranslate"><span class="pre">AuthMethods.__aenter__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.__aexit__"><code class="docutils literal notranslate"><span class="pre">AuthMethods.__aexit__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.__enter__"><code class="docutils literal notranslate"><span class="pre">AuthMethods.__enter__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.__exit__"><code class="docutils literal notranslate"><span class="pre">AuthMethods.__exit__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">AuthMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.edit_2fa"><code class="docutils literal notranslate"><span class="pre">AuthMethods.edit_2fa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.log_out"><code class="docutils literal notranslate"><span class="pre">AuthMethods.log_out()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.qr_login"><code class="docutils literal notranslate"><span class="pre">AuthMethods.qr_login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.send_code_request"><code class="docutils literal notranslate"><span class="pre">AuthMethods.send_code_request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.sign_in"><code class="docutils literal notranslate"><span class="pre">AuthMethods.sign_in()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.sign_up"><code class="docutils literal notranslate"><span class="pre">AuthMethods.sign_up()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.auth.AuthMethods.start"><code class="docutils literal notranslate"><span class="pre">AuthMethods.start()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.bots.BotMethods"><code class="docutils literal notranslate"><span class="pre">BotMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.bots.BotMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">BotMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.bots.BotMethods.inline_query"><code class="docutils literal notranslate"><span class="pre">BotMethods.inline_query()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.buttons.ButtonMethods"><code class="docutils literal notranslate"><span class="pre">ButtonMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.buttons.ButtonMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">ButtonMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.buttons.ButtonMethods.build_reply_markup"><code class="docutils literal notranslate"><span class="pre">ButtonMethods.build_reply_markup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.chats.ChatMethods"><code class="docutils literal notranslate"><span class="pre">ChatMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">ChatMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.action"><code class="docutils literal notranslate"><span class="pre">ChatMethods.action()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.edit_admin"><code class="docutils literal notranslate"><span class="pre">ChatMethods.edit_admin()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.edit_permissions"><code class="docutils literal notranslate"><span class="pre">ChatMethods.edit_permissions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.get_admin_log"><code class="docutils literal notranslate"><span class="pre">ChatMethods.get_admin_log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.get_participants"><code class="docutils literal notranslate"><span class="pre">ChatMethods.get_participants()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.get_permissions"><code class="docutils literal notranslate"><span class="pre">ChatMethods.get_permissions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.get_profile_photos"><code class="docutils literal notranslate"><span class="pre">ChatMethods.get_profile_photos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.get_stats"><code class="docutils literal notranslate"><span class="pre">ChatMethods.get_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.iter_admin_log"><code class="docutils literal notranslate"><span class="pre">ChatMethods.iter_admin_log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.iter_participants"><code class="docutils literal notranslate"><span class="pre">ChatMethods.iter_participants()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.iter_profile_photos"><code class="docutils literal notranslate"><span class="pre">ChatMethods.iter_profile_photos()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.chats.ChatMethods.kick_participant"><code class="docutils literal notranslate"><span class="pre">ChatMethods.kick_participant()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods"><code class="docutils literal notranslate"><span class="pre">DialogMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">DialogMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.conversation"><code class="docutils literal notranslate"><span class="pre">DialogMethods.conversation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.delete_dialog"><code class="docutils literal notranslate"><span class="pre">DialogMethods.delete_dialog()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.edit_folder"><code class="docutils literal notranslate"><span class="pre">DialogMethods.edit_folder()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.get_dialogs"><code class="docutils literal notranslate"><span class="pre">DialogMethods.get_dialogs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.get_drafts"><code class="docutils literal notranslate"><span class="pre">DialogMethods.get_drafts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="docutils literal notranslate"><span class="pre">DialogMethods.iter_dialogs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.dialogs.DialogMethods.iter_drafts"><code class="docutils literal notranslate"><span class="pre">DialogMethods.iter_drafts()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.downloads.DownloadMethods"><code class="docutils literal notranslate"><span class="pre">DownloadMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.downloads.DownloadMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">DownloadMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.downloads.DownloadMethods.download_file"><code class="docutils literal notranslate"><span class="pre">DownloadMethods.download_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.downloads.DownloadMethods.download_media"><code class="docutils literal notranslate"><span class="pre">DownloadMethods.download_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.downloads.DownloadMethods.download_profile_photo"><code class="docutils literal notranslate"><span class="pre">DownloadMethods.download_profile_photo()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.downloads.DownloadMethods.iter_download"><code class="docutils literal notranslate"><span class="pre">DownloadMethods.iter_download()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.messageparse.MessageParseMethods"><code class="docutils literal notranslate"><span class="pre">MessageParseMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messageparse.MessageParseMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">MessageParseMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messageparse.MessageParseMethods.parse_mode"><code class="docutils literal notranslate"><span class="pre">MessageParseMethods.parse_mode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.messages.MessageMethods"><code class="docutils literal notranslate"><span class="pre">MessageMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">MessageMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.delete_messages"><code class="docutils literal notranslate"><span class="pre">MessageMethods.delete_messages()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.edit_message"><code class="docutils literal notranslate"><span class="pre">MessageMethods.edit_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.forward_messages"><code class="docutils literal notranslate"><span class="pre">MessageMethods.forward_messages()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.get_messages"><code class="docutils literal notranslate"><span class="pre">MessageMethods.get_messages()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.iter_messages"><code class="docutils literal notranslate"><span class="pre">MessageMethods.iter_messages()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.pin_message"><code class="docutils literal notranslate"><span class="pre">MessageMethods.pin_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.send_message"><code class="docutils literal notranslate"><span class="pre">MessageMethods.send_message()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.send_reaction"><code class="docutils literal notranslate"><span class="pre">MessageMethods.send_reaction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.send_read_acknowledge"><code class="docutils literal notranslate"><span class="pre">MessageMethods.send_read_acknowledge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.set_default_reaction"><code class="docutils literal notranslate"><span class="pre">MessageMethods.set_default_reaction()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.messages.MessageMethods.unpin_message"><code class="docutils literal notranslate"><span class="pre">MessageMethods.unpin_message()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.updates.EventBuilderDict"><code class="docutils literal notranslate"><span class="pre">EventBuilderDict</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.EventBuilderDict.__getitem__"><code class="docutils literal notranslate"><span class="pre">EventBuilderDict.__getitem__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.EventBuilderDict.__weakref__"><code class="docutils literal notranslate"><span class="pre">EventBuilderDict.__weakref__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.updates.UpdateMethods"><code class="docutils literal notranslate"><span class="pre">UpdateMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.add_event_handler"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.add_event_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.catch_up"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.catch_up()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.list_event_handlers"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.list_event_handlers()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.on"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.on()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.remove_event_handler"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.remove_event_handler()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.run_until_disconnected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.updates.UpdateMethods.set_receive_updates"><code class="docutils literal notranslate"><span class="pre">UpdateMethods.set_receive_updates()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.uploads.UploadMethods"><code class="docutils literal notranslate"><span class="pre">UploadMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.uploads.UploadMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">UploadMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.uploads.UploadMethods.send_file"><code class="docutils literal notranslate"><span class="pre">UploadMethods.send_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.uploads.UploadMethods.upload_file"><code class="docutils literal notranslate"><span class="pre">UploadMethods.upload_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.client.users.UserMethods"><code class="docutils literal notranslate"><span class="pre">UserMethods</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.__call__"><code class="docutils literal notranslate"><span class="pre">UserMethods.__call__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.__weakref__"><code class="docutils literal notranslate"><span class="pre">UserMethods.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.get_entity"><code class="docutils literal notranslate"><span class="pre">UserMethods.get_entity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.get_input_entity"><code class="docutils literal notranslate"><span class="pre">UserMethods.get_input_entity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.get_me"><code class="docutils literal notranslate"><span class="pre">UserMethods.get_me()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.get_peer_id"><code class="docutils literal notranslate"><span class="pre">UserMethods.get_peer_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.is_bot"><code class="docutils literal notranslate"><span class="pre">UserMethods.is_bot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.client.users.UserMethods.is_user_authorized"><code class="docutils literal notranslate"><span class="pre">UserMethods.is_user_authorized()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Update Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Custom package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>

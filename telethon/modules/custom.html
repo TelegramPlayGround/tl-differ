@@ -16,6 +16,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -97,22 +98,70 @@
 <li class="toctree-l1"><a class="reference internal" href="client.html">TelegramClient</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Update Events</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Custom package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.adminlogevent">AdminLogEvent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.button">Button</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.chatgetter">ChatGetter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.conversation">Conversation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.dialog">Dialog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.draft">Draft</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.file">File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.forward">Forward</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.inlinebuilder">InlineBuilder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.inlineresult">InlineResult</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.inlineresults">InlineResults</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.message">Message</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.messagebutton">MessageButton</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.participantpermissions">ParticipantPermissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.qrlogin">QRLogin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.sendergetter">SenderGetter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.adminlogevent">AdminLogEvent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.adminlogevent.AdminLogEvent"><code class="docutils literal notranslate"><span class="pre">AdminLogEvent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.button">Button</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.button.Button"><code class="docutils literal notranslate"><span class="pre">Button</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.chatgetter">ChatGetter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.chatgetter.ChatGetter"><code class="docutils literal notranslate"><span class="pre">ChatGetter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.conversation">Conversation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.conversation.Conversation"><code class="docutils literal notranslate"><span class="pre">Conversation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.dialog">Dialog</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.dialog.Dialog"><code class="docutils literal notranslate"><span class="pre">Dialog</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.draft">Draft</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.draft.Draft"><code class="docutils literal notranslate"><span class="pre">Draft</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.file">File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.file.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.forward">Forward</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.forward.Forward"><code class="docutils literal notranslate"><span class="pre">Forward</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.inlinebuilder">InlineBuilder</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.inlinebuilder.InlineBuilder"><code class="docutils literal notranslate"><span class="pre">InlineBuilder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.inlineresult">InlineResult</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.inlineresult.InlineResult"><code class="docutils literal notranslate"><span class="pre">InlineResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.inlineresults">InlineResults</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.inlineresults.InlineResults"><code class="docutils literal notranslate"><span class="pre">InlineResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.message">Message</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.message.Message"><code class="docutils literal notranslate"><span class="pre">Message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.messagebutton">MessageButton</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.messagebutton.MessageButton"><code class="docutils literal notranslate"><span class="pre">MessageButton</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.participantpermissions">ParticipantPermissions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.participantpermissions.ParticipantPermissions"><code class="docutils literal notranslate"><span class="pre">ParticipantPermissions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.qrlogin">QRLogin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.qrlogin.QRLogin"><code class="docutils literal notranslate"><span class="pre">QRLogin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-telethon.tl.custom.sendergetter">SenderGetter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.tl.custom.sendergetter.SenderGetter"><code class="docutils literal notranslate"><span class="pre">SenderGetter</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
