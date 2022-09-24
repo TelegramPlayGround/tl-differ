@@ -18,6 +18,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -128,26 +129,86 @@
 <span id="auth"></span><h1>Auth<a class="headerlink" href="#module-pyrogram.raw.types.auth" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="authorization.html">Authorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="authorization-sign-up-required.html">AuthorizationSignUpRequired</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-type-call.html">CodeTypeCall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-type-flash-call.html">CodeTypeFlashCall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-type-missed-call.html">CodeTypeMissedCall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-type-sms.html">CodeTypeSms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exported-authorization.html">ExportedAuthorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="logged-out.html">LoggedOut</a></li>
-<li class="toctree-l1"><a class="reference internal" href="login-token.html">LoginToken</a></li>
-<li class="toctree-l1"><a class="reference internal" href="login-token-migrate-to.html">LoginTokenMigrateTo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="login-token-success.html">LoginTokenSuccess</a></li>
-<li class="toctree-l1"><a class="reference internal" href="password-recovery.html">PasswordRecovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code.html">SentCode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-app.html">SentCodeTypeApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-call.html">SentCodeTypeCall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-email-code.html">SentCodeTypeEmailCode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-flash-call.html">SentCodeTypeFlashCall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-missed-call.html">SentCodeTypeMissedCall</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-set-up-email-required.html">SentCodeTypeSetUpEmailRequired</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sent-code-type-sms.html">SentCodeTypeSms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html#pyrogram.raw.types.auth.Authorization"><code class="docutils literal notranslate"><span class="pre">Authorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authorization-sign-up-required.html">AuthorizationSignUpRequired</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authorization-sign-up-required.html#pyrogram.raw.types.auth.AuthorizationSignUpRequired"><code class="docutils literal notranslate"><span class="pre">AuthorizationSignUpRequired</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-type-call.html">CodeTypeCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-type-call.html#pyrogram.raw.types.auth.CodeTypeCall"><code class="docutils literal notranslate"><span class="pre">CodeTypeCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-type-flash-call.html">CodeTypeFlashCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-type-flash-call.html#pyrogram.raw.types.auth.CodeTypeFlashCall"><code class="docutils literal notranslate"><span class="pre">CodeTypeFlashCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-type-missed-call.html">CodeTypeMissedCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-type-missed-call.html#pyrogram.raw.types.auth.CodeTypeMissedCall"><code class="docutils literal notranslate"><span class="pre">CodeTypeMissedCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-type-sms.html">CodeTypeSms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-type-sms.html#pyrogram.raw.types.auth.CodeTypeSms"><code class="docutils literal notranslate"><span class="pre">CodeTypeSms</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exported-authorization.html">ExportedAuthorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exported-authorization.html#pyrogram.raw.types.auth.ExportedAuthorization"><code class="docutils literal notranslate"><span class="pre">ExportedAuthorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="logged-out.html">LoggedOut</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="logged-out.html#pyrogram.raw.types.auth.LoggedOut"><code class="docutils literal notranslate"><span class="pre">LoggedOut</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="login-token.html">LoginToken</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="login-token.html#pyrogram.raw.types.auth.LoginToken"><code class="docutils literal notranslate"><span class="pre">LoginToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="login-token-migrate-to.html">LoginTokenMigrateTo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="login-token-migrate-to.html#pyrogram.raw.types.auth.LoginTokenMigrateTo"><code class="docutils literal notranslate"><span class="pre">LoginTokenMigrateTo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="login-token-success.html">LoginTokenSuccess</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="login-token-success.html#pyrogram.raw.types.auth.LoginTokenSuccess"><code class="docutils literal notranslate"><span class="pre">LoginTokenSuccess</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="password-recovery.html">PasswordRecovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="password-recovery.html#pyrogram.raw.types.auth.PasswordRecovery"><code class="docutils literal notranslate"><span class="pre">PasswordRecovery</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code.html">SentCode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code.html#pyrogram.raw.types.auth.SentCode"><code class="docutils literal notranslate"><span class="pre">SentCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-app.html">SentCodeTypeApp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-app.html#pyrogram.raw.types.auth.SentCodeTypeApp"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeApp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-call.html">SentCodeTypeCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-call.html#pyrogram.raw.types.auth.SentCodeTypeCall"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-email-code.html">SentCodeTypeEmailCode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-email-code.html#pyrogram.raw.types.auth.SentCodeTypeEmailCode"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeEmailCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-flash-call.html">SentCodeTypeFlashCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-flash-call.html#pyrogram.raw.types.auth.SentCodeTypeFlashCall"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeFlashCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-missed-call.html">SentCodeTypeMissedCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-missed-call.html#pyrogram.raw.types.auth.SentCodeTypeMissedCall"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeMissedCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-set-up-email-required.html">SentCodeTypeSetUpEmailRequired</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-set-up-email-required.html#pyrogram.raw.types.auth.SentCodeTypeSetUpEmailRequired"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeSetUpEmailRequired</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sent-code-type-sms.html">SentCodeTypeSms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sent-code-type-sms.html#pyrogram.raw.types.auth.SentCodeTypeSms"><code class="docutils literal notranslate"><span class="pre">SentCodeTypeSms</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

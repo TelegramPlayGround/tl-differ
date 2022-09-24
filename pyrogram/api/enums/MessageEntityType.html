@@ -18,6 +18,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -68,7 +69,32 @@
 <li class="toctree-l2"><a class="reference internal" href="ChatMemberStatus.html">ChatMemberStatus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ChatMembersFilter.html">ChatMembersFilter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ChatType.html">ChatType</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">MessageEntityType</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MessageEntityType</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.enums.MessageEntityType"><code class="docutils literal notranslate"><span class="pre">MessageEntityType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.MENTION"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.MENTION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.HASHTAG"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.HASHTAG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.CASHTAG"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.CASHTAG</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.BOT_COMMAND"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.BOT_COMMAND</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.URL"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.URL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.EMAIL"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.EMAIL</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.PHONE_NUMBER"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.PHONE_NUMBER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.BOLD"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.BOLD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.ITALIC"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.ITALIC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.UNDERLINE"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.UNDERLINE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.STRIKETHROUGH"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.STRIKETHROUGH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.SPOILER"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.SPOILER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.CODE"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.CODE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.PRE"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.PRE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.BLOCKQUOTE"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.BLOCKQUOTE</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.TEXT_LINK"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.TEXT_LINK</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.TEXT_MENTION"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.TEXT_MENTION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.BANK_CARD"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.BANK_CARD</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.CUSTOM_EMOJI"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.CUSTOM_EMOJI</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.MessageEntityType.UNKNOWN"><code class="docutils literal notranslate"><span class="pre">MessageEntityType.UNKNOWN</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="MessageMediaType.html">MessageMediaType</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MessageServiceType.html">MessageServiceType</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MessagesFilter.html">MessagesFilter</a></li>

@@ -18,6 +18,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -67,7 +68,66 @@
 <li class="toctree-l1"><a class="reference internal" href="decorators.html">Decorators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="errors/index.html">RPC Errors</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Update Filters</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-pyrogram.filters">Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-pyrogram.filters">Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.create"><code class="docutils literal notranslate"><span class="pre">create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.all"><code class="docutils literal notranslate"><span class="pre">all</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.me"><code class="docutils literal notranslate"><span class="pre">me</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.bot"><code class="docutils literal notranslate"><span class="pre">bot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.incoming"><code class="docutils literal notranslate"><span class="pre">incoming</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.outgoing"><code class="docutils literal notranslate"><span class="pre">outgoing</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.text"><code class="docutils literal notranslate"><span class="pre">text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.reply"><code class="docutils literal notranslate"><span class="pre">reply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.forwarded"><code class="docutils literal notranslate"><span class="pre">forwarded</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.caption"><code class="docutils literal notranslate"><span class="pre">caption</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.audio"><code class="docutils literal notranslate"><span class="pre">audio</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.document"><code class="docutils literal notranslate"><span class="pre">document</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.photo"><code class="docutils literal notranslate"><span class="pre">photo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.sticker"><code class="docutils literal notranslate"><span class="pre">sticker</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.animation"><code class="docutils literal notranslate"><span class="pre">animation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.game"><code class="docutils literal notranslate"><span class="pre">game</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.video"><code class="docutils literal notranslate"><span class="pre">video</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.media_group"><code class="docutils literal notranslate"><span class="pre">media_group</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.voice"><code class="docutils literal notranslate"><span class="pre">voice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.video_note"><code class="docutils literal notranslate"><span class="pre">video_note</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.contact"><code class="docutils literal notranslate"><span class="pre">contact</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.location"><code class="docutils literal notranslate"><span class="pre">location</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.venue"><code class="docutils literal notranslate"><span class="pre">venue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.web_page"><code class="docutils literal notranslate"><span class="pre">web_page</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.poll"><code class="docutils literal notranslate"><span class="pre">poll</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.dice"><code class="docutils literal notranslate"><span class="pre">dice</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.private"><code class="docutils literal notranslate"><span class="pre">private</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.group"><code class="docutils literal notranslate"><span class="pre">group</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.channel"><code class="docutils literal notranslate"><span class="pre">channel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.new_chat_members"><code class="docutils literal notranslate"><span class="pre">new_chat_members</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.left_chat_member"><code class="docutils literal notranslate"><span class="pre">left_chat_member</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.new_chat_title"><code class="docutils literal notranslate"><span class="pre">new_chat_title</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.new_chat_photo"><code class="docutils literal notranslate"><span class="pre">new_chat_photo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.delete_chat_photo"><code class="docutils literal notranslate"><span class="pre">delete_chat_photo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.group_chat_created"><code class="docutils literal notranslate"><span class="pre">group_chat_created</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.supergroup_chat_created"><code class="docutils literal notranslate"><span class="pre">supergroup_chat_created</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.channel_chat_created"><code class="docutils literal notranslate"><span class="pre">channel_chat_created</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.migrate_to_chat_id"><code class="docutils literal notranslate"><span class="pre">migrate_to_chat_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.migrate_from_chat_id"><code class="docutils literal notranslate"><span class="pre">migrate_from_chat_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.pinned_message"><code class="docutils literal notranslate"><span class="pre">pinned_message</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.game_high_score"><code class="docutils literal notranslate"><span class="pre">game_high_score</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.reply_keyboard"><code class="docutils literal notranslate"><span class="pre">reply_keyboard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.inline_keyboard"><code class="docutils literal notranslate"><span class="pre">inline_keyboard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.mentioned"><code class="docutils literal notranslate"><span class="pre">mentioned</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.via_bot"><code class="docutils literal notranslate"><span class="pre">via_bot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.video_chat_started"><code class="docutils literal notranslate"><span class="pre">video_chat_started</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.video_chat_ended"><code class="docutils literal notranslate"><span class="pre">video_chat_ended</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.video_chat_members_invited"><code class="docutils literal notranslate"><span class="pre">video_chat_members_invited</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.service"><code class="docutils literal notranslate"><span class="pre">service</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.media"><code class="docutils literal notranslate"><span class="pre">media</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.scheduled"><code class="docutils literal notranslate"><span class="pre">scheduled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.from_scheduled"><code class="docutils literal notranslate"><span class="pre">from_scheduled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.linked_channel"><code class="docutils literal notranslate"><span class="pre">linked_channel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.command"><code class="docutils literal notranslate"><span class="pre">command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.regex"><code class="docutils literal notranslate"><span class="pre">regex()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.user"><code class="docutils literal notranslate"><span class="pre">user</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.filters.chat"><code class="docutils literal notranslate"><span class="pre">chat</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

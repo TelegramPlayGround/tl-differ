@@ -18,6 +18,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -128,47 +129,170 @@
 <span id="channels"></span><h1>Channels<a class="headerlink" href="#module-pyrogram.raw.functions.channels" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="check-username.html">CheckUsername</a></li>
-<li class="toctree-l1"><a class="reference internal" href="convert-to-gigagroup.html">ConvertToGigagroup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create-channel.html">CreateChannel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-channel.html">DeleteChannel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-history.html">DeleteHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-messages.html">DeleteMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-participant-history.html">DeleteParticipantHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-admin.html">EditAdmin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-banned.html">EditBanned</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-creator.html">EditCreator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-location.html">EditLocation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-photo.html">EditPhoto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-title.html">EditTitle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export-message-link.html">ExportMessageLink</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-admin-log.html">GetAdminLog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-admined-public-channels.html">GetAdminedPublicChannels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-channels.html">GetChannels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-full-channel.html">GetFullChannel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-groups-for-discussion.html">GetGroupsForDiscussion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-inactive-channels.html">GetInactiveChannels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-left-channels.html">GetLeftChannels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-messages.html">GetMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-participant.html">GetParticipant</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-participants.html">GetParticipants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-send-as.html">GetSendAs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-sponsored-messages.html">GetSponsoredMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="invite-to-channel.html">InviteToChannel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="join-channel.html">JoinChannel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="leave-channel.html">LeaveChannel</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-history.html">ReadHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-message-contents.html">ReadMessageContents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="report-spam.html">ReportSpam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-discussion-group.html">SetDiscussionGroup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-stickers.html">SetStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-join-request.html">ToggleJoinRequest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-join-to-send.html">ToggleJoinToSend</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-pre-history-hidden.html">TogglePreHistoryHidden</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-signatures.html">ToggleSignatures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-slow-mode.html">ToggleSlowMode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update-username.html">UpdateUsername</a></li>
-<li class="toctree-l1"><a class="reference internal" href="view-sponsored-message.html">ViewSponsoredMessage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="check-username.html">CheckUsername</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-username.html#pyrogram.raw.functions.channels.CheckUsername"><code class="docutils literal notranslate"><span class="pre">CheckUsername</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="convert-to-gigagroup.html">ConvertToGigagroup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="convert-to-gigagroup.html#pyrogram.raw.functions.channels.ConvertToGigagroup"><code class="docutils literal notranslate"><span class="pre">ConvertToGigagroup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="create-channel.html">CreateChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="create-channel.html#pyrogram.raw.functions.channels.CreateChannel"><code class="docutils literal notranslate"><span class="pre">CreateChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-channel.html">DeleteChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-channel.html#pyrogram.raw.functions.channels.DeleteChannel"><code class="docutils literal notranslate"><span class="pre">DeleteChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-history.html">DeleteHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-history.html#pyrogram.raw.functions.channels.DeleteHistory"><code class="docutils literal notranslate"><span class="pre">DeleteHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-messages.html">DeleteMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-messages.html#pyrogram.raw.functions.channels.DeleteMessages"><code class="docutils literal notranslate"><span class="pre">DeleteMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-participant-history.html">DeleteParticipantHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-participant-history.html#pyrogram.raw.functions.channels.DeleteParticipantHistory"><code class="docutils literal notranslate"><span class="pre">DeleteParticipantHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-admin.html">EditAdmin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-admin.html#pyrogram.raw.functions.channels.EditAdmin"><code class="docutils literal notranslate"><span class="pre">EditAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-banned.html">EditBanned</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-banned.html#pyrogram.raw.functions.channels.EditBanned"><code class="docutils literal notranslate"><span class="pre">EditBanned</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-creator.html">EditCreator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-creator.html#pyrogram.raw.functions.channels.EditCreator"><code class="docutils literal notranslate"><span class="pre">EditCreator</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-location.html">EditLocation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-location.html#pyrogram.raw.functions.channels.EditLocation"><code class="docutils literal notranslate"><span class="pre">EditLocation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-photo.html">EditPhoto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-photo.html#pyrogram.raw.functions.channels.EditPhoto"><code class="docutils literal notranslate"><span class="pre">EditPhoto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-title.html">EditTitle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-title.html#pyrogram.raw.functions.channels.EditTitle"><code class="docutils literal notranslate"><span class="pre">EditTitle</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export-message-link.html">ExportMessageLink</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export-message-link.html#pyrogram.raw.functions.channels.ExportMessageLink"><code class="docutils literal notranslate"><span class="pre">ExportMessageLink</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-admin-log.html">GetAdminLog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-admin-log.html#pyrogram.raw.functions.channels.GetAdminLog"><code class="docutils literal notranslate"><span class="pre">GetAdminLog</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-admined-public-channels.html">GetAdminedPublicChannels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-admined-public-channels.html#pyrogram.raw.functions.channels.GetAdminedPublicChannels"><code class="docutils literal notranslate"><span class="pre">GetAdminedPublicChannels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-channels.html">GetChannels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-channels.html#pyrogram.raw.functions.channels.GetChannels"><code class="docutils literal notranslate"><span class="pre">GetChannels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-full-channel.html">GetFullChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-full-channel.html#pyrogram.raw.functions.channels.GetFullChannel"><code class="docutils literal notranslate"><span class="pre">GetFullChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-groups-for-discussion.html">GetGroupsForDiscussion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-groups-for-discussion.html#pyrogram.raw.functions.channels.GetGroupsForDiscussion"><code class="docutils literal notranslate"><span class="pre">GetGroupsForDiscussion</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-inactive-channels.html">GetInactiveChannels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-inactive-channels.html#pyrogram.raw.functions.channels.GetInactiveChannels"><code class="docutils literal notranslate"><span class="pre">GetInactiveChannels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-left-channels.html">GetLeftChannels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-left-channels.html#pyrogram.raw.functions.channels.GetLeftChannels"><code class="docutils literal notranslate"><span class="pre">GetLeftChannels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-messages.html">GetMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-messages.html#pyrogram.raw.functions.channels.GetMessages"><code class="docutils literal notranslate"><span class="pre">GetMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-participant.html">GetParticipant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-participant.html#pyrogram.raw.functions.channels.GetParticipant"><code class="docutils literal notranslate"><span class="pre">GetParticipant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-participants.html">GetParticipants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-participants.html#pyrogram.raw.functions.channels.GetParticipants"><code class="docutils literal notranslate"><span class="pre">GetParticipants</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-send-as.html">GetSendAs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-send-as.html#pyrogram.raw.functions.channels.GetSendAs"><code class="docutils literal notranslate"><span class="pre">GetSendAs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-sponsored-messages.html">GetSponsoredMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-sponsored-messages.html#pyrogram.raw.functions.channels.GetSponsoredMessages"><code class="docutils literal notranslate"><span class="pre">GetSponsoredMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="invite-to-channel.html">InviteToChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="invite-to-channel.html#pyrogram.raw.functions.channels.InviteToChannel"><code class="docutils literal notranslate"><span class="pre">InviteToChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="join-channel.html">JoinChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="join-channel.html#pyrogram.raw.functions.channels.JoinChannel"><code class="docutils literal notranslate"><span class="pre">JoinChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="leave-channel.html">LeaveChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="leave-channel.html#pyrogram.raw.functions.channels.LeaveChannel"><code class="docutils literal notranslate"><span class="pre">LeaveChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-history.html">ReadHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-history.html#pyrogram.raw.functions.channels.ReadHistory"><code class="docutils literal notranslate"><span class="pre">ReadHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-message-contents.html">ReadMessageContents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-message-contents.html#pyrogram.raw.functions.channels.ReadMessageContents"><code class="docutils literal notranslate"><span class="pre">ReadMessageContents</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report-spam.html">ReportSpam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report-spam.html#pyrogram.raw.functions.channels.ReportSpam"><code class="docutils literal notranslate"><span class="pre">ReportSpam</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-discussion-group.html">SetDiscussionGroup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-discussion-group.html#pyrogram.raw.functions.channels.SetDiscussionGroup"><code class="docutils literal notranslate"><span class="pre">SetDiscussionGroup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-stickers.html">SetStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-stickers.html#pyrogram.raw.functions.channels.SetStickers"><code class="docutils literal notranslate"><span class="pre">SetStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-join-request.html">ToggleJoinRequest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-join-request.html#pyrogram.raw.functions.channels.ToggleJoinRequest"><code class="docutils literal notranslate"><span class="pre">ToggleJoinRequest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-join-to-send.html">ToggleJoinToSend</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-join-to-send.html#pyrogram.raw.functions.channels.ToggleJoinToSend"><code class="docutils literal notranslate"><span class="pre">ToggleJoinToSend</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-pre-history-hidden.html">TogglePreHistoryHidden</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-pre-history-hidden.html#pyrogram.raw.functions.channels.TogglePreHistoryHidden"><code class="docutils literal notranslate"><span class="pre">TogglePreHistoryHidden</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-signatures.html">ToggleSignatures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-signatures.html#pyrogram.raw.functions.channels.ToggleSignatures"><code class="docutils literal notranslate"><span class="pre">ToggleSignatures</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-slow-mode.html">ToggleSlowMode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-slow-mode.html#pyrogram.raw.functions.channels.ToggleSlowMode"><code class="docutils literal notranslate"><span class="pre">ToggleSlowMode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update-username.html">UpdateUsername</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="update-username.html#pyrogram.raw.functions.channels.UpdateUsername"><code class="docutils literal notranslate"><span class="pre">UpdateUsername</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="view-sponsored-message.html">ViewSponsoredMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="view-sponsored-message.html#pyrogram.raw.functions.channels.ViewSponsoredMessage"><code class="docutils literal notranslate"><span class="pre">ViewSponsoredMessage</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

@@ -18,6 +18,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -128,25 +129,82 @@
 <span id="auth"></span><h1>Auth<a class="headerlink" href="#module-pyrogram.raw.functions.auth" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="accept-login-token.html">AcceptLoginToken</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bind-temp-auth-key.html">BindTempAuthKey</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cancel-code.html">CancelCode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-password.html">CheckPassword</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-recovery-password.html">CheckRecoveryPassword</a></li>
-<li class="toctree-l1"><a class="reference internal" href="drop-temp-auth-keys.html">DropTempAuthKeys</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export-authorization.html">ExportAuthorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export-login-token.html">ExportLoginToken</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import-authorization.html">ImportAuthorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import-bot-authorization.html">ImportBotAuthorization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import-login-token.html">ImportLoginToken</a></li>
-<li class="toctree-l1"><a class="reference internal" href="log-out.html">LogOut</a></li>
-<li class="toctree-l1"><a class="reference internal" href="recover-password.html">RecoverPassword</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-password-recovery.html">RequestPasswordRecovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resend-code.html">ResendCode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reset-authorizations.html">ResetAuthorizations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-code.html">SendCode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sign-in.html">SignIn</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sign-up.html">SignUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accept-login-token.html">AcceptLoginToken</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accept-login-token.html#pyrogram.raw.functions.auth.AcceptLoginToken"><code class="docutils literal notranslate"><span class="pre">AcceptLoginToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bind-temp-auth-key.html">BindTempAuthKey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bind-temp-auth-key.html#pyrogram.raw.functions.auth.BindTempAuthKey"><code class="docutils literal notranslate"><span class="pre">BindTempAuthKey</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cancel-code.html">CancelCode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cancel-code.html#pyrogram.raw.functions.auth.CancelCode"><code class="docutils literal notranslate"><span class="pre">CancelCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-password.html">CheckPassword</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-password.html#pyrogram.raw.functions.auth.CheckPassword"><code class="docutils literal notranslate"><span class="pre">CheckPassword</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-recovery-password.html">CheckRecoveryPassword</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-recovery-password.html#pyrogram.raw.functions.auth.CheckRecoveryPassword"><code class="docutils literal notranslate"><span class="pre">CheckRecoveryPassword</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="drop-temp-auth-keys.html">DropTempAuthKeys</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="drop-temp-auth-keys.html#pyrogram.raw.functions.auth.DropTempAuthKeys"><code class="docutils literal notranslate"><span class="pre">DropTempAuthKeys</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export-authorization.html">ExportAuthorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export-authorization.html#pyrogram.raw.functions.auth.ExportAuthorization"><code class="docutils literal notranslate"><span class="pre">ExportAuthorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export-login-token.html">ExportLoginToken</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export-login-token.html#pyrogram.raw.functions.auth.ExportLoginToken"><code class="docutils literal notranslate"><span class="pre">ExportLoginToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-authorization.html">ImportAuthorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import-authorization.html#pyrogram.raw.functions.auth.ImportAuthorization"><code class="docutils literal notranslate"><span class="pre">ImportAuthorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-bot-authorization.html">ImportBotAuthorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import-bot-authorization.html#pyrogram.raw.functions.auth.ImportBotAuthorization"><code class="docutils literal notranslate"><span class="pre">ImportBotAuthorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-login-token.html">ImportLoginToken</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import-login-token.html#pyrogram.raw.functions.auth.ImportLoginToken"><code class="docutils literal notranslate"><span class="pre">ImportLoginToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="log-out.html">LogOut</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="log-out.html#pyrogram.raw.functions.auth.LogOut"><code class="docutils literal notranslate"><span class="pre">LogOut</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recover-password.html">RecoverPassword</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recover-password.html#pyrogram.raw.functions.auth.RecoverPassword"><code class="docutils literal notranslate"><span class="pre">RecoverPassword</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="request-password-recovery.html">RequestPasswordRecovery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="request-password-recovery.html#pyrogram.raw.functions.auth.RequestPasswordRecovery"><code class="docutils literal notranslate"><span class="pre">RequestPasswordRecovery</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resend-code.html">ResendCode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resend-code.html#pyrogram.raw.functions.auth.ResendCode"><code class="docutils literal notranslate"><span class="pre">ResendCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reset-authorizations.html">ResetAuthorizations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reset-authorizations.html#pyrogram.raw.functions.auth.ResetAuthorizations"><code class="docutils literal notranslate"><span class="pre">ResetAuthorizations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-code.html">SendCode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-code.html#pyrogram.raw.functions.auth.SendCode"><code class="docutils literal notranslate"><span class="pre">SendCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sign-in.html">SignIn</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sign-in.html#pyrogram.raw.functions.auth.SignIn"><code class="docutils literal notranslate"><span class="pre">SignIn</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sign-up.html">SignUp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sign-up.html#pyrogram.raw.functions.auth.SignUp"><code class="docutils literal notranslate"><span class="pre">SignUp</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

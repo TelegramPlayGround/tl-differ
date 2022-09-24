@@ -18,6 +18,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -128,183 +129,714 @@
 <span id="messages"></span><h1>Messages<a class="headerlink" href="#module-pyrogram.raw.functions.messages" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="accept-encryption.html">AcceptEncryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accept-url-auth.html">AcceptUrlAuth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add-chat-user.html">AddChatUser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-chat-invite.html">CheckChatInvite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-history-import.html">CheckHistoryImport</a></li>
-<li class="toctree-l1"><a class="reference internal" href="check-history-import-peer.html">CheckHistoryImportPeer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clear-all-drafts.html">ClearAllDrafts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clear-recent-reactions.html">ClearRecentReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="clear-recent-stickers.html">ClearRecentStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create-chat.html">CreateChat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-chat.html">DeleteChat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-chat-user.html">DeleteChatUser</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-exported-chat-invite.html">DeleteExportedChatInvite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-history.html">DeleteHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-messages.html">DeleteMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-phone-call-history.html">DeletePhoneCallHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-revoked-exported-chat-invites.html">DeleteRevokedExportedChatInvites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-scheduled-messages.html">DeleteScheduledMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="discard-encryption.html">DiscardEncryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-chat-about.html">EditChatAbout</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-chat-admin.html">EditChatAdmin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-chat-default-banned-rights.html">EditChatDefaultBannedRights</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-chat-photo.html">EditChatPhoto</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-chat-title.html">EditChatTitle</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-exported-chat-invite.html">EditExportedChatInvite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-inline-bot-message.html">EditInlineBotMessage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="edit-message.html">EditMessage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export-chat-invite.html">ExportChatInvite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fave-sticker.html">FaveSticker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="forward-messages.html">ForwardMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-admins-with-invites.html">GetAdminsWithInvites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-all-chats.html">GetAllChats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-all-drafts.html">GetAllDrafts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-all-stickers.html">GetAllStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-archived-stickers.html">GetArchivedStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-attach-menu-bot.html">GetAttachMenuBot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-attach-menu-bots.html">GetAttachMenuBots</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-attached-stickers.html">GetAttachedStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-available-reactions.html">GetAvailableReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-bot-callback-answer.html">GetBotCallbackAnswer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-chat-invite-importers.html">GetChatInviteImporters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-chats.html">GetChats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-common-chats.html">GetCommonChats</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-custom-emoji-documents.html">GetCustomEmojiDocuments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-dh-config.html">GetDhConfig</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-dialog-filters.html">GetDialogFilters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-dialog-unread-marks.html">GetDialogUnreadMarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-dialogs.html">GetDialogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-discussion-message.html">GetDiscussionMessage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-document-by-hash.html">GetDocumentByHash</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-emoji-keywords.html">GetEmojiKeywords</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-emoji-keywords-difference.html">GetEmojiKeywordsDifference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-emoji-keywords-languages.html">GetEmojiKeywordsLanguages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-emoji-stickers.html">GetEmojiStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-emoji-url.html">GetEmojiURL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-exported-chat-invite.html">GetExportedChatInvite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-exported-chat-invites.html">GetExportedChatInvites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-extended-media.html">GetExtendedMedia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-faved-stickers.html">GetFavedStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-featured-emoji-stickers.html">GetFeaturedEmojiStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-featured-stickers.html">GetFeaturedStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-full-chat.html">GetFullChat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-game-high-scores.html">GetGameHighScores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-history.html">GetHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-inline-bot-results.html">GetInlineBotResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-inline-game-high-scores.html">GetInlineGameHighScores</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-mask-stickers.html">GetMaskStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-message-edit-data.html">GetMessageEditData</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-message-reactions-list.html">GetMessageReactionsList</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-message-read-participants.html">GetMessageReadParticipants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-messages.html">GetMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-messages-reactions.html">GetMessagesReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-messages-views.html">GetMessagesViews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-old-featured-stickers.html">GetOldFeaturedStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-onlines.html">GetOnlines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-peer-dialogs.html">GetPeerDialogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-peer-settings.html">GetPeerSettings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-pinned-dialogs.html">GetPinnedDialogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-poll-results.html">GetPollResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-poll-votes.html">GetPollVotes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-recent-locations.html">GetRecentLocations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-recent-reactions.html">GetRecentReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-recent-stickers.html">GetRecentStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-replies.html">GetReplies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-saved-gifs.html">GetSavedGifs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-scheduled-history.html">GetScheduledHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-scheduled-messages.html">GetScheduledMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-search-counters.html">GetSearchCounters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-search-results-calendar.html">GetSearchResultsCalendar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-search-results-positions.html">GetSearchResultsPositions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-split-ranges.html">GetSplitRanges</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-sticker-set.html">GetStickerSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-stickers.html">GetStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-suggested-dialog-filters.html">GetSuggestedDialogFilters</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-top-reactions.html">GetTopReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-unread-mentions.html">GetUnreadMentions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-unread-reactions.html">GetUnreadReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-web-page.html">GetWebPage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-web-page-preview.html">GetWebPagePreview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hide-all-chat-join-requests.html">HideAllChatJoinRequests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hide-chat-join-request.html">HideChatJoinRequest</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hide-peer-settings-bar.html">HidePeerSettingsBar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import-chat-invite.html">ImportChatInvite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="init-history-import.html">InitHistoryImport</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install-sticker-set.html">InstallStickerSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="mark-dialog-unread.html">MarkDialogUnread</a></li>
-<li class="toctree-l1"><a class="reference internal" href="migrate-chat.html">MigrateChat</a></li>
-<li class="toctree-l1"><a class="reference internal" href="prolong-web-view.html">ProlongWebView</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rate-transcribed-audio.html">RateTranscribedAudio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-discussion.html">ReadDiscussion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-encrypted-history.html">ReadEncryptedHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-featured-stickers.html">ReadFeaturedStickers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-history.html">ReadHistory</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-mentions.html">ReadMentions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-message-contents.html">ReadMessageContents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="read-reactions.html">ReadReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="received-messages.html">ReceivedMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="received-queue.html">ReceivedQueue</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reorder-pinned-dialogs.html">ReorderPinnedDialogs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reorder-sticker-sets.html">ReorderStickerSets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="report.html">Report</a></li>
-<li class="toctree-l1"><a class="reference internal" href="report-encrypted-spam.html">ReportEncryptedSpam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="report-reaction.html">ReportReaction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="report-spam.html">ReportSpam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-encryption.html">RequestEncryption</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-simple-web-view.html">RequestSimpleWebView</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-url-auth.html">RequestUrlAuth</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request-web-view.html">RequestWebView</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save-default-send-as.html">SaveDefaultSendAs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save-draft.html">SaveDraft</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save-gif.html">SaveGif</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save-recent-sticker.html">SaveRecentSticker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search-global.html">SearchGlobal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search-sent-media.html">SearchSentMedia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search-sticker-sets.html">SearchStickerSets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-encrypted.html">SendEncrypted</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-encrypted-file.html">SendEncryptedFile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-encrypted-service.html">SendEncryptedService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-inline-bot-result.html">SendInlineBotResult</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-media.html">SendMedia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-message.html">SendMessage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-multi-media.html">SendMultiMedia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-reaction.html">SendReaction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-scheduled-messages.html">SendScheduledMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-screenshot-notification.html">SendScreenshotNotification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-vote.html">SendVote</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-web-view-data.html">SendWebViewData</a></li>
-<li class="toctree-l1"><a class="reference internal" href="send-web-view-result-message.html">SendWebViewResultMessage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-bot-callback-answer.html">SetBotCallbackAnswer</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-bot-precheckout-results.html">SetBotPrecheckoutResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-bot-shipping-results.html">SetBotShippingResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-chat-available-reactions.html">SetChatAvailableReactions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-chat-theme.html">SetChatTheme</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-default-reaction.html">SetDefaultReaction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-encrypted-typing.html">SetEncryptedTyping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-game-score.html">SetGameScore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-history-ttl.html">SetHistoryTTL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-inline-bot-results.html">SetInlineBotResults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-inline-game-score.html">SetInlineGameScore</a></li>
-<li class="toctree-l1"><a class="reference internal" href="set-typing.html">SetTyping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="start-bot.html">StartBot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="start-history-import.html">StartHistoryImport</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-bot-in-attach-menu.html">ToggleBotInAttachMenu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-dialog-pin.html">ToggleDialogPin</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-no-forwards.html">ToggleNoForwards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-sticker-sets.html">ToggleStickerSets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transcribe-audio.html">TranscribeAudio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="translate-text.html">TranslateText</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uninstall-sticker-set.html">UninstallStickerSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unpin-all-messages.html">UnpinAllMessages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update-dialog-filter.html">UpdateDialogFilter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update-dialog-filters-order.html">UpdateDialogFiltersOrder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="update-pinned-message.html">UpdatePinnedMessage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="upload-encrypted-file.html">UploadEncryptedFile</a></li>
-<li class="toctree-l1"><a class="reference internal" href="upload-imported-media.html">UploadImportedMedia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="upload-media.html">UploadMedia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accept-encryption.html">AcceptEncryption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accept-encryption.html#pyrogram.raw.functions.messages.AcceptEncryption"><code class="docutils literal notranslate"><span class="pre">AcceptEncryption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="accept-url-auth.html">AcceptUrlAuth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accept-url-auth.html#pyrogram.raw.functions.messages.AcceptUrlAuth"><code class="docutils literal notranslate"><span class="pre">AcceptUrlAuth</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="add-chat-user.html">AddChatUser</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add-chat-user.html#pyrogram.raw.functions.messages.AddChatUser"><code class="docutils literal notranslate"><span class="pre">AddChatUser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-chat-invite.html">CheckChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-chat-invite.html#pyrogram.raw.functions.messages.CheckChatInvite"><code class="docutils literal notranslate"><span class="pre">CheckChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-history-import.html">CheckHistoryImport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-history-import.html#pyrogram.raw.functions.messages.CheckHistoryImport"><code class="docutils literal notranslate"><span class="pre">CheckHistoryImport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="check-history-import-peer.html">CheckHistoryImportPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="check-history-import-peer.html#pyrogram.raw.functions.messages.CheckHistoryImportPeer"><code class="docutils literal notranslate"><span class="pre">CheckHistoryImportPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clear-all-drafts.html">ClearAllDrafts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clear-all-drafts.html#pyrogram.raw.functions.messages.ClearAllDrafts"><code class="docutils literal notranslate"><span class="pre">ClearAllDrafts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clear-recent-reactions.html">ClearRecentReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clear-recent-reactions.html#pyrogram.raw.functions.messages.ClearRecentReactions"><code class="docutils literal notranslate"><span class="pre">ClearRecentReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="clear-recent-stickers.html">ClearRecentStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clear-recent-stickers.html#pyrogram.raw.functions.messages.ClearRecentStickers"><code class="docutils literal notranslate"><span class="pre">ClearRecentStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="create-chat.html">CreateChat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="create-chat.html#pyrogram.raw.functions.messages.CreateChat"><code class="docutils literal notranslate"><span class="pre">CreateChat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-chat.html">DeleteChat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-chat.html#pyrogram.raw.functions.messages.DeleteChat"><code class="docutils literal notranslate"><span class="pre">DeleteChat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-chat-user.html">DeleteChatUser</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-chat-user.html#pyrogram.raw.functions.messages.DeleteChatUser"><code class="docutils literal notranslate"><span class="pre">DeleteChatUser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-exported-chat-invite.html">DeleteExportedChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-exported-chat-invite.html#pyrogram.raw.functions.messages.DeleteExportedChatInvite"><code class="docutils literal notranslate"><span class="pre">DeleteExportedChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-history.html">DeleteHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-history.html#pyrogram.raw.functions.messages.DeleteHistory"><code class="docutils literal notranslate"><span class="pre">DeleteHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-messages.html">DeleteMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-messages.html#pyrogram.raw.functions.messages.DeleteMessages"><code class="docutils literal notranslate"><span class="pre">DeleteMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-phone-call-history.html">DeletePhoneCallHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-phone-call-history.html#pyrogram.raw.functions.messages.DeletePhoneCallHistory"><code class="docutils literal notranslate"><span class="pre">DeletePhoneCallHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-revoked-exported-chat-invites.html">DeleteRevokedExportedChatInvites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-revoked-exported-chat-invites.html#pyrogram.raw.functions.messages.DeleteRevokedExportedChatInvites"><code class="docutils literal notranslate"><span class="pre">DeleteRevokedExportedChatInvites</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-scheduled-messages.html">DeleteScheduledMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-scheduled-messages.html#pyrogram.raw.functions.messages.DeleteScheduledMessages"><code class="docutils literal notranslate"><span class="pre">DeleteScheduledMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discard-encryption.html">DiscardEncryption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discard-encryption.html#pyrogram.raw.functions.messages.DiscardEncryption"><code class="docutils literal notranslate"><span class="pre">DiscardEncryption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-chat-about.html">EditChatAbout</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-chat-about.html#pyrogram.raw.functions.messages.EditChatAbout"><code class="docutils literal notranslate"><span class="pre">EditChatAbout</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-chat-admin.html">EditChatAdmin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-chat-admin.html#pyrogram.raw.functions.messages.EditChatAdmin"><code class="docutils literal notranslate"><span class="pre">EditChatAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-chat-default-banned-rights.html">EditChatDefaultBannedRights</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-chat-default-banned-rights.html#pyrogram.raw.functions.messages.EditChatDefaultBannedRights"><code class="docutils literal notranslate"><span class="pre">EditChatDefaultBannedRights</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-chat-photo.html">EditChatPhoto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-chat-photo.html#pyrogram.raw.functions.messages.EditChatPhoto"><code class="docutils literal notranslate"><span class="pre">EditChatPhoto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-chat-title.html">EditChatTitle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-chat-title.html#pyrogram.raw.functions.messages.EditChatTitle"><code class="docutils literal notranslate"><span class="pre">EditChatTitle</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-exported-chat-invite.html">EditExportedChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-exported-chat-invite.html#pyrogram.raw.functions.messages.EditExportedChatInvite"><code class="docutils literal notranslate"><span class="pre">EditExportedChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-inline-bot-message.html">EditInlineBotMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-inline-bot-message.html#pyrogram.raw.functions.messages.EditInlineBotMessage"><code class="docutils literal notranslate"><span class="pre">EditInlineBotMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edit-message.html">EditMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edit-message.html#pyrogram.raw.functions.messages.EditMessage"><code class="docutils literal notranslate"><span class="pre">EditMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="export-chat-invite.html">ExportChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="export-chat-invite.html#pyrogram.raw.functions.messages.ExportChatInvite"><code class="docutils literal notranslate"><span class="pre">ExportChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fave-sticker.html">FaveSticker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fave-sticker.html#pyrogram.raw.functions.messages.FaveSticker"><code class="docutils literal notranslate"><span class="pre">FaveSticker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forward-messages.html">ForwardMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forward-messages.html#pyrogram.raw.functions.messages.ForwardMessages"><code class="docutils literal notranslate"><span class="pre">ForwardMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-admins-with-invites.html">GetAdminsWithInvites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-admins-with-invites.html#pyrogram.raw.functions.messages.GetAdminsWithInvites"><code class="docutils literal notranslate"><span class="pre">GetAdminsWithInvites</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-all-chats.html">GetAllChats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-all-chats.html#pyrogram.raw.functions.messages.GetAllChats"><code class="docutils literal notranslate"><span class="pre">GetAllChats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-all-drafts.html">GetAllDrafts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-all-drafts.html#pyrogram.raw.functions.messages.GetAllDrafts"><code class="docutils literal notranslate"><span class="pre">GetAllDrafts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-all-stickers.html">GetAllStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-all-stickers.html#pyrogram.raw.functions.messages.GetAllStickers"><code class="docutils literal notranslate"><span class="pre">GetAllStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-archived-stickers.html">GetArchivedStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-archived-stickers.html#pyrogram.raw.functions.messages.GetArchivedStickers"><code class="docutils literal notranslate"><span class="pre">GetArchivedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-attach-menu-bot.html">GetAttachMenuBot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-attach-menu-bot.html#pyrogram.raw.functions.messages.GetAttachMenuBot"><code class="docutils literal notranslate"><span class="pre">GetAttachMenuBot</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-attach-menu-bots.html">GetAttachMenuBots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-attach-menu-bots.html#pyrogram.raw.functions.messages.GetAttachMenuBots"><code class="docutils literal notranslate"><span class="pre">GetAttachMenuBots</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-attached-stickers.html">GetAttachedStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-attached-stickers.html#pyrogram.raw.functions.messages.GetAttachedStickers"><code class="docutils literal notranslate"><span class="pre">GetAttachedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-available-reactions.html">GetAvailableReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-available-reactions.html#pyrogram.raw.functions.messages.GetAvailableReactions"><code class="docutils literal notranslate"><span class="pre">GetAvailableReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-bot-callback-answer.html">GetBotCallbackAnswer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-bot-callback-answer.html#pyrogram.raw.functions.messages.GetBotCallbackAnswer"><code class="docutils literal notranslate"><span class="pre">GetBotCallbackAnswer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-chat-invite-importers.html">GetChatInviteImporters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-chat-invite-importers.html#pyrogram.raw.functions.messages.GetChatInviteImporters"><code class="docutils literal notranslate"><span class="pre">GetChatInviteImporters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-chats.html">GetChats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-chats.html#pyrogram.raw.functions.messages.GetChats"><code class="docutils literal notranslate"><span class="pre">GetChats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-common-chats.html">GetCommonChats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-common-chats.html#pyrogram.raw.functions.messages.GetCommonChats"><code class="docutils literal notranslate"><span class="pre">GetCommonChats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-custom-emoji-documents.html">GetCustomEmojiDocuments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-custom-emoji-documents.html#pyrogram.raw.functions.messages.GetCustomEmojiDocuments"><code class="docutils literal notranslate"><span class="pre">GetCustomEmojiDocuments</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-dh-config.html">GetDhConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-dh-config.html#pyrogram.raw.functions.messages.GetDhConfig"><code class="docutils literal notranslate"><span class="pre">GetDhConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-dialog-filters.html">GetDialogFilters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-dialog-filters.html#pyrogram.raw.functions.messages.GetDialogFilters"><code class="docutils literal notranslate"><span class="pre">GetDialogFilters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-dialog-unread-marks.html">GetDialogUnreadMarks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-dialog-unread-marks.html#pyrogram.raw.functions.messages.GetDialogUnreadMarks"><code class="docutils literal notranslate"><span class="pre">GetDialogUnreadMarks</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-dialogs.html">GetDialogs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-dialogs.html#pyrogram.raw.functions.messages.GetDialogs"><code class="docutils literal notranslate"><span class="pre">GetDialogs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-discussion-message.html">GetDiscussionMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-discussion-message.html#pyrogram.raw.functions.messages.GetDiscussionMessage"><code class="docutils literal notranslate"><span class="pre">GetDiscussionMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-document-by-hash.html">GetDocumentByHash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-document-by-hash.html#pyrogram.raw.functions.messages.GetDocumentByHash"><code class="docutils literal notranslate"><span class="pre">GetDocumentByHash</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-emoji-keywords.html">GetEmojiKeywords</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-emoji-keywords.html#pyrogram.raw.functions.messages.GetEmojiKeywords"><code class="docutils literal notranslate"><span class="pre">GetEmojiKeywords</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-emoji-keywords-difference.html">GetEmojiKeywordsDifference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-emoji-keywords-difference.html#pyrogram.raw.functions.messages.GetEmojiKeywordsDifference"><code class="docutils literal notranslate"><span class="pre">GetEmojiKeywordsDifference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-emoji-keywords-languages.html">GetEmojiKeywordsLanguages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-emoji-keywords-languages.html#pyrogram.raw.functions.messages.GetEmojiKeywordsLanguages"><code class="docutils literal notranslate"><span class="pre">GetEmojiKeywordsLanguages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-emoji-stickers.html">GetEmojiStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-emoji-stickers.html#pyrogram.raw.functions.messages.GetEmojiStickers"><code class="docutils literal notranslate"><span class="pre">GetEmojiStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-emoji-url.html">GetEmojiURL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-emoji-url.html#pyrogram.raw.functions.messages.GetEmojiURL"><code class="docutils literal notranslate"><span class="pre">GetEmojiURL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-exported-chat-invite.html">GetExportedChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-exported-chat-invite.html#pyrogram.raw.functions.messages.GetExportedChatInvite"><code class="docutils literal notranslate"><span class="pre">GetExportedChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-exported-chat-invites.html">GetExportedChatInvites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-exported-chat-invites.html#pyrogram.raw.functions.messages.GetExportedChatInvites"><code class="docutils literal notranslate"><span class="pre">GetExportedChatInvites</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-extended-media.html">GetExtendedMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-extended-media.html#pyrogram.raw.functions.messages.GetExtendedMedia"><code class="docutils literal notranslate"><span class="pre">GetExtendedMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-faved-stickers.html">GetFavedStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-faved-stickers.html#pyrogram.raw.functions.messages.GetFavedStickers"><code class="docutils literal notranslate"><span class="pre">GetFavedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-featured-emoji-stickers.html">GetFeaturedEmojiStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-featured-emoji-stickers.html#pyrogram.raw.functions.messages.GetFeaturedEmojiStickers"><code class="docutils literal notranslate"><span class="pre">GetFeaturedEmojiStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-featured-stickers.html">GetFeaturedStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-featured-stickers.html#pyrogram.raw.functions.messages.GetFeaturedStickers"><code class="docutils literal notranslate"><span class="pre">GetFeaturedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-full-chat.html">GetFullChat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-full-chat.html#pyrogram.raw.functions.messages.GetFullChat"><code class="docutils literal notranslate"><span class="pre">GetFullChat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-game-high-scores.html">GetGameHighScores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-game-high-scores.html#pyrogram.raw.functions.messages.GetGameHighScores"><code class="docutils literal notranslate"><span class="pre">GetGameHighScores</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-history.html">GetHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-history.html#pyrogram.raw.functions.messages.GetHistory"><code class="docutils literal notranslate"><span class="pre">GetHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-inline-bot-results.html">GetInlineBotResults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-inline-bot-results.html#pyrogram.raw.functions.messages.GetInlineBotResults"><code class="docutils literal notranslate"><span class="pre">GetInlineBotResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-inline-game-high-scores.html">GetInlineGameHighScores</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-inline-game-high-scores.html#pyrogram.raw.functions.messages.GetInlineGameHighScores"><code class="docutils literal notranslate"><span class="pre">GetInlineGameHighScores</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-mask-stickers.html">GetMaskStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-mask-stickers.html#pyrogram.raw.functions.messages.GetMaskStickers"><code class="docutils literal notranslate"><span class="pre">GetMaskStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-message-edit-data.html">GetMessageEditData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-message-edit-data.html#pyrogram.raw.functions.messages.GetMessageEditData"><code class="docutils literal notranslate"><span class="pre">GetMessageEditData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-message-reactions-list.html">GetMessageReactionsList</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-message-reactions-list.html#pyrogram.raw.functions.messages.GetMessageReactionsList"><code class="docutils literal notranslate"><span class="pre">GetMessageReactionsList</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-message-read-participants.html">GetMessageReadParticipants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-message-read-participants.html#pyrogram.raw.functions.messages.GetMessageReadParticipants"><code class="docutils literal notranslate"><span class="pre">GetMessageReadParticipants</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-messages.html">GetMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-messages.html#pyrogram.raw.functions.messages.GetMessages"><code class="docutils literal notranslate"><span class="pre">GetMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-messages-reactions.html">GetMessagesReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-messages-reactions.html#pyrogram.raw.functions.messages.GetMessagesReactions"><code class="docutils literal notranslate"><span class="pre">GetMessagesReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-messages-views.html">GetMessagesViews</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-messages-views.html#pyrogram.raw.functions.messages.GetMessagesViews"><code class="docutils literal notranslate"><span class="pre">GetMessagesViews</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-old-featured-stickers.html">GetOldFeaturedStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-old-featured-stickers.html#pyrogram.raw.functions.messages.GetOldFeaturedStickers"><code class="docutils literal notranslate"><span class="pre">GetOldFeaturedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-onlines.html">GetOnlines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-onlines.html#pyrogram.raw.functions.messages.GetOnlines"><code class="docutils literal notranslate"><span class="pre">GetOnlines</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-peer-dialogs.html">GetPeerDialogs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-peer-dialogs.html#pyrogram.raw.functions.messages.GetPeerDialogs"><code class="docutils literal notranslate"><span class="pre">GetPeerDialogs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-peer-settings.html">GetPeerSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-peer-settings.html#pyrogram.raw.functions.messages.GetPeerSettings"><code class="docutils literal notranslate"><span class="pre">GetPeerSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-pinned-dialogs.html">GetPinnedDialogs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-pinned-dialogs.html#pyrogram.raw.functions.messages.GetPinnedDialogs"><code class="docutils literal notranslate"><span class="pre">GetPinnedDialogs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-poll-results.html">GetPollResults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-poll-results.html#pyrogram.raw.functions.messages.GetPollResults"><code class="docutils literal notranslate"><span class="pre">GetPollResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-poll-votes.html">GetPollVotes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-poll-votes.html#pyrogram.raw.functions.messages.GetPollVotes"><code class="docutils literal notranslate"><span class="pre">GetPollVotes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-recent-locations.html">GetRecentLocations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-recent-locations.html#pyrogram.raw.functions.messages.GetRecentLocations"><code class="docutils literal notranslate"><span class="pre">GetRecentLocations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-recent-reactions.html">GetRecentReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-recent-reactions.html#pyrogram.raw.functions.messages.GetRecentReactions"><code class="docutils literal notranslate"><span class="pre">GetRecentReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-recent-stickers.html">GetRecentStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-recent-stickers.html#pyrogram.raw.functions.messages.GetRecentStickers"><code class="docutils literal notranslate"><span class="pre">GetRecentStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-replies.html">GetReplies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-replies.html#pyrogram.raw.functions.messages.GetReplies"><code class="docutils literal notranslate"><span class="pre">GetReplies</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-saved-gifs.html">GetSavedGifs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-saved-gifs.html#pyrogram.raw.functions.messages.GetSavedGifs"><code class="docutils literal notranslate"><span class="pre">GetSavedGifs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-scheduled-history.html">GetScheduledHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-scheduled-history.html#pyrogram.raw.functions.messages.GetScheduledHistory"><code class="docutils literal notranslate"><span class="pre">GetScheduledHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-scheduled-messages.html">GetScheduledMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-scheduled-messages.html#pyrogram.raw.functions.messages.GetScheduledMessages"><code class="docutils literal notranslate"><span class="pre">GetScheduledMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-search-counters.html">GetSearchCounters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-search-counters.html#pyrogram.raw.functions.messages.GetSearchCounters"><code class="docutils literal notranslate"><span class="pre">GetSearchCounters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-search-results-calendar.html">GetSearchResultsCalendar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-search-results-calendar.html#pyrogram.raw.functions.messages.GetSearchResultsCalendar"><code class="docutils literal notranslate"><span class="pre">GetSearchResultsCalendar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-search-results-positions.html">GetSearchResultsPositions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-search-results-positions.html#pyrogram.raw.functions.messages.GetSearchResultsPositions"><code class="docutils literal notranslate"><span class="pre">GetSearchResultsPositions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-split-ranges.html">GetSplitRanges</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-split-ranges.html#pyrogram.raw.functions.messages.GetSplitRanges"><code class="docutils literal notranslate"><span class="pre">GetSplitRanges</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-sticker-set.html">GetStickerSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-sticker-set.html#pyrogram.raw.functions.messages.GetStickerSet"><code class="docutils literal notranslate"><span class="pre">GetStickerSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-stickers.html">GetStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-stickers.html#pyrogram.raw.functions.messages.GetStickers"><code class="docutils literal notranslate"><span class="pre">GetStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-suggested-dialog-filters.html">GetSuggestedDialogFilters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-suggested-dialog-filters.html#pyrogram.raw.functions.messages.GetSuggestedDialogFilters"><code class="docutils literal notranslate"><span class="pre">GetSuggestedDialogFilters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-top-reactions.html">GetTopReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-top-reactions.html#pyrogram.raw.functions.messages.GetTopReactions"><code class="docutils literal notranslate"><span class="pre">GetTopReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-unread-mentions.html">GetUnreadMentions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-unread-mentions.html#pyrogram.raw.functions.messages.GetUnreadMentions"><code class="docutils literal notranslate"><span class="pre">GetUnreadMentions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-unread-reactions.html">GetUnreadReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-unread-reactions.html#pyrogram.raw.functions.messages.GetUnreadReactions"><code class="docutils literal notranslate"><span class="pre">GetUnreadReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-web-page.html">GetWebPage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-web-page.html#pyrogram.raw.functions.messages.GetWebPage"><code class="docutils literal notranslate"><span class="pre">GetWebPage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-web-page-preview.html">GetWebPagePreview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-web-page-preview.html#pyrogram.raw.functions.messages.GetWebPagePreview"><code class="docutils literal notranslate"><span class="pre">GetWebPagePreview</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hide-all-chat-join-requests.html">HideAllChatJoinRequests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hide-all-chat-join-requests.html#pyrogram.raw.functions.messages.HideAllChatJoinRequests"><code class="docutils literal notranslate"><span class="pre">HideAllChatJoinRequests</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hide-chat-join-request.html">HideChatJoinRequest</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hide-chat-join-request.html#pyrogram.raw.functions.messages.HideChatJoinRequest"><code class="docutils literal notranslate"><span class="pre">HideChatJoinRequest</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hide-peer-settings-bar.html">HidePeerSettingsBar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hide-peer-settings-bar.html#pyrogram.raw.functions.messages.HidePeerSettingsBar"><code class="docutils literal notranslate"><span class="pre">HidePeerSettingsBar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-chat-invite.html">ImportChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import-chat-invite.html#pyrogram.raw.functions.messages.ImportChatInvite"><code class="docutils literal notranslate"><span class="pre">ImportChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="init-history-import.html">InitHistoryImport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="init-history-import.html#pyrogram.raw.functions.messages.InitHistoryImport"><code class="docutils literal notranslate"><span class="pre">InitHistoryImport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-sticker-set.html">InstallStickerSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install-sticker-set.html#pyrogram.raw.functions.messages.InstallStickerSet"><code class="docutils literal notranslate"><span class="pre">InstallStickerSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mark-dialog-unread.html">MarkDialogUnread</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mark-dialog-unread.html#pyrogram.raw.functions.messages.MarkDialogUnread"><code class="docutils literal notranslate"><span class="pre">MarkDialogUnread</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="migrate-chat.html">MigrateChat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="migrate-chat.html#pyrogram.raw.functions.messages.MigrateChat"><code class="docutils literal notranslate"><span class="pre">MigrateChat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="prolong-web-view.html">ProlongWebView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="prolong-web-view.html#pyrogram.raw.functions.messages.ProlongWebView"><code class="docutils literal notranslate"><span class="pre">ProlongWebView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rate-transcribed-audio.html">RateTranscribedAudio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rate-transcribed-audio.html#pyrogram.raw.functions.messages.RateTranscribedAudio"><code class="docutils literal notranslate"><span class="pre">RateTranscribedAudio</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-discussion.html">ReadDiscussion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-discussion.html#pyrogram.raw.functions.messages.ReadDiscussion"><code class="docutils literal notranslate"><span class="pre">ReadDiscussion</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-encrypted-history.html">ReadEncryptedHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-encrypted-history.html#pyrogram.raw.functions.messages.ReadEncryptedHistory"><code class="docutils literal notranslate"><span class="pre">ReadEncryptedHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-featured-stickers.html">ReadFeaturedStickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-featured-stickers.html#pyrogram.raw.functions.messages.ReadFeaturedStickers"><code class="docutils literal notranslate"><span class="pre">ReadFeaturedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-history.html">ReadHistory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-history.html#pyrogram.raw.functions.messages.ReadHistory"><code class="docutils literal notranslate"><span class="pre">ReadHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-mentions.html">ReadMentions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-mentions.html#pyrogram.raw.functions.messages.ReadMentions"><code class="docutils literal notranslate"><span class="pre">ReadMentions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-message-contents.html">ReadMessageContents</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-message-contents.html#pyrogram.raw.functions.messages.ReadMessageContents"><code class="docutils literal notranslate"><span class="pre">ReadMessageContents</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-reactions.html">ReadReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-reactions.html#pyrogram.raw.functions.messages.ReadReactions"><code class="docutils literal notranslate"><span class="pre">ReadReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="received-messages.html">ReceivedMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="received-messages.html#pyrogram.raw.functions.messages.ReceivedMessages"><code class="docutils literal notranslate"><span class="pre">ReceivedMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="received-queue.html">ReceivedQueue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="received-queue.html#pyrogram.raw.functions.messages.ReceivedQueue"><code class="docutils literal notranslate"><span class="pre">ReceivedQueue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reorder-pinned-dialogs.html">ReorderPinnedDialogs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reorder-pinned-dialogs.html#pyrogram.raw.functions.messages.ReorderPinnedDialogs"><code class="docutils literal notranslate"><span class="pre">ReorderPinnedDialogs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reorder-sticker-sets.html">ReorderStickerSets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reorder-sticker-sets.html#pyrogram.raw.functions.messages.ReorderStickerSets"><code class="docutils literal notranslate"><span class="pre">ReorderStickerSets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report.html">Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report.html#pyrogram.raw.functions.messages.Report"><code class="docutils literal notranslate"><span class="pre">Report</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report-encrypted-spam.html">ReportEncryptedSpam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report-encrypted-spam.html#pyrogram.raw.functions.messages.ReportEncryptedSpam"><code class="docutils literal notranslate"><span class="pre">ReportEncryptedSpam</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report-reaction.html">ReportReaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report-reaction.html#pyrogram.raw.functions.messages.ReportReaction"><code class="docutils literal notranslate"><span class="pre">ReportReaction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report-spam.html">ReportSpam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report-spam.html#pyrogram.raw.functions.messages.ReportSpam"><code class="docutils literal notranslate"><span class="pre">ReportSpam</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="request-encryption.html">RequestEncryption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="request-encryption.html#pyrogram.raw.functions.messages.RequestEncryption"><code class="docutils literal notranslate"><span class="pre">RequestEncryption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="request-simple-web-view.html">RequestSimpleWebView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="request-simple-web-view.html#pyrogram.raw.functions.messages.RequestSimpleWebView"><code class="docutils literal notranslate"><span class="pre">RequestSimpleWebView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="request-url-auth.html">RequestUrlAuth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="request-url-auth.html#pyrogram.raw.functions.messages.RequestUrlAuth"><code class="docutils literal notranslate"><span class="pre">RequestUrlAuth</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="request-web-view.html">RequestWebView</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="request-web-view.html#pyrogram.raw.functions.messages.RequestWebView"><code class="docutils literal notranslate"><span class="pre">RequestWebView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="save-default-send-as.html">SaveDefaultSendAs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="save-default-send-as.html#pyrogram.raw.functions.messages.SaveDefaultSendAs"><code class="docutils literal notranslate"><span class="pre">SaveDefaultSendAs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="save-draft.html">SaveDraft</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="save-draft.html#pyrogram.raw.functions.messages.SaveDraft"><code class="docutils literal notranslate"><span class="pre">SaveDraft</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="save-gif.html">SaveGif</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="save-gif.html#pyrogram.raw.functions.messages.SaveGif"><code class="docutils literal notranslate"><span class="pre">SaveGif</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="save-recent-sticker.html">SaveRecentSticker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="save-recent-sticker.html#pyrogram.raw.functions.messages.SaveRecentSticker"><code class="docutils literal notranslate"><span class="pre">SaveRecentSticker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search.html#pyrogram.raw.functions.messages.Search"><code class="docutils literal notranslate"><span class="pre">Search</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search-global.html">SearchGlobal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search-global.html#pyrogram.raw.functions.messages.SearchGlobal"><code class="docutils literal notranslate"><span class="pre">SearchGlobal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search-sent-media.html">SearchSentMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search-sent-media.html#pyrogram.raw.functions.messages.SearchSentMedia"><code class="docutils literal notranslate"><span class="pre">SearchSentMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search-sticker-sets.html">SearchStickerSets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search-sticker-sets.html#pyrogram.raw.functions.messages.SearchStickerSets"><code class="docutils literal notranslate"><span class="pre">SearchStickerSets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-encrypted.html">SendEncrypted</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-encrypted.html#pyrogram.raw.functions.messages.SendEncrypted"><code class="docutils literal notranslate"><span class="pre">SendEncrypted</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-encrypted-file.html">SendEncryptedFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-encrypted-file.html#pyrogram.raw.functions.messages.SendEncryptedFile"><code class="docutils literal notranslate"><span class="pre">SendEncryptedFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-encrypted-service.html">SendEncryptedService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-encrypted-service.html#pyrogram.raw.functions.messages.SendEncryptedService"><code class="docutils literal notranslate"><span class="pre">SendEncryptedService</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-inline-bot-result.html">SendInlineBotResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-inline-bot-result.html#pyrogram.raw.functions.messages.SendInlineBotResult"><code class="docutils literal notranslate"><span class="pre">SendInlineBotResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-media.html">SendMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-media.html#pyrogram.raw.functions.messages.SendMedia"><code class="docutils literal notranslate"><span class="pre">SendMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-message.html">SendMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-message.html#pyrogram.raw.functions.messages.SendMessage"><code class="docutils literal notranslate"><span class="pre">SendMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-multi-media.html">SendMultiMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-multi-media.html#pyrogram.raw.functions.messages.SendMultiMedia"><code class="docutils literal notranslate"><span class="pre">SendMultiMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-reaction.html">SendReaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-reaction.html#pyrogram.raw.functions.messages.SendReaction"><code class="docutils literal notranslate"><span class="pre">SendReaction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-scheduled-messages.html">SendScheduledMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-scheduled-messages.html#pyrogram.raw.functions.messages.SendScheduledMessages"><code class="docutils literal notranslate"><span class="pre">SendScheduledMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-screenshot-notification.html">SendScreenshotNotification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-screenshot-notification.html#pyrogram.raw.functions.messages.SendScreenshotNotification"><code class="docutils literal notranslate"><span class="pre">SendScreenshotNotification</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-vote.html">SendVote</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-vote.html#pyrogram.raw.functions.messages.SendVote"><code class="docutils literal notranslate"><span class="pre">SendVote</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-web-view-data.html">SendWebViewData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-web-view-data.html#pyrogram.raw.functions.messages.SendWebViewData"><code class="docutils literal notranslate"><span class="pre">SendWebViewData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-web-view-result-message.html">SendWebViewResultMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-web-view-result-message.html#pyrogram.raw.functions.messages.SendWebViewResultMessage"><code class="docutils literal notranslate"><span class="pre">SendWebViewResultMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-bot-callback-answer.html">SetBotCallbackAnswer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-bot-callback-answer.html#pyrogram.raw.functions.messages.SetBotCallbackAnswer"><code class="docutils literal notranslate"><span class="pre">SetBotCallbackAnswer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-bot-precheckout-results.html">SetBotPrecheckoutResults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-bot-precheckout-results.html#pyrogram.raw.functions.messages.SetBotPrecheckoutResults"><code class="docutils literal notranslate"><span class="pre">SetBotPrecheckoutResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-bot-shipping-results.html">SetBotShippingResults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-bot-shipping-results.html#pyrogram.raw.functions.messages.SetBotShippingResults"><code class="docutils literal notranslate"><span class="pre">SetBotShippingResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-chat-available-reactions.html">SetChatAvailableReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-chat-available-reactions.html#pyrogram.raw.functions.messages.SetChatAvailableReactions"><code class="docutils literal notranslate"><span class="pre">SetChatAvailableReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-chat-theme.html">SetChatTheme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-chat-theme.html#pyrogram.raw.functions.messages.SetChatTheme"><code class="docutils literal notranslate"><span class="pre">SetChatTheme</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-default-reaction.html">SetDefaultReaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-default-reaction.html#pyrogram.raw.functions.messages.SetDefaultReaction"><code class="docutils literal notranslate"><span class="pre">SetDefaultReaction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-encrypted-typing.html">SetEncryptedTyping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-encrypted-typing.html#pyrogram.raw.functions.messages.SetEncryptedTyping"><code class="docutils literal notranslate"><span class="pre">SetEncryptedTyping</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-game-score.html">SetGameScore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-game-score.html#pyrogram.raw.functions.messages.SetGameScore"><code class="docutils literal notranslate"><span class="pre">SetGameScore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-history-ttl.html">SetHistoryTTL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-history-ttl.html#pyrogram.raw.functions.messages.SetHistoryTTL"><code class="docutils literal notranslate"><span class="pre">SetHistoryTTL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-inline-bot-results.html">SetInlineBotResults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-inline-bot-results.html#pyrogram.raw.functions.messages.SetInlineBotResults"><code class="docutils literal notranslate"><span class="pre">SetInlineBotResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-inline-game-score.html">SetInlineGameScore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-inline-game-score.html#pyrogram.raw.functions.messages.SetInlineGameScore"><code class="docutils literal notranslate"><span class="pre">SetInlineGameScore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-typing.html">SetTyping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-typing.html#pyrogram.raw.functions.messages.SetTyping"><code class="docutils literal notranslate"><span class="pre">SetTyping</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="start-bot.html">StartBot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start-bot.html#pyrogram.raw.functions.messages.StartBot"><code class="docutils literal notranslate"><span class="pre">StartBot</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="start-history-import.html">StartHistoryImport</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start-history-import.html#pyrogram.raw.functions.messages.StartHistoryImport"><code class="docutils literal notranslate"><span class="pre">StartHistoryImport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-bot-in-attach-menu.html">ToggleBotInAttachMenu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-bot-in-attach-menu.html#pyrogram.raw.functions.messages.ToggleBotInAttachMenu"><code class="docutils literal notranslate"><span class="pre">ToggleBotInAttachMenu</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-dialog-pin.html">ToggleDialogPin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-dialog-pin.html#pyrogram.raw.functions.messages.ToggleDialogPin"><code class="docutils literal notranslate"><span class="pre">ToggleDialogPin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-no-forwards.html">ToggleNoForwards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-no-forwards.html#pyrogram.raw.functions.messages.ToggleNoForwards"><code class="docutils literal notranslate"><span class="pre">ToggleNoForwards</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-sticker-sets.html">ToggleStickerSets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-sticker-sets.html#pyrogram.raw.functions.messages.ToggleStickerSets"><code class="docutils literal notranslate"><span class="pre">ToggleStickerSets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transcribe-audio.html">TranscribeAudio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transcribe-audio.html#pyrogram.raw.functions.messages.TranscribeAudio"><code class="docutils literal notranslate"><span class="pre">TranscribeAudio</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="translate-text.html">TranslateText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="translate-text.html#pyrogram.raw.functions.messages.TranslateText"><code class="docutils literal notranslate"><span class="pre">TranslateText</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="uninstall-sticker-set.html">UninstallStickerSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uninstall-sticker-set.html#pyrogram.raw.functions.messages.UninstallStickerSet"><code class="docutils literal notranslate"><span class="pre">UninstallStickerSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unpin-all-messages.html">UnpinAllMessages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unpin-all-messages.html#pyrogram.raw.functions.messages.UnpinAllMessages"><code class="docutils literal notranslate"><span class="pre">UnpinAllMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update-dialog-filter.html">UpdateDialogFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="update-dialog-filter.html#pyrogram.raw.functions.messages.UpdateDialogFilter"><code class="docutils literal notranslate"><span class="pre">UpdateDialogFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update-dialog-filters-order.html">UpdateDialogFiltersOrder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="update-dialog-filters-order.html#pyrogram.raw.functions.messages.UpdateDialogFiltersOrder"><code class="docutils literal notranslate"><span class="pre">UpdateDialogFiltersOrder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update-pinned-message.html">UpdatePinnedMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="update-pinned-message.html#pyrogram.raw.functions.messages.UpdatePinnedMessage"><code class="docutils literal notranslate"><span class="pre">UpdatePinnedMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload-encrypted-file.html">UploadEncryptedFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upload-encrypted-file.html#pyrogram.raw.functions.messages.UploadEncryptedFile"><code class="docutils literal notranslate"><span class="pre">UploadEncryptedFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload-imported-media.html">UploadImportedMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upload-imported-media.html#pyrogram.raw.functions.messages.UploadImportedMedia"><code class="docutils literal notranslate"><span class="pre">UploadImportedMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload-media.html">UploadMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upload-media.html#pyrogram.raw.functions.messages.UploadMedia"><code class="docutils literal notranslate"><span class="pre">UploadMedia</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

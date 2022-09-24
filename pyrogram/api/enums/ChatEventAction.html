@@ -18,6 +18,7 @@
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -64,7 +65,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../bound-methods/index.html">Bound Methods</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Enumerations</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ChatAction.html">ChatAction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ChatEventAction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ChatEventAction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyrogram.enums.ChatEventAction"><code class="docutils literal notranslate"><span class="pre">ChatEventAction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.DESCRIPTION_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.DESCRIPTION_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.HISTORY_TTL_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.HISTORY_TTL_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.LINKED_CHAT_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.LINKED_CHAT_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.PHOTO_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.PHOTO_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.TITLE_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.TITLE_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.USERNAME_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.USERNAME_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.CHAT_PERMISSIONS_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.CHAT_PERMISSIONS_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MESSAGE_DELETED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MESSAGE_DELETED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MESSAGE_EDITED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MESSAGE_EDITED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.INVITE_LINK_EDITED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.INVITE_LINK_EDITED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.INVITE_LINK_REVOKED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.INVITE_LINK_REVOKED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.INVITE_LINK_DELETED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.INVITE_LINK_DELETED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MEMBER_INVITED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MEMBER_INVITED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MEMBER_JOINED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MEMBER_JOINED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MEMBER_LEFT"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MEMBER_LEFT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.ADMINISTRATOR_PRIVILEGES_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.ADMINISTRATOR_PRIVILEGES_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MEMBER_PERMISSIONS_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MEMBER_PERMISSIONS_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.POLL_STOPPED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.POLL_STOPPED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.INVITES_ENABLED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.INVITES_ENABLED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.HISTORY_HIDDEN"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.HISTORY_HIDDEN</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.SIGNATURES_ENABLED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.SIGNATURES_ENABLED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.SLOW_MODE_CHANGED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.SLOW_MODE_CHANGED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MESSAGE_PINNED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MESSAGE_PINNED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.MESSAGE_UNPINNED"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.MESSAGE_UNPINNED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.enums.ChatEventAction.UNKNOWN"><code class="docutils literal notranslate"><span class="pre">ChatEventAction.UNKNOWN</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ChatMemberStatus.html">ChatMemberStatus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ChatMembersFilter.html">ChatMembersFilter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ChatType.html">ChatType</a></li>

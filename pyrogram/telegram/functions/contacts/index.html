@@ -18,6 +18,7 @@
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -128,27 +129,90 @@
 <span id="contacts"></span><h1>Contacts<a class="headerlink" href="#module-pyrogram.raw.functions.contacts" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="accept-contact.html">AcceptContact</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add-contact.html">AddContact</a></li>
-<li class="toctree-l1"><a class="reference internal" href="block.html">Block</a></li>
-<li class="toctree-l1"><a class="reference internal" href="block-from-replies.html">BlockFromReplies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-by-phones.html">DeleteByPhones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="delete-contacts.html">DeleteContacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-blocked.html">GetBlocked</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-contact-i-ds.html">GetContactIDs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-contacts.html">GetContacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-located.html">GetLocated</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-saved.html">GetSaved</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-statuses.html">GetStatuses</a></li>
-<li class="toctree-l1"><a class="reference internal" href="get-top-peers.html">GetTopPeers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="import-contacts.html">ImportContacts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reset-saved.html">ResetSaved</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reset-top-peer-rating.html">ResetTopPeerRating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resolve-phone.html">ResolvePhone</a></li>
-<li class="toctree-l1"><a class="reference internal" href="resolve-username.html">ResolveUsername</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
-<li class="toctree-l1"><a class="reference internal" href="toggle-top-peers.html">ToggleTopPeers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unblock.html">Unblock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="accept-contact.html">AcceptContact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="accept-contact.html#pyrogram.raw.functions.contacts.AcceptContact"><code class="docutils literal notranslate"><span class="pre">AcceptContact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="add-contact.html">AddContact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="add-contact.html#pyrogram.raw.functions.contacts.AddContact"><code class="docutils literal notranslate"><span class="pre">AddContact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="block.html">Block</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="block.html#pyrogram.raw.functions.contacts.Block"><code class="docutils literal notranslate"><span class="pre">Block</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="block-from-replies.html">BlockFromReplies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="block-from-replies.html#pyrogram.raw.functions.contacts.BlockFromReplies"><code class="docutils literal notranslate"><span class="pre">BlockFromReplies</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-by-phones.html">DeleteByPhones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-by-phones.html#pyrogram.raw.functions.contacts.DeleteByPhones"><code class="docutils literal notranslate"><span class="pre">DeleteByPhones</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="delete-contacts.html">DeleteContacts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="delete-contacts.html#pyrogram.raw.functions.contacts.DeleteContacts"><code class="docutils literal notranslate"><span class="pre">DeleteContacts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-blocked.html">GetBlocked</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-blocked.html#pyrogram.raw.functions.contacts.GetBlocked"><code class="docutils literal notranslate"><span class="pre">GetBlocked</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-contact-i-ds.html">GetContactIDs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-contact-i-ds.html#pyrogram.raw.functions.contacts.GetContactIDs"><code class="docutils literal notranslate"><span class="pre">GetContactIDs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-contacts.html">GetContacts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-contacts.html#pyrogram.raw.functions.contacts.GetContacts"><code class="docutils literal notranslate"><span class="pre">GetContacts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-located.html">GetLocated</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-located.html#pyrogram.raw.functions.contacts.GetLocated"><code class="docutils literal notranslate"><span class="pre">GetLocated</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-saved.html">GetSaved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-saved.html#pyrogram.raw.functions.contacts.GetSaved"><code class="docutils literal notranslate"><span class="pre">GetSaved</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-statuses.html">GetStatuses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-statuses.html#pyrogram.raw.functions.contacts.GetStatuses"><code class="docutils literal notranslate"><span class="pre">GetStatuses</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-top-peers.html">GetTopPeers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-top-peers.html#pyrogram.raw.functions.contacts.GetTopPeers"><code class="docutils literal notranslate"><span class="pre">GetTopPeers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="import-contacts.html">ImportContacts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="import-contacts.html#pyrogram.raw.functions.contacts.ImportContacts"><code class="docutils literal notranslate"><span class="pre">ImportContacts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reset-saved.html">ResetSaved</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reset-saved.html#pyrogram.raw.functions.contacts.ResetSaved"><code class="docutils literal notranslate"><span class="pre">ResetSaved</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reset-top-peer-rating.html">ResetTopPeerRating</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reset-top-peer-rating.html#pyrogram.raw.functions.contacts.ResetTopPeerRating"><code class="docutils literal notranslate"><span class="pre">ResetTopPeerRating</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resolve-phone.html">ResolvePhone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resolve-phone.html#pyrogram.raw.functions.contacts.ResolvePhone"><code class="docutils literal notranslate"><span class="pre">ResolvePhone</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="resolve-username.html">ResolveUsername</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="resolve-username.html#pyrogram.raw.functions.contacts.ResolveUsername"><code class="docutils literal notranslate"><span class="pre">ResolveUsername</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search.html#pyrogram.raw.functions.contacts.Search"><code class="docutils literal notranslate"><span class="pre">Search</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toggle-top-peers.html">ToggleTopPeers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toggle-top-peers.html#pyrogram.raw.functions.contacts.ToggleTopPeers"><code class="docutils literal notranslate"><span class="pre">ToggleTopPeers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unblock.html">Unblock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unblock.html#pyrogram.raw.functions.contacts.Unblock"><code class="docutils literal notranslate"><span class="pre">Unblock</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
