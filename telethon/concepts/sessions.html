@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session Files &mdash; Telethon 0.145 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Full API" href="full-api.html" />
+    <link rel="prev" title="Updates in Depth" href="updates.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                0.145
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates in Depth</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Session Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-sessions">What are Sessions?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#different-session-storage">Different Session Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-your-own-storage">Creating your Own Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#string-sessions">String Sessions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Session Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/concepts/sessions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="session-files">
+<span id="sessions"></span><h1><a class="toc-backref" href="#id1">Session Files</a><a class="headerlink" href="#session-files" title="Permalink to this heading"></a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#session-files" id="id1">Session Files</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-are-sessions" id="id2">What are Sessions?</a></p></li>
+<li><p><a class="reference internal" href="#different-session-storage" id="id3">Different Session Storage</a></p></li>
+<li><p><a class="reference internal" href="#creating-your-own-storage" id="id4">Creating your Own Storage</a></p></li>
+<li><p><a class="reference internal" href="#string-sessions" id="id5">String Sessions</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>They are an important part for the library to be efficient, such as caching
+and handling your authorization key (or you would have to login every time!).</p>
+<section id="what-are-sessions">
+<h2><a class="toc-backref" href="#id2">What are Sessions?</a><a class="headerlink" href="#what-are-sessions" title="Permalink to this heading"></a></h2>
+<p>The first parameter you pass to the constructor of the
+<a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a> is
+the <code class="docutils literal notranslate"><span class="pre">session</span></code>, and defaults to be the session name (or full path). That is,
+if you create a <code class="docutils literal notranslate"><span class="pre">TelegramClient('anon')</span></code> instance and connect, an
+<code class="docutils literal notranslate"><span class="pre">anon.session</span></code> file will be created in the working directory.</p>
+<p>Note that if you pass a string it will be a file in the current working
+directory, although you can also pass absolute paths.</p>
+<p>The session file contains enough information for you to login without
+re-sending the code, so if you have to enter the code more than once,
+maybe you’re changing the working directory, renaming or removing the
+file, or using random names.</p>
+<p>These database files using <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> contain the required information to
+talk to the Telegram servers, such as to which IP the client should connect,
+port, authorization key so that messages can be encrypted, and so on.</p>
+<p>These files will by default also save all the input entities that you’ve seen,
+so that you can get information about a user or channel by just their ID.
+Telegram will <strong>not</strong> send their <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> required to retrieve more
+information about them, if it thinks you have already seem them. For this
+reason, the library needs to store this information offline.</p>
+<p>The library will by default too save all the entities (chats and channels
+with their name and username, and users with the phone too) in the session
+file, so that you can quickly access them by username or phone number.</p>
+<p>If you’re not going to work with updates, or don’t need to cache the
+<code class="docutils literal notranslate"><span class="pre">access_hash</span></code> associated with the entities’ ID, you can disable this
+by setting <code class="docutils literal notranslate"><span class="pre">client.session.save_entities</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
+</section>
+<section id="different-session-storage">
+<h2><a class="toc-backref" href="#id3">Different Session Storage</a><a class="headerlink" href="#different-session-storage" title="Permalink to this heading"></a></h2>
+<p>If you don’t want to use the default SQLite session storage, you can also
+use one of the other implementations or implement your own storage.</p>
+<p>While it’s often not the case, it’s possible that SQLite is slow enough to
+be noticeable, in which case you can also use a different storage. Note that
+this is rare and most people won’t have this issue, but it’s worth a mention.</p>
+<p>To use a custom session storage, simply pass the custom session instance to
+<a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a> instead of
+the session name.</p>
+<p>Telethon contains three implementations of the abstract <code class="docutils literal notranslate"><span class="pre">Session</span></code> class:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../modules/sessions.html#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MemorySession</span></code></a>: stores session data within memory.</p></li>
+<li><p><a class="reference internal" href="../modules/sessions.html#telethon.sessions.sqlite.SQLiteSession" title="telethon.sessions.sqlite.SQLiteSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SQLiteSession</span></code></a>: stores sessions within on-disk SQLite databases. Default.</p></li>
+<li><p><a class="reference internal" href="../modules/sessions.html#telethon.sessions.string.StringSession" title="telethon.sessions.string.StringSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringSession</span></code></a>: stores session data within memory,
+but can be saved as a string.</p></li>
+</ul>
+<p>You can import these <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">telethon.sessions</span></code>. For example, using the
+<a class="reference internal" href="../modules/sessions.html#telethon.sessions.string.StringSession" title="telethon.sessions.string.StringSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringSession</span></code></a> is done as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<span class="kn">from</span> <span class="nn">telethon.sessions</span> <span class="kn">import</span> <span class="n">StringSession</span>
+
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="o">...</span>  <span class="c1"># use the client</span>
+
+    <span class="c1"># Save the string session as a string; you should decide how</span>
+    <span class="c1"># you want to save this information (over a socket, remote</span>
+    <span class="c1"># database, print it and then paste the string in the code,</span>
+    <span class="c1"># etc.); the advantage is that you don&#39;t need to save it</span>
+    <span class="c1"># on the current disk as a separate file, and can be reused</span>
+    <span class="c1"># anywhere else once you log in.</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="c1"># Note that it&#39;s also possible to save any other session type</span>
+<span class="c1"># as a string by using ``StringSession.save(session_instance)``:</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="s1">&#39;sqlite-session&#39;</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span>
+<span class="n">string</span> <span class="o">=</span> <span class="n">StringSession</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There are other community-maintained implementations available:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tulir/telethon-session-sqlalchemy">SQLAlchemy</a>:
+stores all sessions in a single database via SQLAlchemy.</p></li>
+<li><p><a class="reference external" href="https://github.com/ezdev128/telethon-session-redis">Redis</a>:
+stores all sessions in a single Redis data store.</p></li>
+<li><p><a class="reference external" href="https://github.com/watzon/telethon-session-mongo">MongoDB</a>:
+stores the current session in a MongoDB database.</p></li>
+</ul>
+</section>
+<section id="creating-your-own-storage">
+<h2><a class="toc-backref" href="#id4">Creating your Own Storage</a><a class="headerlink" href="#creating-your-own-storage" title="Permalink to this heading"></a></h2>
+<p>The easiest way to create your own storage implementation is to use
+<a class="reference internal" href="../modules/sessions.html#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MemorySession</span></code></a> as the base and check out how
+<a class="reference internal" href="../modules/sessions.html#telethon.sessions.sqlite.SQLiteSession" title="telethon.sessions.sqlite.SQLiteSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SQLiteSession</span></code></a> or one of the community-maintained
+implementations work. You can find the relevant Python files under the
+<code class="docutils literal notranslate"><span class="pre">sessions/</span></code> directory in the Telethon’s repository.</p>
+<p>After you have made your own implementation, you can add it to the
+community-maintained session implementation list above with a pull request.</p>
+</section>
+<section id="string-sessions">
+<h2><a class="toc-backref" href="#id5">String Sessions</a><a class="headerlink" href="#string-sessions" title="Permalink to this heading"></a></h2>
+<p><a class="reference internal" href="../modules/sessions.html#telethon.sessions.string.StringSession" title="telethon.sessions.string.StringSession"><code class="xref py py-obj docutils literal notranslate"><span class="pre">StringSession</span></code></a> are a convenient way to embed your
+login credentials directly into your code for extremely easy portability,
+since all they take is a string to be able to login without asking for your
+phone and code (or faster start if you’re using a bot token).</p>
+<p>The easiest way to generate a string session is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
+<span class="kn">from</span> <span class="nn">telethon.sessions</span> <span class="kn">import</span> <span class="n">StringSession</span>
+
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">save</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Think of this as a way to export your authorization key (what’s needed
+to login into your account). This will print a string in the standard
+output (likely your terminal).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Keep this string safe!</strong> Anyone with this string can use it
+to login into your account and do anything they want to to do.</p>
+<p>This is similar to leaking your <code class="docutils literal notranslate"><span class="pre">*.session</span></code> files online,
+but it is easier to leak a string than it is to leak a file.</p>
+</div>
+<p>Once you have the string (which is a bit long), load it into your script
+somehow. You can use a normal text file and <code class="docutils literal notranslate"><span class="pre">open(...).read()</span></code> it or
+you can save it in a variable directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;1aaNk8EX-YRfwoRsebUkugFvht6DUPi_Q25UOCzOAqzc...&#39;</span>
+<span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">StringSession</span><span class="p">(</span><span class="n">string</span><span class="p">),</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="s1">&#39;Hi&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>These strings are really convenient for using in places like Heroku since
+their ephemeral filesystem will delete external files once your application
+is over.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="updates.html" class="btn btn-neutral float-left" title="Updates in Depth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="full-api.html" class="btn btn-neutral float-right" title="The Full API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

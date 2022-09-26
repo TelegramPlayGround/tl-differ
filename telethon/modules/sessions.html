@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sessions &mdash; Telethon 0.145 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Connection Modes" href="network.html" />
+    <link rel="prev" title="API Errors" href="errors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                0.145
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">API Errors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.sessions.abstract.Session"><code class="docutils literal notranslate"><span class="pre">Session</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.__weakref__"><code class="docutils literal notranslate"><span class="pre">Session.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.auth_key"><code class="docutils literal notranslate"><span class="pre">Session.auth_key</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.cache_file"><code class="docutils literal notranslate"><span class="pre">Session.cache_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.clone"><code class="docutils literal notranslate"><span class="pre">Session.clone()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.close"><code class="docutils literal notranslate"><span class="pre">Session.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.dc_id"><code class="docutils literal notranslate"><span class="pre">Session.dc_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.delete"><code class="docutils literal notranslate"><span class="pre">Session.delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.get_file"><code class="docutils literal notranslate"><span class="pre">Session.get_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.get_input_entity"><code class="docutils literal notranslate"><span class="pre">Session.get_input_entity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.get_update_state"><code class="docutils literal notranslate"><span class="pre">Session.get_update_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.list_sessions"><code class="docutils literal notranslate"><span class="pre">Session.list_sessions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.port"><code class="docutils literal notranslate"><span class="pre">Session.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.process_entities"><code class="docutils literal notranslate"><span class="pre">Session.process_entities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.save"><code class="docutils literal notranslate"><span class="pre">Session.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.server_address"><code class="docutils literal notranslate"><span class="pre">Session.server_address</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.set_dc"><code class="docutils literal notranslate"><span class="pre">Session.set_dc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.set_update_state"><code class="docutils literal notranslate"><span class="pre">Session.set_update_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.abstract.Session.takeout_id"><code class="docutils literal notranslate"><span class="pre">Session.takeout_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.sessions.memory.MemorySession"><code class="docutils literal notranslate"><span class="pre">MemorySession</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.auth_key"><code class="docutils literal notranslate"><span class="pre">MemorySession.auth_key</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.cache_file"><code class="docutils literal notranslate"><span class="pre">MemorySession.cache_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.close"><code class="docutils literal notranslate"><span class="pre">MemorySession.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.dc_id"><code class="docutils literal notranslate"><span class="pre">MemorySession.dc_id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.delete"><code class="docutils literal notranslate"><span class="pre">MemorySession.delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_id"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_entity_rows_by_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_name"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_entity_rows_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_phone"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_entity_rows_by_phone()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_username"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_entity_rows_by_username()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_file"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_input_entity"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_input_entity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.get_update_state"><code class="docutils literal notranslate"><span class="pre">MemorySession.get_update_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.port"><code class="docutils literal notranslate"><span class="pre">MemorySession.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.process_entities"><code class="docutils literal notranslate"><span class="pre">MemorySession.process_entities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.save"><code class="docutils literal notranslate"><span class="pre">MemorySession.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.server_address"><code class="docutils literal notranslate"><span class="pre">MemorySession.server_address</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.set_dc"><code class="docutils literal notranslate"><span class="pre">MemorySession.set_dc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.set_update_state"><code class="docutils literal notranslate"><span class="pre">MemorySession.set_update_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.memory.MemorySession.takeout_id"><code class="docutils literal notranslate"><span class="pre">MemorySession.takeout_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession"><code class="docutils literal notranslate"><span class="pre">SQLiteSession</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.auth_key"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.auth_key</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.cache_file"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.cache_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.clone"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.clone()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.close"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.close()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.delete"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_id"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.get_entity_rows_by_id()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_name"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.get_entity_rows_by_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_phone"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.get_entity_rows_by_phone()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_username"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.get_entity_rows_by_username()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.get_file"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.get_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.get_update_state"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.get_update_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.list_sessions"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.list_sessions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.process_entities"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.process_entities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.save"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.save()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.set_dc"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.set_dc()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.set_update_state"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.set_update_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.sqlite.SQLiteSession.takeout_id"><code class="docutils literal notranslate"><span class="pre">SQLiteSession.takeout_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.sessions.string.StringSession"><code class="docutils literal notranslate"><span class="pre">StringSession</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.string.StringSession.decode"><code class="docutils literal notranslate"><span class="pre">StringSession.decode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.string.StringSession.encode"><code class="docutils literal notranslate"><span class="pre">StringSession.encode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.sessions.string.StringSession.save"><code class="docutils literal notranslate"><span class="pre">StringSession.save()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Sessions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/sessions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sessions">
+<span id="telethon-sessions"></span><h1>Sessions<a class="headerlink" href="#sessions" title="Permalink to this heading"></a></h1>
+<p>These are the different built-in session storage that you may subclass.</p>
+<span class="target" id="module-telethon.sessions.abstract"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.abstract.</span></span><span class="sig-name descname"><span class="pre">Session</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.__weakref__" title="Permalink to this definition"></a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.auth_key">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auth_key</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.auth_key" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an <code class="docutils literal notranslate"><span class="pre">AuthKey</span></code> instance associated with the saved
+data center, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if a new one should be generated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.cache_file">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cache_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">md5_digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.cache_file" title="Permalink to this definition"></a></dt>
+<dd><p>Caches the given file information persistently, so that it
+doesn’t need to be re-uploaded in case the file is used again.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">instance</span></code> will be either an <code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code> or <code class="docutils literal notranslate"><span class="pre">InputDocument</span></code>,
+both with an <code class="docutils literal notranslate"><span class="pre">.id</span></code> and <code class="docutils literal notranslate"><span class="pre">.access_hash</span></code> attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_instance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.clone" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a clone of this session file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.close">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.close" title="Permalink to this definition"></a></dt>
+<dd><p>Called on client disconnection. Should be used to
+free any used resources. Can be left empty if none.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.dc_id">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dc_id</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.dc_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the currently-used data center ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.delete">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.delete" title="Permalink to this definition"></a></dt>
+<dd><p>Called upon client.log_out(). Should delete the stored
+information from disk since it’s not valid anymore.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.get_file">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">md5_digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.get_file" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an instance of <code class="docutils literal notranslate"><span class="pre">cls</span></code> if the <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> and <code class="docutils literal notranslate"><span class="pre">file_size</span></code>
+match an existing saved record. The class will either be an
+<code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code> or <code class="docutils literal notranslate"><span class="pre">InputDocument</span></code>, both with two parameters
+<code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> in that order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.get_input_entity">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_input_entity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.get_input_entity" title="Permalink to this definition"></a></dt>
+<dd><p>Turns the given key into an <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">InputPeerUser</span></code>).
+The library uses this method whenever an <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> is needed
+to suit several purposes (e.g. user only provided its ID or wishes
+to use a cached username to avoid extra RPC).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.get_update_state">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.get_update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> associated with the given <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code>.
+If the <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code> is 0, it should return the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> for
+no specific channel (the “general” state). If no state is known
+it should <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.list_sessions">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_sessions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.list_sessions" title="Permalink to this definition"></a></dt>
+<dd><p>Lists available sessions. Not used by the library itself.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.port">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.port" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the port to which the library should connect to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.process_entities">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">process_entities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tlo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.process_entities" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the input <code class="docutils literal notranslate"><span class="pre">TLObject</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code> and saves
+whatever information is relevant (e.g., ID or access hash).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.save">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.save" title="Permalink to this definition"></a></dt>
+<dd><p>Called whenever important properties change. It should
+make persist the relevant session information to disk.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.server_address">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">server_address</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.server_address" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the server address where the library should connect to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.set_dc">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_dc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.set_dc" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the information of the data center address and port that
+the library should connect to, as well as the data center ID,
+which is currently unused.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.set_update_state">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set_update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.abstract.Session.set_update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the given <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> for the specified <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code>, which
+should be 0 if the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> is the “general” state (and not
+for any specific channel).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.abstract.Session.takeout_id">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">takeout_id</span></span><a class="headerlink" href="#telethon.sessions.abstract.Session.takeout_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an ID of the takeout process initialized for this session,
+or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if there’s no were any unfinished takeout requests.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.sessions.memory"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.memory.</span></span><span class="sig-name descname"><span class="pre">MemorySession</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.abstract.Session" title="telethon.sessions.abstract.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">Session</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.auth_key">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auth_key</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.auth_key" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an <code class="docutils literal notranslate"><span class="pre">AuthKey</span></code> instance associated with the saved
+data center, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if a new one should be generated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.cache_file">
+<span class="sig-name descname"><span class="pre">cache_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">md5_digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.cache_file" title="Permalink to this definition"></a></dt>
+<dd><p>Caches the given file information persistently, so that it
+doesn’t need to be re-uploaded in case the file is used again.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">instance</span></code> will be either an <code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code> or <code class="docutils literal notranslate"><span class="pre">InputDocument</span></code>,
+both with an <code class="docutils literal notranslate"><span class="pre">.id</span></code> and <code class="docutils literal notranslate"><span class="pre">.access_hash</span></code> attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.close" title="Permalink to this definition"></a></dt>
+<dd><p>Called on client disconnection. Should be used to
+free any used resources. Can be left empty if none.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.dc_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dc_id</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.dc_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the currently-used data center ID.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.delete" title="Permalink to this definition"></a></dt>
+<dd><p>Called upon client.log_out(). Should delete the stored
+information from disk since it’s not valid anymore.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_entity_rows_by_id">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_entity_rows_by_name">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_entity_rows_by_phone">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_phone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_phone" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_entity_rows_by_username">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_entity_rows_by_username" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_file">
+<span class="sig-name descname"><span class="pre">get_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">md5_digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_file" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an instance of <code class="docutils literal notranslate"><span class="pre">cls</span></code> if the <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> and <code class="docutils literal notranslate"><span class="pre">file_size</span></code>
+match an existing saved record. The class will either be an
+<code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code> or <code class="docutils literal notranslate"><span class="pre">InputDocument</span></code>, both with two parameters
+<code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> in that order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_input_entity">
+<span class="sig-name descname"><span class="pre">get_input_entity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_input_entity" title="Permalink to this definition"></a></dt>
+<dd><p>Turns the given key into an <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">InputPeerUser</span></code>).
+The library uses this method whenever an <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> is needed
+to suit several purposes (e.g. user only provided its ID or wishes
+to use a cached username to avoid extra RPC).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.get_update_state">
+<span class="sig-name descname"><span class="pre">get_update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.get_update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> associated with the given <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code>.
+If the <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code> is 0, it should return the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> for
+no specific channel (the “general” state). If no state is known
+it should <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.port">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">port</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.port" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the port to which the library should connect to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.process_entities">
+<span class="sig-name descname"><span class="pre">process_entities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tlo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.process_entities" title="Permalink to this definition"></a></dt>
+<dd><p>Processes the input <code class="docutils literal notranslate"><span class="pre">TLObject</span></code> or <code class="docutils literal notranslate"><span class="pre">list</span></code> and saves
+whatever information is relevant (e.g., ID or access hash).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.save" title="Permalink to this definition"></a></dt>
+<dd><p>Called whenever important properties change. It should
+make persist the relevant session information to disk.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.server_address">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">server_address</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.server_address" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the server address where the library should connect to.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.set_dc">
+<span class="sig-name descname"><span class="pre">set_dc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.set_dc" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the information of the data center address and port that
+the library should connect to, as well as the data center ID,
+which is currently unused.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.set_update_state">
+<span class="sig-name descname"><span class="pre">set_update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.set_update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the given <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> for the specified <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code>, which
+should be 0 if the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> is the “general” state (and not
+for any specific channel).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.memory.MemorySession.takeout_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">takeout_id</span></span><a class="headerlink" href="#telethon.sessions.memory.MemorySession.takeout_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an ID of the takeout process initialized for this session,
+or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if there’s no were any unfinished takeout requests.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.sessions.sqlite"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.sqlite.</span></span><span class="sig-name descname"><span class="pre">SQLiteSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemorySession</span></code></a></p>
+<p>This session contains the required information to login into your
+Telegram account. NEVER give the saved session file to anyone, since
+they would gain instant access to all your messages and contacts.</p>
+<p>If you think the session has been compromised, close all the sessions
+through an official Telegram client to revoke the authorization.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.auth_key">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">auth_key</span></span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.auth_key" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an <code class="docutils literal notranslate"><span class="pre">AuthKey</span></code> instance associated with the saved
+data center, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if a new one should be generated.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.cache_file">
+<span class="sig-name descname"><span class="pre">cache_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">md5_digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.cache_file" title="Permalink to this definition"></a></dt>
+<dd><p>Caches the given file information persistently, so that it
+doesn’t need to be re-uploaded in case the file is used again.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">instance</span></code> will be either an <code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code> or <code class="docutils literal notranslate"><span class="pre">InputDocument</span></code>,
+both with an <code class="docutils literal notranslate"><span class="pre">.id</span></code> and <code class="docutils literal notranslate"><span class="pre">.access_hash</span></code> attributes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.clone">
+<span class="sig-name descname"><span class="pre">clone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">to_instance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.clone" title="Permalink to this definition"></a></dt>
+<dd><p>Creates a clone of this session file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.close" title="Permalink to this definition"></a></dt>
+<dd><p>Closes the connection unless we’re working in-memory</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.delete" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes the current session file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_id">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_name">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_phone">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_phone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_phone" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_username">
+<span class="sig-name descname"><span class="pre">get_entity_rows_by_username</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.get_entity_rows_by_username" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.get_file">
+<span class="sig-name descname"><span class="pre">get_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">md5_digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.get_file" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an instance of <code class="docutils literal notranslate"><span class="pre">cls</span></code> if the <code class="docutils literal notranslate"><span class="pre">md5_digest</span></code> and <code class="docutils literal notranslate"><span class="pre">file_size</span></code>
+match an existing saved record. The class will either be an
+<code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code> or <code class="docutils literal notranslate"><span class="pre">InputDocument</span></code>, both with two parameters
+<code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> in that order.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.get_update_state">
+<span class="sig-name descname"><span class="pre">get_update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.get_update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> associated with the given <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code>.
+If the <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code> is 0, it should return the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> for
+no specific channel (the “general” state). If no state is known
+it should <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">None</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.list_sessions">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list_sessions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.list_sessions" title="Permalink to this definition"></a></dt>
+<dd><p>Lists all the sessions of the users who have ever connected
+using this client and never logged out</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.process_entities">
+<span class="sig-name descname"><span class="pre">process_entities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tlo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.process_entities" title="Permalink to this definition"></a></dt>
+<dd><p>Processes all the found entities on the given TLObject,
+unless .save_entities is False.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.save" title="Permalink to this definition"></a></dt>
+<dd><p>Saves the current session object as session_user_id.session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.set_dc">
+<span class="sig-name descname"><span class="pre">set_dc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.set_dc" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the information of the data center address and port that
+the library should connect to, as well as the data center ID,
+which is currently unused.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.set_update_state">
+<span class="sig-name descname"><span class="pre">set_update_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entity_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.set_update_state" title="Permalink to this definition"></a></dt>
+<dd><p>Sets the given <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> for the specified <code class="xref py py-obj docutils literal notranslate"><span class="pre">entity_id</span></code>, which
+should be 0 if the <code class="docutils literal notranslate"><span class="pre">UpdateState</span></code> is the “general” state (and not
+for any specific channel).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="telethon.sessions.sqlite.SQLiteSession.takeout_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">takeout_id</span></span><a class="headerlink" href="#telethon.sessions.sqlite.SQLiteSession.takeout_id" title="Permalink to this definition"></a></dt>
+<dd><p>Returns an ID of the takeout process initialized for this session,
+or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if there’s no were any unfinished takeout requests.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.sessions.string"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.sessions.string.StringSession">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.sessions.string.</span></span><span class="sig-name descname"><span class="pre">StringSession</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Optional" title="(in Python v3.10)"><span class="pre">Optional</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.string.StringSession" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#telethon.sessions.memory.MemorySession" title="telethon.sessions.memory.MemorySession"><code class="xref py py-class docutils literal notranslate"><span class="pre">MemorySession</span></code></a></p>
+<p>This session file can be easily saved and loaded as a string. According
+to the initial design, it contains only the data that is necessary for
+successful connection and authentication, so takeout ID is not stored.</p>
+<p>It is thought to be used where you don’t want to create any on-disk
+files but would still like to be able to save and load existing sessions
+by other means.</p>
+<p>You can use custom <a class="reference internal" href="#telethon.sessions.string.StringSession.encode" title="telethon.sessions.string.StringSession.encode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode</span></code></a> and <a class="reference internal" href="#telethon.sessions.string.StringSession.decode" title="telethon.sessions.string.StringSession.decode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode</span></code></a> functions, if present:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#telethon.sessions.string.StringSession.encode" title="telethon.sessions.string.StringSession.encode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">encode</span></code></a> definition must be <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">encode(value:</span> <span class="pre">bytes)</span> <span class="pre">-&gt;</span> <span class="pre">str:</span></code>.</p></li>
+<li><p><a class="reference internal" href="#telethon.sessions.string.StringSession.decode" title="telethon.sessions.string.StringSession.decode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode</span></code></a> definition must be <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">decode(value:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">bytes:</span></code>.</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.string.StringSession.decode">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><span class="pre">bytes</span></a></span></span><a class="headerlink" href="#telethon.sessions.string.StringSession.decode" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.string.StringSession.encode">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#telethon.sessions.string.StringSession.encode" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.sessions.string.StringSession.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.sessions.string.StringSession.save" title="Permalink to this definition"></a></dt>
+<dd><p>Called whenever important properties change. It should
+make persist the relevant session information to disk.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="errors.html" class="btn btn-neutral float-left" title="API Errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="network.html" class="btn btn-neutral float-right" title="Connection Modes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

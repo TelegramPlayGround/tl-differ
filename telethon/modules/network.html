@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connection Modes &mdash; Telethon 0.145 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Helpers" href="helpers.html" />
+    <link rel="prev" title="Sessions" href="sessions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                0.145
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/entities.html">Entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/chats-vs-channels.html">Chats vs Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessions.html">Sessions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Connection Modes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpfull.ConnectionTcpFull"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpFull</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.ConnectionTcpFull.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpFull.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">FullPacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">AbridgedPacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpAbridged</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpAbridged.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpIntermediate</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpIntermediate.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">IntermediatePacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">RandomizedIntermediatePacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.obfuscated_io"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated.obfuscated_io</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.__weakref__"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.__weakref__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.header"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.header</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.init_header"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.init_header()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.readexactly"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.readexactly()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.write"><code class="docutils literal notranslate"><span class="pre">ObfuscatedIO.write()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.http.ConnectionHttp"><code class="docutils literal notranslate"><span class="pre">ConnectionHttp</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.ConnectionHttp.connect"><code class="docutils literal notranslate"><span class="pre">ConnectionHttp.connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.ConnectionHttp.packet_codec"><code class="docutils literal notranslate"><span class="pre">ConnectionHttp.packet_codec</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.encode_packet"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.encode_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.obfuscate_tag"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.obfuscate_tag</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.read_packet"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.read_packet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec.tag"><code class="docutils literal notranslate"><span class="pre">HttpPacketCodec.tag</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Connection Modes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/network.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="connection-modes">
+<span id="telethon-network"></span><h1>Connection Modes<a class="headerlink" href="#connection-modes" title="Permalink to this heading"></a></h1>
+<p>The only part about network that you should worry about are
+the different connection modes, which are the following:</p>
+<span class="target" id="module-telethon.network.connection.tcpfull"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpfull.ConnectionTcpFull">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpfull.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpFull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.ConnectionTcpFull" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
+<p>Default Telegram mode. Sends 12 additional bytes and
+needs to calculate the CRC value of the packet itself.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpfull.ConnectionTcpFull.packet_codec">
+<span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpfull.ConnectionTcpFull.packet_codec" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpfull.FullPacketCodec" title="telethon.network.connection.tcpfull.FullPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">FullPacketCodec</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpfull.FullPacketCodec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpfull.</span></span><span class="sig-name descname"><span class="pre">FullPacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.FullPacketCodec" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpfull.FullPacketCodec.encode_packet">
+<span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.FullPacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Encodes single packet and returns encoded bytes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpfull.FullPacketCodec.read_packet">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpfull.FullPacketCodec.read_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Reads single packet from <code class="xref py py-obj docutils literal notranslate"><span class="pre">reader</span></code> object that should have
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">readexactly(n)</span></code> method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpfull.FullPacketCodec.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#telethon.network.connection.tcpfull.FullPacketCodec.tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.network.connection.tcpabridged"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpabridged.</span></span><span class="sig-name descname"><span class="pre">AbridgedPacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec.encode_packet">
+<span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Encodes single packet and returns encoded bytes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec.obfuscate_tag">
+<span class="sig-name descname"><span class="pre">obfuscate_tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">b'\xef\xef\xef\xef'</span></em><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.obfuscate_tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec.read_packet">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.read_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Reads single packet from <code class="xref py py-obj docutils literal notranslate"><span class="pre">reader</span></code> object that should have
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">readexactly(n)</span></code> method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.AbridgedPacketCodec.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">b'\xef'</span></em><a class="headerlink" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec.tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.ConnectionTcpAbridged">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpabridged.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpAbridged</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
+<p>This is the mode with the lowest overhead, as it will
+only require 1 byte if the packet length is less than
+508 bytes (127 &lt;&lt; 2, which is very common).</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpabridged.ConnectionTcpAbridged.packet_codec">
+<span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpabridged.ConnectionTcpAbridged.packet_codec" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbridgedPacketCodec</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.network.connection.tcpintermediate"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpintermediate.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpIntermediate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
+<p>Intermediate mode between <code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpFull</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpAbridged</span></code>.
+Always sends 4 extra bytes for the packet length.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate.packet_codec">
+<span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.ConnectionTcpIntermediate.packet_codec" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntermediatePacketCodec</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpintermediate.</span></span><span class="sig-name descname"><span class="pre">IntermediatePacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec.encode_packet">
+<span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Encodes single packet and returns encoded bytes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec.obfuscate_tag">
+<span class="sig-name descname"><span class="pre">obfuscate_tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">b'\xee\xee\xee\xee'</span></em><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.obfuscate_tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec.read_packet">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.read_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Reads single packet from <code class="xref py py-obj docutils literal notranslate"><span class="pre">reader</span></code> object that should have
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">readexactly(n)</span></code> method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.IntermediatePacketCodec.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">b'\xee\xee\xee\xee'</span></em><a class="headerlink" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec.tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpintermediate.</span></span><span class="sig-name descname"><span class="pre">RandomizedIntermediatePacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#telethon.network.connection.tcpintermediate.IntermediatePacketCodec" title="telethon.network.connection.tcpintermediate.IntermediatePacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntermediatePacketCodec</span></code></a></p>
+<p>Data packets are aligned to 4bytes. This codec adds random bytes of size
+from 0 to 3 bytes, which are ignored by decoder.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.encode_packet">
+<span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Encodes single packet and returns encoded bytes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.obfuscate_tag">
+<span class="sig-name descname"><span class="pre">obfuscate_tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">b'\xdd\xdd\xdd\xdd'</span></em><a class="headerlink" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.obfuscate_tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.read_packet">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.read_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Reads single packet from <code class="xref py py-obj docutils literal notranslate"><span class="pre">reader</span></code> object that should have
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">readexactly(n)</span></code> method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#telethon.network.connection.tcpintermediate.RandomizedIntermediatePacketCodec.tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.network.connection.tcpobfuscated"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpobfuscated.</span></span><span class="sig-name descname"><span class="pre">ConnectionTcpObfuscated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObfuscatedConnection</span></code></p>
+<p>Mode that Telegram defines as “obfuscated2”. Encodes the packet
+just like <code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpAbridged</span></code>, but encrypts every message with
+a randomly generated key using the AES-CTR mode so the packets are
+harder to discern.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.obfuscated_io">
+<span class="sig-name descname"><span class="pre">obfuscated_io</span></span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.obfuscated_io" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO" title="telethon.network.connection.tcpobfuscated.ObfuscatedIO"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObfuscatedIO</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.packet_codec">
+<span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated.packet_codec" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.tcpabridged.AbridgedPacketCodec" title="telethon.network.connection.tcpabridged.AbridgedPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbridgedPacketCodec</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ObfuscatedIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.tcpobfuscated.</span></span><span class="sig-name descname"><span class="pre">ObfuscatedIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ObfuscatedIO.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.__weakref__" title="Permalink to this definition"></a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ObfuscatedIO.header">
+<span class="sig-name descname"><span class="pre">header</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.header" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ObfuscatedIO.init_header">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">init_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet_codec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.init_header" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ObfuscatedIO.readexactly">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">readexactly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.readexactly" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.tcpobfuscated.ObfuscatedIO.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.tcpobfuscated.ObfuscatedIO.write" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-telethon.network.connection.http"></span><dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.http.ConnectionHttp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.http.</span></span><span class="sig-name descname"><span class="pre">ConnectionHttp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dc_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loggers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proxy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.ConnectionHttp" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Connection</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.http.ConnectionHttp.connect">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.ConnectionHttp.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Establishes a connection with the server.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.http.ConnectionHttp.packet_codec">
+<span class="sig-name descname"><span class="pre">packet_codec</span></span><a class="headerlink" href="#telethon.network.connection.http.ConnectionHttp.packet_codec" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#telethon.network.connection.http.HttpPacketCodec" title="telethon.network.connection.http.HttpPacketCodec"><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpPacketCodec</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.network.connection.http.</span></span><span class="sig-name descname"><span class="pre">HttpPacketCodec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PacketCodec</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec.encode_packet">
+<span class="sig-name descname"><span class="pre">encode_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec.encode_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Encodes single packet and returns encoded bytes.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec.obfuscate_tag">
+<span class="sig-name descname"><span class="pre">obfuscate_tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec.obfuscate_tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec.read_packet">
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_packet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec.read_packet" title="Permalink to this definition"></a></dt>
+<dd><p>Reads single packet from <code class="xref py py-obj docutils literal notranslate"><span class="pre">reader</span></code> object that should have
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">readexactly(n)</span></code> method.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="telethon.network.connection.http.HttpPacketCodec.tag">
+<span class="sig-name descname"><span class="pre">tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#telethon.network.connection.http.HttpPacketCodec.tag" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sessions.html" class="btn btn-neutral float-left" title="Sessions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="helpers.html" class="btn btn-neutral float-right" title="Helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

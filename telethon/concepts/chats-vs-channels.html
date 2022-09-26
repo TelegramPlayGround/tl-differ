@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chats vs Channels &mdash; Telethon 0.145 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Updates in Depth" href="updates.html" />
+    <link rel="prev" title="Entities" href="entities.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Telethon
+          </a>
+              <div class="version">
+                0.145
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">First Steps</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../basic/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/signing-in.html">Signing In</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/quick-start.html">Quick-Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/updates.html">Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basic/next-steps.html">Next Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/client-reference.html">Client Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/events-reference.html">Events Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick-references/objects-reference.html">Objects Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="strings.html">String-based Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="entities.html">Entities</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Chats vs Channels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#chats">Chats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#channels">Channels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#converting-ids">Converting IDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-note-on-raw-api">A note on raw API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates in Depth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sessions.html">Session Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="full-api.html">The Full API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="botapi-vs-mtproto.html">HTTP Bot API vs MTProto</a></li>
+<li class="toctree-l1"><a class="reference internal" href="asyncio.html">Mastering asyncio</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Full API Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/word-of-warning.html">A Word of Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/chats-and-channels.html">Working with Chats and Channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/users.html">Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/working-with-messages.html">Working with messages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing/philosophy.html">Philosophy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/project-structure.html">Project Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/coding-style.html">Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/understanding-the-type-language.html">Understanding the Type Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/tips-for-porting-the-project.html">Tips for Porting the Project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing/telegram-api-in-other-languages.html">Telegram API in Other Languages</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/changelog.html">Changelog (Version History)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/wall-of-shame.html">Wall of Shame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/compatibility-and-convenience.html">Compatibility and Convenience</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telethon Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/client.html">TelegramClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/events.html">Update Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/custom.html">Custom package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/errors.html">API Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/sessions.html">Sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/network.html">Connection Modes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/helpers.html">Helpers</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Telethon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Chats vs Channels</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/concepts/chats-vs-channels.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chats-vs-channels">
+<span id="chats-channels"></span><h1>Chats vs Channels<a class="headerlink" href="#chats-vs-channels" title="Permalink to this heading"></a></h1>
+<p>Telegram’s raw API can get very confusing sometimes, in particular when it
+comes to talking about “chats”, “channels”, “groups”, “megagroups”, and all
+those concepts.</p>
+<p>This section will try to explain what each of these concepts are.</p>
+<section id="chats">
+<h2>Chats<a class="headerlink" href="#chats" title="Permalink to this heading"></a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">Chat</span></code> can be used to talk about either the common “subclass” that both
+chats and channels share, or the concrete <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> type.</p>
+<p>Technically, both <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> and <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> are a form of the <a class="reference external" href="https://tl.telethon.dev/types/chat.html">Chat type</a>.</p>
+<p><strong>Most of the time</strong>, the term <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> is used to talk about <em>small group
+chats</em>. When you create a group through an official application, this is the
+type that you get. Official applications refer to these as “Group”.</p>
+<p>Both the bot API and Telethon will add a minus sign (negate) the real chat ID
+so that you can tell at a glance, with just a number, the entity type.</p>
+<p>For example, if you create a chat with <a class="reference external" href="https://tl.telethon.dev/?q=CreateChatRequest">CreateChatRequest</a>, the real chat
+ID might be something like <code class="xref py py-obj docutils literal notranslate"><span class="pre">123</span></code>. If you try printing it from a
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">message.chat_id</span></code> you will see <code class="xref py py-obj docutils literal notranslate"><span class="pre">-123</span></code>. This ID helps Telethon know you’re
+talking about a <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a>.</p>
+</section>
+<section id="channels">
+<h2>Channels<a class="headerlink" href="#channels" title="Permalink to this heading"></a></h2>
+<p>Official applications create a <em>broadcast</em> channel when you create a new
+channel (used to broadcast messages, only administrators can post messages).</p>
+<p>Official applications implicitly <em>migrate</em> an <em>existing</em> <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> to a
+<em>megagroup</em> <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> when you perform certain actions (exceed user limit,
+add a public username, set certain permissions, etc.).</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">Channel</span></code> can be created directly with <a class="reference external" href="https://tl.telethon.dev/?q=CreateChannelRequest">CreateChannelRequest</a>, as
+either a <code class="docutils literal notranslate"><span class="pre">megagroup</span></code> or <code class="docutils literal notranslate"><span class="pre">broadcast</span></code>.</p>
+<p>Official applications use the term “channel” <strong>only</strong> for broadcast channels.</p>
+<p>The API refers to the different types of <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> with certain attributes:</p>
+<ul class="simple">
+<li><p>A <strong>broadcast channel</strong> is a <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> with the <code class="docutils literal notranslate"><span class="pre">channel.broadcast</span></code>
+attribute set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>.</p></li>
+<li><p>A <strong>megagroup channel</strong> is a <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> with the <code class="docutils literal notranslate"><span class="pre">channel.megagroup</span></code>
+attribute set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>. Official applications refer to this as “supergroup”.</p></li>
+<li><p>A <strong>gigagroup channel</strong> is a <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> with the <code class="docutils literal notranslate"><span class="pre">channel.gigagroup</span></code>
+attribute set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>. Official applications refer to this as “broadcast
+groups”, and is used when a megagroup becomes very large and administrators
+want to transform it into something where only they can post messages.</p></li>
+</ul>
+<p>Both the bot API and Telethon will “concatenate” <code class="docutils literal notranslate"><span class="pre">-100</span></code> to the real chat ID
+so that you can tell at a glance, with just a number, the entity type.</p>
+<p>For example, if you create a new broadcast channel, the real channel ID might
+be something like <code class="xref py py-obj docutils literal notranslate"><span class="pre">456</span></code>. If you try printing it from a <code class="xref py py-obj docutils literal notranslate"><span class="pre">message.chat_id</span></code> you
+will see <code class="xref py py-obj docutils literal notranslate"><span class="pre">-1000000000456</span></code>. This ID helps Telethon know you’re talking about a
+<a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a>.</p>
+</section>
+<section id="converting-ids">
+<h2>Converting IDs<a class="headerlink" href="#converting-ids" title="Permalink to this heading"></a></h2>
+<p>You can convert between the “marked” identifiers (prefixed with a minus sign)
+and the real ones with <code class="docutils literal notranslate"><span class="pre">utils.resolve_id</span></code>. It will return a tuple with the
+real ID, and the peer type (the class):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="n">real_id</span><span class="p">,</span> <span class="n">peer_type</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">resolve_id</span><span class="p">(</span><span class="o">-</span><span class="mi">1000000000456</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">real_id</span><span class="p">)</span>  <span class="c1"># 456</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">peer_type</span><span class="p">)</span>  <span class="c1"># &lt;class &#39;telethon.tl.types.PeerChannel&#39;&gt;</span>
+
+<span class="n">peer</span> <span class="o">=</span> <span class="n">peer_type</span><span class="p">(</span><span class="n">real_id</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">peer</span><span class="p">)</span>  <span class="c1"># PeerChannel(channel_id=456)</span>
+</pre></div>
+</div>
+<p>The reverse operation can be done with <code class="docutils literal notranslate"><span class="pre">utils.get_peer_id</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">get_peer_id</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">PeerChannel</span><span class="p">(</span><span class="mi">456</span><span class="p">)))</span>  <span class="c1"># -1000000000456</span>
+</pre></div>
+</div>
+<p>Note that this function can also work with other types, like <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or
+<a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> instances.</p>
+<p>If you need to convert other types like usernames which might need to perform
+API calls to find out the identifier, you can use <code class="docutils literal notranslate"><span class="pre">client.get_peer_id</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_peer_id</span><span class="p">(</span><span class="s1">&#39;me&#39;</span><span class="p">))</span>  <span class="c1"># your id</span>
+</pre></div>
+</div>
+<p>If there is no “mark” (no minus sign), Telethon will assume your identifier
+refers to a <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>. If this is <strong>not</strong> the case, you can manually fix it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">types</span>
+<span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">PeerChannel</span><span class="p">(</span><span class="mi">456</span><span class="p">),</span> <span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<span class="c1">#                         ^^^^^^^^^^^^^^^^^ explicit peer type</span>
+</pre></div>
+</div>
+</section>
+<section id="a-note-on-raw-api">
+<h2>A note on raw API<a class="headerlink" href="#a-note-on-raw-api" title="Permalink to this heading"></a></h2>
+<p>Certain methods only work on a <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a>, and some others only work on a
+<a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> (and these may only work in broadcast, or megagroup). Your code
+likely knows what it’s working with, so it shouldn’t be too much of an issue.</p>
+<p>If you need to find the <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> from a <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> that migrated to it,
+access the <code class="xref py py-obj docutils literal notranslate"><span class="pre">migrated_to</span></code> property:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># chat is a Chat</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_entity</span><span class="p">(</span><span class="n">chat</span><span class="o">.</span><span class="n">migrated_to</span><span class="p">)</span>
+<span class="c1"># channel is now a Channel</span>
+</pre></div>
+</div>
+<p>Channels do not have a “migrated_from”, but a <a class="reference external" href="https://tl.telethon.dev/?q=ChannelFull">ChannelFull</a> does. You can
+use <a class="reference external" href="https://tl.telethon.dev/?q=GetFullChannelRequest">GetFullChannelRequest</a> to obtain this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">functions</span>
+<span class="n">full</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">(</span><span class="n">functions</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">GetFullChannelRequest</span><span class="p">(</span><span class="n">your_channel</span><span class="p">))</span>
+<span class="n">full_channel</span> <span class="o">=</span> <span class="n">full</span><span class="o">.</span><span class="n">full_chat</span>
+<span class="c1"># full_channel is a ChannelFull</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">full_channel</span><span class="o">.</span><span class="n">migrated_from_chat_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This way, you can also access the linked discussion megagroup of a broadcast channel:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">full_channel</span><span class="o">.</span><span class="n">linked_chat_id</span><span class="p">)</span>  <span class="c1"># prints ID of linked discussion group or None</span>
+</pre></div>
+</div>
+<p>You do not need to use <code class="docutils literal notranslate"><span class="pre">client.get_entity</span></code> to access the
+<code class="docutils literal notranslate"><span class="pre">migrated_from_chat_id</span></code> <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or the <code class="docutils literal notranslate"><span class="pre">linked_chat_id</span></code> <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a>.
+They are in the <code class="docutils literal notranslate"><span class="pre">full.chats</span></code> attribute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">full_channel</span><span class="o">.</span><span class="n">migrated_from_chat_id</span><span class="p">:</span>
+    <span class="n">migrated_from_chat</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">full</span><span class="o">.</span><span class="n">chats</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">full_channel</span><span class="o">.</span><span class="n">migrated_from_chat_id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">migrated_from_chat</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">full_channel</span><span class="o">.</span><span class="n">linked_chat_id</span><span class="p">:</span>
+    <span class="n">linked_group</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">full</span><span class="o">.</span><span class="n">chats</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">full_channel</span><span class="o">.</span><span class="n">linked_chat_id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">linked_group</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="entities.html" class="btn btn-neutral float-left" title="Entities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="updates.html" class="btn btn-neutral float-right" title="Updates in Depth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017 - 2019, Lonami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
