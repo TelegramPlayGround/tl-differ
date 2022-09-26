@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat &mdash; Pyrogram Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="canonical" href="https://docs.pyrogram.org/api/types/Chat.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ChatPreview" href="ChatPreview.html" />
+    <link rel="prev" title="User" href="User.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Pyrogram
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/install.html">Install Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../start/setup.html">Project Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/auth.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/invoking.html">Invoking Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/updates.html">Handling Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/examples/index.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../client.html">Pyrogram Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/index.html">Available Methods</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available Types</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#users-chats">Users &amp; Chats</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="User.html">User</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Chat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.types.Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ChatPreview.html">ChatPreview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatPhoto.html">ChatPhoto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatMember.html">ChatMember</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatPermissions.html">ChatPermissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatPrivileges.html">ChatPrivileges</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatInviteLink.html">ChatInviteLink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatAdminWithInviteLinks.html">ChatAdminWithInviteLinks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatEvent.html">ChatEvent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatEventFilter.html">ChatEventFilter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatMemberUpdated.html">ChatMemberUpdated</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatJoinRequest.html">ChatJoinRequest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatJoiner.html">ChatJoiner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dialog.html">Dialog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Restriction.html">Restriction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmojiStatus.html">EmojiStatus</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#messages-media">Messages &amp; Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#bot-keyboards">Bot keyboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#bot-commands">Bot commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#input-media">Input Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inline-mode">Inline Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inputmessagecontent">InputMessageContent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#authorization">Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bound-methods/index.html">Bound Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handlers.html">Update Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/index.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Update Filters</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/use-filters.html">Using Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/create-filters.html">Creating Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/more-on-updates.html">More on Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/client-settings.html">Client Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/speedups.html">Speedups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/text-formatting.html">Text Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/synchronous.html">Synchronous Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/smart-plugins.html">Smart Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/storage-engines.html">Storage Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/serializing.html">Object Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/proxy.html">Proxy Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/scheduling.html">Scheduling Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/mtproto-vs-botapi.html">MTProto vs. Bot API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/advanced-usage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/voice-calls.html">Voice Calls</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support Pyrogram</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/types/index.html">Raw Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/base/index.html">Raw Base</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pyrogram</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Available Types</a> &raquo;</li>
+      <li>Chat</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="chat">
+<h1>Chat<a class="headerlink" href="#chat" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyrogram.types.Chat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyrogram.types.</span></span><span class="sig-name descname"><span class="pre">Chat</span></span><a class="headerlink" href="#pyrogram.types.Chat" title="Permalink to this definition"></a></dt>
+<dd><p>A chat.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – Unique identifier for this chat.</p></li>
+<li><p><strong>type</strong> (<a class="reference internal" href="../enums/ChatType.html#pyrogram.enums.ChatType" title="pyrogram.enums.ChatType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatType</span></code></a>) – Type of chat.</p></li>
+<li><p><strong>is_verified</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if this chat has been verified by Telegram. Supergroups, channels and bots only.</p></li>
+<li><p><strong>is_restricted</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if this chat has been restricted. Supergroups, channels and bots only.
+See <em>restriction_reason</em> for details.</p></li>
+<li><p><strong>is_creator</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if this chat owner is the current user. Supergroups, channels and groups only.</p></li>
+<li><p><strong>is_scam</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if this chat has been flagged for scam.</p></li>
+<li><p><strong>is_fake</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if this chat has been flagged for impersonation.</p></li>
+<li><p><strong>is_support</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – True, if this chat is part of the Telegram support team. Users and bots only.</p></li>
+<li><p><strong>title</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Title, for supergroups, channels and basic group chats.</p></li>
+<li><p><strong>username</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Username, for private chats, bots, supergroups and channels if available.</p></li>
+<li><p><strong>first_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – First name of the other party in a private chat, for private chats and bots.</p></li>
+<li><p><strong>last_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Last name of the other party in a private chat, for private chats.</p></li>
+<li><p><strong>photo</strong> (<a class="reference internal" href="ChatPhoto.html#pyrogram.types.ChatPhoto" title="pyrogram.types.ChatPhoto"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatPhoto</span></code></a>, <em>optional</em>) – Chat photo. Suitable for downloads only.</p></li>
+<li><p><strong>bio</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Bio of the other party in a private chat.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>description</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Description, for groups, supergroups and channel chats.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>dc_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The chat assigned DC (data center). Available only in case the chat has a photo.
+Note that this information is approximate; it is based on where Telegram stores the current chat photo.
+It is accurate only in case the owner has set the chat photo, otherwise the dc_id will be the one assigned
+to the administrator who set the current chat photo.</p></li>
+<li><p><strong>has_protected_content</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if messages from the chat can’t be forwarded to other chats.</p></li>
+<li><p><strong>invite_link</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Chat invite link, for groups, supergroups and channels.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>pinned_message</strong> (<a class="reference internal" href="Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>, <em>optional</em>) – Pinned message, for groups, supergroups channels and own chat.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>sticker_set_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – For supergroups, name of group sticker set.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>can_set_sticker_set</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if the group sticker set can be changed by you.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>members_count</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Chat members count, for groups, supergroups and channels only.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>restrictions</strong> (List of <a class="reference internal" href="Restriction.html#pyrogram.types.Restriction" title="pyrogram.types.Restriction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Restriction</span></code></a>, <em>optional</em>) – The list of reasons why this chat might be unavailable to some users.
+This field is available only in case <em>is_restricted</em> is True.</p></li>
+<li><p><strong>permissions</strong> (<a class="reference internal" href="ChatPermissions.html#pyrogram.types.ChatPermissions" title="pyrogram.types.ChatPermissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatPermissions</span></code></a> <em>optional</em>) – Default chat member permissions, for groups and supergroups.</p></li>
+<li><p><strong>distance</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Distance in meters of this group chat from your location.
+Returned only in <a class="reference internal" href="../methods/get_nearby_chats.html#pyrogram.Client.get_nearby_chats" title="pyrogram.Client.get_nearby_chats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_nearby_chats()</span></code></a>.</p></li>
+<li><p><strong>linked_chat</strong> (<a class="reference internal" href="#pyrogram.types.Chat" title="pyrogram.types.Chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Chat</span></code></a>, <em>optional</em>) – The linked discussion group (in case of channels) or the linked channel (in case of supergroups).
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>send_as_chat</strong> (<a class="reference internal" href="#pyrogram.types.Chat" title="pyrogram.types.Chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Chat</span></code></a>, <em>optional</em>) – The default “send_as” chat.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+<li><p><strong>available_reactions</strong> (<a class="reference internal" href="ChatReactions.html#pyrogram.types.ChatReactions" title="pyrogram.types.ChatReactions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatReactions</span></code></a>, <em>optional</em>) – Available reactions in the chat.
+Returned only in <a class="reference internal" href="../methods/get_chat.html#pyrogram.Client.get_chat" title="pyrogram.Client.get_chat"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_chat()</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="User.html" class="btn btn-neutral float-left" title="User" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ChatPreview.html" class="btn btn-neutral float-right" title="ChatPreview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

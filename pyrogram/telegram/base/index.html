@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raw Base &mdash; Pyrogram Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="canonical" href="https://docs.pyrogram.org/telegram/base/index.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Account" href="account/index.html" />
+    <link rel="prev" title="WebViewResultUrl" href="../types/web-view-result-url.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Pyrogram
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/install.html">Install Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../start/setup.html">Project Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/auth.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/invoking.html">Invoking Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/updates.html">Handling Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/examples/index.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api/client.html">Pyrogram Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/methods/index.html">Available Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/types/index.html">Available Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/bound-methods/index.html">Bound Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/enums/index.html">Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/handlers.html">Update Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/errors/index.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api/filters.html">Update Filters</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/use-filters.html">Using Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/create-filters.html">Creating Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/more-on-updates.html">More on Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/client-settings.html">Client Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/speedups.html">Speedups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/text-formatting.html">Text Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/synchronous.html">Synchronous Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/smart-plugins.html">Smart Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/storage-engines.html">Storage Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/serializing.html">Object Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/proxy.html">Proxy Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/scheduling.html">Scheduling Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/mtproto-vs-botapi.html">MTProto vs. Bot API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/advanced-usage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/voice-calls.html">Voice Calls</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support Pyrogram</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Raw Types</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raw Base</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pyrogram</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Raw Base</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyrogram.raw.base">
+<span id="raw-base"></span><h1>Raw Base<a class="headerlink" href="#module-pyrogram.raw.base" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="account/index.html">Account</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="account/authorization-form.html">AuthorizationForm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/authorization-form.html#pyrogram.raw.base.account.AuthorizationForm"><code class="docutils literal notranslate"><span class="pre">AuthorizationForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/authorizations.html">Authorizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/authorizations.html#pyrogram.raw.base.account.Authorizations"><code class="docutils literal notranslate"><span class="pre">Authorizations</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/auto-download-settings.html">AutoDownloadSettings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/auto-download-settings.html#pyrogram.raw.base.account.AutoDownloadSettings"><code class="docutils literal notranslate"><span class="pre">AutoDownloadSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/content-settings.html">ContentSettings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/content-settings.html#pyrogram.raw.base.account.ContentSettings"><code class="docutils literal notranslate"><span class="pre">ContentSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/email-verified.html">EmailVerified</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/email-verified.html#pyrogram.raw.base.account.EmailVerified"><code class="docutils literal notranslate"><span class="pre">EmailVerified</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/emoji-statuses.html">EmojiStatuses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/emoji-statuses.html#pyrogram.raw.base.account.EmojiStatuses"><code class="docutils literal notranslate"><span class="pre">EmojiStatuses</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/password.html">Password</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/password.html#pyrogram.raw.base.account.Password"><code class="docutils literal notranslate"><span class="pre">Password</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/password-input-settings.html">PasswordInputSettings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/password-input-settings.html#pyrogram.raw.base.account.PasswordInputSettings"><code class="docutils literal notranslate"><span class="pre">PasswordInputSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/password-settings.html">PasswordSettings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/password-settings.html#pyrogram.raw.base.account.PasswordSettings"><code class="docutils literal notranslate"><span class="pre">PasswordSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/privacy-rules.html">PrivacyRules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/privacy-rules.html#pyrogram.raw.base.account.PrivacyRules"><code class="docutils literal notranslate"><span class="pre">PrivacyRules</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/reset-password-result.html">ResetPasswordResult</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/reset-password-result.html#pyrogram.raw.base.account.ResetPasswordResult"><code class="docutils literal notranslate"><span class="pre">ResetPasswordResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/saved-ringtone.html">SavedRingtone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/saved-ringtone.html#pyrogram.raw.base.account.SavedRingtone"><code class="docutils literal notranslate"><span class="pre">SavedRingtone</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/saved-ringtones.html">SavedRingtones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/saved-ringtones.html#pyrogram.raw.base.account.SavedRingtones"><code class="docutils literal notranslate"><span class="pre">SavedRingtones</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/sent-email-code.html">SentEmailCode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/sent-email-code.html#pyrogram.raw.base.account.SentEmailCode"><code class="docutils literal notranslate"><span class="pre">SentEmailCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/takeout.html">Takeout</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/takeout.html#pyrogram.raw.base.account.Takeout"><code class="docutils literal notranslate"><span class="pre">Takeout</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/themes.html">Themes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/themes.html#pyrogram.raw.base.account.Themes"><code class="docutils literal notranslate"><span class="pre">Themes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/tmp-password.html">TmpPassword</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/tmp-password.html#pyrogram.raw.base.account.TmpPassword"><code class="docutils literal notranslate"><span class="pre">TmpPassword</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/wall-papers.html">WallPapers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/wall-papers.html#pyrogram.raw.base.account.WallPapers"><code class="docutils literal notranslate"><span class="pre">WallPapers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="account/web-authorizations.html">WebAuthorizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="account/web-authorizations.html#pyrogram.raw.base.account.WebAuthorizations"><code class="docutils literal notranslate"><span class="pre">WebAuthorizations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auth/index.html">Auth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auth/authorization.html">Authorization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/authorization.html#pyrogram.raw.base.auth.Authorization"><code class="docutils literal notranslate"><span class="pre">Authorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/code-type.html">CodeType</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/code-type.html#pyrogram.raw.base.auth.CodeType"><code class="docutils literal notranslate"><span class="pre">CodeType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/exported-authorization.html">ExportedAuthorization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/exported-authorization.html#pyrogram.raw.base.auth.ExportedAuthorization"><code class="docutils literal notranslate"><span class="pre">ExportedAuthorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/logged-out.html">LoggedOut</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/logged-out.html#pyrogram.raw.base.auth.LoggedOut"><code class="docutils literal notranslate"><span class="pre">LoggedOut</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/login-token.html">LoginToken</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/login-token.html#pyrogram.raw.base.auth.LoginToken"><code class="docutils literal notranslate"><span class="pre">LoginToken</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/password-recovery.html">PasswordRecovery</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/password-recovery.html#pyrogram.raw.base.auth.PasswordRecovery"><code class="docutils literal notranslate"><span class="pre">PasswordRecovery</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/sent-code.html">SentCode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/sent-code.html#pyrogram.raw.base.auth.SentCode"><code class="docutils literal notranslate"><span class="pre">SentCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auth/sent-code-type.html">SentCodeType</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auth/sent-code-type.html#pyrogram.raw.base.auth.SentCodeType"><code class="docutils literal notranslate"><span class="pre">SentCodeType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channels/index.html">Channels</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channels/admin-log-results.html">AdminLogResults</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="channels/admin-log-results.html#pyrogram.raw.base.channels.AdminLogResults"><code class="docutils literal notranslate"><span class="pre">AdminLogResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="channels/channel-participant.html">ChannelParticipant</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="channels/channel-participant.html#pyrogram.raw.base.channels.ChannelParticipant"><code class="docutils literal notranslate"><span class="pre">ChannelParticipant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="channels/channel-participants.html">ChannelParticipants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="channels/channel-participants.html#pyrogram.raw.base.channels.ChannelParticipants"><code class="docutils literal notranslate"><span class="pre">ChannelParticipants</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="channels/send-as-peers.html">SendAsPeers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="channels/send-as-peers.html#pyrogram.raw.base.channels.SendAsPeers"><code class="docutils literal notranslate"><span class="pre">SendAsPeers</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contacts/index.html">Contacts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contacts/blocked.html">Blocked</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contacts/blocked.html#pyrogram.raw.base.contacts.Blocked"><code class="docutils literal notranslate"><span class="pre">Blocked</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/contacts.html">Contacts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contacts/contacts.html#pyrogram.raw.base.contacts.Contacts"><code class="docutils literal notranslate"><span class="pre">Contacts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/found.html">Found</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contacts/found.html#pyrogram.raw.base.contacts.Found"><code class="docutils literal notranslate"><span class="pre">Found</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/imported-contacts.html">ImportedContacts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contacts/imported-contacts.html#pyrogram.raw.base.contacts.ImportedContacts"><code class="docutils literal notranslate"><span class="pre">ImportedContacts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/resolved-peer.html">ResolvedPeer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contacts/resolved-peer.html#pyrogram.raw.base.contacts.ResolvedPeer"><code class="docutils literal notranslate"><span class="pre">ResolvedPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contacts/top-peers.html">TopPeers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contacts/top-peers.html#pyrogram.raw.base.contacts.TopPeers"><code class="docutils literal notranslate"><span class="pre">TopPeers</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="help/index.html">Help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="help/app-update.html">AppUpdate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/app-update.html#pyrogram.raw.base.help.AppUpdate"><code class="docutils literal notranslate"><span class="pre">AppUpdate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/config-simple.html">ConfigSimple</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/config-simple.html#pyrogram.raw.base.help.ConfigSimple"><code class="docutils literal notranslate"><span class="pre">ConfigSimple</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/countries-list.html">CountriesList</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/countries-list.html#pyrogram.raw.base.help.CountriesList"><code class="docutils literal notranslate"><span class="pre">CountriesList</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/country.html">Country</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/country.html#pyrogram.raw.base.help.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/country-code.html">CountryCode</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/country-code.html#pyrogram.raw.base.help.CountryCode"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/deep-link-info.html">DeepLinkInfo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/deep-link-info.html#pyrogram.raw.base.help.DeepLinkInfo"><code class="docutils literal notranslate"><span class="pre">DeepLinkInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/invite-text.html">InviteText</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/invite-text.html#pyrogram.raw.base.help.InviteText"><code class="docutils literal notranslate"><span class="pre">InviteText</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/passport-config.html">PassportConfig</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/passport-config.html#pyrogram.raw.base.help.PassportConfig"><code class="docutils literal notranslate"><span class="pre">PassportConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/premium-promo.html">PremiumPromo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/premium-promo.html#pyrogram.raw.base.help.PremiumPromo"><code class="docutils literal notranslate"><span class="pre">PremiumPromo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/promo-data.html">PromoData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/promo-data.html#pyrogram.raw.base.help.PromoData"><code class="docutils literal notranslate"><span class="pre">PromoData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/recent-me-urls.html">RecentMeUrls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/recent-me-urls.html#pyrogram.raw.base.help.RecentMeUrls"><code class="docutils literal notranslate"><span class="pre">RecentMeUrls</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/support.html">Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/support.html#pyrogram.raw.base.help.Support"><code class="docutils literal notranslate"><span class="pre">Support</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/support-name.html">SupportName</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/support-name.html#pyrogram.raw.base.help.SupportName"><code class="docutils literal notranslate"><span class="pre">SupportName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/terms-of-service.html">TermsOfService</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/terms-of-service.html#pyrogram.raw.base.help.TermsOfService"><code class="docutils literal notranslate"><span class="pre">TermsOfService</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/terms-of-service-update.html">TermsOfServiceUpdate</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/terms-of-service-update.html#pyrogram.raw.base.help.TermsOfServiceUpdate"><code class="docutils literal notranslate"><span class="pre">TermsOfServiceUpdate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="help/user-info.html">UserInfo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="help/user-info.html#pyrogram.raw.base.help.UserInfo"><code class="docutils literal notranslate"><span class="pre">UserInfo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messages/index.html">Messages</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="messages/affected-found-messages.html">AffectedFoundMessages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/affected-found-messages.html#pyrogram.raw.base.messages.AffectedFoundMessages"><code class="docutils literal notranslate"><span class="pre">AffectedFoundMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/affected-history.html">AffectedHistory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/affected-history.html#pyrogram.raw.base.messages.AffectedHistory"><code class="docutils literal notranslate"><span class="pre">AffectedHistory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/affected-messages.html">AffectedMessages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/affected-messages.html#pyrogram.raw.base.messages.AffectedMessages"><code class="docutils literal notranslate"><span class="pre">AffectedMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/all-stickers.html">AllStickers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/all-stickers.html#pyrogram.raw.base.messages.AllStickers"><code class="docutils literal notranslate"><span class="pre">AllStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/archived-stickers.html">ArchivedStickers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/archived-stickers.html#pyrogram.raw.base.messages.ArchivedStickers"><code class="docutils literal notranslate"><span class="pre">ArchivedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/available-reactions.html">AvailableReactions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/available-reactions.html#pyrogram.raw.base.messages.AvailableReactions"><code class="docutils literal notranslate"><span class="pre">AvailableReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/bot-callback-answer.html">BotCallbackAnswer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/bot-callback-answer.html#pyrogram.raw.base.messages.BotCallbackAnswer"><code class="docutils literal notranslate"><span class="pre">BotCallbackAnswer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/bot-results.html">BotResults</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/bot-results.html#pyrogram.raw.base.messages.BotResults"><code class="docutils literal notranslate"><span class="pre">BotResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/chat-admins-with-invites.html">ChatAdminsWithInvites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/chat-admins-with-invites.html#pyrogram.raw.base.messages.ChatAdminsWithInvites"><code class="docutils literal notranslate"><span class="pre">ChatAdminsWithInvites</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/chat-full.html">ChatFull</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/chat-full.html#pyrogram.raw.base.messages.ChatFull"><code class="docutils literal notranslate"><span class="pre">ChatFull</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/chat-invite-importers.html">ChatInviteImporters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/chat-invite-importers.html#pyrogram.raw.base.messages.ChatInviteImporters"><code class="docutils literal notranslate"><span class="pre">ChatInviteImporters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/chats.html">Chats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/chats.html#pyrogram.raw.base.messages.Chats"><code class="docutils literal notranslate"><span class="pre">Chats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/checked-history-import-peer.html">CheckedHistoryImportPeer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/checked-history-import-peer.html#pyrogram.raw.base.messages.CheckedHistoryImportPeer"><code class="docutils literal notranslate"><span class="pre">CheckedHistoryImportPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/dh-config.html">DhConfig</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/dh-config.html#pyrogram.raw.base.messages.DhConfig"><code class="docutils literal notranslate"><span class="pre">DhConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/dialogs.html">Dialogs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/dialogs.html#pyrogram.raw.base.messages.Dialogs"><code class="docutils literal notranslate"><span class="pre">Dialogs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/discussion-message.html">DiscussionMessage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/discussion-message.html#pyrogram.raw.base.messages.DiscussionMessage"><code class="docutils literal notranslate"><span class="pre">DiscussionMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/exported-chat-invite.html">ExportedChatInvite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/exported-chat-invite.html#pyrogram.raw.base.messages.ExportedChatInvite"><code class="docutils literal notranslate"><span class="pre">ExportedChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/exported-chat-invites.html">ExportedChatInvites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/exported-chat-invites.html#pyrogram.raw.base.messages.ExportedChatInvites"><code class="docutils literal notranslate"><span class="pre">ExportedChatInvites</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/faved-stickers.html">FavedStickers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/faved-stickers.html#pyrogram.raw.base.messages.FavedStickers"><code class="docutils literal notranslate"><span class="pre">FavedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/featured-stickers.html">FeaturedStickers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/featured-stickers.html#pyrogram.raw.base.messages.FeaturedStickers"><code class="docutils literal notranslate"><span class="pre">FeaturedStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/found-sticker-sets.html">FoundStickerSets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/found-sticker-sets.html#pyrogram.raw.base.messages.FoundStickerSets"><code class="docutils literal notranslate"><span class="pre">FoundStickerSets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/high-scores.html">HighScores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/high-scores.html#pyrogram.raw.base.messages.HighScores"><code class="docutils literal notranslate"><span class="pre">HighScores</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/history-import.html">HistoryImport</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/history-import.html#pyrogram.raw.base.messages.HistoryImport"><code class="docutils literal notranslate"><span class="pre">HistoryImport</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/history-import-parsed.html">HistoryImportParsed</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/history-import-parsed.html#pyrogram.raw.base.messages.HistoryImportParsed"><code class="docutils literal notranslate"><span class="pre">HistoryImportParsed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/inactive-chats.html">InactiveChats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/inactive-chats.html#pyrogram.raw.base.messages.InactiveChats"><code class="docutils literal notranslate"><span class="pre">InactiveChats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/message-edit-data.html">MessageEditData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/message-edit-data.html#pyrogram.raw.base.messages.MessageEditData"><code class="docutils literal notranslate"><span class="pre">MessageEditData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/message-reactions-list.html">MessageReactionsList</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/message-reactions-list.html#pyrogram.raw.base.messages.MessageReactionsList"><code class="docutils literal notranslate"><span class="pre">MessageReactionsList</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/message-views.html">MessageViews</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/message-views.html#pyrogram.raw.base.messages.MessageViews"><code class="docutils literal notranslate"><span class="pre">MessageViews</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/messages.html">Messages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/messages.html#pyrogram.raw.base.messages.Messages"><code class="docutils literal notranslate"><span class="pre">Messages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/peer-dialogs.html">PeerDialogs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/peer-dialogs.html#pyrogram.raw.base.messages.PeerDialogs"><code class="docutils literal notranslate"><span class="pre">PeerDialogs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/peer-settings.html">PeerSettings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/peer-settings.html#pyrogram.raw.base.messages.PeerSettings"><code class="docutils literal notranslate"><span class="pre">PeerSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/reactions.html">Reactions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/reactions.html#pyrogram.raw.base.messages.Reactions"><code class="docutils literal notranslate"><span class="pre">Reactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/recent-stickers.html">RecentStickers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/recent-stickers.html#pyrogram.raw.base.messages.RecentStickers"><code class="docutils literal notranslate"><span class="pre">RecentStickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/saved-gifs.html">SavedGifs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/saved-gifs.html#pyrogram.raw.base.messages.SavedGifs"><code class="docutils literal notranslate"><span class="pre">SavedGifs</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/search-counter.html">SearchCounter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/search-counter.html#pyrogram.raw.base.messages.SearchCounter"><code class="docutils literal notranslate"><span class="pre">SearchCounter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/search-results-calendar.html">SearchResultsCalendar</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/search-results-calendar.html#pyrogram.raw.base.messages.SearchResultsCalendar"><code class="docutils literal notranslate"><span class="pre">SearchResultsCalendar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/search-results-positions.html">SearchResultsPositions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/search-results-positions.html#pyrogram.raw.base.messages.SearchResultsPositions"><code class="docutils literal notranslate"><span class="pre">SearchResultsPositions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/sent-encrypted-message.html">SentEncryptedMessage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/sent-encrypted-message.html#pyrogram.raw.base.messages.SentEncryptedMessage"><code class="docutils literal notranslate"><span class="pre">SentEncryptedMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/sponsored-messages.html">SponsoredMessages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/sponsored-messages.html#pyrogram.raw.base.messages.SponsoredMessages"><code class="docutils literal notranslate"><span class="pre">SponsoredMessages</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/sticker-set.html">StickerSet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/sticker-set.html#pyrogram.raw.base.messages.StickerSet"><code class="docutils literal notranslate"><span class="pre">StickerSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/sticker-set-install-result.html">StickerSetInstallResult</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/sticker-set-install-result.html#pyrogram.raw.base.messages.StickerSetInstallResult"><code class="docutils literal notranslate"><span class="pre">StickerSetInstallResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/stickers.html">Stickers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/stickers.html#pyrogram.raw.base.messages.Stickers"><code class="docutils literal notranslate"><span class="pre">Stickers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/transcribed-audio.html">TranscribedAudio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/transcribed-audio.html#pyrogram.raw.base.messages.TranscribedAudio"><code class="docutils literal notranslate"><span class="pre">TranscribedAudio</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/translated-text.html">TranslatedText</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/translated-text.html#pyrogram.raw.base.messages.TranslatedText"><code class="docutils literal notranslate"><span class="pre">TranslatedText</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="messages/votes-list.html">VotesList</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="messages/votes-list.html#pyrogram.raw.base.messages.VotesList"><code class="docutils literal notranslate"><span class="pre">VotesList</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payments/index.html">Payments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payments/bank-card-data.html">BankCardData</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/bank-card-data.html#pyrogram.raw.base.payments.BankCardData"><code class="docutils literal notranslate"><span class="pre">BankCardData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="payments/exported-invoice.html">ExportedInvoice</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/exported-invoice.html#pyrogram.raw.base.payments.ExportedInvoice"><code class="docutils literal notranslate"><span class="pre">ExportedInvoice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="payments/payment-form.html">PaymentForm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/payment-form.html#pyrogram.raw.base.payments.PaymentForm"><code class="docutils literal notranslate"><span class="pre">PaymentForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="payments/payment-receipt.html">PaymentReceipt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/payment-receipt.html#pyrogram.raw.base.payments.PaymentReceipt"><code class="docutils literal notranslate"><span class="pre">PaymentReceipt</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="payments/payment-result.html">PaymentResult</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/payment-result.html#pyrogram.raw.base.payments.PaymentResult"><code class="docutils literal notranslate"><span class="pre">PaymentResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="payments/saved-info.html">SavedInfo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/saved-info.html#pyrogram.raw.base.payments.SavedInfo"><code class="docutils literal notranslate"><span class="pre">SavedInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="payments/validated-requested-info.html">ValidatedRequestedInfo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="payments/validated-requested-info.html#pyrogram.raw.base.payments.ValidatedRequestedInfo"><code class="docutils literal notranslate"><span class="pre">ValidatedRequestedInfo</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phone/index.html">Phone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phone/exported-group-call-invite.html">ExportedGroupCallInvite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/exported-group-call-invite.html#pyrogram.raw.base.phone.ExportedGroupCallInvite"><code class="docutils literal notranslate"><span class="pre">ExportedGroupCallInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phone/group-call.html">GroupCall</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/group-call.html#pyrogram.raw.base.phone.GroupCall"><code class="docutils literal notranslate"><span class="pre">GroupCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phone/group-call-stream-channels.html">GroupCallStreamChannels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/group-call-stream-channels.html#pyrogram.raw.base.phone.GroupCallStreamChannels"><code class="docutils literal notranslate"><span class="pre">GroupCallStreamChannels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phone/group-call-stream-rtmp-url.html">GroupCallStreamRtmpUrl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/group-call-stream-rtmp-url.html#pyrogram.raw.base.phone.GroupCallStreamRtmpUrl"><code class="docutils literal notranslate"><span class="pre">GroupCallStreamRtmpUrl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phone/group-participants.html">GroupParticipants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/group-participants.html#pyrogram.raw.base.phone.GroupParticipants"><code class="docutils literal notranslate"><span class="pre">GroupParticipants</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phone/join-as-peers.html">JoinAsPeers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/join-as-peers.html#pyrogram.raw.base.phone.JoinAsPeers"><code class="docutils literal notranslate"><span class="pre">JoinAsPeers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="phone/phone-call.html">PhoneCall</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="phone/phone-call.html#pyrogram.raw.base.phone.PhoneCall"><code class="docutils literal notranslate"><span class="pre">PhoneCall</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="photos/index.html">Photos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="photos/photo.html">Photo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="photos/photo.html#pyrogram.raw.base.photos.Photo"><code class="docutils literal notranslate"><span class="pre">Photo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="photos/photos.html">Photos</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="photos/photos.html#pyrogram.raw.base.photos.Photos"><code class="docutils literal notranslate"><span class="pre">Photos</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats/index.html">Stats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats/broadcast-stats.html">BroadcastStats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="stats/broadcast-stats.html#pyrogram.raw.base.stats.BroadcastStats"><code class="docutils literal notranslate"><span class="pre">BroadcastStats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="stats/megagroup-stats.html">MegagroupStats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="stats/megagroup-stats.html#pyrogram.raw.base.stats.MegagroupStats"><code class="docutils literal notranslate"><span class="pre">MegagroupStats</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="stats/message-stats.html">MessageStats</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="stats/message-stats.html#pyrogram.raw.base.stats.MessageStats"><code class="docutils literal notranslate"><span class="pre">MessageStats</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stickers/index.html">Stickers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stickers/suggested-short-name.html">SuggestedShortName</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="stickers/suggested-short-name.html#pyrogram.raw.base.stickers.SuggestedShortName"><code class="docutils literal notranslate"><span class="pre">SuggestedShortName</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="storage/index.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="storage/file-type.html">FileType</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="storage/file-type.html#pyrogram.raw.base.storage.FileType"><code class="docutils literal notranslate"><span class="pre">FileType</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates/index.html">Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updates/channel-difference.html">ChannelDifference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="updates/channel-difference.html#pyrogram.raw.base.updates.ChannelDifference"><code class="docutils literal notranslate"><span class="pre">ChannelDifference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="updates/difference.html">Difference</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="updates/difference.html#pyrogram.raw.base.updates.Difference"><code class="docutils literal notranslate"><span class="pre">Difference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="updates/state.html">State</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="updates/state.html#pyrogram.raw.base.updates.State"><code class="docutils literal notranslate"><span class="pre">State</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upload/index.html">Upload</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upload/cdn-file.html">CdnFile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="upload/cdn-file.html#pyrogram.raw.base.upload.CdnFile"><code class="docutils literal notranslate"><span class="pre">CdnFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="upload/file.html">File</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="upload/file.html#pyrogram.raw.base.upload.File"><code class="docutils literal notranslate"><span class="pre">File</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="upload/web-file.html">WebFile</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="upload/web-file.html#pyrogram.raw.base.upload.WebFile"><code class="docutils literal notranslate"><span class="pre">WebFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="users/index.html">Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="users/user-full.html">UserFull</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="users/user-full.html#pyrogram.raw.base.users.UserFull"><code class="docutils literal notranslate"><span class="pre">UserFull</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="access-point-rule.html">AccessPointRule</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="access-point-rule.html#pyrogram.raw.base.AccessPointRule"><code class="docutils literal notranslate"><span class="pre">AccessPointRule</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="account-days-ttl.html">AccountDaysTTL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="account-days-ttl.html#pyrogram.raw.base.AccountDaysTTL"><code class="docutils literal notranslate"><span class="pre">AccountDaysTTL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attach-menu-bot.html">AttachMenuBot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attach-menu-bot.html#pyrogram.raw.base.AttachMenuBot"><code class="docutils literal notranslate"><span class="pre">AttachMenuBot</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attach-menu-bot-icon.html">AttachMenuBotIcon</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attach-menu-bot-icon.html#pyrogram.raw.base.AttachMenuBotIcon"><code class="docutils literal notranslate"><span class="pre">AttachMenuBotIcon</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attach-menu-bot-icon-color.html">AttachMenuBotIconColor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attach-menu-bot-icon-color.html#pyrogram.raw.base.AttachMenuBotIconColor"><code class="docutils literal notranslate"><span class="pre">AttachMenuBotIconColor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attach-menu-bots.html">AttachMenuBots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attach-menu-bots.html#pyrogram.raw.base.AttachMenuBots"><code class="docutils literal notranslate"><span class="pre">AttachMenuBots</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attach-menu-bots-bot.html">AttachMenuBotsBot</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attach-menu-bots-bot.html#pyrogram.raw.base.AttachMenuBotsBot"><code class="docutils literal notranslate"><span class="pre">AttachMenuBotsBot</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="attach-menu-peer-type.html">AttachMenuPeerType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="attach-menu-peer-type.html#pyrogram.raw.base.AttachMenuPeerType"><code class="docutils literal notranslate"><span class="pre">AttachMenuPeerType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="authorization.html">Authorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html#pyrogram.raw.base.Authorization"><code class="docutils literal notranslate"><span class="pre">Authorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto-download-settings.html">AutoDownloadSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto-download-settings.html#pyrogram.raw.base.AutoDownloadSettings"><code class="docutils literal notranslate"><span class="pre">AutoDownloadSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="available-reaction.html">AvailableReaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="available-reaction.html#pyrogram.raw.base.AvailableReaction"><code class="docutils literal notranslate"><span class="pre">AvailableReaction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bad-msg-notification.html">BadMsgNotification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bad-msg-notification.html#pyrogram.raw.base.BadMsgNotification"><code class="docutils literal notranslate"><span class="pre">BadMsgNotification</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bank-card-open-url.html">BankCardOpenUrl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bank-card-open-url.html#pyrogram.raw.base.BankCardOpenUrl"><code class="docutils literal notranslate"><span class="pre">BankCardOpenUrl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="base-theme.html">BaseTheme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base-theme.html#pyrogram.raw.base.BaseTheme"><code class="docutils literal notranslate"><span class="pre">BaseTheme</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bind-auth-key-inner.html">BindAuthKeyInner</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bind-auth-key-inner.html#pyrogram.raw.base.BindAuthKeyInner"><code class="docutils literal notranslate"><span class="pre">BindAuthKeyInner</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bot-command.html">BotCommand</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bot-command.html#pyrogram.raw.base.BotCommand"><code class="docutils literal notranslate"><span class="pre">BotCommand</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bot-command-scope.html">BotCommandScope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bot-command-scope.html#pyrogram.raw.base.BotCommandScope"><code class="docutils literal notranslate"><span class="pre">BotCommandScope</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bot-info.html">BotInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bot-info.html#pyrogram.raw.base.BotInfo"><code class="docutils literal notranslate"><span class="pre">BotInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bot-inline-message.html">BotInlineMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bot-inline-message.html#pyrogram.raw.base.BotInlineMessage"><code class="docutils literal notranslate"><span class="pre">BotInlineMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bot-inline-result.html">BotInlineResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bot-inline-result.html#pyrogram.raw.base.BotInlineResult"><code class="docutils literal notranslate"><span class="pre">BotInlineResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bot-menu-button.html">BotMenuButton</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bot-menu-button.html#pyrogram.raw.base.BotMenuButton"><code class="docutils literal notranslate"><span class="pre">BotMenuButton</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cdn-config.html">CdnConfig</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cdn-config.html#pyrogram.raw.base.CdnConfig"><code class="docutils literal notranslate"><span class="pre">CdnConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cdn-public-key.html">CdnPublicKey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cdn-public-key.html#pyrogram.raw.base.CdnPublicKey"><code class="docutils literal notranslate"><span class="pre">CdnPublicKey</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-admin-log-event.html">ChannelAdminLogEvent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-admin-log-event.html#pyrogram.raw.base.ChannelAdminLogEvent"><code class="docutils literal notranslate"><span class="pre">ChannelAdminLogEvent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-admin-log-event-action.html">ChannelAdminLogEventAction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-admin-log-event-action.html#pyrogram.raw.base.ChannelAdminLogEventAction"><code class="docutils literal notranslate"><span class="pre">ChannelAdminLogEventAction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-admin-log-events-filter.html">ChannelAdminLogEventsFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-admin-log-events-filter.html#pyrogram.raw.base.ChannelAdminLogEventsFilter"><code class="docutils literal notranslate"><span class="pre">ChannelAdminLogEventsFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-location.html">ChannelLocation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-location.html#pyrogram.raw.base.ChannelLocation"><code class="docutils literal notranslate"><span class="pre">ChannelLocation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-messages-filter.html">ChannelMessagesFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-messages-filter.html#pyrogram.raw.base.ChannelMessagesFilter"><code class="docutils literal notranslate"><span class="pre">ChannelMessagesFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-participant.html">ChannelParticipant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-participant.html#pyrogram.raw.base.ChannelParticipant"><code class="docutils literal notranslate"><span class="pre">ChannelParticipant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="channel-participants-filter.html">ChannelParticipantsFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="channel-participants-filter.html#pyrogram.raw.base.ChannelParticipantsFilter"><code class="docutils literal notranslate"><span class="pre">ChannelParticipantsFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat.html">Chat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat.html#pyrogram.raw.base.Chat"><code class="docutils literal notranslate"><span class="pre">Chat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-admin-rights.html">ChatAdminRights</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-admin-rights.html#pyrogram.raw.base.ChatAdminRights"><code class="docutils literal notranslate"><span class="pre">ChatAdminRights</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-admin-with-invites.html">ChatAdminWithInvites</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-admin-with-invites.html#pyrogram.raw.base.ChatAdminWithInvites"><code class="docutils literal notranslate"><span class="pre">ChatAdminWithInvites</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-banned-rights.html">ChatBannedRights</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-banned-rights.html#pyrogram.raw.base.ChatBannedRights"><code class="docutils literal notranslate"><span class="pre">ChatBannedRights</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-full.html">ChatFull</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-full.html#pyrogram.raw.base.ChatFull"><code class="docutils literal notranslate"><span class="pre">ChatFull</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-invite.html">ChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-invite.html#pyrogram.raw.base.ChatInvite"><code class="docutils literal notranslate"><span class="pre">ChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-invite-importer.html">ChatInviteImporter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-invite-importer.html#pyrogram.raw.base.ChatInviteImporter"><code class="docutils literal notranslate"><span class="pre">ChatInviteImporter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-onlines.html">ChatOnlines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-onlines.html#pyrogram.raw.base.ChatOnlines"><code class="docutils literal notranslate"><span class="pre">ChatOnlines</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-participant.html">ChatParticipant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-participant.html#pyrogram.raw.base.ChatParticipant"><code class="docutils literal notranslate"><span class="pre">ChatParticipant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-participants.html">ChatParticipants</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-participants.html#pyrogram.raw.base.ChatParticipants"><code class="docutils literal notranslate"><span class="pre">ChatParticipants</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-photo.html">ChatPhoto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-photo.html#pyrogram.raw.base.ChatPhoto"><code class="docutils literal notranslate"><span class="pre">ChatPhoto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chat-reactions.html">ChatReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chat-reactions.html#pyrogram.raw.base.ChatReactions"><code class="docutils literal notranslate"><span class="pre">ChatReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client-dh-inner-data.html">ClientDHInnerData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client-dh-inner-data.html#pyrogram.raw.base.ClientDHInnerData"><code class="docutils literal notranslate"><span class="pre">ClientDHInnerData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-settings.html">CodeSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-settings.html#pyrogram.raw.base.CodeSettings"><code class="docutils literal notranslate"><span class="pre">CodeSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Config</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#pyrogram.raw.base.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contact.html#pyrogram.raw.base.Contact"><code class="docutils literal notranslate"><span class="pre">Contact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contact-status.html">ContactStatus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contact-status.html#pyrogram.raw.base.ContactStatus"><code class="docutils literal notranslate"><span class="pre">ContactStatus</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data-json.html">DataJSON</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data-json.html#pyrogram.raw.base.DataJSON"><code class="docutils literal notranslate"><span class="pre">DataJSON</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dc-option.html">DcOption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dc-option.html#pyrogram.raw.base.DcOption"><code class="docutils literal notranslate"><span class="pre">DcOption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="destroy-auth-key-res.html">DestroyAuthKeyRes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="destroy-auth-key-res.html#pyrogram.raw.base.DestroyAuthKeyRes"><code class="docutils literal notranslate"><span class="pre">DestroyAuthKeyRes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="destroy-session-res.html">DestroySessionRes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="destroy-session-res.html#pyrogram.raw.base.DestroySessionRes"><code class="docutils literal notranslate"><span class="pre">DestroySessionRes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dialog.html">Dialog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dialog.html#pyrogram.raw.base.Dialog"><code class="docutils literal notranslate"><span class="pre">Dialog</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dialog-filter.html">DialogFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dialog-filter.html#pyrogram.raw.base.DialogFilter"><code class="docutils literal notranslate"><span class="pre">DialogFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dialog-filter-suggested.html">DialogFilterSuggested</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dialog-filter-suggested.html#pyrogram.raw.base.DialogFilterSuggested"><code class="docutils literal notranslate"><span class="pre">DialogFilterSuggested</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dialog-peer.html">DialogPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dialog-peer.html#pyrogram.raw.base.DialogPeer"><code class="docutils literal notranslate"><span class="pre">DialogPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document.html">Document</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="document.html#pyrogram.raw.base.Document"><code class="docutils literal notranslate"><span class="pre">Document</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="document-attribute.html">DocumentAttribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="document-attribute.html#pyrogram.raw.base.DocumentAttribute"><code class="docutils literal notranslate"><span class="pre">DocumentAttribute</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="draft-message.html">DraftMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="draft-message.html#pyrogram.raw.base.DraftMessage"><code class="docutils literal notranslate"><span class="pre">DraftMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="email-verification.html">EmailVerification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="email-verification.html#pyrogram.raw.base.EmailVerification"><code class="docutils literal notranslate"><span class="pre">EmailVerification</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="email-verify-purpose.html">EmailVerifyPurpose</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="email-verify-purpose.html#pyrogram.raw.base.EmailVerifyPurpose"><code class="docutils literal notranslate"><span class="pre">EmailVerifyPurpose</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-keyword.html">EmojiKeyword</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emoji-keyword.html#pyrogram.raw.base.EmojiKeyword"><code class="docutils literal notranslate"><span class="pre">EmojiKeyword</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-keywords-difference.html">EmojiKeywordsDifference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emoji-keywords-difference.html#pyrogram.raw.base.EmojiKeywordsDifference"><code class="docutils literal notranslate"><span class="pre">EmojiKeywordsDifference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-language.html">EmojiLanguage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emoji-language.html#pyrogram.raw.base.EmojiLanguage"><code class="docutils literal notranslate"><span class="pre">EmojiLanguage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-status.html">EmojiStatus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emoji-status.html#pyrogram.raw.base.EmojiStatus"><code class="docutils literal notranslate"><span class="pre">EmojiStatus</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="emoji-url.html">EmojiURL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="emoji-url.html#pyrogram.raw.base.EmojiURL"><code class="docutils literal notranslate"><span class="pre">EmojiURL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-chat.html">EncryptedChat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encrypted-chat.html#pyrogram.raw.base.EncryptedChat"><code class="docutils literal notranslate"><span class="pre">EncryptedChat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-file.html">EncryptedFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encrypted-file.html#pyrogram.raw.base.EncryptedFile"><code class="docutils literal notranslate"><span class="pre">EncryptedFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="encrypted-message.html">EncryptedMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="encrypted-message.html#pyrogram.raw.base.EncryptedMessage"><code class="docutils literal notranslate"><span class="pre">EncryptedMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exported-chat-invite.html">ExportedChatInvite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exported-chat-invite.html#pyrogram.raw.base.ExportedChatInvite"><code class="docutils literal notranslate"><span class="pre">ExportedChatInvite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="exported-message-link.html">ExportedMessageLink</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="exported-message-link.html#pyrogram.raw.base.ExportedMessageLink"><code class="docutils literal notranslate"><span class="pre">ExportedMessageLink</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="file-hash.html">FileHash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file-hash.html#pyrogram.raw.base.FileHash"><code class="docutils literal notranslate"><span class="pre">FileHash</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder.html">Folder</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="folder.html#pyrogram.raw.base.Folder"><code class="docutils literal notranslate"><span class="pre">Folder</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="folder-peer.html">FolderPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="folder-peer.html#pyrogram.raw.base.FolderPeer"><code class="docutils literal notranslate"><span class="pre">FolderPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="game.html">Game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="game.html#pyrogram.raw.base.Game"><code class="docutils literal notranslate"><span class="pre">Game</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="geo-point.html">GeoPoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="geo-point.html#pyrogram.raw.base.GeoPoint"><code class="docutils literal notranslate"><span class="pre">GeoPoint</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global-privacy-settings.html">GlobalPrivacySettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="global-privacy-settings.html#pyrogram.raw.base.GlobalPrivacySettings"><code class="docutils literal notranslate"><span class="pre">GlobalPrivacySettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group-call.html">GroupCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-call.html#pyrogram.raw.base.GroupCall"><code class="docutils literal notranslate"><span class="pre">GroupCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group-call-participant.html">GroupCallParticipant</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-call-participant.html#pyrogram.raw.base.GroupCallParticipant"><code class="docutils literal notranslate"><span class="pre">GroupCallParticipant</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group-call-participant-video.html">GroupCallParticipantVideo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-call-participant-video.html#pyrogram.raw.base.GroupCallParticipantVideo"><code class="docutils literal notranslate"><span class="pre">GroupCallParticipantVideo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group-call-participant-video-source-group.html">GroupCallParticipantVideoSourceGroup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-call-participant-video-source-group.html#pyrogram.raw.base.GroupCallParticipantVideoSourceGroup"><code class="docutils literal notranslate"><span class="pre">GroupCallParticipantVideoSourceGroup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group-call-stream-channel.html">GroupCallStreamChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group-call-stream-channel.html#pyrogram.raw.base.GroupCallStreamChannel"><code class="docutils literal notranslate"><span class="pre">GroupCallStreamChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="high-score.html">HighScore</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="high-score.html#pyrogram.raw.base.HighScore"><code class="docutils literal notranslate"><span class="pre">HighScore</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http-wait.html">HttpWait</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http-wait.html#pyrogram.raw.base.HttpWait"><code class="docutils literal notranslate"><span class="pre">HttpWait</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="imported-contact.html">ImportedContact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="imported-contact.html#pyrogram.raw.base.ImportedContact"><code class="docutils literal notranslate"><span class="pre">ImportedContact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inline-bot-switch-pm.html">InlineBotSwitchPM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inline-bot-switch-pm.html#pyrogram.raw.base.InlineBotSwitchPM"><code class="docutils literal notranslate"><span class="pre">InlineBotSwitchPM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inline-query-peer-type.html">InlineQueryPeerType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inline-query-peer-type.html#pyrogram.raw.base.InlineQueryPeerType"><code class="docutils literal notranslate"><span class="pre">InlineQueryPeerType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-app-event.html">InputAppEvent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-app-event.html#pyrogram.raw.base.InputAppEvent"><code class="docutils literal notranslate"><span class="pre">InputAppEvent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-bot-inline-message.html">InputBotInlineMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-bot-inline-message.html#pyrogram.raw.base.InputBotInlineMessage"><code class="docutils literal notranslate"><span class="pre">InputBotInlineMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-bot-inline-message-id.html">InputBotInlineMessageID</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-bot-inline-message-id.html#pyrogram.raw.base.InputBotInlineMessageID"><code class="docutils literal notranslate"><span class="pre">InputBotInlineMessageID</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-bot-inline-result.html">InputBotInlineResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-bot-inline-result.html#pyrogram.raw.base.InputBotInlineResult"><code class="docutils literal notranslate"><span class="pre">InputBotInlineResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-channel.html">InputChannel</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-channel.html#pyrogram.raw.base.InputChannel"><code class="docutils literal notranslate"><span class="pre">InputChannel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-chat-photo.html">InputChatPhoto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-chat-photo.html#pyrogram.raw.base.InputChatPhoto"><code class="docutils literal notranslate"><span class="pre">InputChatPhoto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-check-password-srp.html">InputCheckPasswordSRP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-check-password-srp.html#pyrogram.raw.base.InputCheckPasswordSRP"><code class="docutils literal notranslate"><span class="pre">InputCheckPasswordSRP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-client-proxy.html">InputClientProxy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-client-proxy.html#pyrogram.raw.base.InputClientProxy"><code class="docutils literal notranslate"><span class="pre">InputClientProxy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-contact.html">InputContact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-contact.html#pyrogram.raw.base.InputContact"><code class="docutils literal notranslate"><span class="pre">InputContact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-dialog-peer.html">InputDialogPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-dialog-peer.html#pyrogram.raw.base.InputDialogPeer"><code class="docutils literal notranslate"><span class="pre">InputDialogPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-document.html">InputDocument</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-document.html#pyrogram.raw.base.InputDocument"><code class="docutils literal notranslate"><span class="pre">InputDocument</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-encrypted-chat.html">InputEncryptedChat</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-encrypted-chat.html#pyrogram.raw.base.InputEncryptedChat"><code class="docutils literal notranslate"><span class="pre">InputEncryptedChat</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-encrypted-file.html">InputEncryptedFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-encrypted-file.html#pyrogram.raw.base.InputEncryptedFile"><code class="docutils literal notranslate"><span class="pre">InputEncryptedFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-file.html">InputFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-file.html#pyrogram.raw.base.InputFile"><code class="docutils literal notranslate"><span class="pre">InputFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-file-location.html">InputFileLocation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-file-location.html#pyrogram.raw.base.InputFileLocation"><code class="docutils literal notranslate"><span class="pre">InputFileLocation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-folder-peer.html">InputFolderPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-folder-peer.html#pyrogram.raw.base.InputFolderPeer"><code class="docutils literal notranslate"><span class="pre">InputFolderPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-game.html">InputGame</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-game.html#pyrogram.raw.base.InputGame"><code class="docutils literal notranslate"><span class="pre">InputGame</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-geo-point.html">InputGeoPoint</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-geo-point.html#pyrogram.raw.base.InputGeoPoint"><code class="docutils literal notranslate"><span class="pre">InputGeoPoint</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-group-call.html">InputGroupCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-group-call.html#pyrogram.raw.base.InputGroupCall"><code class="docutils literal notranslate"><span class="pre">InputGroupCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-invoice.html">InputInvoice</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-invoice.html#pyrogram.raw.base.InputInvoice"><code class="docutils literal notranslate"><span class="pre">InputInvoice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-media.html">InputMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-media.html#pyrogram.raw.base.InputMedia"><code class="docutils literal notranslate"><span class="pre">InputMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-message.html">InputMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-message.html#pyrogram.raw.base.InputMessage"><code class="docutils literal notranslate"><span class="pre">InputMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-notify-peer.html">InputNotifyPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-notify-peer.html#pyrogram.raw.base.InputNotifyPeer"><code class="docutils literal notranslate"><span class="pre">InputNotifyPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-payment-credentials.html">InputPaymentCredentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-payment-credentials.html#pyrogram.raw.base.InputPaymentCredentials"><code class="docutils literal notranslate"><span class="pre">InputPaymentCredentials</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-peer.html">InputPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-peer.html#pyrogram.raw.base.InputPeer"><code class="docutils literal notranslate"><span class="pre">InputPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-peer-notify-settings.html">InputPeerNotifySettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-peer-notify-settings.html#pyrogram.raw.base.InputPeerNotifySettings"><code class="docutils literal notranslate"><span class="pre">InputPeerNotifySettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-phone-call.html">InputPhoneCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-phone-call.html#pyrogram.raw.base.InputPhoneCall"><code class="docutils literal notranslate"><span class="pre">InputPhoneCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-photo.html">InputPhoto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-photo.html#pyrogram.raw.base.InputPhoto"><code class="docutils literal notranslate"><span class="pre">InputPhoto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-privacy-key.html">InputPrivacyKey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-privacy-key.html#pyrogram.raw.base.InputPrivacyKey"><code class="docutils literal notranslate"><span class="pre">InputPrivacyKey</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-privacy-rule.html">InputPrivacyRule</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-privacy-rule.html#pyrogram.raw.base.InputPrivacyRule"><code class="docutils literal notranslate"><span class="pre">InputPrivacyRule</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-secure-file.html">InputSecureFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-secure-file.html#pyrogram.raw.base.InputSecureFile"><code class="docutils literal notranslate"><span class="pre">InputSecureFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-secure-value.html">InputSecureValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-secure-value.html#pyrogram.raw.base.InputSecureValue"><code class="docutils literal notranslate"><span class="pre">InputSecureValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-single-media.html">InputSingleMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-single-media.html#pyrogram.raw.base.InputSingleMedia"><code class="docutils literal notranslate"><span class="pre">InputSingleMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-sticker-set.html">InputStickerSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-sticker-set.html#pyrogram.raw.base.InputStickerSet"><code class="docutils literal notranslate"><span class="pre">InputStickerSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-sticker-set-item.html">InputStickerSetItem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-sticker-set-item.html#pyrogram.raw.base.InputStickerSetItem"><code class="docutils literal notranslate"><span class="pre">InputStickerSetItem</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-stickered-media.html">InputStickeredMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-stickered-media.html#pyrogram.raw.base.InputStickeredMedia"><code class="docutils literal notranslate"><span class="pre">InputStickeredMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-store-payment-purpose.html">InputStorePaymentPurpose</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-store-payment-purpose.html#pyrogram.raw.base.InputStorePaymentPurpose"><code class="docutils literal notranslate"><span class="pre">InputStorePaymentPurpose</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-theme.html">InputTheme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-theme.html#pyrogram.raw.base.InputTheme"><code class="docutils literal notranslate"><span class="pre">InputTheme</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-theme-settings.html">InputThemeSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-theme-settings.html#pyrogram.raw.base.InputThemeSettings"><code class="docutils literal notranslate"><span class="pre">InputThemeSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-user.html">InputUser</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-user.html#pyrogram.raw.base.InputUser"><code class="docutils literal notranslate"><span class="pre">InputUser</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-wall-paper.html">InputWallPaper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-wall-paper.html#pyrogram.raw.base.InputWallPaper"><code class="docutils literal notranslate"><span class="pre">InputWallPaper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-web-document.html">InputWebDocument</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-web-document.html#pyrogram.raw.base.InputWebDocument"><code class="docutils literal notranslate"><span class="pre">InputWebDocument</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="input-web-file-location.html">InputWebFileLocation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-web-file-location.html#pyrogram.raw.base.InputWebFileLocation"><code class="docutils literal notranslate"><span class="pre">InputWebFileLocation</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="invoice.html">Invoice</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="invoice.html#pyrogram.raw.base.Invoice"><code class="docutils literal notranslate"><span class="pre">Invoice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ip-port.html">IpPort</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ip-port.html#pyrogram.raw.base.IpPort"><code class="docutils literal notranslate"><span class="pre">IpPort</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="json-object-value.html">JSONObjectValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="json-object-value.html#pyrogram.raw.base.JSONObjectValue"><code class="docutils literal notranslate"><span class="pre">JSONObjectValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="json-value.html">JSONValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="json-value.html#pyrogram.raw.base.JSONValue"><code class="docutils literal notranslate"><span class="pre">JSONValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard-button.html">KeyboardButton</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="keyboard-button.html#pyrogram.raw.base.KeyboardButton"><code class="docutils literal notranslate"><span class="pre">KeyboardButton</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="keyboard-button-row.html">KeyboardButtonRow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="keyboard-button-row.html#pyrogram.raw.base.KeyboardButtonRow"><code class="docutils literal notranslate"><span class="pre">KeyboardButtonRow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="labeled-price.html">LabeledPrice</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="labeled-price.html#pyrogram.raw.base.LabeledPrice"><code class="docutils literal notranslate"><span class="pre">LabeledPrice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lang-pack-difference.html">LangPackDifference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lang-pack-difference.html#pyrogram.raw.base.LangPackDifference"><code class="docutils literal notranslate"><span class="pre">LangPackDifference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lang-pack-language.html">LangPackLanguage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lang-pack-language.html#pyrogram.raw.base.LangPackLanguage"><code class="docutils literal notranslate"><span class="pre">LangPackLanguage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lang-pack-string.html">LangPackString</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lang-pack-string.html#pyrogram.raw.base.LangPackString"><code class="docutils literal notranslate"><span class="pre">LangPackString</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mask-coords.html">MaskCoords</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mask-coords.html#pyrogram.raw.base.MaskCoords"><code class="docutils literal notranslate"><span class="pre">MaskCoords</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message.html">Message</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message.html#pyrogram.raw.base.Message"><code class="docutils literal notranslate"><span class="pre">Message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-action.html">MessageAction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-action.html#pyrogram.raw.base.MessageAction"><code class="docutils literal notranslate"><span class="pre">MessageAction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-entity.html">MessageEntity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-entity.html#pyrogram.raw.base.MessageEntity"><code class="docutils literal notranslate"><span class="pre">MessageEntity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-extended-media.html">MessageExtendedMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-extended-media.html#pyrogram.raw.base.MessageExtendedMedia"><code class="docutils literal notranslate"><span class="pre">MessageExtendedMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-fwd-header.html">MessageFwdHeader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-fwd-header.html#pyrogram.raw.base.MessageFwdHeader"><code class="docutils literal notranslate"><span class="pre">MessageFwdHeader</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-interaction-counters.html">MessageInteractionCounters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-interaction-counters.html#pyrogram.raw.base.MessageInteractionCounters"><code class="docutils literal notranslate"><span class="pre">MessageInteractionCounters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-media.html">MessageMedia</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-media.html#pyrogram.raw.base.MessageMedia"><code class="docutils literal notranslate"><span class="pre">MessageMedia</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-peer-reaction.html">MessagePeerReaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-peer-reaction.html#pyrogram.raw.base.MessagePeerReaction"><code class="docutils literal notranslate"><span class="pre">MessagePeerReaction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-range.html">MessageRange</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-range.html#pyrogram.raw.base.MessageRange"><code class="docutils literal notranslate"><span class="pre">MessageRange</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-reactions.html">MessageReactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-reactions.html#pyrogram.raw.base.MessageReactions"><code class="docutils literal notranslate"><span class="pre">MessageReactions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-replies.html">MessageReplies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-replies.html#pyrogram.raw.base.MessageReplies"><code class="docutils literal notranslate"><span class="pre">MessageReplies</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-reply-header.html">MessageReplyHeader</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-reply-header.html#pyrogram.raw.base.MessageReplyHeader"><code class="docutils literal notranslate"><span class="pre">MessageReplyHeader</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-user-vote.html">MessageUserVote</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-user-vote.html#pyrogram.raw.base.MessageUserVote"><code class="docutils literal notranslate"><span class="pre">MessageUserVote</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="message-views.html">MessageViews</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="message-views.html#pyrogram.raw.base.MessageViews"><code class="docutils literal notranslate"><span class="pre">MessageViews</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messages-filter.html">MessagesFilter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="messages-filter.html#pyrogram.raw.base.MessagesFilter"><code class="docutils literal notranslate"><span class="pre">MessagesFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="msg-detailed-info.html">MsgDetailedInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="msg-detailed-info.html#pyrogram.raw.base.MsgDetailedInfo"><code class="docutils literal notranslate"><span class="pre">MsgDetailedInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="msg-resend-req.html">MsgResendReq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="msg-resend-req.html#pyrogram.raw.base.MsgResendReq"><code class="docutils literal notranslate"><span class="pre">MsgResendReq</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="msgs-ack.html">MsgsAck</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="msgs-ack.html#pyrogram.raw.base.MsgsAck"><code class="docutils literal notranslate"><span class="pre">MsgsAck</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="msgs-all-info.html">MsgsAllInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="msgs-all-info.html#pyrogram.raw.base.MsgsAllInfo"><code class="docutils literal notranslate"><span class="pre">MsgsAllInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="msgs-state-info.html">MsgsStateInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="msgs-state-info.html#pyrogram.raw.base.MsgsStateInfo"><code class="docutils literal notranslate"><span class="pre">MsgsStateInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="msgs-state-req.html">MsgsStateReq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="msgs-state-req.html#pyrogram.raw.base.MsgsStateReq"><code class="docutils literal notranslate"><span class="pre">MsgsStateReq</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nearest-dc.html">NearestDc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nearest-dc.html#pyrogram.raw.base.NearestDc"><code class="docutils literal notranslate"><span class="pre">NearestDc</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="new-session.html">NewSession</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="new-session.html#pyrogram.raw.base.NewSession"><code class="docutils literal notranslate"><span class="pre">NewSession</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notification-sound.html">NotificationSound</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notification-sound.html#pyrogram.raw.base.NotificationSound"><code class="docutils literal notranslate"><span class="pre">NotificationSound</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="notify-peer.html">NotifyPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="notify-peer.html#pyrogram.raw.base.NotifyPeer"><code class="docutils literal notranslate"><span class="pre">NotifyPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pq-inner-data.html">PQInnerData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pq-inner-data.html#pyrogram.raw.base.PQInnerData"><code class="docutils literal notranslate"><span class="pre">PQInnerData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page.html">Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page.html#pyrogram.raw.base.Page"><code class="docutils literal notranslate"><span class="pre">Page</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-block.html">PageBlock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-block.html#pyrogram.raw.base.PageBlock"><code class="docutils literal notranslate"><span class="pre">PageBlock</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-caption.html">PageCaption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-caption.html#pyrogram.raw.base.PageCaption"><code class="docutils literal notranslate"><span class="pre">PageCaption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-list-item.html">PageListItem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-list-item.html#pyrogram.raw.base.PageListItem"><code class="docutils literal notranslate"><span class="pre">PageListItem</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-list-ordered-item.html">PageListOrderedItem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-list-ordered-item.html#pyrogram.raw.base.PageListOrderedItem"><code class="docutils literal notranslate"><span class="pre">PageListOrderedItem</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-related-article.html">PageRelatedArticle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-related-article.html#pyrogram.raw.base.PageRelatedArticle"><code class="docutils literal notranslate"><span class="pre">PageRelatedArticle</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-table-cell.html">PageTableCell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-table-cell.html#pyrogram.raw.base.PageTableCell"><code class="docutils literal notranslate"><span class="pre">PageTableCell</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-table-row.html">PageTableRow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-table-row.html#pyrogram.raw.base.PageTableRow"><code class="docutils literal notranslate"><span class="pre">PageTableRow</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="password-kdf-algo.html">PasswordKdfAlgo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="password-kdf-algo.html#pyrogram.raw.base.PasswordKdfAlgo"><code class="docutils literal notranslate"><span class="pre">PasswordKdfAlgo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payment-charge.html">PaymentCharge</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payment-charge.html#pyrogram.raw.base.PaymentCharge"><code class="docutils literal notranslate"><span class="pre">PaymentCharge</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payment-form-method.html">PaymentFormMethod</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payment-form-method.html#pyrogram.raw.base.PaymentFormMethod"><code class="docutils literal notranslate"><span class="pre">PaymentFormMethod</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payment-requested-info.html">PaymentRequestedInfo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payment-requested-info.html#pyrogram.raw.base.PaymentRequestedInfo"><code class="docutils literal notranslate"><span class="pre">PaymentRequestedInfo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payment-saved-credentials.html">PaymentSavedCredentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payment-saved-credentials.html#pyrogram.raw.base.PaymentSavedCredentials"><code class="docutils literal notranslate"><span class="pre">PaymentSavedCredentials</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peer.html">Peer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peer.html#pyrogram.raw.base.Peer"><code class="docutils literal notranslate"><span class="pre">Peer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peer-blocked.html">PeerBlocked</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peer-blocked.html#pyrogram.raw.base.PeerBlocked"><code class="docutils literal notranslate"><span class="pre">PeerBlocked</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peer-located.html">PeerLocated</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peer-located.html#pyrogram.raw.base.PeerLocated"><code class="docutils literal notranslate"><span class="pre">PeerLocated</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peer-notify-settings.html">PeerNotifySettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peer-notify-settings.html#pyrogram.raw.base.PeerNotifySettings"><code class="docutils literal notranslate"><span class="pre">PeerNotifySettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="peer-settings.html">PeerSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="peer-settings.html#pyrogram.raw.base.PeerSettings"><code class="docutils literal notranslate"><span class="pre">PeerSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phone-call.html">PhoneCall</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phone-call.html#pyrogram.raw.base.PhoneCall"><code class="docutils literal notranslate"><span class="pre">PhoneCall</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phone-call-discard-reason.html">PhoneCallDiscardReason</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phone-call-discard-reason.html#pyrogram.raw.base.PhoneCallDiscardReason"><code class="docutils literal notranslate"><span class="pre">PhoneCallDiscardReason</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phone-call-protocol.html">PhoneCallProtocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phone-call-protocol.html#pyrogram.raw.base.PhoneCallProtocol"><code class="docutils literal notranslate"><span class="pre">PhoneCallProtocol</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="phone-connection.html">PhoneConnection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="phone-connection.html#pyrogram.raw.base.PhoneConnection"><code class="docutils literal notranslate"><span class="pre">PhoneConnection</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="photo.html">Photo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="photo.html#pyrogram.raw.base.Photo"><code class="docutils literal notranslate"><span class="pre">Photo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="photo-size.html">PhotoSize</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="photo-size.html#pyrogram.raw.base.PhotoSize"><code class="docutils literal notranslate"><span class="pre">PhotoSize</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poll.html">Poll</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poll.html#pyrogram.raw.base.Poll"><code class="docutils literal notranslate"><span class="pre">Poll</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poll-answer.html">PollAnswer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poll-answer.html#pyrogram.raw.base.PollAnswer"><code class="docutils literal notranslate"><span class="pre">PollAnswer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poll-answer-voters.html">PollAnswerVoters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poll-answer-voters.html#pyrogram.raw.base.PollAnswerVoters"><code class="docutils literal notranslate"><span class="pre">PollAnswerVoters</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="poll-results.html">PollResults</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="poll-results.html#pyrogram.raw.base.PollResults"><code class="docutils literal notranslate"><span class="pre">PollResults</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pong.html">Pong</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pong.html#pyrogram.raw.base.Pong"><code class="docutils literal notranslate"><span class="pre">Pong</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="popular-contact.html">PopularContact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="popular-contact.html#pyrogram.raw.base.PopularContact"><code class="docutils literal notranslate"><span class="pre">PopularContact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="post-address.html">PostAddress</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="post-address.html#pyrogram.raw.base.PostAddress"><code class="docutils literal notranslate"><span class="pre">PostAddress</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="premium-gift-option.html">PremiumGiftOption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="premium-gift-option.html#pyrogram.raw.base.PremiumGiftOption"><code class="docutils literal notranslate"><span class="pre">PremiumGiftOption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="premium-subscription-option.html">PremiumSubscriptionOption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="premium-subscription-option.html#pyrogram.raw.base.PremiumSubscriptionOption"><code class="docutils literal notranslate"><span class="pre">PremiumSubscriptionOption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="privacy-key.html">PrivacyKey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="privacy-key.html#pyrogram.raw.base.PrivacyKey"><code class="docutils literal notranslate"><span class="pre">PrivacyKey</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="privacy-rule.html">PrivacyRule</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="privacy-rule.html#pyrogram.raw.base.PrivacyRule"><code class="docutils literal notranslate"><span class="pre">PrivacyRule</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reaction.html">Reaction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reaction.html#pyrogram.raw.base.Reaction"><code class="docutils literal notranslate"><span class="pre">Reaction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reaction-count.html">ReactionCount</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reaction-count.html#pyrogram.raw.base.ReactionCount"><code class="docutils literal notranslate"><span class="pre">ReactionCount</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="received-notify-message.html">ReceivedNotifyMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="received-notify-message.html#pyrogram.raw.base.ReceivedNotifyMessage"><code class="docutils literal notranslate"><span class="pre">ReceivedNotifyMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recent-me-url.html">RecentMeUrl</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recent-me-url.html#pyrogram.raw.base.RecentMeUrl"><code class="docutils literal notranslate"><span class="pre">RecentMeUrl</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reply-markup.html">ReplyMarkup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reply-markup.html#pyrogram.raw.base.ReplyMarkup"><code class="docutils literal notranslate"><span class="pre">ReplyMarkup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="report-reason.html">ReportReason</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="report-reason.html#pyrogram.raw.base.ReportReason"><code class="docutils literal notranslate"><span class="pre">ReportReason</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="res-pq.html">ResPQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="res-pq.html#pyrogram.raw.base.ResPQ"><code class="docutils literal notranslate"><span class="pre">ResPQ</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="restriction-reason.html">RestrictionReason</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restriction-reason.html#pyrogram.raw.base.RestrictionReason"><code class="docutils literal notranslate"><span class="pre">RestrictionReason</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rich-text.html">RichText</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rich-text.html#pyrogram.raw.base.RichText"><code class="docutils literal notranslate"><span class="pre">RichText</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rpc-drop-answer.html">RpcDropAnswer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rpc-drop-answer.html#pyrogram.raw.base.RpcDropAnswer"><code class="docutils literal notranslate"><span class="pre">RpcDropAnswer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rpc-error.html">RpcError</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rpc-error.html#pyrogram.raw.base.RpcError"><code class="docutils literal notranslate"><span class="pre">RpcError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rpc-result.html">RpcResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rpc-result.html#pyrogram.raw.base.RpcResult"><code class="docutils literal notranslate"><span class="pre">RpcResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="saved-contact.html">SavedContact</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="saved-contact.html#pyrogram.raw.base.SavedContact"><code class="docutils literal notranslate"><span class="pre">SavedContact</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search-results-calendar-period.html">SearchResultsCalendarPeriod</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search-results-calendar-period.html#pyrogram.raw.base.SearchResultsCalendarPeriod"><code class="docutils literal notranslate"><span class="pre">SearchResultsCalendarPeriod</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="search-results-position.html">SearchResultsPosition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="search-results-position.html#pyrogram.raw.base.SearchResultsPosition"><code class="docutils literal notranslate"><span class="pre">SearchResultsPosition</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-credentials-encrypted.html">SecureCredentialsEncrypted</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-credentials-encrypted.html#pyrogram.raw.base.SecureCredentialsEncrypted"><code class="docutils literal notranslate"><span class="pre">SecureCredentialsEncrypted</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-data.html">SecureData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-data.html#pyrogram.raw.base.SecureData"><code class="docutils literal notranslate"><span class="pre">SecureData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-file.html">SecureFile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-file.html#pyrogram.raw.base.SecureFile"><code class="docutils literal notranslate"><span class="pre">SecureFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-password-kdf-algo.html">SecurePasswordKdfAlgo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-password-kdf-algo.html#pyrogram.raw.base.SecurePasswordKdfAlgo"><code class="docutils literal notranslate"><span class="pre">SecurePasswordKdfAlgo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-plain-data.html">SecurePlainData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-plain-data.html#pyrogram.raw.base.SecurePlainData"><code class="docutils literal notranslate"><span class="pre">SecurePlainData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-required-type.html">SecureRequiredType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-required-type.html#pyrogram.raw.base.SecureRequiredType"><code class="docutils literal notranslate"><span class="pre">SecureRequiredType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-secret-settings.html">SecureSecretSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-secret-settings.html#pyrogram.raw.base.SecureSecretSettings"><code class="docutils literal notranslate"><span class="pre">SecureSecretSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-value.html">SecureValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-value.html#pyrogram.raw.base.SecureValue"><code class="docutils literal notranslate"><span class="pre">SecureValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-value-error.html">SecureValueError</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-value-error.html#pyrogram.raw.base.SecureValueError"><code class="docutils literal notranslate"><span class="pre">SecureValueError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-value-hash.html">SecureValueHash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-value-hash.html#pyrogram.raw.base.SecureValueHash"><code class="docutils literal notranslate"><span class="pre">SecureValueHash</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="secure-value-type.html">SecureValueType</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="secure-value-type.html#pyrogram.raw.base.SecureValueType"><code class="docutils literal notranslate"><span class="pre">SecureValueType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-as-peer.html">SendAsPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-as-peer.html#pyrogram.raw.base.SendAsPeer"><code class="docutils literal notranslate"><span class="pre">SendAsPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="send-message-action.html">SendMessageAction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="send-message-action.html#pyrogram.raw.base.SendMessageAction"><code class="docutils literal notranslate"><span class="pre">SendMessageAction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server-dh-inner-data.html">ServerDHInnerData</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server-dh-inner-data.html#pyrogram.raw.base.ServerDHInnerData"><code class="docutils literal notranslate"><span class="pre">ServerDHInnerData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server-dh-params.html">ServerDHParams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server-dh-params.html#pyrogram.raw.base.ServerDHParams"><code class="docutils literal notranslate"><span class="pre">ServerDHParams</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="set-client-dh-params-answer.html">SetClientDHParamsAnswer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="set-client-dh-params-answer.html#pyrogram.raw.base.SetClientDHParamsAnswer"><code class="docutils literal notranslate"><span class="pre">SetClientDHParamsAnswer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="shipping-option.html">ShippingOption</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="shipping-option.html#pyrogram.raw.base.ShippingOption"><code class="docutils literal notranslate"><span class="pre">ShippingOption</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simple-web-view-result.html">SimpleWebViewResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simple-web-view-result.html#pyrogram.raw.base.SimpleWebViewResult"><code class="docutils literal notranslate"><span class="pre">SimpleWebViewResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sponsored-message.html">SponsoredMessage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sponsored-message.html#pyrogram.raw.base.SponsoredMessage"><code class="docutils literal notranslate"><span class="pre">SponsoredMessage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-abs-value-and-prev.html">StatsAbsValueAndPrev</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-abs-value-and-prev.html#pyrogram.raw.base.StatsAbsValueAndPrev"><code class="docutils literal notranslate"><span class="pre">StatsAbsValueAndPrev</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-date-range-days.html">StatsDateRangeDays</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-date-range-days.html#pyrogram.raw.base.StatsDateRangeDays"><code class="docutils literal notranslate"><span class="pre">StatsDateRangeDays</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-graph.html">StatsGraph</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-graph.html#pyrogram.raw.base.StatsGraph"><code class="docutils literal notranslate"><span class="pre">StatsGraph</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-group-top-admin.html">StatsGroupTopAdmin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-group-top-admin.html#pyrogram.raw.base.StatsGroupTopAdmin"><code class="docutils literal notranslate"><span class="pre">StatsGroupTopAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-group-top-inviter.html">StatsGroupTopInviter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-group-top-inviter.html#pyrogram.raw.base.StatsGroupTopInviter"><code class="docutils literal notranslate"><span class="pre">StatsGroupTopInviter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-group-top-poster.html">StatsGroupTopPoster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-group-top-poster.html#pyrogram.raw.base.StatsGroupTopPoster"><code class="docutils literal notranslate"><span class="pre">StatsGroupTopPoster</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-percent-value.html">StatsPercentValue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-percent-value.html#pyrogram.raw.base.StatsPercentValue"><code class="docutils literal notranslate"><span class="pre">StatsPercentValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stats-url.html">StatsURL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stats-url.html#pyrogram.raw.base.StatsURL"><code class="docutils literal notranslate"><span class="pre">StatsURL</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sticker-pack.html">StickerPack</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sticker-pack.html#pyrogram.raw.base.StickerPack"><code class="docutils literal notranslate"><span class="pre">StickerPack</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sticker-set.html">StickerSet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sticker-set.html#pyrogram.raw.base.StickerSet"><code class="docutils literal notranslate"><span class="pre">StickerSet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sticker-set-covered.html">StickerSetCovered</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sticker-set-covered.html#pyrogram.raw.base.StickerSetCovered"><code class="docutils literal notranslate"><span class="pre">StickerSetCovered</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="theme.html">Theme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="theme.html#pyrogram.raw.base.Theme"><code class="docutils literal notranslate"><span class="pre">Theme</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="theme-settings.html">ThemeSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="theme-settings.html#pyrogram.raw.base.ThemeSettings"><code class="docutils literal notranslate"><span class="pre">ThemeSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="top-peer.html">TopPeer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="top-peer.html#pyrogram.raw.base.TopPeer"><code class="docutils literal notranslate"><span class="pre">TopPeer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="top-peer-category.html">TopPeerCategory</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="top-peer-category.html#pyrogram.raw.base.TopPeerCategory"><code class="docutils literal notranslate"><span class="pre">TopPeerCategory</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="top-peer-category-peers.html">TopPeerCategoryPeers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="top-peer-category-peers.html#pyrogram.raw.base.TopPeerCategoryPeers"><code class="docutils literal notranslate"><span class="pre">TopPeerCategoryPeers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="update.html">Update</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="update.html#pyrogram.raw.base.Update"><code class="docutils literal notranslate"><span class="pre">Update</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updates.html">Updates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#pyrogram.raw.base.Updates"><code class="docutils literal notranslate"><span class="pre">Updates</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="url-auth-result.html">UrlAuthResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="url-auth-result.html#pyrogram.raw.base.UrlAuthResult"><code class="docutils literal notranslate"><span class="pre">UrlAuthResult</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user.html#pyrogram.raw.base.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-full.html">UserFull</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-full.html#pyrogram.raw.base.UserFull"><code class="docutils literal notranslate"><span class="pre">UserFull</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-profile-photo.html">UserProfilePhoto</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-profile-photo.html#pyrogram.raw.base.UserProfilePhoto"><code class="docutils literal notranslate"><span class="pre">UserProfilePhoto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-status.html">UserStatus</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user-status.html#pyrogram.raw.base.UserStatus"><code class="docutils literal notranslate"><span class="pre">UserStatus</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="video-size.html">VideoSize</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="video-size.html#pyrogram.raw.base.VideoSize"><code class="docutils literal notranslate"><span class="pre">VideoSize</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wall-paper.html">WallPaper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wall-paper.html#pyrogram.raw.base.WallPaper"><code class="docutils literal notranslate"><span class="pre">WallPaper</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wall-paper-settings.html">WallPaperSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wall-paper-settings.html#pyrogram.raw.base.WallPaperSettings"><code class="docutils literal notranslate"><span class="pre">WallPaperSettings</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web-authorization.html">WebAuthorization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web-authorization.html#pyrogram.raw.base.WebAuthorization"><code class="docutils literal notranslate"><span class="pre">WebAuthorization</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web-document.html">WebDocument</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web-document.html#pyrogram.raw.base.WebDocument"><code class="docutils literal notranslate"><span class="pre">WebDocument</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web-page.html">WebPage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web-page.html#pyrogram.raw.base.WebPage"><code class="docutils literal notranslate"><span class="pre">WebPage</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web-page-attribute.html">WebPageAttribute</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web-page-attribute.html#pyrogram.raw.base.WebPageAttribute"><code class="docutils literal notranslate"><span class="pre">WebPageAttribute</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web-view-message-sent.html">WebViewMessageSent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web-view-message-sent.html#pyrogram.raw.base.WebViewMessageSent"><code class="docutils literal notranslate"><span class="pre">WebViewMessageSent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="web-view-result.html">WebViewResult</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web-view-result.html#pyrogram.raw.base.WebViewResult"><code class="docutils literal notranslate"><span class="pre">WebViewResult</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../types/web-view-result-url.html" class="btn btn-neutral float-left" title="WebViewResultUrl" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="account/index.html" class="btn btn-neutral float-right" title="Account" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

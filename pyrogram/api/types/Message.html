@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message &mdash; Pyrogram Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="canonical" href="https://docs.pyrogram.org/api/types/Message.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="MessageEntity" href="MessageEntity.html" />
+    <link rel="prev" title="EmojiStatus" href="EmojiStatus.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Pyrogram
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/install.html">Install Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../start/setup.html">Project Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/auth.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/invoking.html">Invoking Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/updates.html">Handling Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/examples/index.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../client.html">Pyrogram Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/index.html">Available Methods</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Available Types</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#users-chats">Users &amp; Chats</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#messages-media">Messages &amp; Media</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Message</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.types.Message"><code class="docutils literal notranslate"><span class="pre">Message</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="MessageEntity.html">MessageEntity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Photo.html">Photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Thumbnail.html">Thumbnail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Audio.html">Audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Document.html">Document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Animation.html">Animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Video.html">Video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Voice.html">Voice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoNote.html">VideoNote</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Contact.html">Contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Location.html">Location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Venue.html">Venue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Sticker.html">Sticker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Game.html">Game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebPage.html">WebPage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Poll.html">Poll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PollOption.html">PollOption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Dice.html">Dice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Reaction.html">Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoChatScheduled.html">VideoChatScheduled</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoChatStarted.html">VideoChatStarted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoChatEnded.html">VideoChatEnded</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VideoChatMembersInvited.html">VideoChatMembersInvited</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WebAppData.html">WebAppData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MessageReactions.html">MessageReactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ChatReactions.html">ChatReactions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#bot-keyboards">Bot keyboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#bot-commands">Bot commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#input-media">Input Media</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inline-mode">Inline Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inputmessagecontent">InputMessageContent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#authorization">Authorization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../bound-methods/index.html">Bound Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handlers.html">Update Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/index.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Update Filters</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/use-filters.html">Using Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/create-filters.html">Creating Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/more-on-updates.html">More on Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/client-settings.html">Client Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/speedups.html">Speedups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/text-formatting.html">Text Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/synchronous.html">Synchronous Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/smart-plugins.html">Smart Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/storage-engines.html">Storage Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/serializing.html">Object Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/proxy.html">Proxy Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/scheduling.html">Scheduling Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/mtproto-vs-botapi.html">MTProto vs. Bot API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/advanced-usage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/voice-calls.html">Voice Calls</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support Pyrogram</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/types/index.html">Raw Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/base/index.html">Raw Base</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pyrogram</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Available Types</a> &raquo;</li>
+      <li>Message</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="message">
+<h1>Message<a class="headerlink" href="#message" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyrogram.types.Message">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyrogram.types.</span></span><span class="sig-name descname"><span class="pre">Message</span></span><a class="headerlink" href="#pyrogram.types.Message" title="Permalink to this definition"></a></dt>
+<dd><p>A message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>) – Unique message identifier inside this chat.</p></li>
+<li><p><strong>from_user</strong> (<a class="reference internal" href="User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a>, <em>optional</em>) – Sender, empty for messages sent to channels.</p></li>
+<li><p><strong>sender_chat</strong> (<a class="reference internal" href="Chat.html#pyrogram.types.Chat" title="pyrogram.types.Chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Chat</span></code></a>, <em>optional</em>) – Sender of the message, sent on behalf of a chat.
+The channel itself for channel messages.
+The supergroup itself for messages from anonymous group administrators.
+The linked channel for messages automatically forwarded to the discussion group.</p></li>
+<li><p><strong>date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – Date the message was sent.</p></li>
+<li><p><strong>chat</strong> (<a class="reference internal" href="Chat.html#pyrogram.types.Chat" title="pyrogram.types.Chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Chat</span></code></a>, <em>optional</em>) – Conversation the message belongs to.</p></li>
+<li><p><strong>forward_from</strong> (<a class="reference internal" href="User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a>, <em>optional</em>) – For forwarded messages, sender of the original message.</p></li>
+<li><p><strong>forward_sender_name</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – For messages forwarded from users who have hidden their accounts, name of the user.</p></li>
+<li><p><strong>forward_from_chat</strong> (<a class="reference internal" href="Chat.html#pyrogram.types.Chat" title="pyrogram.types.Chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Chat</span></code></a>, <em>optional</em>) – For messages forwarded from channels, information about the original channel. For messages forwarded from anonymous group administrators, information about the original supergroup.</p></li>
+<li><p><strong>forward_from_message_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – For messages forwarded from channels, identifier of the original message in the channel.</p></li>
+<li><p><strong>forward_signature</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – For messages forwarded from channels, signature of the post author if present.</p></li>
+<li><p><strong>forward_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – For forwarded messages, date the original message was sent.</p></li>
+<li><p><strong>reply_to_message_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The id of the message which this message directly replied to.</p></li>
+<li><p><strong>reply_to_top_message_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The id of the first message which started this message thread.</p></li>
+<li><p><strong>reply_to_message</strong> (<a class="reference internal" href="#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>, <em>optional</em>) – For replies, the original message. Note that the Message object in this field will not contain
+further reply_to_message fields even if it itself is a reply.</p></li>
+<li><p><strong>mentioned</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – The message contains a mention.</p></li>
+<li><p><strong>empty</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – The message is empty.
+A message can be empty in case it was deleted or you tried to retrieve a message that doesn’t exist yet.</p></li>
+<li><p><strong>service</strong> (<a class="reference internal" href="../enums/MessageServiceType.html#pyrogram.enums.MessageServiceType" title="pyrogram.enums.MessageServiceType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageServiceType</span></code></a>, <em>optional</em>) – The message is a service message.
+This field will contain the enumeration type of the service message.
+You can use <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">=</span> <span class="pre">getattr(message,</span> <span class="pre">message.service.value)</span></code> to access the service message.</p></li>
+<li><p><strong>media</strong> (<a class="reference internal" href="../enums/MessageMediaType.html#pyrogram.enums.MessageMediaType" title="pyrogram.enums.MessageMediaType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageMediaType</span></code></a>, <em>optional</em>) – The message is a media message.
+This field will contain the enumeration type of the media message.
+You can use <code class="docutils literal notranslate"><span class="pre">media</span> <span class="pre">=</span> <span class="pre">getattr(message,</span> <span class="pre">message.media.value)</span></code> to access the media message.</p></li>
+<li><p><strong>edit_date</strong> (<a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime</span></code></a>, <em>optional</em>) – Date the message was last edited.</p></li>
+<li><p><strong>media_group_id</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – The unique identifier of a media message group this message belongs to.</p></li>
+<li><p><strong>author_signature</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Signature of the post author for messages in channels, or the custom title of an anonymous group
+administrator.</p></li>
+<li><p><strong>has_protected_content</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – True, if the message can’t be forwarded.</p></li>
+<li><p><strong>text</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – For text messages, the actual UTF-8 text of the message, 0-4096 characters.
+If the message contains entities (bold, italic, …) you can access <em>text.markdown</em> or
+<em>text.html</em> to get the marked up message text. In case there is no entity, the fields
+will contain the same text as <em>text</em>.</p></li>
+<li><p><strong>entities</strong> (List of <a class="reference internal" href="MessageEntity.html#pyrogram.types.MessageEntity" title="pyrogram.types.MessageEntity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEntity</span></code></a>, <em>optional</em>) – For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text.</p></li>
+<li><p><strong>caption_entities</strong> (List of <a class="reference internal" href="MessageEntity.html#pyrogram.types.MessageEntity" title="pyrogram.types.MessageEntity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEntity</span></code></a>, <em>optional</em>) – For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear
+in the caption.</p></li>
+<li><p><strong>audio</strong> (<a class="reference internal" href="Audio.html#pyrogram.types.Audio" title="pyrogram.types.Audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Audio</span></code></a>, <em>optional</em>) – Message is an audio file, information about the file.</p></li>
+<li><p><strong>document</strong> (<a class="reference internal" href="Document.html#pyrogram.types.Document" title="pyrogram.types.Document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Document</span></code></a>, <em>optional</em>) – Message is a general file, information about the file.</p></li>
+<li><p><strong>photo</strong> (<a class="reference internal" href="Photo.html#pyrogram.types.Photo" title="pyrogram.types.Photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Photo</span></code></a>, <em>optional</em>) – Message is a photo, information about the photo.</p></li>
+<li><p><strong>sticker</strong> (<a class="reference internal" href="Sticker.html#pyrogram.types.Sticker" title="pyrogram.types.Sticker"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sticker</span></code></a>, <em>optional</em>) – Message is a sticker, information about the sticker.</p></li>
+<li><p><strong>animation</strong> (<a class="reference internal" href="Animation.html#pyrogram.types.Animation" title="pyrogram.types.Animation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Animation</span></code></a>, <em>optional</em>) – Message is an animation, information about the animation.</p></li>
+<li><p><strong>game</strong> (<a class="reference internal" href="Game.html#pyrogram.types.Game" title="pyrogram.types.Game"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Game</span></code></a>, <em>optional</em>) – Message is a game, information about the game.</p></li>
+<li><p><strong>video</strong> (<a class="reference internal" href="Video.html#pyrogram.types.Video" title="pyrogram.types.Video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Video</span></code></a>, <em>optional</em>) – Message is a video, information about the video.</p></li>
+<li><p><strong>voice</strong> (<a class="reference internal" href="Voice.html#pyrogram.types.Voice" title="pyrogram.types.Voice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Voice</span></code></a>, <em>optional</em>) – Message is a voice message, information about the file.</p></li>
+<li><p><strong>video_note</strong> (<a class="reference internal" href="VideoNote.html#pyrogram.types.VideoNote" title="pyrogram.types.VideoNote"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VideoNote</span></code></a>, <em>optional</em>) – Message is a video note, information about the video message.</p></li>
+<li><p><strong>caption</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – Caption for the audio, document, photo, video or voice, 0-1024 characters.
+If the message contains caption entities (bold, italic, …) you can access <em>caption.markdown</em> or
+<em>caption.html</em> to get the marked up caption text. In case there is no caption entity, the fields
+will contain the same text as <em>caption</em>.</p></li>
+<li><p><strong>contact</strong> (<a class="reference internal" href="Contact.html#pyrogram.types.Contact" title="pyrogram.types.Contact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Contact</span></code></a>, <em>optional</em>) – Message is a shared contact, information about the contact.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="Location.html#pyrogram.types.Location" title="pyrogram.types.Location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Location</span></code></a>, <em>optional</em>) – Message is a shared location, information about the location.</p></li>
+<li><p><strong>venue</strong> (<a class="reference internal" href="Venue.html#pyrogram.types.Venue" title="pyrogram.types.Venue"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Venue</span></code></a>, <em>optional</em>) – Message is a venue, information about the venue.</p></li>
+<li><p><strong>web_page</strong> (<a class="reference internal" href="WebPage.html#pyrogram.types.WebPage" title="pyrogram.types.WebPage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WebPage</span></code></a>, <em>optional</em>) – Message was sent with a webpage preview.</p></li>
+<li><p><strong>poll</strong> (<a class="reference internal" href="Poll.html#pyrogram.types.Poll" title="pyrogram.types.Poll"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Poll</span></code></a>, <em>optional</em>) – Message is a native poll, information about the poll.</p></li>
+<li><p><strong>dice</strong> (<a class="reference internal" href="Dice.html#pyrogram.types.Dice" title="pyrogram.types.Dice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dice</span></code></a>, <em>optional</em>) – A dice containing a value that is randomly generated by Telegram.</p></li>
+<li><p><strong>new_chat_members</strong> (List of <a class="reference internal" href="User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a>, <em>optional</em>) – New members that were added to the group or supergroup and information about them
+(the bot itself may be one of these members).</p></li>
+<li><p><strong>left_chat_member</strong> (<a class="reference internal" href="User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a>, <em>optional</em>) – A member was removed from the group, information about them (this member may be the bot itself).</p></li>
+<li><p><strong>new_chat_title</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – A chat title was changed to this value.</p></li>
+<li><p><strong>new_chat_photo</strong> (<a class="reference internal" href="Photo.html#pyrogram.types.Photo" title="pyrogram.types.Photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Photo</span></code></a>, <em>optional</em>) – A chat photo was change to this value.</p></li>
+<li><p><strong>delete_chat_photo</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Service message: the chat photo was deleted.</p></li>
+<li><p><strong>group_chat_created</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Service message: the group has been created.</p></li>
+<li><p><strong>supergroup_chat_created</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Service message: the supergroup has been created.
+This field can’t be received in a message coming through updates, because bot can’t be a member of a
+supergroup when it is created. It can only be found in reply_to_message if someone replies to a very
+first message in a directly created supergroup.</p></li>
+<li><p><strong>channel_chat_created</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Service message: the channel has been created.
+This field can’t be received in a message coming through updates, because bot can’t be a member of a
+channel when it is created. It can only be found in reply_to_message if someone replies to a very
+first message in a channel.</p></li>
+<li><p><strong>migrate_to_chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The group has been migrated to a supergroup with the specified identifier.
+This number may be greater than 32 bits and some programming languages may have difficulty/silent defects
+in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float
+type are safe for storing this identifier.</p></li>
+<li><p><strong>migrate_from_chat_id</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – The supergroup has been migrated from a group with the specified identifier.
+This number may be greater than 32 bits and some programming languages may have difficulty/silent defects
+in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision float
+type are safe for storing this identifier.</p></li>
+<li><p><strong>pinned_message</strong> (<a class="reference internal" href="#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>, <em>optional</em>) – Specified message was pinned.
+Note that the Message object in this field will not contain further reply_to_message fields even if it
+is itself a reply.</p></li>
+<li><p><strong>game_high_score</strong> (<a class="reference internal" href="GameHighScore.html#pyrogram.types.GameHighScore" title="pyrogram.types.GameHighScore"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GameHighScore</span></code></a>, <em>optional</em>) – The game score for a user.
+The reply_to_message field will contain the game Message.</p></li>
+<li><p><strong>views</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Channel post views.</p></li>
+<li><p><strong>via_bot</strong> (<a class="reference internal" href="User.html#pyrogram.types.User" title="pyrogram.types.User"><code class="xref py py-obj docutils literal notranslate"><span class="pre">User</span></code></a>) – The information of the bot that generated the message from an inline query of a user.</p></li>
+<li><p><strong>outgoing</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Whether the message is incoming or outgoing.
+Messages received from other chats are incoming (<em>outgoing</em> is False).
+Messages sent from yourself to other chats are outgoing (<em>outgoing</em> is True).
+An exception is made for your own personal chat; messages sent there will be incoming.</p></li>
+<li><p><strong>matches</strong> (<em>List of regex Matches, *optional*</em>) – A list containing all <a class="reference external" href="https://docs.python.org/3/library/re.html#match-objects">Match Objects</a> that match
+the text of this message. Only applicable when using <code class="xref py py-obj docutils literal notranslate"><span class="pre">Filters.regex</span></code>.</p></li>
+<li><p><strong>command</strong> (List of <code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>optional</em>) – A list containing the command and its arguments, if any.
+E.g.: “/start 1 2 3” would produce [“start”, “1”, “2”, “3”].
+Only applicable when using <a class="reference internal" href="../filters.html#pyrogram.filters.command" title="pyrogram.filters.command"><code class="xref py py-obj docutils literal notranslate"><span class="pre">command</span></code></a>.</p></li>
+<li><p><strong>video_chat_scheduled</strong> (<a class="reference internal" href="VideoChatScheduled.html#pyrogram.types.VideoChatScheduled" title="pyrogram.types.VideoChatScheduled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VideoChatScheduled</span></code></a>, <em>optional</em>) – Service message: voice chat scheduled.</p></li>
+<li><p><strong>video_chat_started</strong> (<a class="reference internal" href="VideoChatStarted.html#pyrogram.types.VideoChatStarted" title="pyrogram.types.VideoChatStarted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VideoChatStarted</span></code></a>, <em>optional</em>) – Service message: the voice chat started.</p></li>
+<li><p><strong>video_chat_ended</strong> (<a class="reference internal" href="VideoChatEnded.html#pyrogram.types.VideoChatEnded" title="pyrogram.types.VideoChatEnded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VideoChatEnded</span></code></a>, <em>optional</em>) – Service message: the voice chat has ended.</p></li>
+<li><p><strong>video_chat_members_invited</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">VoiceChatParticipantsInvited</span></code>, <em>optional</em>) – Service message: new members were invited to the voice chat.</p></li>
+<li><p><strong>web_app_data</strong> (<a class="reference internal" href="WebAppData.html#pyrogram.types.WebAppData" title="pyrogram.types.WebAppData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WebAppData</span></code></a>, <em>optional</em>) – Service message: web app data sent to the bot.</p></li>
+<li><p><strong>reply_markup</strong> (<a class="reference internal" href="InlineKeyboardMarkup.html#pyrogram.types.InlineKeyboardMarkup" title="pyrogram.types.InlineKeyboardMarkup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineKeyboardMarkup</span></code></a> | <a class="reference internal" href="ReplyKeyboardMarkup.html#pyrogram.types.ReplyKeyboardMarkup" title="pyrogram.types.ReplyKeyboardMarkup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplyKeyboardMarkup</span></code></a> | <a class="reference internal" href="ReplyKeyboardRemove.html#pyrogram.types.ReplyKeyboardRemove" title="pyrogram.types.ReplyKeyboardRemove"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ReplyKeyboardRemove</span></code></a> | <a class="reference internal" href="ForceReply.html#pyrogram.types.ForceReply" title="pyrogram.types.ForceReply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ForceReply</span></code></a>, <em>optional</em>) – Additional interface options. An object for an inline keyboard, custom reply keyboard,
+instructions to remove reply keyboard or to force a reply from the user.</p></li>
+<li><p><strong>reactions</strong> (List of <a class="reference internal" href="Reaction.html#pyrogram.types.Reaction" title="pyrogram.types.Reaction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Reaction</span></code></a>) – List of the reactions to this message.</p></li>
+<li><p><strong>link</strong> (<code class="docutils literal notranslate"><span class="pre">str</span></code>, <em>property</em>) – Generate a link to this message, only for groups and channels.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="EmojiStatus.html" class="btn btn-neutral float-left" title="EmojiStatus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MessageEntity.html" class="btn btn-neutral float-right" title="MessageEntity" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

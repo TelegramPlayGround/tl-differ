@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Message.click() &mdash; Pyrogram Documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+    <link rel="canonical" href="https://docs.pyrogram.org/api/bound-methods/Message.click.html"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Message.delete()" href="Message.delete.html" />
+    <link rel="prev" title="Bound Methods" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Pyrogram
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/install.html">Install Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../start/setup.html">Project Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/auth.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/invoking.html">Invoking Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/updates.html">Handling Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../start/examples/index.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../client.html">Pyrogram Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../methods/index.html">Available Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../types/index.html">Available Types</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Bound Methods</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#message">Message</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">click</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyrogram.types.Message.click"><code class="docutils literal notranslate"><span class="pre">Message.click()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Message.delete.html">delete</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.download.html">download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.forward.html">forward</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.copy.html">copy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.pin.html">pin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.unpin.html">unpin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.edit.html">edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.edit_text.html">edit_text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.edit_caption.html">edit_caption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.edit_media.html">edit_media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.edit_reply_markup.html">edit_reply_markup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply.html">reply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_text.html">reply_text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_animation.html">reply_animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_audio.html">reply_audio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_cached_media.html">reply_cached_media</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_chat_action.html">reply_chat_action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_contact.html">reply_contact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_document.html">reply_document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_game.html">reply_game</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_inline_bot_result.html">reply_inline_bot_result</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_location.html">reply_location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_media_group.html">reply_media_group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_photo.html">reply_photo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_poll.html">reply_poll</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_sticker.html">reply_sticker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_venue.html">reply_venue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_video.html">reply_video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_video_note.html">reply_video_note</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.reply_voice.html">reply_voice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.get_media_group.html">get_media_group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Message.react.html">react</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#chat">Chat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#callbackquery">CallbackQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#inlinequery">InlineQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#chatjoinrequest">ChatJoinRequest</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../enums/index.html">Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../handlers.html">Update Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/index.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filters.html">Update Filters</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/use-filters.html">Using Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/create-filters.html">Creating Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/more-on-updates.html">More on Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/client-settings.html">Client Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/speedups.html">Speedups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/text-formatting.html">Text Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/synchronous.html">Synchronous Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/smart-plugins.html">Smart Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/storage-engines.html">Storage Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/serializing.html">Object Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/proxy.html">Proxy Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/scheduling.html">Scheduling Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/mtproto-vs-botapi.html">MTProto vs. Bot API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/test-servers.html">Test Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/advanced-usage.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/voice-calls.html">Voice Calls</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../faq/index.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support.html">Support Pyrogram</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/types/index.html">Raw Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../telegram/base/index.html">Raw Base</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Pyrogram</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Bound Methods</a> &raquo;</li>
+      <li>Message.click()</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="message-click">
+<h1>Message.click()<a class="headerlink" href="#message-click" title="Permalink to this heading"></a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyrogram.types.Message.click">
+<span class="sig-prename descclassname"><span class="pre">Message.</span></span><span class="sig-name descname"><span class="pre">click</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyrogram.types.Message.click" title="Permalink to this definition"></a></dt>
+<dd><p>Bound method <em>click</em> of <a class="reference internal" href="../types/Message.html#pyrogram.types.Message" title="pyrogram.types.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>.</p>
+<p>Use as a shortcut for clicking a button attached to the message instead of:</p>
+<ul class="simple">
+<li><p>Clicking inline buttons:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">request_callback_answer</span><span class="p">(</span>
+    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">message_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">callback_data</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">reply_markup</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">callback_data</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Clicking normal buttons:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span>
+    <span class="n">chat_id</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+    <span class="n">text</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">reply_markup</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Example</p>
+<p>This method can be used in three different ways:</p>
+<ol class="arabic simple">
+<li><p>Pass one integer argument only (e.g.: <code class="docutils literal notranslate"><span class="pre">.click(2)</span></code>, to click a button at index 2).
+Buttons are counted left to right, starting from the top.</p></li>
+<li><p>Pass two integer arguments (e.g.: <code class="docutils literal notranslate"><span class="pre">.click(1,</span> <span class="pre">0)</span></code>, to click a button at position (1, 0)).
+The origin (0, 0) is top-left.</p></li>
+<li><p>Pass one string argument only (e.g.: <code class="docutils literal notranslate"><span class="pre">.click(&quot;Settings&quot;)</span></code>, to click a button by using its label).
+Only the first matching button will be pressed.</p></li>
+</ol>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code> | <code class="docutils literal notranslate"><span class="pre">str</span></code>) – Used as integer index, integer abscissa (in pair with y) or as string label.
+Defaults to 0 (first button).</p></li>
+<li><p><strong>y</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Used as ordinate only (in pair with x).</p></li>
+<li><p><strong>quote</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>, <em>optional</em>) – Useful for normal buttons only, where pressing it will result in a new message sent.
+If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the message will be sent as a reply to this message.
+Defaults to <code class="docutils literal notranslate"><span class="pre">True</span></code> in group chats and <code class="docutils literal notranslate"><span class="pre">False</span></code> in private chats.</p></li>
+<li><p><strong>timeout</strong> (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <em>optional</em>) – Timeout in seconds.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p>The result of <a class="reference internal" href="../methods/request_callback_answer.html#pyrogram.Client.request_callback_answer" title="pyrogram.Client.request_callback_answer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">request_callback_answer()</span></code></a> in case of inline callback button clicks.</p></li>
+<li><p>The result of <a class="reference internal" href="Message.reply.html#pyrogram.types.Message.reply" title="pyrogram.types.Message.reply"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reply()</span></code></a> in case of normal button clicks.</p></li>
+<li><p>A string in case the inline button is a URL, a <em>switch_inline_query</em> or a
+<em>switch_inline_query_current_chat</em> button.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>RPCError</strong> – In case of a Telegram RPC error.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – In case the provided index or position is out of range or the button label was not found.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TimeoutError" title="(in Python v3.10)"><strong>TimeoutError</strong></a> – In case, after clicking an inline button, the bot fails to answer within the timeout.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Bound Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Message.delete.html" class="btn btn-neutral float-right" title="Message.delete()" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

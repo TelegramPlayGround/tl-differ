@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Usage &mdash; Pyrogram Documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+    <link rel="canonical" href="https://docs.pyrogram.org/topics/advanced-usage.html"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Voice Calls" href="voice-calls.html" />
+    <link rel="prev" title="Test Servers" href="test-servers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Pyrogram
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro/install.html">Install Guide</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../start/setup.html">Project Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start/auth.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start/invoking.html">Invoking Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start/updates.html">Handling Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start/errors.html">Error Handling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../start/examples/index.html">Examples</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/client.html">Pyrogram Client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/methods/index.html">Available Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/types/index.html">Available Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/bound-methods/index.html">Bound Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/enums/index.html">Enumerations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/handlers.html">Update Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/decorators.html">Decorators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/errors/index.html">RPC Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/filters.html">Update Filters</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Topic Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="use-filters.html">Using Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-filters.html">Creating Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="more-on-updates.html">More on Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client-settings.html">Client Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="speedups.html">Speedups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="text-formatting.html">Text Formatting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="synchronous.html">Synchronous Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smart-plugins.html">Smart Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storage-engines.html">Storage Engines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serializing.html">Object Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proxy.html">Proxy Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scheduling.html">Scheduling Tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtproto-vs-botapi.html">MTProto vs. Bot API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test-servers.html">Test Servers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#telegram-raw-api">Telegram Raw API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-functions">Invoking Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chat-ids">Chat IDs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="voice-calls.html">Voice Calls</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Meta</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support Pyrogram</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Telegram Raw API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../telegram/functions/index.html">Raw Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../telegram/types/index.html">Raw Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../telegram/base/index.html">Raw Base</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Pyrogram</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Advanced Usage</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this heading"></a></h1>
+<p>Pyrogram’s API – which consists of well documented <a class="reference internal" href="../api/methods/index.html"><span class="doc">methods</span></a> and
+<a class="reference internal" href="../api/types/index.html"><span class="doc">types</span></a> – exists to provide an easier interface to the more complex Telegram API.</p>
+<p>In this section, you’ll be shown the alternative way of communicating with Telegram using Pyrogram: the main “raw”
+Telegram API with its functions and types.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#telegram-raw-api" id="id1">Telegram Raw API</a></p></li>
+<li><p><a class="reference internal" href="#invoking-functions" id="id2">Invoking Functions</a></p></li>
+<li><p><a class="reference internal" href="#chat-ids" id="id3">Chat IDs</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="telegram-raw-api">
+<h2>Telegram Raw API<a class="headerlink" href="#telegram-raw-api" title="Permalink to this heading"></a></h2>
+<p>If you can’t find a high-level method for your needs or if you want complete, low-level access to the whole
+Telegram API, you have to use the raw <a class="reference internal" href="../telegram/functions/index.html#module-pyrogram.raw.functions" title="pyrogram.raw.functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">functions</span></code></a> and <a class="reference internal" href="../telegram/types/index.html#module-pyrogram.raw.types" title="pyrogram.raw.types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">types</span></code></a>.</p>
+<p>As already hinted, raw functions and types can be less convenient. This section will therefore explain some pitfalls to
+take into consideration when working with the raw API.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Every available high-level method in Pyrogram is built on top of these raw functions.</p>
+</div>
+</section>
+<section id="invoking-functions">
+<h2>Invoking Functions<a class="headerlink" href="#invoking-functions" title="Permalink to this heading"></a></h2>
+<p>Unlike the <a class="reference internal" href="../api/methods/index.html"><span class="doc">methods</span></a> found in Pyrogram’s API, which can be called in the usual simple way,
+functions to be invoked from the raw Telegram API have a different way of usage.</p>
+<p>First of all, both <a class="reference internal" href="../telegram/functions/index.html"><span class="doc">raw functions</span></a> and <a class="reference internal" href="../telegram/types/index.html"><span class="doc">raw types</span></a>
+live in their respective packages (and sub-packages): <code class="docutils literal notranslate"><span class="pre">pyrogram.raw.functions</span></code>, <code class="docutils literal notranslate"><span class="pre">pyrogram.raw.types</span></code>. They all exist
+as Python classes, meaning you need to create an instance of each every time you need them and fill them in with the
+correct values using named arguments.</p>
+<p>Next, to actually invoke the raw function you have to use the <a class="reference internal" href="../api/methods/invoke.html#pyrogram.Client.invoke" title="pyrogram.Client.invoke"><code class="xref py py-meth docutils literal notranslate"><span class="pre">invoke()</span></code></a> method provided by the
+Client class and pass the function object you created.</p>
+<p>Here’s some examples:</p>
+<ul>
+<li><p>Update first name, last name and bio:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pyrogram.raw</span> <span class="kn">import</span> <span class="n">functions</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;my_account&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
+    <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+        <span class="n">functions</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">UpdateProfile</span><span class="p">(</span>
+            <span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;First Name&quot;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Last Name&quot;</span><span class="p">,</span>
+            <span class="n">about</span><span class="o">=</span><span class="s2">&quot;New bio text&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Set online/offline status:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pyrogram.raw</span> <span class="kn">import</span> <span class="n">functions</span><span class="p">,</span> <span class="n">types</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;my_account&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
+    <span class="c1"># Set online status</span>
+    <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">functions</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">UpdateStatus</span><span class="p">(</span><span class="n">offline</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+    <span class="c1"># Set offline status</span>
+    <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">functions</span><span class="o">.</span><span class="n">account</span><span class="o">.</span><span class="n">UpdateStatus</span><span class="p">(</span><span class="n">offline</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p>Get chat info:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyrogram</span> <span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">pyrogram.raw</span> <span class="kn">import</span> <span class="n">functions</span><span class="p">,</span> <span class="n">types</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">Client</span><span class="p">(</span><span class="s2">&quot;my_account&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">app</span><span class="p">:</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+        <span class="n">functions</span><span class="o">.</span><span class="n">channels</span><span class="o">.</span><span class="n">GetFullChannel</span><span class="p">(</span>
+            <span class="n">channel</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">resolve_peer</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="chat-ids">
+<h2>Chat IDs<a class="headerlink" href="#chat-ids" title="Permalink to this heading"></a></h2>
+<p>The way Telegram works makes it not possible to directly send a message to a user or a chat by using their IDs only.
+Instead, a pair of <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">access_hash</span></code> wrapped in a so called <code class="docutils literal notranslate"><span class="pre">InputPeer</span></code> is always needed. Pyrogram allows
+sending messages with IDs only thanks to cached access hashes.</p>
+<p>There are three different InputPeer types, one for each kind of Telegram entity.
+Whenever an InputPeer is needed you must pass one of these:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../telegram/types/input-peer-user.html#pyrogram.raw.types.InputPeerUser" title="pyrogram.raw.types.InputPeerUser"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputPeerUser</span></code></a> - Users</p></li>
+<li><p><a class="reference internal" href="../telegram/types/input-peer-chat.html#pyrogram.raw.types.InputPeerChat" title="pyrogram.raw.types.InputPeerChat"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputPeerChat</span></code></a> -  Basic Chats</p></li>
+<li><p><a class="reference internal" href="../telegram/types/input-peer-channel.html#pyrogram.raw.types.InputPeerChannel" title="pyrogram.raw.types.InputPeerChannel"><code class="xref py py-class docutils literal notranslate"><span class="pre">InputPeerChannel</span></code></a> - Channels &amp; Supergroups</p></li>
+</ul>
+<p>But you don’t necessarily have to manually instantiate each object because Pyrogram already provides
+<a class="reference internal" href="../api/methods/resolve_peer.html#pyrogram.Client.resolve_peer" title="pyrogram.Client.resolve_peer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resolve_peer()</span></code></a> as a convenience utility method that returns the correct InputPeer
+by accepting a peer ID only.</p>
+<p>Another thing to take into consideration about chat IDs is the way they are represented: they are all integers and
+all positive within their respective raw types.</p>
+<p>Things are different when working with Pyrogram’s API because having them in the same space could lead to
+collisions, and that’s why Pyrogram uses a slightly different representation for each kind of ID.</p>
+<p>For example, given the ID <em>123456789</em>, here’s how Pyrogram can tell entities apart:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+ID</span></code> User: <em>123456789</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-ID</span></code> Chat: <em>-123456789</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-100ID</span></code> Channel or Supergroup: <em>-100123456789</em></p></li>
+</ul>
+<p>So, every time you take a raw ID, make sure to translate it into the correct ID when you want to use it with an
+high-level method.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="test-servers.html" class="btn btn-neutral float-left" title="Test Servers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="voice-calls.html" class="btn btn-neutral float-right" title="Voice Calls" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
