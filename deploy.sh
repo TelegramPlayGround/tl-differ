@@ -27,26 +27,25 @@ git commit -am "${current_date} TLDiffer: Deploy new layer" > /dev/null 2>&1
 
 curpath=$(pwd)
 
-git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
-cd /tmp/docgen/
-sudo apt install -y pandoc latexmk
-make clean
-make venv
-pip install --upgrade pip
-pip install tox sphinx_tabs
-make api
-make docs
-mv /tmp/docgen/docs/build/html /tmp/pydocs
-cd ${curpath}
-rm -rf pyrogram
-mv /tmp/pydocs pyrogram
-
-git config --global user.name "GitHub Action <Dan>"
-git config --global user.email "14043624+delivrance@users.noreply.github.com"
-rm -rf pyrogram/.doctrees/
-git add . -A
-git commit -m "${current_date} DocGen: Update documentation" > /dev/null 2>&1
-rm -rf /tmp/docgen
+# git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
+# cd /tmp/docgen/
+# sudo apt install -y pandoc latexmk
+# make clean
+# make venv
+# pip install --upgrade pip
+# pip install tox sphinx_tabs
+# make api
+# make docs
+# mv /tmp/docgen/docs/build/html /tmp/pydocs
+# cd ${curpath}
+# rm -rf pyrogram
+# mv /tmp/pydocs pyrogram
+# git config --global user.name "GitHub Action <Dan>"
+# git config --global user.email "14043624+delivrance@users.noreply.github.com"
+# rm -rf pyrogram/.doctrees/
+# git add . -A
+# git commit -m "${current_date} DocGen: Update documentation" > /dev/null 2>&1
+# rm -rf /tmp/docgen
 
 git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
 cd /tmp/docgen/
