@@ -1278,7 +1278,7 @@ working” if you forgot to configure logging. It took so long for this change
 to arrive because nobody noticed that Telethon was using a
 <code class="docutils literal notranslate"><span class="pre">logging.NullHandler</span></code> when it really shouldn’t have.</p>
 <p>If you want the old behaviour of no messages being logged, you can configure
-<a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging</span></code></a> to <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> severity:</p>
+<a class="reference external" href="https://docs.python.org/3/library/logging.html#module-logging" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logging</span></code></a> to <code class="docutils literal notranslate"><span class="pre">CRITICAL</span></code> severity:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span>
 </pre></div>
@@ -1298,7 +1298,7 @@ to comment on channel posts.</p></li>
 <h3><a class="toc-backref" href="#id221">Enhancements</a><a class="headerlink" href="#id6" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">utils.resolve_invite_link</span></code> handles the newer link format.</p></li>
-<li><p>Downloading files now retries once on <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TimeoutError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeoutError</span></code></a>, which has been
+<li><p>Downloading files now retries once on <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TimeoutError" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TimeoutError</span></code></a>, which has been
 happening recently. It is not guaranteed to work, but it should help.</p></li>
 <li><p>Sending albums of photo URLs is now supported.</p></li>
 <li><p>EXIF metadata is respected when automatically resizing photos, so the
@@ -1309,7 +1309,7 @@ orientation information should no longer be lost.</p></li>
 <section id="id7">
 <h3><a class="toc-backref" href="#id222">Bug fixes</a><a class="headerlink" href="#id7" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Fixed a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KeyError</span></code></a> on certain cases with <code class="docutils literal notranslate"><span class="pre">Conversation</span></code>.</p></li>
+<li><p>Fixed a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#KeyError" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KeyError</span></code></a> on certain cases with <code class="docutils literal notranslate"><span class="pre">Conversation</span></code>.</p></li>
 <li><p>Thumbnails should properly render on more clients. Installing <code class="docutils literal notranslate"><span class="pre">hachoir</span></code>
 may help.</p></li>
 <li><p>Message search was broken when using a certain combination of parameters.</p></li>
@@ -1388,7 +1388,7 @@ less.</p></li>
 <p>Mostly fixes, and added some new things that can be done in this new layer.</p>
 <p>For proxy users, a pull request was merged that will use the <code class="docutils literal notranslate"><span class="pre">python-socks</span></code>
 library when available for proxy support. This library natively supports
-<a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>, so it should work better than the old <code class="docutils literal notranslate"><span class="pre">pysocks</span></code>. <code class="docutils literal notranslate"><span class="pre">pysocks</span></code> will
+<a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>, so it should work better than the old <code class="docutils literal notranslate"><span class="pre">pysocks</span></code>. <code class="docutils literal notranslate"><span class="pre">pysocks</span></code> will
 still be used if the new library is not available, and both will be handled
 transparently by Telethon so you don’t need to worry about it.</p>
 <section id="id11">
@@ -1408,7 +1408,7 @@ client. This is also an external contribution.</p></li>
 <li><p>If the <code class="docutils literal notranslate"><span class="pre">python-socks</span></code> library is installed (new optional requirement), it
 will be used instead of <code class="docutils literal notranslate"><span class="pre">pysocks</span></code> for proxy support. This should fix some
 issues with proxy timeouts, because the new library natively supports
-<a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>.</p></li>
+<a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>.</p></li>
 <li><p><a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a> will
 now group any media type, instead of sending non-image documents separatedly.
 This lets you create music albums, for example.</p></li>
@@ -1461,7 +1461,7 @@ versions is a lie and will cause issues.</p>
 <p>The reason to bring this up is that Telegram has changed things again, and
 with the introduction of anonymous administrators and channel comments, the
 sender of a message may not be a <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>! To accomodate for this, the field
-is now a <a class="reference external" href="https://tl.telethon.dev/?q=Peer">Peer</a> and not <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>. As a reminder, it’s always a good idea to
+is now a <a class="reference external" href="https://tl.telethon.dev/?q=Peer">Peer</a> and not <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>. As a reminder, it’s always a good idea to
 use Telethon’s friendly methods and custom properties, which have a higher
 stability guarantee than accessing raw API fields.</p>
 <p>Even if you don’t update, your code will still need to account for the fact
@@ -1479,7 +1479,7 @@ like they did before (Telegram has renamed and changed how these fields work).</
 <section id="id14">
 <h3><a class="toc-backref" href="#id232">Breaking Changes</a><a class="headerlink" href="#id14" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Message.from_id</span></code> is now a <a class="reference external" href="https://tl.telethon.dev/?q=Peer">Peer</a>, not <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>! If you want the marked
+<li><p><code class="docutils literal notranslate"><span class="pre">Message.from_id</span></code> is now a <a class="reference external" href="https://tl.telethon.dev/?q=Peer">Peer</a>, not <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>! If you want the marked
 sender ID (much like old behaviour), replace all uses of <code class="docutils literal notranslate"><span class="pre">.from_id</span></code> with
 <code class="docutils literal notranslate"><span class="pre">.sender_id</span></code>. This will mostly work, but of course in old and new versions
 you have to account for the fact that this sender may no longer be a user.</p></li>
@@ -1496,7 +1496,7 @@ behaviour. You can use the old behaviour with <code class="docutils literal notr
 <ul class="simple">
 <li><p>New <code class="docutils literal notranslate"><span class="pre">raise_last_call_error</span></code> parameter in the client constructor to raise
 the same error produced by the last failing call, rather than a generic
-<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a>.</p></li>
+<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a>.</p></li>
 <li><p>New <code class="docutils literal notranslate"><span class="pre">formatting_entities</span></code> parameter in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code></a>, and
 <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a>
 to bypass the parse mode and manually specify the formatting entities.</p></li>
@@ -1554,7 +1554,7 @@ should now work correctly, instead of claiming “code invalid”.</p></li>
 </ul>
 <p>Special mention to some of the other changes in the 1.16.x series:</p>
 <ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">thumb</span></code> for <code class="docutils literal notranslate"><span class="pre">download_media</span></code> now supports both <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a> and <a class="reference external" href="https://tl.telethon.dev/?q=VideoSize">VideoSize</a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">thumb</span></code> for <code class="docutils literal notranslate"><span class="pre">download_media</span></code> now supports both <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a> and <a class="reference external" href="https://tl.telethon.dev/?q=VideoSize">VideoSize</a>.</p></li>
 <li><p>Thumbnails are sorted, so <code class="docutils literal notranslate"><span class="pre">-1</span></code> is always the largest.</p></li>
 </ul>
 </section>
@@ -1654,7 +1654,7 @@ click on buttons requesting phone or location.</p></li>
 <li><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code></a> should now handle albums from
 different data centers more gracefully.</p></li>
 <li><p><a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_file" title="telethon.client.downloads.DownloadMethods.download_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_file()</span></code></a> now supports
-<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a> as the destination.</p></li>
+<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a> as the destination.</p></li>
 </ul>
 </section>
 <section id="id24">
@@ -1757,7 +1757,7 @@ deserves a new minor release.</p>
 </ul>
 <p>These bug fixes are available in this release and beyond:</p>
 <ul class="simple">
-<li><p>Avoid another occurrence of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#MemoryError" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MemoryError</span></code></a>.</p></li>
+<li><p>Avoid another occurrence of <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#MemoryError" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MemoryError</span></code></a>.</p></li>
 <li><p>Sending large files in albums would fail because it tried to cache them.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">thumb</span></code> was being ignored when sending files from <a class="reference external" href="https://tl.telethon.dev/?q=InputFile">InputFile</a>.</p></li>
 <li><p>Fixed editing inline messages from callback queries in some cases.</p></li>
@@ -1864,16 +1864,16 @@ method to truly kick (not ban) participants.</p></li>
 <li><p>Fix calling <code class="docutils literal notranslate"><span class="pre">flush</span></code> on file objects which lack this attribute.</p></li>
 <li><p>Fix <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a> pattern.</p></li>
 <li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.action" title="telethon.client.chats.ChatMethods.action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action()</span></code></a> not returning
-itself when used in a context manager (so the <code class="docutils literal notranslate"><span class="pre">as</span></code> would be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>).</p></li>
+itself when used in a context manager (so the <code class="docutils literal notranslate"><span class="pre">as</span></code> would be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>).</p></li>
 <li><p>Fix sending <a class="reference external" href="https://tl.telethon.dev/?q=InputKeyboardButtonUrlAuth">InputKeyboardButtonUrlAuth</a> as inline buttons.</p></li>
 <li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_permissions" title="telethon.client.chats.ChatMethods.edit_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code></a>
 defaults.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a> had its <code class="docutils literal notranslate"><span class="pre">client</span></code> as <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
+<li><p>Fix <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a> had its <code class="docutils literal notranslate"><span class="pre">client</span></code> as <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
 <li><p>Fix (de)serialization of negative timestamps (caused by the information in some
 sites with instant view, where the date could be very old).</p></li>
 <li><p>Fix HTML un-parsing.</p></li>
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">to/from_id</span></code> in private messages when using multiple clients.</p></li>
-<li><p>Stop disconnecting from <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> (incorrect logging).</p></li>
+<li><p>Stop disconnecting from <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> (incorrect logging).</p></li>
 <li><p>Fix double-read on double-connect.</p></li>
 <li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.get_messages" title="telethon.client.messages.MessageMethods.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages()</span></code></a>
 when being passed more than 100 IDs.</p></li>
@@ -2286,7 +2286,7 @@ detecting user leaves as if they were kicked.</p></li>
 <ul class="simple">
 <li><p>Cleared up some parts of the documentation.</p></li>
 <li><p>Improved some auto-casts to make life easier.</p></li>
-<li><p>Improved image detection. Now you can easily send <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a>
+<li><p>Improved image detection. Now you can easily send <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a>
 and streams of images as photos, unless you force document.</p></li>
 <li><p>Sending images as photos that are too large will now be resized
 before uploading, reducing the time it takes to upload them and
@@ -2408,7 +2408,7 @@ the library to create inline bots and send stickers through them!</p></li>
 <p><em>Published at 2019/01/03</em></p>
 <p>The library already had a way to easily convert the objects the API returned
 into dictionaries through <code class="docutils literal notranslate"><span class="pre">object.to_dict()</span></code>, but some of the fields are
-dates or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a> which JSON can’t serialize directly.</p>
+dates or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a> which JSON can’t serialize directly.</p>
 <p>For convenience, a new <code class="docutils literal notranslate"><span class="pre">object.to_json()</span></code> has been added which will by
 default format both of those problematic types into something sensible.</p>
 <section id="id59">
@@ -2433,7 +2433,7 @@ that the client has not seen before.</p></li>
 <ul class="simple">
 <li><p>You can now configure the reply markup when using <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button" title="telethon.tl.custom.button.Button"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Button</span></code></a> as a bot.</p></li>
 <li><p>More properties for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> to make accessing media convenient.</p></li>
-<li><p>Downloading to <code class="docutils literal notranslate"><span class="pre">file=bytes</span></code> will now return a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a> object
+<li><p>Downloading to <code class="docutils literal notranslate"><span class="pre">file=bytes</span></code> will now return a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a> object
 with the downloaded media.</p></li>
 </ul>
 </section>
@@ -2654,7 +2654,7 @@ You can add it later:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">.sender</span></code> is the <code class="docutils literal notranslate"><span class="pre">.chat</span></code> when the message is sent in a broadcast
 channel. This makes sense, because the sender of the message was the
 channel itself, but you now must take into consideration that it may
-be either a <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> instead of being <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
+be either a <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> instead of being <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
 </ul>
 </section>
 <section id="id77">
@@ -2741,7 +2741,7 @@ excited about.</p>
 <ul class="simple">
 <li><p>The mentioned method to start a new <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation</span></code></a>.</p></li>
 <li><p>Implemented global search through <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages</span></code></a>
-with <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> entity.</p></li>
+with <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> entity.</p></li>
 <li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query</span></code></a>
 method to perform inline queries.</p></li>
 <li><p>Bot-API-style <code class="docutils literal notranslate"><span class="pre">file_id</span></code> can now be used to send files and download media.
@@ -2863,7 +2863,7 @@ the client’s friendly methods at <em>(removed broken link)</em>.</p></li>
 <ul class="simple">
 <li><p>Empty <code class="docutils literal notranslate"><span class="pre">except</span></code> are no longer used which means
 sending a keyboard interrupt should now work properly.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">pts</span></code> of incoming updates could be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">pts</span></code> of incoming updates could be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
 <li><p>UTC timezone information is properly set for read <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p></li>
 <li><p>Some infinite recursion bugs in the custom message class.</p></li>
 <li><p><a class="reference external" href="https://tl.telethon.dev/?q=Updates">Updates</a> was being dispatched to raw handlers when it shouldn’t.</p></li>
@@ -2968,7 +2968,7 @@ as a script that only forwards incoming messages somewhere else.</p></li>
 <section id="id94">
 <h3><a class="toc-backref" href="#id341">Bug fixes</a><a class="headerlink" href="#id94" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Count was always <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.button_count" title="telethon.tl.custom.message.Message.button_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.button_count</span></code></a>.</p></li>
+<li><p>Count was always <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.button_count" title="telethon.tl.custom.message.Message.button_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.button_count</span></code></a>.</p></li>
 <li><p>Some fixes when disconnecting upon dropping the client.</p></li>
 <li><p>Support for Python 3.4 in the sync version, and fix media download.</p></li>
 <li><p>Some issues with events when accessing the input chat or their media.</p></li>
@@ -3019,7 +3019,7 @@ remove some of the old methods that were around until now for compatibility
 reasons. But there’s one more surprise!</p>
 <p>There is a new magic <code class="docutils literal notranslate"><span class="pre">telethon.sync</span></code> module to let you use <strong>all</strong> the
 methods in the <a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a> (and the types returned
-from its functions) in a synchronous way, while using <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> behind
+from its functions) in a synchronous way, while using <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> behind
 the scenes! This means you’re now able to do both of the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -3089,7 +3089,7 @@ it returns the instance of the client:</p>
 <li><p>“User joined” event was being treated as “User was invited”.</p></li>
 <li><p>SQLite’s cursor should not be closed properly after usage.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">await</span></code> the updates task upon disconnection.</p></li>
-<li><p>Some bug in Python 3.5.2’s <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> causing 100% CPU load if you
+<li><p>Some bug in Python 3.5.2’s <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> causing 100% CPU load if you
 forgot to call <a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code></a>.
 The method is called for you on object destruction, but you still should
 disconnect manually or use a <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p></li>
@@ -3143,7 +3143,7 @@ differently.</p></li>
 <code class="docutils literal notranslate"><span class="pre">telethon.errors.rpc_error_list</span></code> won’t work, but you should
 have been using <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.errors</span></code> all this time instead.</p></li>
 <li><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.connect" title="telethon.client.telegrambaseclient.TelegramBaseClient.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.connect</span></code></a>
-no longer returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> on success. Instead, you should <code class="docutils literal notranslate"><span class="pre">except</span></code> the
+no longer returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> on success. Instead, you should <code class="docutils literal notranslate"><span class="pre">except</span></code> the
 possible <code class="docutils literal notranslate"><span class="pre">ConnectionError</span></code> and act accordingly. This makes it easier to
 not ignore the error.</p></li>
 <li><p>You can no longer set <code class="docutils literal notranslate"><span class="pre">retries=n</span></code> when calling a request manually. The
@@ -3214,7 +3214,7 @@ be used only in quick scripts.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> is now supported for downloading and uploading media.</p></li>
 <li><p>Messages you send to yourself are now considered outgoing, unless they
 are forwarded.</p></li>
-<li><p>The documentation has been updated with a brand new <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> crash
+<li><p>The documentation has been updated with a brand new <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> crash
 course to encourage you use it. You can still use the threaded version
 if you want though.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.name</span></code> property is now properly supported when sending and downloading
@@ -3359,8 +3359,8 @@ fixes.</p>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">search</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> and <code class="docutils literal notranslate"><span class="pre">from_user</span></code> parameters to
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient.iter_messages</span></code>.</p></li>
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient.download_file</span></code> now
-supports a <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> path to return the file in memory and
-return its <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p></li>
+supports a <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> path to return the file in memory and
+return its <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a>.</p></li>
 <li><p>Events now have a <code class="docutils literal notranslate"><span class="pre">.original_update</span></code> field.</p></li>
 </ul>
 </section>
@@ -3917,8 +3917,8 @@ will always be resolved, since they may have changed.</p></li>
 setting no last name).</p></li>
 <li><p>Fix invalid assertion regarding flag parameters as well.</p></li>
 <li><p>Avoid joining the background thread on disconnect, as it would be
-<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> due to a race condition.</p></li>
-<li><p>Correctly handle <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> dates when downloading media.</p></li>
+<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> due to a race condition.</p></li>
+<li><p>Correctly handle <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> dates when downloading media.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.download_profile_photo</span></code> was failing for some channels.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.download_media</span></code> wasn’t handling <code class="docutils literal notranslate"><span class="pre">Photo</span></code>.</p></li>
 </ul>
@@ -3986,7 +3986,7 @@ have always done.</p></li>
 <ul class="simple">
 <li><p>Getting an entity using their phone wasn’t actually working.</p></li>
 <li><p>Full entities aren’t saved unless they have an <code class="docutils literal notranslate"><span class="pre">access_hash</span></code>, to
-avoid some <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> errors.</p></li>
+avoid some <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> errors.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.get_message_history</span></code> was failing when retrieving items that had
 messages forwarded from a channel.</p></li>
 </ul>
@@ -4044,7 +4044,7 @@ Python ≥3.6.</p></li>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">auth_key</span></code> generation has been moved from <code class="docutils literal notranslate"><span class="pre">.connect()</span></code> to
 <code class="docutils literal notranslate"><span class="pre">.invoke()</span></code>. There were some issues were <code class="docutils literal notranslate"><span class="pre">.connect()</span></code> failed and
-the <code class="docutils literal notranslate"><span class="pre">auth_key</span></code> was <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> so this will ensure to have a valid
+the <code class="docutils literal notranslate"><span class="pre">auth_key</span></code> was <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> so this will ensure to have a valid
 <code class="docutils literal notranslate"><span class="pre">auth_key</span></code> when needed, even if <code class="docutils literal notranslate"><span class="pre">BrokenAuthKeyError</span></code> is raised.</p></li>
 <li><p>Support for higher limits on <code class="docutils literal notranslate"><span class="pre">.get_history()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">.get_dialogs()</span></code>.</p></li>
@@ -4184,7 +4184,7 @@ library itself.</p></li>
 <li><p>You can <strong>invoke</strong> requests from <strong>update handlers</strong>. And <strong>any other
 thread</strong>. A new temporary will be made, so that you can be sending
 even several requests at the same time!</p></li>
-<li><p><strong>Several worker threads</strong> for your updates! By default, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>
+<li><p><strong>Several worker threads</strong> for your updates! By default, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>
 will spawn. I recommend you to work with <code class="docutils literal notranslate"><span class="pre">update_workers=4</span></code> to get
 started, these will be polling constantly for updates.</p></li>
 <li><p>You can also change the number of workers at any given time.</p></li>
@@ -4257,7 +4257,7 @@ tuned!</p>
 <li><p><strong>Important</strong>, related to the serialization. Every object or request
 that had to serialize a <code class="docutils literal notranslate"><span class="pre">True/False</span></code> type was always being serialized
 as <code class="xref py py-obj docutils literal notranslate"><span class="pre">false</span></code>!</p></li>
-<li><p>Another bug that didn’t allow you to leave as <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> flag parameters
+<li><p>Another bug that didn’t allow you to leave as <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> flag parameters
 that needed a list has been fixed.</p></li>
 </ul>
 </section>
@@ -4341,7 +4341,7 @@ should have been on <code class="docutils literal notranslate"><span class="pre"
 <p>Some other additions are a tiny fix when <strong>handling updates</strong>, which was
 ignoring some of them, nicer <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">.stringify()</span></code> methods
 for the <code class="docutils literal notranslate"><span class="pre">TLObject</span></code>‘s, and not stopping the <code class="docutils literal notranslate"><span class="pre">ReadThread</span></code> if you try
-invoking something there (now it simply returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>).</p>
+invoking something there (now it simply returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>).</p>
 </section>
 <section id="attempts-at-more-stability-v0-13-5">
 <h2><a class="toc-backref" href="#id451">Attempts at more stability (v0.13.5)</a><a class="headerlink" href="#attempts-at-more-stability-v0-13-5" title="Permalink to this heading"></a></h2>
@@ -4552,7 +4552,7 @@ outside the buffer.</p>
 <code class="docutils literal notranslate"><span class="pre">TelegramClient</span></code> constructor (using <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">RPCError</span></code>‘s now belong to some request you’ve made, which makes
 more sense.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">get_input_*</span></code> now handles <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> (default) parameters more
+<li><p><code class="docutils literal notranslate"><span class="pre">get_input_*</span></code> now handles <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> (default) parameters more
 gracefully (it used to crash).</p></li>
 </ul>
 </section>
