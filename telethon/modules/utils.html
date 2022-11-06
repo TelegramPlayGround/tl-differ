@@ -182,7 +182,7 @@ to convert between an entity like a User, Chat, etc. into its Input version)</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.utils.AsyncClassWrapper">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">AsyncClassWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrapped</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.AsyncClassWrapper" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.utils.AsyncClassWrapper.__getattr__">
 <span class="sig-name descname"><span class="pre">__getattr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.AsyncClassWrapper.__getattr__" title="Permalink to this definition"></a></dt>
@@ -212,7 +212,7 @@ which is 100 by default since that’s what Telegram uses the most.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.encode_waveform">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">encode_waveform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waveform</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.encode_waveform" title="Permalink to this definition"></a></dt>
-<dd><p>Encodes the input <code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code> into a 5-bit byte-string
+<dd><p>Encodes the input <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a> into a 5-bit byte-string
 to be used as a voice note’s waveform. See <a class="reference internal" href="#telethon.utils.decode_waveform" title="telethon.utils.decode_waveform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decode_waveform</span></code></a>
 for the reverse operation.</p>
 <dl>
@@ -337,7 +337,7 @@ hashes, unlike <a class="reference internal" href="#telethon.utils.get_input_pee
 <dt class="sig sig-object py" id="telethon.utils.get_input_media">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">get_input_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">media</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_photo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attributes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_document</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voice_note</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">video_note</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">supports_streaming</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.get_input_media" title="Permalink to this definition"></a></dt>
 <dd><p>Similar to <a class="reference internal" href="#telethon.utils.get_input_peer" title="telethon.utils.get_input_peer"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_input_peer()</span></code></a>, but for media.</p>
-<p>If the media is <a class="reference external" href="https://tl.telethon.dev/?q=InputFile">InputFile</a> and <code class="docutils literal notranslate"><span class="pre">is_photo</span></code> is known to be <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>,
+<p>If the media is <a class="reference external" href="https://tl.telethon.dev/?q=InputFile">InputFile</a> and <code class="docutils literal notranslate"><span class="pre">is_photo</span></code> is known to be <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>,
 it will be treated as an <a class="reference external" href="https://tl.telethon.dev/?q=InputMediaUploadedPhoto">InputMediaUploadedPhoto</a>. Else, the rest
 of parameters will indicate how to treat it.</p>
 </dd></dl>
@@ -410,25 +410,25 @@ a call to <code class="xref py py-meth docutils literal notranslate"><span class
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.is_audio">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">is_audio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.is_audio" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the file has an audio mime type.</p>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the file has an audio mime type.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.is_gif">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">is_gif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.is_gif" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the file extension looks like a gif file to Telegram.</p>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the file extension looks like a gif file to Telegram.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.is_image">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">is_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.is_image" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the file extension looks like an image file to Telegram.</p>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the file extension looks like an image file to Telegram.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.is_list_like">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">is_list_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.is_list_like" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the given object looks like a list.</p>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the given object looks like a list.</p>
 <p>Checking <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">hasattr(obj,</span> <span class="pre">'__iter__')</span></code> and ignoring <code class="docutils literal notranslate"><span class="pre">str/bytes</span></code> is not
 enough. Things like <code class="docutils literal notranslate"><span class="pre">open()</span></code> are also iterable (and probably many
 other things), so just support the commonly known list-like objects.</p>
@@ -437,7 +437,7 @@ other things), so just support the commonly known list-like objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.is_video">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">is_video</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.is_video" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the file has a video mime type.</p>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the file has a video mime type.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -452,7 +452,7 @@ other things), so just support the commonly known list-like objects.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.utils.parse_phone">
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">parse_phone</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phone</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.parse_phone" title="Permalink to this definition"></a></dt>
-<dd><p>Parses the given phone, or returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if it’s invalid.</p>
+<dd><p>Parses the given phone, or returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if it’s invalid.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -470,7 +470,7 @@ a joinchat/ hash (in which case is not lowercase’d).</p>
 <span class="sig-prename descclassname"><span class="pre">telethon.utils.</span></span><span class="sig-name descname"><span class="pre">resolve_bot_file_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.utils.resolve_bot_file_id" title="Permalink to this definition"></a></dt>
 <dd><p>Given a Bot API-style <a class="reference internal" href="custom.html#telethon.tl.custom.file.File.id" title="telethon.tl.custom.file.File.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_id</span></code></a>,
 returns the media it represents. If the <a class="reference internal" href="custom.html#telethon.tl.custom.file.File.id" title="telethon.tl.custom.file.File.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_id</span></code></a>
-is not valid, <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> is returned instead.</p>
+is not valid, <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> is returned instead.</p>
 <p>Note that the <a class="reference internal" href="custom.html#telethon.tl.custom.file.File.id" title="telethon.tl.custom.file.File.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">file_id</span></code></a> does not have information
 such as image dimensions or file size, so these will be zero if present.</p>
 <p>For thumbnails, the photo ID and hash will always be zero.</p>
@@ -522,16 +522,16 @@ own set of entities. This allows sending a very large message as multiple
 messages while respecting the formatting.</p>
 <dl>
 <dt>Arguments</dt><dd><dl>
-<dt>text (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>):</dt><dd><p>The message text.</p>
+<dt>text (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>):</dt><dd><p>The message text.</p>
 </dd>
 <dt>entities (List[<a class="reference external" href="https://tl.telethon.dev/?q=MessageEntity">MessageEntity</a>])</dt><dd><p>The formatting entities.</p>
 </dd>
-<dt>limit (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>):</dt><dd><p>The maximum message length of each individual message.</p>
+<dt>limit (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>):</dt><dd><p>The maximum message length of each individual message.</p>
 </dd>
-<dt>max_entities (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>):</dt><dd><p>The maximum amount of entities that will be present in each
+<dt>max_entities (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>):</dt><dd><p>The maximum amount of entities that will be present in each
 individual message.</p>
 </dd>
-<dt>split_at (Tuplel[<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>]):</dt><dd><p>The list of regular expressions that will determine where to split
+<dt>split_at (Tuplel[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>]):</dt><dd><p>The list of regular expressions that will determine where to split
 the text. By default, a newline is searched. If no newline is
 present, a space is searched. If no space is found, the split will
 be made at any character.</p>

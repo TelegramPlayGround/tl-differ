@@ -223,22 +223,22 @@ so all the methods in it can be used from any event builder/event instance.</p>
 <span class="target" id="module-telethon.events.common"></span><dl class="py class">
 <dt class="sig sig-object py" id="telethon.events.common.EventBuilder">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.events.common.</span></span><span class="sig-name descname"><span class="pre">EventBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blacklist_chats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.common.EventBuilder" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
 <p>The common event builder, with builtin support to filter per chat.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
 <dt>chats (<code class="xref py py-obj docutils literal notranslate"><span class="pre">entity</span></code>, optional):</dt><dd><p>May be one or more entities (username/peer/etc.), preferably IDs.
 By default, only matching chats will be handled.</p>
 </dd>
-<dt>blacklist_chats (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>Whether to treat the chats as a blacklist instead of
+<dt>blacklist_chats (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>Whether to treat the chats as a blacklist instead of
 as a whitelist (default). This means that every chat
 will be handled <em>except</em> those specified in <code class="docutils literal notranslate"><span class="pre">chats</span></code>
 which will be ignored if <code class="docutils literal notranslate"><span class="pre">blacklist_chats=True</span></code>.</p>
 </dd>
-<dt>func (<code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code>, optional):</dt><dd><p>A callable (async or not) function that should accept the event as input
+<dt>func (<a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></a>, optional):</dt><dd><p>A callable (async or not) function that should accept the event as input
 parameter, and return a value indicating whether the event
 should be dispatched or not (any truthy value will do, it
-does not need to be a <code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>). It works like a custom filter:</p>
+does not need to be a <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>). It works like a custom filter:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@client</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">is_private</span><span class="p">))</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="k">pass</span>  <span class="c1"># code here</span>
@@ -283,7 +283,7 @@ used, or falsy otherwise. The return value may need to be awaited.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.events.common.EventCommon">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.events.common.</span></span><span class="sig-name descname"><span class="pre">EventCommon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chat_peer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadcast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.common.EventCommon" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/abc.html#abc.ABC" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></a></p>
 <p>Intermediate class with common things to all events.</p>
 <p>Remember that this class implements <a class="reference internal" href="custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a> which
 means you have access to all chat properties and methods.</p>
@@ -326,10 +326,10 @@ field which contains the original <a class="reference external" href="https://tl
 <p>Occurs whenever a new text message or a message with media arrives.</p>
 <dl>
 <dt>Args:</dt><dd><dl class="simple">
-<dt>incoming (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>If set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, only <strong>incoming</strong> messages will be handled.
+<dt>incoming (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>If set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, only <strong>incoming</strong> messages will be handled.
 Mutually exclusive with <code class="docutils literal notranslate"><span class="pre">outgoing</span></code> (can only set one of either).</p>
 </dd>
-<dt>outgoing (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>If set to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, only <strong>outgoing</strong> messages will be handled.
+<dt>outgoing (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>If set to <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, only <strong>outgoing</strong> messages will be handled.
 Mutually exclusive with <code class="docutils literal notranslate"><span class="pre">incoming</span></code> (can only set one of either).</p>
 </dd>
 <dt>from_users (<code class="xref py py-obj docutils literal notranslate"><span class="pre">entity</span></code>, optional):</dt><dd><p>Unlike <code class="xref py py-obj docutils literal notranslate"><span class="pre">chats</span></code>, this parameter filters the <em>senders</em> of the
@@ -338,14 +338,14 @@ handled. Use <code class="xref py py-obj docutils literal notranslate"><span cla
 users. <code class="xref py py-obj docutils literal notranslate"><span class="pre">from_users</span></code> lets you filter by messages sent by <em>one or
 more</em> users across the desired chats (doesn’t need a list).</p>
 </dd>
-<dt>forwards (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>Whether forwarded messages should be handled or not. By default,
-both forwarded and normal messages are included. If it’s <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>
-<em>only</em> forwards will be handled. If it’s <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code> only messages
+<dt>forwards (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>Whether forwarded messages should be handled or not. By default,
+both forwarded and normal messages are included. If it’s <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>
+<em>only</em> forwards will be handled. If it’s <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a> only messages
 that are <em>not</em> forwards will be handled.</p>
 </dd>
-<dt>pattern (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>, optional):</dt><dd><p>If set, only messages matching this pattern will be handled.
+<dt>pattern (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>, optional):</dt><dd><p>If set, only messages matching this pattern will be handled.
 You can specify a regex-like string which will be matched
-against the message, a callable function that returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>
+against the message, a callable function that returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>
 if a message is acceptable, or a compiled regex pattern.</p>
 </dd>
 </dl>
@@ -474,27 +474,27 @@ channel”, whereas “group” refers to “small group and megagroup” only.<
 <dt>Members:</dt><dd><dl class="simple">
 <dt>action_message  (<a class="reference external" href="https://tl.telethon.dev/types/message_action.html">MessageAction</a>):</dt><dd><p>The message invoked by this Chat Action.</p>
 </dd>
-<dt>new_pin (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if there is a new pin.</p>
+<dt>new_pin (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if there is a new pin.</p>
 </dd>
-<dt>new_photo (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if there’s a new chat photo (or it was removed).</p>
+<dt>new_photo (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if there’s a new chat photo (or it was removed).</p>
 </dd>
-<dt>photo (<a class="reference external" href="https://tl.telethon.dev/?q=Photo">Photo</a>, optional):</dt><dd><p>The new photo (or <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if it was removed).</p>
+<dt>photo (<a class="reference external" href="https://tl.telethon.dev/?q=Photo">Photo</a>, optional):</dt><dd><p>The new photo (or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if it was removed).</p>
 </dd>
-<dt>user_added (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user was added by some other.</p>
+<dt>user_added (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was added by some other.</p>
 </dd>
-<dt>user_joined (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user joined on their own.</p>
+<dt>user_joined (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user joined on their own.</p>
 </dd>
-<dt>user_left (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user left on their own.</p>
+<dt>user_left (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user left on their own.</p>
 </dd>
-<dt>user_kicked (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user was kicked by some other.</p>
+<dt>user_kicked (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was kicked by some other.</p>
 </dd>
-<dt>created (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if this chat was just created.</p>
+<dt>created (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if this chat was just created.</p>
 </dd>
-<dt>new_title (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>The new title string for the chat, if applicable.</p>
+<dt>new_title (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>The new title string for the chat, if applicable.</p>
 </dd>
-<dt>new_score (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>The new score string for the game, if applicable.</p>
+<dt>new_score (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>The new score string for the game, if applicable.</p>
 </dd>
-<dt>unpin (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the existing pin gets unpinned.</p>
+<dt>unpin (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the existing pin gets unpinned.</p>
 </dd>
 </dl>
 </dd>
@@ -502,7 +502,7 @@ channel”, whereas “group” refers to “small group and megagroup” only.<
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.chataction.ChatAction.Event.added_by">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">added_by</span></span><a class="headerlink" href="#telethon.events.chataction.ChatAction.Event.added_by" title="Permalink to this definition"></a></dt>
-<dd><p>The user who added <code class="docutils literal notranslate"><span class="pre">users</span></code>, if applicable (<code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> otherwise).</p>
+<dd><p>The user who added <code class="docutils literal notranslate"><span class="pre">users</span></code>, if applicable (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> otherwise).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -543,13 +543,13 @@ otherwise. Shorthand for
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.events.chataction.ChatAction.Event.get_pinned_message">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pinned_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.chataction.ChatAction.Event.get_pinned_message" title="Permalink to this definition"></a></dt>
-<dd><p>If <code class="docutils literal notranslate"><span class="pre">new_pin</span></code> is <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, this returns the <a class="reference internal" href="custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> object that was pinned.</p>
+<dd><p>If <code class="docutils literal notranslate"><span class="pre">new_pin</span></code> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, this returns the <a class="reference internal" href="custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> object that was pinned.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.events.chataction.ChatAction.Event.get_pinned_messages">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pinned_messages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.chataction.ChatAction.Event.get_pinned_messages" title="Permalink to this definition"></a></dt>
-<dd><p>If <code class="docutils literal notranslate"><span class="pre">new_pin</span></code> is <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, this returns a <code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <a class="reference internal" href="custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> objects that were pinned.</p>
+<dd><p>If <code class="docutils literal notranslate"><span class="pre">new_pin</span></code> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, this returns a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference internal" href="custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> objects that were pinned.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -579,7 +579,7 @@ otherwise. Shorthand for
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.chataction.ChatAction.Event.kicked_by">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kicked_by</span></span><a class="headerlink" href="#telethon.events.chataction.ChatAction.Event.kicked_by" title="Permalink to this definition"></a></dt>
-<dd><p>The user who kicked <code class="docutils literal notranslate"><span class="pre">users</span></code>, if applicable (<code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> otherwise).</p>
+<dd><p>The user who kicked <code class="docutils literal notranslate"><span class="pre">users</span></code>, if applicable (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> otherwise).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -603,7 +603,7 @@ both <code class="docutils literal notranslate"><span class="pre">entity</span><
 <dt class="sig sig-object py" id="telethon.events.chataction.ChatAction.Event.user">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#telethon.events.chataction.ChatAction.Event.user" title="Permalink to this definition"></a></dt>
 <dd><p>The first user that takes part in this action. For example, who joined.</p>
-<p>Might be <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if the information can’t be retrieved or
+<p>Might be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if the information can’t be retrieved or
 there is no user taking part.</p>
 </dd></dl>
 
@@ -668,12 +668,12 @@ such as gone online, started typing, etc.</p>
 <dt>Members:</dt><dd><dl>
 <dt>status (<a class="reference external" href="https://tl.telethon.dev/?q=UserStatus">UserStatus</a>, optional):</dt><dd><p>The user status if the update is about going online or offline.</p>
 <p>You should check this attribute first before checking any
-of the seen within properties, since they will all be <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>
+of the seen within properties, since they will all be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>
 if the status is not set.</p>
 </dd>
 <dt>action (<a class="reference external" href="https://tl.telethon.dev/?q=SendMessageAction">SendMessageAction</a>, optional):</dt><dd><p>The “typing” action if any the user is performing if any.</p>
 <p>You should check this attribute first before checking any
-of the typing properties, since they will all be <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>
+of the typing properties, since they will all be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>
 if the action is not set.</p>
 </dd>
 </dl>
@@ -682,31 +682,31 @@ if the action is not set.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.audio">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">audio</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.audio" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being recorded/uploaded is an audio.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being recorded/uploaded is an audio.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.cancel">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cancel</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.cancel" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the action was cancelling other actions.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action was cancelling other actions.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.contact">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">contact</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.contact" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being uploaded (selected) is a contact.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being uploaded (selected) is a contact.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.document">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">document</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.document" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being uploaded is document.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being uploaded is document.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.geo">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">geo</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.geo" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being uploaded is a geo.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being uploaded is a geo.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -730,67 +730,67 @@ if the action is not set.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.last_seen">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_seen</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.last_seen" title="Permalink to this definition"></a></dt>
-<dd><p>Exact <code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.datetime</span></code> when the user was last seen if known.</p>
+<dd><p>Exact <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> when the user was last seen if known.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.online">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">online</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.online" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user is currently online,</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user is currently online,</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.photo">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">photo</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.photo" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being uploaded is a photo.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being uploaded is a photo.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.playing">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">playing</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.playing" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the action is playing a game.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is playing a game.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.recently">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recently</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.recently" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user was seen within a day.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was seen within a day.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.recording">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">recording</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.recording" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the action is recording something.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is recording something.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.round">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">round</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.round" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being recorded/uploaded is a round video.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being recorded/uploaded is a round video.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.sticker">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">sticker</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.sticker" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being uploaded is a sticker.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being uploaded is a sticker.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.typing">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">typing</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.typing" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the action is typing a message.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is typing a message.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.until">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">until</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.until" title="Permalink to this definition"></a></dt>
-<dd><p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.datetime</span></code> until when the user should appear online.</p>
+<dd><p>The <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> until when the user should appear online.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.uploading">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uploading</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.uploading" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the action is uploading something.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is uploading something.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -808,19 +808,19 @@ if the action is not set.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.video">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">video</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.video" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what’s being recorded/uploaded is an video.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what’s being recorded/uploaded is an video.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.within_months">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">within_months</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.within_months" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user was seen within 30 days.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was seen within 30 days.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.userupdate.UserUpdate.Event.within_weeks">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">within_weeks</span></span><a class="headerlink" href="#telethon.events.userupdate.UserUpdate.Event.within_weeks" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the user was seen within 7 days.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was seen within 7 days.</p>
 </dd></dl>
 
 </dd></dl>
@@ -846,7 +846,7 @@ this event as a <a class="reference internal" href="custom.html#telethon.tl.cust
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>On channels, <a class="reference internal" href="custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.out</span></code></a>
-will be <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if you sent the message originally, <strong>not if
+will be <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if you sent the message originally, <strong>not if
 you edited it</strong>! This can be dangerous if you run outgoing
 commands on edits.</p>
 <p>Some examples follow:</p>
@@ -950,8 +950,8 @@ for some events which lack this information but still need it.</p>
 <p>Occurs whenever one or more messages are read in a chat.</p>
 <dl>
 <dt>Args:</dt><dd><dl class="simple">
-<dt>inbox (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>If this argument is <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, then when you read someone else’s
-messages the event will be fired. By default (<code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>) only
+<dt>inbox (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>If this argument is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, then when you read someone else’s
+messages the event will be fired. By default (<a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a>) only
 when messages you sent are read by someone else will fire it.</p>
 </dd>
 </dl>
@@ -978,12 +978,12 @@ when messages you sent are read by someone else will fire it.</p>
 <p>Represents the event of one or more messages being read.</p>
 <dl class="simple">
 <dt>Members:</dt><dd><dl class="simple">
-<dt>max_id (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>):</dt><dd><p>Up to which message ID has been read. Every message
+<dt>max_id (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>):</dt><dd><p>Up to which message ID has been read. Every message
 with an ID equal or lower to it have been read.</p>
 </dd>
-<dt>outbox (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if someone else has read your messages.</p>
+<dt>outbox (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if someone else has read your messages.</p>
 </dd>
-<dt>contents (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>):</dt><dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if what was read were the contents of a message.
+<dt>contents (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>):</dt><dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what was read were the contents of a message.
 This will be the case when e.g. you play a voice note.
 It may only be set on <code class="docutils literal notranslate"><span class="pre">inbox</span></code> events.</p>
 </dd>
@@ -993,7 +993,7 @@ It may only be set on <code class="docutils literal notranslate"><span class="pr
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.events.messageread.MessageRead.Event.__contains__">
 <span class="sig-name descname"><span class="pre">__contains__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.messageread.MessageRead.Event.__contains__" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the message(s) are read message.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message(s) are read message.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1008,13 +1008,13 @@ was read instead checking if it’s in here.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.messageread.MessageRead.Event.inbox">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inbox</span></span><a class="headerlink" href="#telethon.events.messageread.MessageRead.Event.inbox" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if you have read someone else’s messages.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if you have read someone else’s messages.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.events.messageread.MessageRead.Event.is_read">
 <span class="sig-name descname"><span class="pre">is_read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.messageread.MessageRead.Event.is_read" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the given message (or its ID) has been read.</p>
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the given message (or its ID) has been read.</p>
 <p>If a list-like argument is provided, this method will return a
 list of booleans indicating which messages have been read.</p>
 </dd></dl>
@@ -1061,14 +1061,14 @@ message. The <code class="xref py py-obj docutils literal notranslate"><span cla
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_instance</span></code> which should be used for inline callbacks.</p>
 <dl>
 <dt>Args:</dt><dd><dl class="simple">
-<dt>data (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code>, optional):</dt><dd><p>If set, the inline button payload data must match this data.
+<dt>data (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></a>, optional):</dt><dd><p>If set, the inline button payload data must match this data.
 A UTF-8 string can also be given, a regex or a callable. For
 instance, to check against <code class="docutils literal notranslate"><span class="pre">'data_1'</span></code> and <code class="docutils literal notranslate"><span class="pre">'data_2'</span></code> you
 can use <code class="docutils literal notranslate"><span class="pre">re.compile(b'data_')</span></code>.</p>
 </dd>
-<dt>pattern (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>, optional):</dt><dd><p>If set, only buttons with payload matching this pattern will be handled.
+<dt>pattern (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>, optional):</dt><dd><p>If set, only buttons with payload matching this pattern will be handled.
 You can specify a regex-like string which will be matched
-against the payload data, a callable function that returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>
+against the payload data, a callable function that returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>
 if a the payload data is acceptable, or a compiled regex pattern.</p>
 </dd>
 </dl>
@@ -1121,17 +1121,17 @@ to <code class="docutils literal notranslate"><span class="pre">pattern_match</s
 <dd><p>Answers the callback query (and stops the loading circle).</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
-<dt>message (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>The toast message to show feedback to the user.</p>
+<dt>message (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>The toast message to show feedback to the user.</p>
 </dd>
-<dt>cache_time (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional):</dt><dd><p>For how long this result should be cached on
+<dt>cache_time (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional):</dt><dd><p>For how long this result should be cached on
 the user’s client. Defaults to 0 for no cache.</p>
 </dd>
-<dt>url (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>The URL to be opened in the user’s client. Note that
+<dt>url (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>The URL to be opened in the user’s client. Note that
 the only valid URLs are those of games your bot has,
 or alternatively a ‘t.me/your_bot?start=xyz’ parameter.</p>
 </dd>
-<dt>alert (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>Whether an alert (a pop-up dialog) should be used
-instead of showing a toast. Defaults to <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<dt>alert (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>Whether an alert (a pop-up dialog) should be used
+instead of showing a toast. Defaults to <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -1161,7 +1161,7 @@ Useful for high scores in games.</p>
 this <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.delete" title="telethon.events.callbackquery.CallbackQuery.Event.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a> method. Use a
 <a class="reference internal" href="client.html#telethon.client.telegramclient.TelegramClient" title="telethon.client.telegramclient.TelegramClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.telegramclient.TelegramClient</span></code></a> instance directly.</p>
 <p>This method also creates a task to <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.answer" title="telethon.events.callbackquery.CallbackQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">answer</span></code></a> the callback.</p>
-<p>This method will likely fail if <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a> is <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>This method will likely fail if <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1170,7 +1170,7 @@ this <a class="reference internal" href="#telethon.events.callbackquery.Callback
 <dd><p>Edits the message. Shorthand for
 <a class="reference internal" href="client.html#telethon.client.messages.MessageMethods.edit_message" title="telethon.client.messages.MessageMethods.edit_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.messages.MessageMethods.edit_message</span></code></a> with
 the <code class="docutils literal notranslate"><span class="pre">entity</span></code> set to the correct <a class="reference external" href="https://tl.telethon.dev/?q=InputBotInlineMessageID">InputBotInlineMessageID</a>.</p>
-<p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the edit was successful.</p>
+<p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the edit was successful.</p>
 <p>This method also creates a task to <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.answer" title="telethon.events.callbackquery.CallbackQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">answer</span></code></a> the callback.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1206,7 +1206,7 @@ button is the one who generated this random ID.</p>
 <a class="reference internal" href="client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.messages.MessageMethods.send_message</span></code></a> with
 both <code class="docutils literal notranslate"><span class="pre">entity</span></code> and <code class="docutils literal notranslate"><span class="pre">reply_to</span></code> already set.</p>
 <p>This method also creates a task to <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.answer" title="telethon.events.callbackquery.CallbackQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">answer</span></code></a> the callback.</p>
-<p>This method will likely fail if <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a> is <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>This method will likely fail if <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1216,7 +1216,7 @@ both <code class="docutils literal notranslate"><span class="pre">entity</span><
 <a class="reference internal" href="client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.messages.MessageMethods.send_message</span></code></a> with
 <code class="docutils literal notranslate"><span class="pre">entity</span></code> already set.</p>
 <p>This method also creates a task to <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.answer" title="telethon.events.callbackquery.CallbackQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">answer</span></code></a> the callback.</p>
-<p>This method will likely fail if <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a> is <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>This method will likely fail if <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py property">
@@ -1224,10 +1224,10 @@ both <code class="docutils literal notranslate"><span class="pre">entity</span><
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">via_inline</span></span><a class="headerlink" href="#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="Permalink to this definition"></a></dt>
 <dd><p>Whether this callback was generated from an inline button sent
 via an inline query or not. If the bot sent the message itself
-with buttons, and one of those is clicked, this will be <code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code>.
+with buttons, and one of those is clicked, this will be <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">False</span></code></a>.
 If a user sent the message coming from an inline query to the
-bot, and one of those is clicked, this will be <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<p>If it’s <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>, it’s likely that the bot is <strong>not</strong> in the
+bot, and one of those is clicked, this will be <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>.</p>
+<p>If it’s <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, it’s likely that the bot is <strong>not</strong> in the
 chat, so methods like <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.respond" title="telethon.events.callbackquery.CallbackQuery.Event.respond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">respond</span></code></a> or <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.delete" title="telethon.events.callbackquery.CallbackQuery.Event.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a> won’t work (but
 <a class="reference internal" href="#telethon.events.callbackquery.CallbackQuery.Event.edit" title="telethon.events.callbackquery.CallbackQuery.Event.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit</span></code></a> will always work).</p>
 </dd></dl>
@@ -1265,14 +1265,14 @@ sends an inline query such as <code class="docutils literal notranslate"><span c
 <dt>users (<code class="xref py py-obj docutils literal notranslate"><span class="pre">entity</span></code>, optional):</dt><dd><p>May be one or more entities (username/peer/etc.), preferably IDs.
 By default, only inline queries from these users will be handled.</p>
 </dd>
-<dt>blacklist_users (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>Whether to treat the users as a blacklist instead of
+<dt>blacklist_users (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>Whether to treat the users as a blacklist instead of
 as a whitelist (default). This means that every chat
 will be handled <em>except</em> those specified in <code class="docutils literal notranslate"><span class="pre">users</span></code>
 which will be ignored if <code class="docutils literal notranslate"><span class="pre">blacklist_users=True</span></code>.</p>
 </dd>
-<dt>pattern (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>, optional):</dt><dd><p>If set, only queries matching this pattern will be handled.
+<dt>pattern (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Pattern</span></code>, optional):</dt><dd><p>If set, only queries matching this pattern will be handled.
 You can specify a regex-like string which will be matched
-against the message, a callable function that returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code>
+against the message, a callable function that returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>
 if a message is acceptable, or a compiled regex pattern.</p>
 </dd>
 </dl>
@@ -1317,7 +1317,7 @@ function, which is <code class="docutils literal notranslate"><span class="pre">
 can be given.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
-<dt>results (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional):</dt><dd><p>A list of <a class="reference external" href="https://tl.telethon.dev/?q=InputBotInlineResult">InputBotInlineResult</a> to use.
+<dt>results (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a>, optional):</dt><dd><p>A list of <a class="reference external" href="https://tl.telethon.dev/?q=InputBotInlineResult">InputBotInlineResult</a> to use.
 You should use <a class="reference internal" href="#telethon.events.inlinequery.InlineQuery.Event.builder" title="telethon.events.inlinequery.InlineQuery.Event.builder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">builder</span></code></a> to create these:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">builder</span> <span class="o">=</span> <span class="n">inline</span><span class="o">.</span><span class="n">builder</span>
 <span class="n">r1</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">article</span><span class="p">(</span><span class="s1">&#39;Be nice&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Have a nice day&#39;</span><span class="p">)</span>
@@ -1331,21 +1331,21 @@ Sending more will raise <code class="docutils literal notranslate"><span class="
 and you should consider using <code class="xref py py-obj docutils literal notranslate"><span class="pre">next_offset</span></code> to
 paginate them.</p>
 </dd>
-<dt>cache_time (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, optional):</dt><dd><p>For how long this result should be cached on
+<dt>cache_time (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>, optional):</dt><dd><p>For how long this result should be cached on
 the user’s client. Defaults to 0 for no cache.</p>
 </dd>
-<dt>gallery (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>Whether the results should show as a gallery (grid) or not.</p>
+<dt>gallery (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>Whether the results should show as a gallery (grid) or not.</p>
 </dd>
-<dt>next_offset (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>The offset the client will send when the user scrolls the
+<dt>next_offset (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>The offset the client will send when the user scrolls the
 results and it repeats the request.</p>
 </dd>
-<dt>private (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, optional):</dt><dd><p>Whether the results should be cached by Telegram
+<dt>private (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a>, optional):</dt><dd><p>Whether the results should be cached by Telegram
 (not private) or by the user’s client (private).</p>
 </dd>
-<dt>switch_pm (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>If set, this text will be shown in the results
+<dt>switch_pm (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>If set, this text will be shown in the results
 to allow the user to switch to private messages.</p>
 </dd>
-<dt>switch_pm_param (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional):</dt><dd><p>Optional parameter to start the bot with if
+<dt>switch_pm_param (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></a>, optional):</dt><dd><p>Optional parameter to start the bot with if
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">switch_pm</span></code> was used.</p>
 </dd>
 </dl>
@@ -1499,7 +1499,7 @@ Shorthand for
 caption if no caption is set, iff it’s outgoing. Shorthand for
 <a class="reference internal" href="client.html#telethon.client.messages.MessageMethods.edit_message" title="telethon.client.messages.MessageMethods.edit_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.messages.MessageMethods.edit_message</span></code></a>
 with both <code class="docutils literal notranslate"><span class="pre">entity</span></code> and <code class="docutils literal notranslate"><span class="pre">message</span></code> already set.</p>
-<p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> if the message was incoming,
+<p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> if the message was incoming,
 or the edited <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> otherwise.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1507,7 +1507,7 @@ or the edited <code class="xref py py-obj docutils literal notranslate"><span cl
 and <strong>will respect</strong> the previous state of the message.
 For example, if the message didn’t have a link preview,
 the edit won’t add one by default, and you should force
-it by setting it to <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if you want it.</p>
+it by setting it to <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if you want it.</p>
 <p>This is generally the most desired and convenient behaviour,
 and will work for link previews and message buttons.</p>
 </div>
@@ -1532,7 +1532,7 @@ with both <code class="docutils literal notranslate"><span class="pre">messages<
 <dt class="sig sig-object py" id="telethon.events.album.Album.Event.get_reply_message">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_reply_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.album.Album.Event.get_reply_message" title="Permalink to this definition"></a></dt>
 <dd><p>The <a class="reference internal" href="custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>
-that this album is replying to, or <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>.</p>
+that this album is replying to, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p>
 <p>The result will be cached after its first use.</p>
 </dd></dl>
 
@@ -1545,7 +1545,7 @@ that this album is replying to, or <code class="xref py py-obj docutils literal 
 <dl class="py property">
 <dt class="sig sig-object py" id="telethon.events.album.Album.Event.is_reply">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_reply</span></span><a class="headerlink" href="#telethon.events.album.Album.Event.is_reply" title="Permalink to this definition"></a></dt>
-<dd><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the album is a reply to some other message.</p>
+<dd><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the album is a reply to some other message.</p>
 <p>Remember that you can access the ID of the message
 this one is replying to through <code class="xref py py-obj docutils literal notranslate"><span class="pre">reply_to_msg_id</span></code>,
 and the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> object with <a class="reference internal" href="#telethon.events.album.Album.Event.get_reply_message" title="telethon.events.album.Album.Event.get_reply_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_reply_message()</span></code></a>.</p>
@@ -1622,7 +1622,7 @@ used, or falsy otherwise. The return value may need to be awaited.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="telethon.events.album.AlbumHack">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.events.album.</span></span><span class="sig-name descname"><span class="pre">AlbumHack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.album.AlbumHack" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>When receiving an album from a different data-center, they will come in
 separate <code class="xref py py-obj docutils literal notranslate"><span class="pre">Updates</span></code>, so we need to temporarily remember them for a while
 and only after produce the event.</p>
@@ -1658,7 +1658,7 @@ handling code is bad enough as it is.</p>
 need these.</p>
 <dl>
 <dt>Args:</dt><dd><dl class="simple">
-<dt>types (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code>, optional):</dt><dd><p>The type or types that the <a class="reference external" href="https://tl.telethon.dev/?q=Update">Update</a> instance must be.
+<dt>types (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code></a> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>, optional):</dt><dd><p>The type or types that the <a class="reference external" href="https://tl.telethon.dev/?q=Update">Update</a> instance must be.
 Equivalent to <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">isinstance(update,</span> <span class="pre">types):</span> <span class="pre">return</span></code>.</p>
 </dd>
 </dl>
@@ -1702,7 +1702,7 @@ used, or falsy otherwise. The return value may need to be awaited.</p>
 <span class="target" id="module-telethon.events"></span><dl class="py exception">
 <dt class="sig sig-object py" id="telethon.events.StopPropagation">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.events.</span></span><span class="sig-name descname"><span class="pre">StopPropagation</span></span><a class="headerlink" href="#telethon.events.StopPropagation" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
 <p>If this exception is raised in any of the handlers for a given event,
 it will stop the execution of all other registered event handlers.
 It can be seen as the <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> in a for loop but for events.</p>
@@ -1733,7 +1733,7 @@ It can be seen as the <code class="docutils literal notranslate"><span class="pr
 <dl class="py function">
 <dt class="sig sig-object py" id="telethon.events.is_handler">
 <span class="sig-prename descclassname"><span class="pre">telethon.events.</span></span><span class="sig-name descname"><span class="pre">is_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.events.is_handler" title="Permalink to this definition"></a></dt>
-<dd><p>Returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the given callback is an
+<dd><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the given callback is an
 event handler (i.e. you used <a class="reference internal" href="#telethon.events.register" title="telethon.events.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register</span></code></a> on it).</p>
 </dd></dl>
 
@@ -1769,7 +1769,7 @@ still want to define themselves as a handler. Example:</p>
 through <code class="docutils literal notranslate"><span class="pre">register(event)(callback)</span></code>.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
-<dt>event (<code class="xref py py-obj docutils literal notranslate"><span class="pre">_EventBuilder</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code>):</dt><dd><p>The event builder class or instance to be used,
+<dt>event (<code class="xref py py-obj docutils literal notranslate"><span class="pre">_EventBuilder</span></code> | <a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">type</span></code></a>):</dt><dd><p>The event builder class or instance to be used,
 for instance <code class="docutils literal notranslate"><span class="pre">events.NewMessage</span></code>.</p>
 </dd>
 </dl>
