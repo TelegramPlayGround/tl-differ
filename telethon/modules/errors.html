@@ -228,7 +228,7 @@ known possible errors and learning to determine what a method may raise.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.AlreadyInConversationError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">AlreadyInConversationError</span></span><a class="headerlink" href="#telethon.errors.common.AlreadyInConversationError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Occurs when another exclusive conversation is opened in the same chat.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.common.AlreadyInConversationError.__weakref__">
@@ -241,7 +241,7 @@ known possible errors and learning to determine what a method may raise.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.BadMessageError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">BadMessageError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.common.BadMessageError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Occurs when handling a bad_message_notification.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.common.BadMessageError.ErrorMessages">
@@ -267,7 +267,7 @@ and its expected hash.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.InvalidBufferError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">InvalidBufferError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.common.InvalidBufferError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#BufferError" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BufferError</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BufferError</span></code></p>
 <p>Occurs when the buffer is invalid, and may contain an HTTP error code.
 For instance, 404 means “forgotten/broken authorization key”, while</p>
 <dl class="py attribute">
@@ -281,7 +281,7 @@ For instance, 404 means “forgotten/broken authorization key”, while</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.InvalidChecksumError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">InvalidChecksumError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checksum</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_checksum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.common.InvalidChecksumError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Occurs when using the TCP full mode and the checksum of a received
 packet doesn’t match the expected checksum.</p>
 <dl class="py attribute">
@@ -295,7 +295,7 @@ packet doesn’t match the expected checksum.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.MultiError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">MultiError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exceptions</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requests</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.common.MultiError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Exception container for multiple <code class="xref py py-obj docutils literal notranslate"><span class="pre">TLRequest</span></code>’s.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.errors.common.MultiError.__new__">
@@ -313,7 +313,7 @@ packet doesn’t match the expected checksum.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.ReadCancelledError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">ReadCancelledError</span></span><a class="headerlink" href="#telethon.errors.common.ReadCancelledError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Occurs when a read operation was cancelled.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.common.ReadCancelledError.__weakref__">
@@ -326,7 +326,7 @@ packet doesn’t match the expected checksum.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.SecurityError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">SecurityError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.common.SecurityError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Generic security error, mostly used when generating a new AuthKey.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="telethon.errors.common.SecurityError.__weakref__">
@@ -339,7 +339,7 @@ packet doesn’t match the expected checksum.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.common.TypeNotFoundError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.common.</span></span><span class="sig-name descname"><span class="pre">TypeNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">invalid_constructor_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remaining</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.common.TypeNotFoundError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Occurs when a type is not found, for example,
 when trying to read a TLObject with an invalid constructor code.</p>
 <dl class="py attribute">
@@ -468,7 +468,7 @@ someone who has blacklisted the current user.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.RPCError">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">telethon.errors.rpcbaseerrors.</span></span><span class="sig-name descname"><span class="pre">RPCError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#telethon.errors.rpcbaseerrors.RPCError" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.11)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Base class for all Remote Procedure Call errors.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="telethon.errors.rpcbaseerrors.RPCError.__reduce__">
