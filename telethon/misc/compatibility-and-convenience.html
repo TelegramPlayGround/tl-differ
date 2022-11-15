@@ -137,7 +137,7 @@
              
   <section id="compatibility-and-convenience">
 <span id="id1"></span><h1><a class="toc-backref" href="#id2">Compatibility and Convenience</a><a class="headerlink" href="#compatibility-and-convenience" title="Permalink to this heading"></a></h1>
-<p>Telethon is an <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> library. Compatibility is an important concern,
+<p>Telethon is an <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> library. Compatibility is an important concern,
 and while it can’t always be kept and mistakes happens, the <a class="reference internal" href="changelog.html#changelog"><span class="std std-ref">Changelog (Version History)</span></a>
 is there to tell you when these important changes happen.</p>
 <div class="contents topic" id="contents">
@@ -157,7 +157,7 @@ is there to tell you when these important changes happen.</p>
 <h2><a class="toc-backref" href="#id3">Compatibility</a><a class="headerlink" href="#compatibility" title="Permalink to this heading"></a></h2>
 <p>Some decisions when developing will inevitable be proven wrong in the future.
 One of these decisions was using threads. Now that Python 3.4 is reaching EOL
-and using <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> is usable as of Python 3.5 it makes sense for a library
+and using <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> is usable as of Python 3.5 it makes sense for a library
 like Telethon to make a good use of it.</p>
 <p>If you have old code, <strong>just use old versions</strong> of the library! There is
 nothing wrong with that other than not getting new updates or fixes, but
@@ -169,7 +169,7 @@ is that people don’t have time to upgrade, and there has been several changes
 and clean-ups. Using an older version is the right way to go.</p>
 <p>Sometimes, other small decisions are made. These all will be reflected in the
 <a class="reference internal" href="changelog.html#changelog"><span class="std std-ref">Changelog (Version History)</span></a> which you should read when upgrading.</p>
-<p>If you want to jump the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> boat, here are some of the things you will
+<p>If you want to jump the <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> boat, here are some of the things you will
 need to start migrating really old code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Import the client from telethon.sync</span>
 <span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
@@ -219,7 +219,7 @@ the chat or sender. If you don’t use updates, you’re done!</p>
 <p>This makes the examples shorter and easier to think about.</p>
 </div>
 <p>For quick scripts that don’t need updates, it’s a lot more convenient to
-forget about <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> and just work with sequential code. This can prove
+forget about <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> and just work with sequential code. This can prove
 to be a powerful hybrid for running under the Python REPL too.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.sync</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
 <span class="c1">#            ^~~~~ note this part; it will manage the asyncio loop for you</span>
@@ -296,12 +296,12 @@ overhead you pay if you import it, and what you save if you don’t.</p>
 </section>
 <section id="learning">
 <h2><a class="toc-backref" href="#id6">Learning</a><a class="headerlink" href="#learning" title="Permalink to this heading"></a></h2>
-<p>You know the library uses <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> everywhere, and you want to learn
-how to do things right. Even though <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> is its own topic, the
+<p>You know the library uses <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> everywhere, and you want to learn
+how to do things right. Even though <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> is its own topic, the
 documentation wants you to learn how to use Telethon correctly, and for
-that, you need to use <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> correctly too. For this reason, there
+that, you need to use <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> correctly too. For this reason, there
 is a section called <a class="reference internal" href="../concepts/asyncio.html#mastering-asyncio"><span class="std std-ref">Mastering asyncio</span></a> that will introduce you to
-the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> world, with links to more resources for learning how to
+the <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code> world, with links to more resources for learning how to
 use it. Feel free to check that section out once you have read the rest.</p>
 </section>
 </section>

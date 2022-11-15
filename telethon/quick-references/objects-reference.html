@@ -199,13 +199,13 @@ and some of the objects below do too, so it’s important to know its methods.</
 <td><p>Returns the marked chat integer ID.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.is_private" title="telethon.tl.custom.chatgetter.ChatGetter.is_private"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_private</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message was sent as a private message.</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the message was sent as a private message.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.is_group" title="telethon.tl.custom.chatgetter.ChatGetter.is_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_group</span></code></a></p></td>
 <td><p>True if the message was sent on a group or megagroup.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.is_channel" title="telethon.tl.custom.chatgetter.ChatGetter.is_channel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_channel</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message was sent on a megagroup or channel.</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the message was sent on a megagroup or channel.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.get_chat" title="telethon.tl.custom.chatgetter.ChatGetter.get_chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_chat</span></code></a></p></td>
 <td><p>Returns <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter.chat" title="telethon.tl.custom.chatgetter.ChatGetter.chat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat</span></code></a>, but will make an API call to find the chat unless it's already cached.</p></td>
@@ -272,7 +272,7 @@ in events, when fetching history, replies, etc.</p>
 <td><p>The raw message text, ignoring any formatting.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.is_reply" title="telethon.tl.custom.message.Message.is_reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_reply</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the message is a reply to some other message.</p></td>
+<td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> if the message is a reply to some other message.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.forward" title="telethon.tl.custom.message.Message.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a></p></td>
 <td><p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a> information if this message is a forwarded message.</p></td>
@@ -370,7 +370,7 @@ in events, when fetching history, replies, etc.</p>
 <td><p>Deletes the message.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_reply_message" title="telethon.tl.custom.message.Message.get_reply_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_reply_message</span></code></a></p></td>
-<td><p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> that this message is replying to, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></td>
+<td><p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> that this message is replying to, or <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.click" title="telethon.tl.custom.message.Message.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">click</span></code></a></p></td>
 <td><p>Calls <a class="reference external" href="https://tl.telethon.dev/?q=SendVote">SendVote</a> with the specified poll option or <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.messagebutton.MessageButton.click" title="telethon.tl.custom.messagebutton.MessageButton.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">button.click</span></code></a> on the specified button.</p></td>
@@ -763,7 +763,7 @@ you call <a class="reference internal" href="../modules/client.html#telethon.cli
 <td><p>Sends the contents of this draft to the dialog.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.delete" title="telethon.tl.custom.draft.Draft.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
-<td><p>Deletes this draft, and returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> on success.</p></td>
+<td><p>Deletes this draft, and returns <code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code> on success.</p></td>
 </tr>
 </tbody>
 </table>

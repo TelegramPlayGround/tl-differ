@@ -146,7 +146,7 @@ can access all the properties it has, like <code class="docutils literal notrans
 <p><strong>However</strong> events are different to other methods in the client, like
 <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.get_messages" title="telethon.client.messages.MessageMethods.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages</span></code></a>.
 Events <em>may not</em> send information about the sender or chat, which means it
-can be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>, but all the methods defined in the client always have this
+can be <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code>, but all the methods defined in the client always have this
 information so it doesn’t need to be re-fetched. For this reason, you have
 <code class="docutils literal notranslate"><span class="pre">get_</span></code> methods, which will make a network call if necessary.</p>
 <p>In short, you should do this:</p>
@@ -222,7 +222,7 @@ you can explicitly pass the event handler to use to the mentioned
 <p>Similarly, you also have <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.remove_event_handler" title="telethon.client.updates.UpdateMethods.remove_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.remove_event_handler</span></code></a>
 and <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.list_event_handlers" title="telethon.client.updates.UpdateMethods.list_event_handlers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.list_event_handlers</span></code></a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">event</span></code> argument is optional in all three methods and defaults to
-<a class="reference internal" href="../modules/events.html#telethon.events.raw.Raw" title="telethon.events.raw.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Raw</span></code></a> for adding, and <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> when
+<a class="reference internal" href="../modules/events.html#telethon.events.raw.Raw" title="telethon.events.raw.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Raw</span></code></a> for adding, and <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code> when
 removing (so all callbacks would be removed).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -259,11 +259,11 @@ the methods reference.</p>
 </section>
 <section id="understanding-asyncio">
 <h2>Understanding asyncio<a class="headerlink" href="#understanding-asyncio" title="Permalink to this heading"></a></h2>
-<p>With <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>, the library has several tasks running in the background.
+<p>With <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code>, the library has several tasks running in the background.
 One task is used for sending requests, another task is used to receive them,
 and a third one is used to handle updates.</p>
 <p>To handle updates, you must keep your script running. You can do this in
-several ways. For instance, if you are <em>not</em> running <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>’s event
+several ways. For instance, if you are <em>not</em> running <code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code>’s event
 loop, you should use <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 <span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span>
