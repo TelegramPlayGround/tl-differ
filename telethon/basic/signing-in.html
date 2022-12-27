@@ -186,7 +186,7 @@ the client from there and it will fail with an error such as
 <p>In the first line, we import the class name so we can create an instance
 of the client. Then, we define variables to store our API ID and hash
 conveniently.</p>
-<p>At last, we create a new <a class="reference internal" href="../modules/client.html#telethon.client.telegramclient.TelegramClient" title="telethon.client.telegramclient.TelegramClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TelegramClient</span></code></a>
+<p>At last, we create a new <code class="xref py py-obj docutils literal notranslate"><span class="pre">TelegramClient</span></code>
 instance and call it <code class="docutils literal notranslate"><span class="pre">client</span></code>. We can now use the client variable
 for anything that we want, such as sending a message to ourselves.</p>
 <div class="admonition note">
@@ -198,7 +198,7 @@ making an <code class="docutils literal notranslate"><span class="pre">async</sp
 <p>See <a class="reference internal" href="../concepts/asyncio.html#mastering-asyncio"><span class="std std-ref">Mastering asyncio</span></a> to find out more.</p>
 </div>
 <p>Using a <code class="docutils literal notranslate"><span class="pre">with</span></code> block is the preferred way to use the library. It will
-automatically <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start()</span></code></a> the client,
+automatically <code class="xref py py-obj docutils literal notranslate"><span class="pre">start()</span></code> the client,
 logging or signing up if necessary.</p>
 <p>If the <code class="docutils literal notranslate"><span class="pre">.session</span></code> file already existed, it will not login
 again, so be aware of this if you move or rename the file!</p>

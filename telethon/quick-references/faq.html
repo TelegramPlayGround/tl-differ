@@ -304,10 +304,10 @@ won’t do unnecessary work unless you need to:</p>
 <h2><a class="toc-backref" href="#id11">What does “bases ChatGetter” mean?</a><a class="headerlink" href="#what-does-bases-chatgetter-mean" title="Permalink to this heading"></a></h2>
 <p>In Python, classes can base others. This is called <a class="reference external" href="https://ddg.gg/python%20inheritance">inheritance</a>. What it means is that
 “if a class bases another, you can use the other’s methods too”.</p>
-<p>For example, <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> <em>bases</em>
-<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>. In turn,
-<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a> defines
-things like <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj.chat_id</span></code></a>.</p>
+<p>For example, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> <em>bases</em>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>. In turn,
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code> defines
+things like <code class="xref py py-obj docutils literal notranslate"><span class="pre">obj.chat_id</span></code>.</p>
 <p>So if you have a message, you can access that too:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ChatGetter has a chat_id property, and Message bases ChatGetter.</span>
 <span class="c1"># Thus you can use ChatGetter properties and methods from Message</span>

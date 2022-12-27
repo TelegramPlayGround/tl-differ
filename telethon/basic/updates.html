@@ -180,15 +180,15 @@ Nothing we don’t know already.</p>
 </pre></div>
 </div>
 <p>This Python decorator will attach itself to the <code class="docutils literal notranslate"><span class="pre">my_event_handler</span></code>
-definition, and basically means that <em>on</em> a <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a> <em>event</em>,
+definition, and basically means that <em>on</em> a <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code> <em>event</em>,
 the callback function you’re about to define will be called:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">def</span> <span class="nf">my_event_handler</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="k">if</span> <span class="s1">&#39;hello&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">raw_text</span><span class="p">:</span>
         <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;hi!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If a <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a> event occurs,
-and <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> is in the text of the message, we <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.reply" title="telethon.tl.custom.message.Message.reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reply()</span></code></a> to the event
+<p>If a <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code> event occurs,
+and <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> is in the text of the message, we <code class="xref py py-obj docutils literal notranslate"><span class="pre">reply()</span></code> to the event
 with a <code class="docutils literal notranslate"><span class="pre">'hi!'</span></code> message.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -227,7 +227,7 @@ and download their profile photo.</p>
 <p>With the <code class="docutils literal notranslate"><span class="pre">r'(?i).*heck'</span></code> regex, we match case-insensitive
 “heck” anywhere in the message. Regex is very powerful and you
 can learn more at <a class="reference external" href="https://regexone.com/">https://regexone.com/</a>.</p>
-<p>So far, we have only seen the <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a>, but there are many more
+<p>So far, we have only seen the <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code>, but there are many more
 which will be covered later. This is only a small introduction to updates.</p>
 </section>
 <section id="entities">

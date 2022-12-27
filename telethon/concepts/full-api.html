@@ -155,7 +155,7 @@ can also do <code class="docutils literal notranslate"><span class="pre">from</s
 <p>You should also refer to the documentation to see what the objects
 (constructors) Telegram returns look like. Every constructor inherits
 from a common type, and that’s the reason for this distinction.</p>
-<p>Say <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code></a> didn’t exist,
+<p>Say <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code> didn’t exist,
 we could <a class="reference external" href="https://tl.telethon.dev/?q=message&amp;redirect=no">use the search</a> to look for “message”. There we would find
 <a class="reference external" href="https://tl.telethon.dev/?q=SendMessageRequest">SendMessageRequest</a>, which we can work with.</p>
 <p>Every request is a Python class, and has the parameters needed for you
@@ -180,7 +180,7 @@ construct one, for instance:</p>
 <span class="n">peer</span> <span class="o">=</span> <span class="n">InputPeerUser</span><span class="p">(</span><span class="n">user_id</span><span class="p">,</span> <span class="n">user_hash</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Or we call <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code></a>:</p>
+<p>Or we call <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">telethon</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -196,10 +196,10 @@ Every full API example assumes you already know and do this.</p>
 </div>
 <p>When you’re going to invoke an API method, most require you to pass an
 <a class="reference external" href="https://tl.telethon.dev/?q=InputUser">InputUser</a>, <a class="reference external" href="https://tl.telethon.dev/?q=InputChat">InputChat</a>, or so on, this is why using
-<a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code></a>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code>
 is more straightforward (and often immediate, if you’ve seen the user before,
 know their ID, etc.). If you also <strong>need</strong> to have information about the whole
-user, use <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_entity" title="telethon.client.users.UserMethods.get_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity()</span></code></a>
+user, use <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity()</span></code>
 instead:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">entity</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_entity</span><span class="p">(</span><span class="s1">&#39;someone&#39;</span><span class="p">)</span>
 </pre></div>
@@ -215,11 +215,11 @@ every time its used, simply call <a class="reference internal" href="../modules/
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">v0.16.2</span></code> this is further simplified. The <code class="docutils literal notranslate"><span class="pre">Request</span></code> itself
-will call <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity</span></code></a> for you when
+will call <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity</span></code> for you when
 required, but it’s good to remember what’s happening.</p>
 </div>
-<p>After this small parenthesis about <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_entity" title="telethon.client.users.UserMethods.get_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity</span></code></a> versus
-<a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code></a>,
+<p>After this small parenthesis about <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity</span></code> versus
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code>,
 we have everything we need. To invoke our
 request we do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">(</span><span class="n">SendMessageRequest</span><span class="p">(</span><span class="n">peer</span><span class="p">,</span> <span class="s1">&#39;Hello there!&#39;</span><span class="p">))</span>

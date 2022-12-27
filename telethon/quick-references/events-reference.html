@@ -151,7 +151,7 @@ events to find out what arguments it allows on creation and
 its <strong>attributes</strong> (the properties will be shown here).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Remember that <strong>all events base</strong> <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.chatgetter.ChatGetter" title="telethon.tl.custom.chatgetter.ChatGetter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code></a>! Please see <a class="reference internal" href="faq.html#faq"><span class="std std-ref">FAQ</span></a>
+<p>Remember that <strong>all events base</strong> <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>! Please see <a class="reference internal" href="faq.html#faq"><span class="std std-ref">FAQ</span></a>
 if you don’t know what this means or the implications of it.</p>
 </div>
 <div class="contents topic" id="contents">
@@ -179,23 +179,23 @@ if you don’t know what this means or the implications of it.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The new message event <strong>should be treated as</strong> a
-normal <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>, with
+normal <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code>, with
 the following exceptions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pattern_match</span></code> is the match object returned by <code class="docutils literal notranslate"><span class="pre">pattern=</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code> is <strong>not</strong> the message string. It’s the <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code> is <strong>not</strong> the message string. It’s the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> object.</p></li>
 </ul>
 <p>Remember, this event is just a proxy over the message, so while
 you won’t see its attributes and properties, you can still access
 them. Please see the full documentation for examples.</p>
 </div>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code>.</p>
 </section>
 <section id="messageedited">
 <h2><a class="toc-backref" href="#id3">MessageEdited</a><a class="headerlink" href="#messageedited" title="Permalink to this heading"></a></h2>
-<p>Occurs whenever a message is edited. Just like <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code></a>, you should treat
-this event as a <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a>.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.messageedited.MessageEdited" title="telethon.events.messageedited.MessageEdited"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEdited</span></code></a>.</p>
+<p>Occurs whenever a message is edited. Just like <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code>, you should treat
+this event as a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEdited</span></code>.</p>
 </section>
 <section id="messagedeleted">
 <h2><a class="toc-backref" href="#id4">MessageDeleted</a><a class="headerlink" href="#messagedeleted" title="Permalink to this heading"></a></h2>
@@ -204,30 +204,18 @@ reliable, since Telegram doesn’t always notify the clients that a message
 was deleted.</p>
 <p>It only has the <code class="docutils literal notranslate"><span class="pre">deleted_id</span></code> and <code class="docutils literal notranslate"><span class="pre">deleted_ids</span></code> attributes
 (in addition to the chat if the deletion happened in a channel).</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.messagedeleted.MessageDeleted" title="telethon.events.messagedeleted.MessageDeleted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageDeleted</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageDeleted</span></code>.</p>
 </section>
 <section id="messageread">
 <h2><a class="toc-backref" href="#id5">MessageRead</a><a class="headerlink" href="#messageread" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever one or more messages are read in a chat.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead" title="telethon.events.messageread.MessageRead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageRead</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageRead</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead.Event.inbox" title="telethon.events.messageread.MessageRead.Event.inbox"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inbox</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if you have read someone else's messages.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead.Event.message_ids" title="telethon.events.messageread.MessageRead.Event.message_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message_ids</span></code></a></p></td>
-<td><p>The IDs of the messages <strong>which contents'</strong> were read.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead.Event.get_messages" title="telethon.events.messageread.MessageRead.Event.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_messages</span></code></a></p></td>
-<td><p>Returns the list of <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> <strong>which contents'</strong> were read.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead.Event.is_read" title="telethon.events.messageread.MessageRead.Event.is_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_read</span></code></a></p></td>
-<td><p>Returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the given message (or its ID) has been read.</p></td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -235,148 +223,28 @@ was deleted.</p>
 <h2><a class="toc-backref" href="#id6">ChatAction</a><a class="headerlink" href="#chataction" title="Permalink to this heading"></a></h2>
 <p>Occurs on certain chat actions, such as chat title changes,
 user join or leaves, pinned messages, photo changes, etc.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction" title="telethon.events.chataction.ChatAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatAction</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatAction</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.added_by" title="telethon.events.chataction.ChatAction.Event.added_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">added_by</span></code></a></p></td>
-<td><p>The user who added <code class="docutils literal notranslate"><span class="pre">users</span></code>, if applicable (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> otherwise).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.kicked_by" title="telethon.events.chataction.ChatAction.Event.kicked_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kicked_by</span></code></a></p></td>
-<td><p>The user who kicked <code class="docutils literal notranslate"><span class="pre">users</span></code>, if applicable (<a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> otherwise).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.user" title="telethon.events.chataction.ChatAction.Event.user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user</span></code></a></p></td>
-<td><p>The first user that takes part in this action.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.input_user" title="telethon.events.chataction.ChatAction.Event.input_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_user</span></code></a></p></td>
-<td><p>Input version of the <code class="docutils literal notranslate"><span class="pre">self.user</span></code> property.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.user_id" title="telethon.events.chataction.ChatAction.Event.user_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user_id</span></code></a></p></td>
-<td><p>Returns the marked signed ID of the first user, if any.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.users" title="telethon.events.chataction.ChatAction.Event.users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">users</span></code></a></p></td>
-<td><p>A list of users that take part in this action.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.input_users" title="telethon.events.chataction.ChatAction.Event.input_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_users</span></code></a></p></td>
-<td><p>Input version of the <code class="docutils literal notranslate"><span class="pre">self.users</span></code> property.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.user_ids" title="telethon.events.chataction.ChatAction.Event.user_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user_ids</span></code></a></p></td>
-<td><p>Returns the marked signed ID of the users, if any.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.respond" title="telethon.events.chataction.ChatAction.Event.respond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">respond</span></code></a></p></td>
-<td><p>Responds to the chat action message (not as a reply).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.reply" title="telethon.events.chataction.ChatAction.Event.reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reply</span></code></a></p></td>
-<td><p>Replies to the chat action message (as a reply).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.delete" title="telethon.events.chataction.ChatAction.Event.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
-<td><p>Deletes the chat action message.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_pinned_message" title="telethon.events.chataction.ChatAction.Event.get_pinned_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_pinned_message</span></code></a></p></td>
-<td><p>If <code class="docutils literal notranslate"><span class="pre">new_pin</span></code> is <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a>, this returns the <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> object that was pinned.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_added_by" title="telethon.events.chataction.ChatAction.Event.get_added_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_added_by</span></code></a></p></td>
-<td><p>Returns <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.added_by" title="telethon.events.chataction.ChatAction.Event.added_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">added_by</span></code></a> but will make an API call if necessary.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_kicked_by" title="telethon.events.chataction.ChatAction.Event.get_kicked_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kicked_by</span></code></a></p></td>
-<td><p>Returns <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.kicked_by" title="telethon.events.chataction.ChatAction.Event.kicked_by"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kicked_by</span></code></a> but will make an API call if necessary.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_user" title="telethon.events.chataction.ChatAction.Event.get_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_user</span></code></a></p></td>
-<td><p>Returns <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.user" title="telethon.events.chataction.ChatAction.Event.user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user</span></code></a> but will make an API call if necessary.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_input_user" title="telethon.events.chataction.ChatAction.Event.get_input_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_user</span></code></a></p></td>
-<td><p>Returns <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.input_user" title="telethon.events.chataction.ChatAction.Event.input_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_user</span></code></a> but will make an API call if necessary.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_users" title="telethon.events.chataction.ChatAction.Event.get_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_users</span></code></a></p></td>
-<td><p>Returns <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.users" title="telethon.events.chataction.ChatAction.Event.users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">users</span></code></a> but will make an API call if necessary.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.get_input_users" title="telethon.events.chataction.ChatAction.Event.get_input_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_users</span></code></a></p></td>
-<td><p>Returns <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction.Event.input_users" title="telethon.events.chataction.ChatAction.Event.input_users"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_users</span></code></a> but will make an API call if necessary.</p></td>
-</tr>
 </tbody>
 </table>
 </section>
 <section id="userupdate">
 <h2><a class="toc-backref" href="#id7">UserUpdate</a><a class="headerlink" href="#userupdate" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a user goes online, starts typing, etc.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate" title="telethon.events.userupdate.UserUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UserUpdate</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">UserUpdate</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.user" title="telethon.events.userupdate.UserUpdate.Event.user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user</span></code></a></p></td>
-<td><p>Alias for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.sender" title="telethon.tl.custom.sendergetter.SenderGetter.sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sender</span></code></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.input_user" title="telethon.events.userupdate.UserUpdate.Event.input_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_user</span></code></a></p></td>
-<td><p>Alias for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.input_sender" title="telethon.tl.custom.sendergetter.SenderGetter.input_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_sender</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.user_id" title="telethon.events.userupdate.UserUpdate.Event.user_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">user_id</span></code></a></p></td>
-<td><p>Alias for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.sender_id" title="telethon.tl.custom.sendergetter.SenderGetter.sender_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sender_id</span></code></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.get_user" title="telethon.events.userupdate.UserUpdate.Event.get_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_user</span></code></a></p></td>
-<td><p>Alias for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.get_sender" title="telethon.tl.custom.sendergetter.SenderGetter.get_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_sender</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.get_input_user" title="telethon.events.userupdate.UserUpdate.Event.get_input_user"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_user</span></code></a></p></td>
-<td><p>Alias for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.sendergetter.SenderGetter.get_input_sender" title="telethon.tl.custom.sendergetter.SenderGetter.get_input_sender"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_sender</span></code></a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.typing" title="telethon.events.userupdate.UserUpdate.Event.typing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typing</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is typing a message.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.uploading" title="telethon.events.userupdate.UserUpdate.Event.uploading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uploading</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is uploading something.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.recording" title="telethon.events.userupdate.UserUpdate.Event.recording"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recording</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is recording something.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.playing" title="telethon.events.userupdate.UserUpdate.Event.playing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">playing</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action is playing a game.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.cancel" title="telethon.events.userupdate.UserUpdate.Event.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cancel</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the action was cancelling other actions.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.geo" title="telethon.events.userupdate.UserUpdate.Event.geo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geo</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being uploaded is a geo.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.audio" title="telethon.events.userupdate.UserUpdate.Event.audio"><code class="xref py py-obj docutils literal notranslate"><span class="pre">audio</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being recorded/uploaded is an audio.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.round" title="telethon.events.userupdate.UserUpdate.Event.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being recorded/uploaded is a round video.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.video" title="telethon.events.userupdate.UserUpdate.Event.video"><code class="xref py py-obj docutils literal notranslate"><span class="pre">video</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being recorded/uploaded is an video.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.contact" title="telethon.events.userupdate.UserUpdate.Event.contact"><code class="xref py py-obj docutils literal notranslate"><span class="pre">contact</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being uploaded (selected) is a contact.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.document" title="telethon.events.userupdate.UserUpdate.Event.document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">document</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being uploaded is document.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.photo" title="telethon.events.userupdate.UserUpdate.Event.photo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">photo</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if what's being uploaded is a photo.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.last_seen" title="telethon.events.userupdate.UserUpdate.Event.last_seen"><code class="xref py py-obj docutils literal notranslate"><span class="pre">last_seen</span></code></a></p></td>
-<td><p>Exact <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> when the user was last seen if known.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.until" title="telethon.events.userupdate.UserUpdate.Event.until"><code class="xref py py-obj docutils literal notranslate"><span class="pre">until</span></code></a></p></td>
-<td><p>The <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">datetime.datetime</span></code></a> until when the user should appear online.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.online" title="telethon.events.userupdate.UserUpdate.Event.online"><code class="xref py py-obj docutils literal notranslate"><span class="pre">online</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user is currently online,</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.recently" title="telethon.events.userupdate.UserUpdate.Event.recently"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recently</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was seen within a day.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.within_weeks" title="telethon.events.userupdate.UserUpdate.Event.within_weeks"><code class="xref py py-obj docutils literal notranslate"><span class="pre">within_weeks</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was seen within 7 days.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate.Event.within_months" title="telethon.events.userupdate.UserUpdate.Event.within_months"><code class="xref py py-obj docutils literal notranslate"><span class="pre">within_months</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the user was seen within 30 days.</p></td>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#module-typing" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typing</span></code></a></p></td>
+<td><p>The typing module: Support for gradual typing as defined by PEP 484.</p></td>
 </tr>
 </tbody>
 </table>
@@ -385,46 +253,13 @@ user join or leaves, pinned messages, photo changes, etc.</p>
 <h2><a class="toc-backref" href="#id8">CallbackQuery</a><a class="headerlink" href="#callbackquery" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you sign in as a bot and a user
 clicks one of the inline buttons on your messages.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.id" title="telethon.events.callbackquery.CallbackQuery.Event.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
-<td><p>Returns the query ID.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.message_id" title="telethon.events.callbackquery.CallbackQuery.Event.message_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message_id</span></code></a></p></td>
-<td><p>Returns the message ID to which the clicked inline button belongs.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.data" title="telethon.events.callbackquery.CallbackQuery.Event.data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></a></p></td>
-<td><p>Returns the data payload from the original inline button.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.chat_instance" title="telethon.events.callbackquery.CallbackQuery.Event.chat_instance"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chat_instance</span></code></a></p></td>
-<td><p>Unique identifier for the chat where the callback occurred.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.via_inline" title="telethon.events.callbackquery.CallbackQuery.Event.via_inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">via_inline</span></code></a></p></td>
-<td><p>Whether this callback was generated from an inline button sent via an inline query or not.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.respond" title="telethon.events.callbackquery.CallbackQuery.Event.respond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">respond</span></code></a></p></td>
-<td><p>Responds to the message (not as a reply).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.reply" title="telethon.events.callbackquery.CallbackQuery.Event.reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reply</span></code></a></p></td>
-<td><p>Replies to the message (as a reply).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.edit" title="telethon.events.callbackquery.CallbackQuery.Event.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit</span></code></a></p></td>
-<td><p>Edits the message.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.delete" title="telethon.events.callbackquery.CallbackQuery.Event.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
-<td><p>Deletes the message.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.answer" title="telethon.events.callbackquery.CallbackQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">answer</span></code></a></p></td>
-<td><p>Answers the callback query (and stops the loading circle).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.get_message" title="telethon.events.callbackquery.CallbackQuery.Event.get_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_message</span></code></a></p></td>
-<td><p>Returns the message to which the clicked inline button belongs.</p></td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -432,83 +267,26 @@ clicks one of the inline buttons on your messages.</p>
 <h2><a class="toc-backref" href="#id9">InlineQuery</a><a class="headerlink" href="#inlinequery" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you sign in as a bot and a user
 sends an inline query such as <code class="docutils literal notranslate"><span class="pre">&#64;bot</span> <span class="pre">query</span></code>.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery" title="telethon.events.inlinequery.InlineQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineQuery</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineQuery</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.id" title="telethon.events.inlinequery.InlineQuery.Event.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
-<td><p>Returns the unique identifier for the query ID.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.text" title="telethon.events.inlinequery.InlineQuery.Event.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code></a></p></td>
-<td><p>Returns the text the user used to make the inline query.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.offset" title="telethon.events.inlinequery.InlineQuery.Event.offset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">offset</span></code></a></p></td>
-<td><p>The string the user's client used as an offset for the query.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.geo" title="telethon.events.inlinequery.InlineQuery.Event.geo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geo</span></code></a></p></td>
-<td><p>If the user location is requested when using inline mode and the user's device is able to send it, this will return the <a class="reference external" href="https://tl.telethon.dev/?q=GeoPoint">GeoPoint</a> with the position of the user.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.builder" title="telethon.events.inlinequery.InlineQuery.Event.builder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">builder</span></code></a></p></td>
-<td><p>Returns a new <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlinebuilder.InlineBuilder" title="telethon.tl.custom.inlinebuilder.InlineBuilder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineBuilder</span></code></a> instance.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.answer" title="telethon.events.inlinequery.InlineQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">answer</span></code></a></p></td>
-<td><p>Answers the inline query with the given results.</p></td>
-</tr>
 </tbody>
 </table>
 </section>
 <section id="album">
 <h2><a class="toc-backref" href="#id10">Album</a><a class="headerlink" href="#album" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you receive an entire album.</p>
-<p>Full documentation for the <a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Album</span></code></a>.</p>
+<p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Album</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.grouped_id" title="telethon.events.album.Album.Event.grouped_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grouped_id</span></code></a></p></td>
-<td><p>The shared <code class="docutils literal notranslate"><span class="pre">grouped_id</span></code> between all the messages.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.text" title="telethon.events.album.Album.Event.text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text</span></code></a></p></td>
-<td><p>The message text of the first photo with a caption, formatted using the client's default parse mode.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.raw_text" title="telethon.events.album.Album.Event.raw_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_text</span></code></a></p></td>
-<td><p>The raw message text of the first photo with a caption, ignoring any formatting.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.is_reply" title="telethon.events.album.Album.Event.is_reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_reply</span></code></a></p></td>
-<td><p><a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> if the album is a reply to some other message.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.forward" title="telethon.events.album.Album.Event.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward</span></code></a></p></td>
-<td><p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a> information for the first message in the album if it was forwarded.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.get_reply_message" title="telethon.events.album.Album.Event.get_reply_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_reply_message</span></code></a></p></td>
-<td><p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> that this album is replying to, or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.respond" title="telethon.events.album.Album.Event.respond"><code class="xref py py-obj docutils literal notranslate"><span class="pre">respond</span></code></a></p></td>
-<td><p>Responds to the album (not as a reply).</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.reply" title="telethon.events.album.Album.Event.reply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reply</span></code></a></p></td>
-<td><p>Replies to the first photo in the album (as a reply).</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.forward_to" title="telethon.events.album.Album.Event.forward_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">forward_to</span></code></a></p></td>
-<td><p>Forwards the entire album.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.edit" title="telethon.events.album.Album.Event.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edit</span></code></a></p></td>
-<td><p>Edits the first caption or the message, or the first messages' caption if no caption is set, iff it's outgoing.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.delete" title="telethon.events.album.Album.Event.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">delete</span></code></a></p></td>
-<td><p>Deletes the entire album.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.mark_read" title="telethon.events.album.Album.Event.mark_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mark_read</span></code></a></p></td>
-<td><p>Marks the entire album as read.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album.Event.pin" title="telethon.events.album.Album.Event.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pin</span></code></a></p></td>
-<td><p>Pins the first photo in the album.</p></td>
-</tr>
 </tbody>
 </table>
 </section>

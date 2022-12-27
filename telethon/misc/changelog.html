@@ -1159,7 +1159,7 @@ You can refer to the following link to see them early:
 <section id="enhancements">
 <h3><a class="toc-backref" href="#id210">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.pin_message" title="telethon.client.messages.MessageMethods.pin_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.pin_message()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.pin_message()</span></code>
 can now pin on a single side in PMs.</p></li>
 <li><p>Iterating participants should now be less expensive floodwait-wise.</p></li>
 </ul>
@@ -1188,9 +1188,9 @@ can now pin on a single side in PMs.</p></li>
 <section id="id1">
 <h3><a class="toc-backref" href="#id213">Enhancements</a><a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>You can now specify a message in <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_stats" title="telethon.client.chats.ChatMethods.get_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_stats()</span></code></a>.</p></li>
+<li><p>You can now specify a message in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_stats()</span></code>.</p></li>
 <li><p>Metadata extraction from audio files with <code class="docutils literal notranslate"><span class="pre">hachoir</span></code> now recognises “artist”.</p></li>
-<li><p>Get default chat permissions by not supplying a user to <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_permissions" title="telethon.client.chats.ChatMethods.get_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_permissions()</span></code></a>.</p></li>
+<li><p>Get default chat permissions by not supplying a user to <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_permissions()</span></code>.</p></li>
 <li><p>You may now use <code class="docutils literal notranslate"><span class="pre">thumb</span></code> when editing messages.</p></li>
 </ul>
 </section>
@@ -1229,7 +1229,7 @@ occurs). This layer change
 <section id="additions">
 <h3><a class="toc-backref" href="#id216">Additions</a><a class="headerlink" href="#additions" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.click" title="telethon.tl.custom.message.Message.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.click()</span></code></a> now supports
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.click()</span></code> now supports
 a <code class="docutils literal notranslate"><span class="pre">password</span></code> parameter, needed when doing things like changing the owner
 of a bot via <a class="reference external" href="https://t.me/BotFather">&#64;BotFather</a>.</p></li>
 </ul>
@@ -1243,9 +1243,9 @@ of a bot via <a class="reference external" href="https://t.me/BotFather">&#64;Bo
 <section id="id4">
 <h3><a class="toc-backref" href="#id218">Bug fixes</a><a class="headerlink" href="#id4" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.edit" title="telethon.tl.custom.message.Message.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.edit</span></code></a> wasn’t working in
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.edit</span></code> wasn’t working in
 your own chat on events other than <code class="docutils literal notranslate"><span class="pre">NewMessage</span></code>.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.delete_dialog" title="telethon.client.dialogs.DialogMethods.delete_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_dialog()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_dialog()</span></code>
 was not working on chats.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">events.UserUpdate</span></code> should now handle channels’ typing status.</p></li>
 <li><p><a class="reference external" href="https://tl.telethon.dev/?q=InputNotifyPeer">InputNotifyPeer</a> auto-cast should now work on other <code class="docutils literal notranslate"><span class="pre">TLObject</span></code>.</p></li>
@@ -1289,8 +1289,8 @@ used for logging purposes, not to emit information others may consume (use
 <section id="id5">
 <h3><a class="toc-backref" href="#id220">Additions</a><a class="headerlink" href="#id5" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <code class="docutils literal notranslate"><span class="pre">comment_to</span></code> parameter in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code></a>, and
-<a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">comment_to</span></code> parameter in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code>, and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code>
 to comment on channel posts.</p></li>
 </ul>
 </section>
@@ -1347,7 +1347,7 @@ release:</p>
 <section id="id8">
 <h3><a class="toc-backref" href="#id224">Additions</a><a class="headerlink" href="#id8" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <code class="docutils literal notranslate"><span class="pre">has_left</span></code> property for user permissions on <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_permissions" title="telethon.client.chats.ChatMethods.get_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_permissions()</span></code></a>.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">has_left</span></code> property for user permissions on <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_permissions()</span></code>.</p></li>
 </ul>
 </section>
 <section id="id9">
@@ -1355,7 +1355,7 @@ release:</p>
 <ul class="simple">
 <li><p>Updated documentation and list of known RPC errors.</p></li>
 <li><p>The library now treats a lack of ping responses as a network error.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.kick_participant" title="telethon.client.chats.ChatMethods.kick_participant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.kick_participant()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.kick_participant()</span></code>
 now returns the service message about the user being kicked, so you can
 delete it.</p></li>
 </ul>
@@ -1369,7 +1369,7 @@ main client, which should reduce the amount of asyncio warnings.</p></li>
 <li><p>Automatic reconnection with no retries was failing.</p></li>
 <li><p><a class="reference external" href="https://tl.telethon.dev/?q=PhotoPathSize">PhotoPathSize</a> is now ignored when determining a download size, since
 this “size” is not a JPEG thumbnail unlike the rest.</p></li>
-<li><p><a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction" title="telethon.events.chataction.ChatAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code></a> should misbehave
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code> should misbehave
 less.</p></li>
 </ul>
 </section>
@@ -1394,11 +1394,11 @@ transparently by Telethon so you don’t need to worry about it.</p>
 <section id="id11">
 <h3><a class="toc-backref" href="#id228">Additions</a><a class="headerlink" href="#id11" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.set_proxy" title="telethon.client.telegrambaseclient.TelegramBaseClient.set_proxy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.set_proxy()</span></code></a> method
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.set_proxy()</span></code> method
 which lets you change the proxy without recreating the client. You will need
 to reconnect for it to take effect, but you won’t need to recreate the
 client. This is also an external contribution.</p></li>
-<li><p>New method to unpin messages <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.unpin_message" title="telethon.client.messages.MessageMethods.unpin_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.unpin_message()</span></code></a>.</p></li>
+<li><p>New method to unpin messages <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.unpin_message()</span></code>.</p></li>
 </ul>
 </section>
 <section id="id12">
@@ -1409,7 +1409,7 @@ client. This is also an external contribution.</p></li>
 will be used instead of <code class="docutils literal notranslate"><span class="pre">pysocks</span></code> for proxy support. This should fix some
 issues with proxy timeouts, because the new library natively supports
 <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a> will
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code> will
 now group any media type, instead of sending non-image documents separatedly.
 This lets you create music albums, for example.</p></li>
 <li><p>You can now search messages with a <code class="docutils literal notranslate"><span class="pre">from_user</span></code> that’s not a user. This is
@@ -1473,8 +1473,8 @@ driving the project on their free time, bug-fixes are not backported.</p>
 after upgrading and using an old session, the session will be updated, which
 means trying to use it back in older versions of the library won’t work.</p>
 <p>For backwards-compatibility sake, the library has introduced the properties
-<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.reply_to_msg_id" title="telethon.tl.custom.message.Message.reply_to_msg_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.reply_to_msg_id</span></code></a>
-and <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.to_id" title="telethon.tl.custom.message.Message.to_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.to_id</span></code></a> that behave
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.reply_to_msg_id</span></code>
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.to_id</span></code> that behave
 like they did before (Telegram has renamed and changed how these fields work).</p>
 <section id="id14">
 <h3><a class="toc-backref" href="#id232">Breaking Changes</a><a class="headerlink" href="#id14" title="Permalink to this heading"></a></h3>
@@ -1483,7 +1483,7 @@ like they did before (Telegram has renamed and changed how these fields work).</
 sender ID (much like old behaviour), replace all uses of <code class="docutils literal notranslate"><span class="pre">.from_id</span></code> with
 <code class="docutils literal notranslate"><span class="pre">.sender_id</span></code>. This will mostly work, but of course in old and new versions
 you have to account for the fact that this sender may no longer be a user.</p></li>
-<li><p>You can no longer assign to <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.reply_to_msg_id" title="telethon.tl.custom.message.Message.reply_to_msg_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.reply_to_msg_id</span></code></a> and <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.to_id" title="telethon.tl.custom.message.Message.to_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.to_id</span></code></a> because these are now properties
+<li><p>You can no longer assign to <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.reply_to_msg_id</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.to_id</span></code> because these are now properties
 that offer a “view” to the real value from a different field.</p></li>
 <li><p>Answering inline queries with a <code class="docutils literal notranslate"><span class="pre">photo</span></code> or <code class="docutils literal notranslate"><span class="pre">document</span></code> will now send the
 photo or document used in the resulting message by default. Not sending the
@@ -1497,22 +1497,22 @@ behaviour. You can use the old behaviour with <code class="docutils literal notr
 <li><p>New <code class="docutils literal notranslate"><span class="pre">raise_last_call_error</span></code> parameter in the client constructor to raise
 the same error produced by the last failing call, rather than a generic
 <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ValueError</span></code></a>.</p></li>
-<li><p>New <code class="docutils literal notranslate"><span class="pre">formatting_entities</span></code> parameter in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code></a>, and
-<a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">formatting_entities</span></code> parameter in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code>, and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code>
 to bypass the parse mode and manually specify the formatting entities.</p></li>
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_permissions" title="telethon.client.chats.ChatMethods.get_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_permissions()</span></code></a>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_permissions()</span></code>
 method to query a participant’s permissions in a group or channel. This
 request is slightly expensive in small group chats because it has to fetch
 the entire chat to check just a user, so use of a cache is advised.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.click" title="telethon.tl.custom.message.Message.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.click()</span></code></a> now works on
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.click()</span></code> now works on
 normal polls!</p></li>
 <li><p>New <code class="docutils literal notranslate"><span class="pre">local_addr</span></code> parameter in the client constructor to use a specific
 local network address when connecting to Telegram.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query()</span></code></a> now
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query()</span></code> now
 lets you specify the chat where the query is being made from, which some
 bots need to provide certain functionality.</p></li>
 <li><p>You can now get comments in a channel post with the <code class="docutils literal notranslate"><span class="pre">reply_to</span></code> parameter in
-<a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages()</span></code></a>.
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages()</span></code>.
 Comments are messages that “reply to” a specific channel message, hence the
 name (which is consistent with how Telegram’s API calls it).</p></li>
 </ul>
@@ -1541,15 +1541,15 @@ example, another client revokes the session).</p></li>
 <section id="id17">
 <h3><a class="toc-backref" href="#id235">Bug fixes</a><a class="headerlink" href="#id17" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>In some cases, there were issues when using <a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code></a> together with <a class="reference internal" href="../modules/events.html#telethon.events.raw.Raw" title="telethon.events.raw.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Raw</span></code></a>.</p></li>
+<li><p>In some cases, there were issues when using <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code> together with <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Raw</span></code>.</p></li>
 <li><p>For some channels, one of their channel photos would not show up in
-<a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_profile_photos" title="telethon.client.chats.ChatMethods.iter_profile_photos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_profile_photos()</span></code></a>.</p></li>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_profile_photos()</span></code>.</p></li>
 <li><p>In some cases, a request that failed to be sent would be forgotten, causing
 the original caller to be “locked” forever for a response that would never
 arrive. Failing requests should now consistently be automatically re-sent.</p></li>
 <li><p>The library should more reliably handle certain updates with “empty” data.</p></li>
 <li><p>Sending documents in inline queries should now work fine.</p></li>
-<li><p>Manually using <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.sign_up" title="telethon.client.auth.AuthMethods.sign_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.sign_up</span></code></a>
+<li><p>Manually using <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.sign_up</span></code>
 should now work correctly, instead of claiming “code invalid”.</p></li>
 </ul>
 <p>Special mention to some of the other changes in the 1.16.x series:</p>
@@ -1572,7 +1572,7 @@ again as long as Telegram adds it.</p>
 <section id="id18">
 <h3><a class="toc-backref" href="#id237">Enhancements</a><a class="headerlink" href="#id18" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>When trying to <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code></a> to
+<li><p>When trying to <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code> to
 another account if you were previously logged in, the library will now warn
 you because this is probably not intended. To avoid the warning, make sure
 you’re logging in to the right account or logout from the other first.</p></li>
@@ -1601,7 +1601,7 @@ when Telegram has internal issues).</p></li>
 </tbody>
 </table>
 <p>The newest Telegram update has a new method to also retrieve megagroup
-statistics, which can now be used with <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.get_stats" title="telethon.client.chats.ChatMethods.get_stats"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_stats()</span></code></a>. This way you’ll be able
+statistics, which can now be used with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_stats()</span></code>. This way you’ll be able
 to access the raw data about your channel or megagroup statistics.</p>
 <p>The maximum file size limit has also been increased to 2GB on the server,
 so you can send even larger files.</p>
@@ -1618,7 +1618,7 @@ from the one that was set, things may break.</p></li>
 <section id="id21">
 <h3><a class="toc-backref" href="#id241">Enhancements</a><a class="headerlink" href="#id21" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.upload_file" title="telethon.client.uploads.UploadMethods.upload_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.upload_file()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.upload_file()</span></code>
 now works better when streaming files (anything that has a <code class="docutils literal notranslate"><span class="pre">.read()</span></code>),
 instead of reading it all into memory when possible.</p></li>
 </ul>
@@ -1642,8 +1642,8 @@ provides a way for you to easily do so with any other library of your choice.</p
 <section id="id22">
 <h3><a class="toc-backref" href="#id243">Additions</a><a class="headerlink" href="#id22" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.qr_login" title="telethon.client.auth.AuthMethods.qr_login"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.qr_login()</span></code></a>.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.click" title="telethon.tl.custom.message.Message.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.click</span></code></a> now lets you
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.qr_login()</span></code>.</p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.click</span></code> now lets you
 click on buttons requesting phone or location.</p></li>
 </ul>
 </section>
@@ -1651,9 +1651,9 @@ click on buttons requesting phone or location.</p></li>
 <h3><a class="toc-backref" href="#id244">Enhancements</a><a class="headerlink" href="#id23" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Updated documentation and list of known errors.</p></li>
-<li><p><a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code></a> should now handle albums from
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code> should now handle albums from
 different data centers more gracefully.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_file" title="telethon.client.downloads.DownloadMethods.download_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_file()</span></code></a> now supports
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_file()</span></code> now supports
 <a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pathlib.Path</span></code></a> as the destination.</p></li>
 </ul>
 </section>
@@ -1682,18 +1682,18 @@ error, which is now handled correctly.</p></li>
 <section id="id25">
 <h3><a class="toc-backref" href="#id247">Additions</a><a class="headerlink" href="#id25" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.dice" title="telethon.tl.custom.message.Message.dice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.dice</span></code></a> property.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.dice</span></code> property.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">func=</span></code> parameter of events can now be an <code class="docutils literal notranslate"><span class="pre">async</span></code> function.</p></li>
 </ul>
 </section>
 <section id="id26">
 <h3><a class="toc-backref" href="#id248">Bug fixes</a><a class="headerlink" href="#id26" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Fixed <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.action" title="telethon.client.chats.ChatMethods.action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action()</span></code></a>
+<li><p>Fixed <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action()</span></code>
 having an alias wrong.</p></li>
 <li><p>Fixed incorrect formatting of some errors.</p></li>
 <li><p>Probably more reliable detection of pin events in small groups.</p></li>
-<li><p>Fixed send methods on <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code></a> were not honoring
+<li><p>Fixed send methods on <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code> were not honoring
 cancellation.</p></li>
 <li><p>Flood waits of zero seconds are handled better.</p></li>
 <li><p>Getting the pinned message in a chat was failing.</p></li>
@@ -1705,10 +1705,10 @@ and also the return value of albums.</p></li>
 <h3><a class="toc-backref" href="#id249">Enhancements</a><a class="headerlink" href="#id27" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">.tgs</span></code> files are now recognised as animated stickers.</p></li>
-<li><p>The service message produced by <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.pin" title="telethon.tl.custom.message.Message.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.pin()</span></code></a> is now returned.</p></li>
-<li><p>Sending a file with <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a> now works fine when
+<li><p>The service message produced by <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.pin()</span></code> is now returned.</p></li>
+<li><p>Sending a file with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code> now works fine when
 you pass an existing dice media (e.g. sending a message copy).</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_permissions" title="telethon.client.chats.ChatMethods.edit_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code>
 now has the <code class="docutils literal notranslate"><span class="pre">embed_links</span></code> parameter which was missing.</p></li>
 </ul>
 </section>
@@ -1729,7 +1729,7 @@ now has the <code class="docutils literal notranslate"><span class="pre">embed_l
 <section id="id28">
 <h3><a class="toc-backref" href="#id251">Bug fixes</a><a class="headerlink" href="#id28" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Passing <code class="docutils literal notranslate"><span class="pre">None</span></code> as the entity to <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.delete_messages" title="telethon.client.messages.MessageMethods.delete_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_messages()</span></code></a> would fail.</p></li>
+<li><p>Passing <code class="docutils literal notranslate"><span class="pre">None</span></code> as the entity to <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_messages()</span></code> would fail.</p></li>
 <li><p>When downloading a thumbnail, the name inferred was wrong.</p></li>
 </ul>
 </section>
@@ -1753,7 +1753,7 @@ deserves a new minor release.</p>
 <p>These were already included in the <code class="docutils literal notranslate"><span class="pre">v1.11.3</span></code> patch:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">libssl</span></code> check was failing on macOS.</p></li>
-<li><p>Getting input users would sometimes fail on <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction" title="telethon.events.chataction.ChatAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code></a>.</p></li>
+<li><p>Getting input users would sometimes fail on <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code>.</p></li>
 </ul>
 <p>These bug fixes are available in this release and beyond:</p>
 <ul class="simple">
@@ -1784,9 +1784,9 @@ made since then. This release includes them and updates the scheme layer.</p>
 <h3><a class="toc-backref" href="#id255">Bug fixes</a><a class="headerlink" href="#id30" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">MemoryError</span></code> when casting certain media.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_entity" title="telethon.client.users.UserMethods.get_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity()</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity()</span></code>
 on small group chats.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.delete_dialog" title="telethon.client.dialogs.DialogMethods.delete_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_dialog()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_dialog()</span></code>
 now handles deactivated chats more gracefully.</p></li>
 <li><p>Sending a message with <code class="docutils literal notranslate"><span class="pre">file=</span></code> would ignore some of the parameters.</p></li>
 <li><p>Errors are now un-pickle-able once again.</p></li>
@@ -1794,10 +1794,10 @@ now handles deactivated chats more gracefully.</p></li>
 </ul>
 <p>The following are also present in <code class="docutils literal notranslate"><span class="pre">v1.10.10</span></code>:</p>
 <ul class="simple">
-<li><p>Fixed some issues with <a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code></a>.</p></li>
-<li><p>Fixed some issues with <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.kick_participant" title="telethon.client.chats.ChatMethods.kick_participant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.kick_participant()</span></code></a> and
-<a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_admin" title="telethon.client.chats.ChatMethods.edit_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_admin()</span></code></a>.</p></li>
-<li><p>Fixed sending albums and more within <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code></a>.</p></li>
+<li><p>Fixed some issues with <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code>.</p></li>
+<li><p>Fixed some issues with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.kick_participant()</span></code> and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_admin()</span></code>.</p></li>
+<li><p>Fixed sending albums and more within <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code>.</p></li>
 <li><p>Fixed some import issues.</p></li>
 <li><p>And a lot more minor stuff.</p></li>
 </ul>
@@ -1816,7 +1816,7 @@ now handles deactivated chats more gracefully.</p></li>
 <li><p>Auto-sleep now works for slow-mode too.</p></li>
 <li><p>Improved some error messages.</p></li>
 <li><p>Some internal improvements and updating.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.pin_message" title="telethon.client.messages.MessageMethods.pin_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.pin_message()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.pin_message()</span></code>
 now also works with message objects.</p></li>
 <li><p>Asynchronous file descriptors are now allowed during download and upload.</p></li>
 </ul>
@@ -1850,34 +1850,34 @@ time, which can also work as reminders for yourself when used in your own chat!<
 <section id="id32">
 <h3><a class="toc-backref" href="#id258">Additions</a><a class="headerlink" href="#id32" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.auth" title="telethon.tl.custom.button.Button.auth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Button.auth</span></code></a> friendly button
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">Button.auth</span></code> friendly button
 you can use to ask users to login to your bot.</p></li>
 <li><p>Telethon’s repository now contains <code class="docutils literal notranslate"><span class="pre">*.nix</span></code> expressions that you can use.</p></li>
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.kick_participant" title="telethon.client.chats.ChatMethods.kick_participant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.kick_participant()</span></code></a>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.kick_participant()</span></code>
 method to truly kick (not ban) participants.</p></li>
-<li><p>New <code class="docutils literal notranslate"><span class="pre">schedule</span></code> parameter in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code></a>, <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.edit_message" title="telethon.client.messages.MessageMethods.edit_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_message()</span></code></a>, <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.forward_messages" title="telethon.client.messages.MessageMethods.forward_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages()</span></code></a> and <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a>.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">schedule</span></code> parameter in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_message()</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_message()</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages()</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code>.</p></li>
 </ul>
 </section>
 <section id="id33">
 <h3><a class="toc-backref" href="#id259">Bug fixes</a><a class="headerlink" href="#id33" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>Fix calling <code class="docutils literal notranslate"><span class="pre">flush</span></code> on file objects which lack this attribute.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a> pattern.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.action" title="telethon.client.chats.ChatMethods.action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action()</span></code></a> not returning
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code> pattern.</p></li>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action()</span></code> not returning
 itself when used in a context manager (so the <code class="docutils literal notranslate"><span class="pre">as</span></code> would be <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>).</p></li>
 <li><p>Fix sending <a class="reference external" href="https://tl.telethon.dev/?q=InputKeyboardButtonUrlAuth">InputKeyboardButtonUrlAuth</a> as inline buttons.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_permissions" title="telethon.client.chats.ChatMethods.edit_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code>
 defaults.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a> had its <code class="docutils literal notranslate"><span class="pre">client</span></code> as <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code> had its <code class="docutils literal notranslate"><span class="pre">client</span></code> as <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a>.</p></li>
 <li><p>Fix (de)serialization of negative timestamps (caused by the information in some
 sites with instant view, where the date could be very old).</p></li>
 <li><p>Fix HTML un-parsing.</p></li>
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">to/from_id</span></code> in private messages when using multiple clients.</p></li>
 <li><p>Stop disconnecting from <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> (incorrect logging).</p></li>
 <li><p>Fix double-read on double-connect.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.get_messages" title="telethon.client.messages.MessageMethods.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages()</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages()</span></code>
 when being passed more than 100 IDs.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.document" title="telethon.tl.custom.message.Message.document"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.document</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.document</span></code>
 for documents coming from web-pages.</p></li>
 </ul>
 </section>
@@ -1887,10 +1887,10 @@ for documents coming from web-pages.</p></li>
 <li><p>Some documentation improvements, including the TL reference.</p></li>
 <li><p>Documentation now avoids <code class="docutils literal notranslate"><span class="pre">telethon.sync</span></code>, which should hopefully be less confusing.</p></li>
 <li><p>Better error messages for flood wait.</p></li>
-<li><p>You can now <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.get_drafts" title="telethon.client.dialogs.DialogMethods.get_drafts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_drafts()</span></code></a>
+<li><p>You can now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_drafts()</span></code>
 for a single entity (which means you can now get a single draft from a single chat).</p></li>
 <li><p>New-style file IDs now work with Telethon.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">progress_callback</span></code> for <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.upload_file" title="telethon.client.uploads.UploadMethods.upload_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.upload_file()</span></code></a> can now be an <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">progress_callback</span></code> for <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.upload_file()</span></code> can now be an <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code>.</p></li>
 </ul>
 </section>
 </section>
@@ -1912,18 +1912,18 @@ now, you can access its raw data, which is a gzipped JSON.</p>
 <section id="id35">
 <h3><a class="toc-backref" href="#id262">Additions</a><a class="headerlink" href="#id35" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/events.html#telethon.events.album.Album" title="telethon.events.album.Album"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code></a> to easily receive entire albums!</p></li>
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_admin" title="telethon.client.chats.ChatMethods.edit_admin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_admin()</span></code></a>
-and <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.edit_permissions" title="telethon.client.chats.ChatMethods.edit_permissions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code></a>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.Album</span></code> to easily receive entire albums!</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_admin()</span></code>
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_permissions()</span></code>
 methods to more easily manage your groups.</p></li>
-<li><p>New <code class="docutils literal notranslate"><span class="pre">pattern=</span></code> in <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code></a>.</p></li>
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.cancel" title="telethon.tl.custom.conversation.Conversation.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.cancel_all()</span></code></a> method,
+<li><p>New <code class="docutils literal notranslate"><span class="pre">pattern=</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code>.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.cancel_all()</span></code> method,
 to cancel all currently-active conversations in a particular chat.</p></li>
 <li><p>New <a class="reference internal" href="../modules/utils.html#telethon.utils.encode_waveform" title="telethon.utils.encode_waveform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils.encode_waveform</span></code></a> and <a class="reference internal" href="../modules/utils.html#telethon.utils.decode_waveform" title="telethon.utils.decode_waveform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils.decode_waveform</span></code></a>
 methods as implemented by Telegram Desktop, which lets you customize how
 voice notes will render.</p></li>
-<li><p>New <code class="docutils literal notranslate"><span class="pre">ignore_pinned</span></code> parameter in <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a>.</p></li>
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.mark_read" title="telethon.tl.custom.message.Message.mark_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.mark_read()</span></code></a>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">ignore_pinned</span></code> parameter in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code>.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.mark_read()</span></code>
 method.</p></li>
 <li><p>You can now use strike-through in markdown with <code class="docutils literal notranslate"><span class="pre">~~text~~</span></code>, and the
 corresponding HTML tags for strike-through, quotes and underlined text.</p></li>
@@ -1934,23 +1934,23 @@ corresponding HTML tags for strike-through, quotes and underlined text.</p></li>
 <h3><a class="toc-backref" href="#id263">Bug fixes</a><a class="headerlink" href="#id36" title="Permalink to this heading"></a></h3>
 <ul>
 <li><p>Fixed downloading contacts.</p></li>
-<li><p>Fixed <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a> missing some under
+<li><p>Fixed <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code> missing some under
 certain circumstances.</p></li>
 <li><p>Fixed incredibly slow imports under some systems due to expensive path
 resolution when searching for <code class="docutils literal notranslate"><span class="pre">libssl</span></code>.</p></li>
 <li><p>Fixed captions when sending albums.</p></li>
-<li><p>Fixed invalid states in <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation" title="telethon.tl.custom.conversation.Conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code></a>.</p></li>
+<li><p>Fixed invalid states in <code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code>.</p></li>
 <li><p>Fixes to some methods in utils regarding extensions.</p></li>
-<li><p>Fixed memory cycle in <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.forward.Forward" title="telethon.tl.custom.forward.Forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code></a>
+<li><p>Fixed memory cycle in <code class="xref py py-obj docutils literal notranslate"><span class="pre">Forward</span></code>
 which let you do things like the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">original_fwd</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">forward</span><span class="o">.</span><span class="n">original_fwd</span><span class="o">.</span><span class="n">original_fwd</span><span class="o">.</span><span class="n">original_fwd</span><span class="o">.</span><span class="n">original_fwd</span><span class="o">.</span><span class="n">original_fwd</span><span class="o">.</span><span class="n">original_fwd</span>
 </pre></div>
 </div>
 <p>Hopefully you didn’t rely on that in your code.</p>
 </li>
-<li><p>Fixed <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.ext" title="telethon.tl.custom.file.File.ext"><code class="xref py py-obj docutils literal notranslate"><span class="pre">File.ext</span></code></a> not working on
+<li><p>Fixed <code class="xref py py-obj docutils literal notranslate"><span class="pre">File.ext</span></code> not working on
 unknown mime-types, despite the file name having the extension.</p></li>
-<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">ids=...,</span> <span class="pre">reverse=True</span></code> in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages()</span></code></a>.</p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">ids=...,</span> <span class="pre">reverse=True</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages()</span></code>.</p></li>
 <li><p>Fixed <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft" title="telethon.tl.custom.draft.Draft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draft</span></code></a> not being aware
 of the entity.</p></li>
 <li><p>Added missing re-exports in <code class="docutils literal notranslate"><span class="pre">telethon.sync</span></code>.</p></li>
@@ -1959,9 +1959,9 @@ of the entity.</p></li>
 <section id="id37">
 <h3><a class="toc-backref" href="#id264">Enhancements</a><a class="headerlink" href="#id37" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Improved <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.cancel" title="telethon.tl.custom.conversation.Conversation.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.cancel()</span></code></a>
+<li><p>Improved <code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.cancel()</span></code>
 behaviour. Now you can use it from anywhere.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">progress_callback</span></code> in <a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_media" title="telethon.client.downloads.DownloadMethods.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media()</span></code></a>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">progress_callback</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media()</span></code>
 now lets you use <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code>.</p></li>
 <li><p>Improved documentation and the online
 method reference at <a class="reference external" href="https://tl.telethon.dev">https://tl.telethon.dev</a>.</p></li>
@@ -2003,28 +2003,28 @@ they probably just fixed your issue.</p>
 <li><p>The layer changed, so take note if you use the raw API, as it’s usual.</p></li>
 <li><p>The way photos are downloaded changed during the layer update of the
 previous version, and fixing that bug as a breaking change in itself.
-<a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_media" title="telethon.client.downloads.DownloadMethods.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media()</span></code></a>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media()</span></code>
 now offers a different way to deal with thumbnails.</p></li>
 </ul>
 </section>
 <section id="id39">
 <h3><a class="toc-backref" href="#id267">Additions</a><a class="headerlink" href="#id39" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.file" title="telethon.tl.custom.message.Message.file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.file</span></code></a> property!
-Now you can trivially access <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.file.File.id" title="telethon.tl.custom.file.File.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.file.id</span></code></a>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.file</span></code> property!
+Now you can trivially access <code class="xref py py-obj docutils literal notranslate"><span class="pre">message.file.id</span></code>
 to get the file ID of some media, or even <code class="docutils literal notranslate"><span class="pre">print(message.file.name)</span></code>.</p></li>
-<li><p>Archiving dialogs with <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog.archive" title="telethon.tl.custom.dialog.Dialog.archive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog.archive()</span></code></a>
-or <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.edit_folder" title="telethon.client.dialogs.DialogMethods.edit_folder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_folder()</span></code></a>
+<li><p>Archiving dialogs with <code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog.archive()</span></code>
+or <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_folder()</span></code>
 is now possible.</p></li>
-<li><p>New cleaned-up method to stream downloads with <a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.iter_download" title="telethon.client.downloads.DownloadMethods.iter_download"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_download()</span></code></a>, which offers
+<li><p>New cleaned-up method to stream downloads with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_download()</span></code>, which offers
 a lot of flexibility, such as arbitrary offsets for efficient seeking.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog.delete" title="telethon.tl.custom.dialog.Dialog.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog.delete()</span></code></a> has existed
-for a while, and now <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.delete_dialog" title="telethon.client.dialogs.DialogMethods.delete_dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_dialog()</span></code></a> exists too so you
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog.delete()</span></code> has existed
+for a while, and now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_dialog()</span></code> exists too so you
 can easily leave chats or delete dialogs without fetching all dialogs.</p></li>
 <li><p>Some people or chats have a lot of profile photos. You can now iterate
-over all of them with the new <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_profile_photos" title="telethon.client.chats.ChatMethods.iter_profile_photos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_profile_photos()</span></code></a> method.</p></li>
-<li><p>You can now annoy everyone with the new <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.pin" title="telethon.tl.custom.message.Message.pin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.pin(notify=True)</span></code></a>! The client has its own
-variant too, called <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.pin_message" title="telethon.client.messages.MessageMethods.pin_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.pin_message()</span></code></a>.</p></li>
+over all of them with the new <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_profile_photos()</span></code> method.</p></li>
+<li><p>You can now annoy everyone with the new <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.pin(notify=True)</span></code>! The client has its own
+variant too, called <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.pin_message()</span></code>.</p></li>
 </ul>
 </section>
 <section id="id40">
@@ -2034,9 +2034,9 @@ variant too, called <a class="reference internal" href="../modules/client.html#t
 <li><p>Downloading stripped photos wouldn’t work correctly.</p></li>
 <li><p>Under some systems, <code class="docutils literal notranslate"><span class="pre">libssl</span></code> would fail to load earlier than
 expected, causing the library to fail when being imported.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.get_response" title="telethon.tl.custom.conversation.Conversation.get_response"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv.get_response()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">conv.get_response()</span></code>
 after ID 0 wasn’t allowed when it should.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.inlinebuilder.InlineBuilder" title="telethon.tl.custom.inlinebuilder.InlineBuilder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineBuilder</span></code></a> only worked
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineBuilder</span></code> only worked
 with local files, but files from anywhere are supported.</p></li>
 <li><p>Accessing the text property from a raw-API call to fetch <a class="reference external" href="https://tl.telethon.dev/?q=Message">Message</a> would fail
 (any any other property that needed the client).</p></li>
@@ -2045,7 +2045,7 @@ From now on, this should help with upgrades and downgrades slightly.</p></li>
 <li><p>Fixed saving <code class="docutils literal notranslate"><span class="pre">pts</span></code> and session-related stuff.</p></li>
 <li><p>Disconnection should not raise any errors.</p></li>
 <li><p>Invite links of the form <code class="docutils literal notranslate"><span class="pre">tg://join?invite=</span></code> now work.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_participants" title="telethon.client.chats.ChatMethods.iter_participants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_participants(search=...)</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_participants(search=...)</span></code>
 now works on private chats again.</p></li>
 <li><p>Iterating over messages in reverse with a date as offset wouldn’t work.</p></li>
 <li><p>The conversation would behave weirdly when a timeout occurred.</p></li>
@@ -2082,7 +2082,7 @@ they will now work.</p></li>
 so you can no longer use a <a class="reference external" href="https://tl.telethon.dev/?q=PhotoSize">PhotoSize</a> alone to download a particular
 thumbnail size (this is a <strong>breaking change</strong>).</p>
 <p>Instead, you will have to specify the new <code class="docutils literal notranslate"><span class="pre">thumb</span></code> parameter in
-<a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_media" title="telethon.client.downloads.DownloadMethods.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media()</span></code></a>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media()</span></code>
 to download a particular thumbnail size. This addition enables you to easily
 download thumbnails from documents, something you couldn’t do easily before.</p>
 </section>
@@ -2137,10 +2137,10 @@ weren’t of type <code class="docutils literal notranslate"><span class="pre">d
 <li><p>Due to the layer change, you can no longer download photos with just
 their <a class="reference external" href="https://tl.telethon.dev/?q=PhotoSize">PhotoSize</a>. Version 1.7.1 introduces a new way to download
 thumbnails to work around this issue.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code>
 is now asynchronous again. This means you need to <code class="docutils literal notranslate"><span class="pre">await</span></code> it. You
 don’t need to worry about this if you were using <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">client</span></code> or
-<a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected</span></code></a>.
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected</span></code>.
 This should prevent the “pending task was destroyed” errors.</p></li>
 </ul>
 </section>
@@ -2149,7 +2149,7 @@ This should prevent the “pending task was destroyed” errors.</p></li>
 <ul>
 <li><p>New in-memory cache for input entities. This should mean a lot less
 of disk look-ups.</p></li>
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.action" title="telethon.client.chats.ChatMethods.action"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action</span></code></a> method
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.action</span></code> method
 to easily indicate that you are doing some chat action:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="k">with</span> <span class="n">client</span><span class="o">.</span><span class="n">action</span><span class="p">(</span><span class="n">chat</span><span class="p">,</span> <span class="s1">&#39;typing&#39;</span><span class="p">):</span>
     <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># type for 2 seconds</span>
@@ -2172,28 +2172,28 @@ to easily indicate that you are doing some chat action:</p>
 <li><p>Fix sending photos from streams/bytes.</p></li>
 <li><p>Fix unhandled error when sending requests that were too big.</p></li>
 <li><p>Fix edits that arrive too early on conversations.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.edit_message" title="telethon.client.messages.MessageMethods.edit_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_message()</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.edit_message()</span></code>
 when trying to edit a file.</p></li>
-<li><p>Fix method calls on the objects returned by <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a>.</p></li>
-<li><p>Attempt at fixing <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a> missing many dialogs.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">offset_date</span></code> in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages()</span></code></a> was being
+<li><p>Fix method calls on the objects returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code>.</p></li>
+<li><p>Attempt at fixing <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code> missing many dialogs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset_date</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages()</span></code> was being
 ignored in some cases. This has been worked around.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery.Event.edit" title="telethon.events.callbackquery.CallbackQuery.Event.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">callback_query.edit()</span></code></a>.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery(func=...)</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">callback_query.edit()</span></code>.</p></li>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery(func=...)</span></code>
 was being ignored.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate" title="telethon.events.userupdate.UserUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UserUpdate</span></code></a> not working for
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">UserUpdate</span></code> not working for
 “typing” (and uploading file, etc.) status.</p></li>
 <li><p>Fix library was not expecting <code class="docutils literal notranslate"><span class="pre">IOError</span></code> from PySocks.</p></li>
 <li><p>Fix library was raising a generic <code class="docutils literal notranslate"><span class="pre">ConnectionError</span></code>
 and not the one that actually occurred.</p></li>
-<li><p>Fix the <code class="docutils literal notranslate"><span class="pre">blacklist_chats</span></code> parameter in <a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead" title="telethon.events.messageread.MessageRead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageRead</span></code></a> not working as intended.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.downloads.DownloadMethods.download_media" title="telethon.client.downloads.DownloadMethods.download_media"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media(contact)</span></code></a>.</p></li>
+<li><p>Fix the <code class="docutils literal notranslate"><span class="pre">blacklist_chats</span></code> parameter in <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageRead</span></code> not working as intended.</p></li>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.download_media(contact)</span></code>.</p></li>
 <li><p>Fix mime type when sending <code class="docutils literal notranslate"><span class="pre">mp3</span></code> files.</p></li>
 <li><p>Fix forcibly getting the sender or chat from events would
 not always return all their information.</p></li>
-<li><p>Fix sending albums with <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code></a> was not returning
+<li><p>Fix sending albums with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file()</span></code> was not returning
 the sent messages.</p></li>
-<li><p>Fix forwarding albums with <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.forward_messages" title="telethon.client.messages.MessageMethods.forward_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages()</span></code></a>.</p></li>
+<li><p>Fix forwarding albums with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages()</span></code>.</p></li>
 <li><p>Some fixes regarding filtering updates from chats.</p></li>
 <li><p>Attempt at preventing duplicated updates.</p></li>
 <li><p>Prevent double auto-reconnect.</p></li>
@@ -2206,7 +2206,7 @@ the sent messages.</p></li>
 <li><p>Several updates and improvements to the documentation,
 such as optional dependencies now being properly listed.</p></li>
 <li><p>You can now forward messages from different chats directly with
-<a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.forward_messages" title="telethon.client.messages.MessageMethods.forward_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages</span></code></a>.</p></li>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages</span></code>.</p></li>
 </ul>
 </section>
 </section>
@@ -2250,7 +2250,7 @@ object which has a <code class="docutils literal notranslate"><span class="pre">
 <section id="id47">
 <h3><a class="toc-backref" href="#id280">Additions</a><a class="headerlink" href="#id47" title="Permalink to this heading"></a></h3>
 <ul>
-<li><p>You can now pass <code class="docutils literal notranslate"><span class="pre">phone</span></code> and <code class="docutils literal notranslate"><span class="pre">phone_code_hash</span></code> in <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.sign_up" title="telethon.client.auth.AuthMethods.sign_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.sign_up</span></code></a>, although you probably don’t
+<li><p>You can now pass <code class="docutils literal notranslate"><span class="pre">phone</span></code> and <code class="docutils literal notranslate"><span class="pre">phone_code_hash</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.sign_up</span></code>, although you probably don’t
 need that.</p></li>
 <li><p>Thanks to the overhaul of all <code class="docutils literal notranslate"><span class="pre">client.iter_*</span></code> methods, you can now do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">iter_messages</span><span class="p">(</span><span class="s1">&#39;me&#39;</span><span class="p">)):</span>
@@ -2266,18 +2266,18 @@ need that.</p></li>
 <li><p>Fix <a class="reference internal" href="../modules/utils.html#telethon.utils.resolve_bot_file_id" title="telethon.utils.resolve_bot_file_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils.resolve_bot_file_id</span></code></a>, which wasn’t working after
 the layer update (so you couldn’t send some files by bot file IDs).</p></li>
 <li><p>Fix sending albums as bot file IDs (due to image detection improvements).</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.account.AccountMethods.takeout" title="telethon.client.account.AccountMethods.takeout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">takeout()</span></code></a> failing
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">takeout()</span></code> failing
 when they need to download media from other DCs.</p></li>
-<li><p>Fix repeatedly calling <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.get_response" title="telethon.tl.custom.conversation.Conversation.get_response"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.get_response()</span></code></a> when many
+<li><p>Fix repeatedly calling <code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.get_response()</span></code> when many
 messages arrived at once (i.e. when several of them were forwarded).</p></li>
 <li><p>Fixed connecting with <a class="reference internal" href="../modules/network.html#telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated" title="telethon.network.connection.tcpobfuscated.ConnectionTcpObfuscated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConnectionTcpObfuscated</span></code></a>.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_peer_id" title="telethon.client.users.UserMethods.get_peer_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_peer_id('me')</span></code></a>.</p></li>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_peer_id('me')</span></code>.</p></li>
 <li><p>Fix warning of “missing sqlite3” when in reality it just had wrong tables.</p></li>
-<li><p>Fix a strange error when using too many IDs in <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.delete_messages" title="telethon.client.messages.MessageMethods.delete_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_messages()</span></code></a>.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code></a>
-with the result of <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.upload_file" title="telethon.client.uploads.UploadMethods.upload_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.upload_file</span></code></a>.</p></li>
+<li><p>Fix a strange error when using too many IDs in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_messages()</span></code>.</p></li>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code>
+with the result of <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.upload_file</span></code>.</p></li>
 <li><p>When answering inline results, their order was not being preserved.</p></li>
-<li><p>Fix <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction" title="telethon.events.chataction.ChatAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code></a>
+<li><p>Fix <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code>
 detecting user leaves as if they were kicked.</p></li>
 </ul>
 </section>
@@ -2323,7 +2323,7 @@ regarding loggers. This update is slightly bigger so it deserves mention.</p>
 <section id="id51">
 <h3><a class="toc-backref" href="#id285">Additions</a><a class="headerlink" href="#id51" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <code class="docutils literal notranslate"><span class="pre">supports_streaming</span></code> parameter in <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code></a>.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">supports_streaming</span></code> parameter in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code>.</p></li>
 </ul>
 </section>
 <section id="id52">
@@ -2351,7 +2351,7 @@ Press <code class="docutils literal notranslate"><span class="pre">?</span></cod
 <section id="id54">
 <h3><a class="toc-backref" href="#id289">Breaking Changes</a><a class="headerlink" href="#id54" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.edit" title="telethon.tl.custom.message.Message.edit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.edit</span></code></a> now respects
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.edit</span></code> now respects
 the previous message buttons or link preview being hidden. If you want to
 toggle them you need to explicitly set them. This is generally the desired
 behaviour, but may cause some bots to have buttons when they shouldn’t.</p></li>
@@ -2360,7 +2360,7 @@ behaviour, but may cause some bots to have buttons when they shouldn’t.</p></l
 <section id="id55">
 <h3><a class="toc-backref" href="#id290">Additions</a><a class="headerlink" href="#id55" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>You can now “hide_via” when clicking on results from <a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query</span></code></a> to &#64;bing and &#64;gif.</p></li>
+<li><p>You can now “hide_via” when clicking on results from <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query</span></code> to &#64;bing and &#64;gif.</p></li>
 <li><p>You can now further configure the logger Telethon uses to suit your needs.</p></li>
 </ul>
 </section>
@@ -2388,7 +2388,7 @@ always contain the <a class="reference external" href="https://tl.telethon.dev/?
 <h2><a class="toc-backref" href="#id293">Takeout Sessions (v1.5.2)</a><a class="headerlink" href="#takeout-sessions-v1-5-2" title="Permalink to this heading"></a></h2>
 <p><em>Published at 2019/01/05</em></p>
 <p>You can now easily start takeout sessions (also known as data export sessions)
-through <a class="reference internal" href="../modules/client.html#telethon.client.account.AccountMethods.takeout" title="telethon.client.account.AccountMethods.takeout"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.takeout()</span></code></a>.
+through <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.takeout()</span></code>.
 Some of the requests will have lower flood limits when done through the
 takeout session.</p>
 <section id="id58">
@@ -2396,7 +2396,7 @@ takeout session.</p>
 <ul class="simple">
 <li><p>The new <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent" title="telethon.tl.custom.adminlogevent.AdminLogEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AdminLogEvent</span></code></a>
 had a bug that made it unusable.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code>
 will now locally check for the offset date, since Telegram ignores it.</p></li>
 <li><p>Answering inline queries with media no works properly. You can now use
 the library to create inline bots and send stickers through them!</p></li>
@@ -2414,25 +2414,25 @@ default format both of those problematic types into something sensible.</p>
 <section id="id59">
 <h3><a class="toc-backref" href="#id296">Additions</a><a class="headerlink" href="#id59" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_admin_log" title="telethon.client.chats.ChatMethods.iter_admin_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_admin_log()</span></code></a> method.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_admin_log()</span></code> method.</p></li>
 </ul>
 </section>
 <section id="id60">
 <h3><a class="toc-backref" href="#id297">Bug fixes</a><a class="headerlink" href="#id60" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.is_connected" title="telethon.client.telegrambaseclient.TelegramBaseClient.is_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.is_connected()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.is_connected()</span></code>
 would be wrong when the initial connection failed.</p></li>
 <li><p>Fixed <code class="docutils literal notranslate"><span class="pre">UnicodeDecodeError</span></code> when accessing the text of messages
 with malformed offsets in their entities.</p></li>
-<li><p>Fixed <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code></a> for integer IDs
+<li><p>Fixed <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code> for integer IDs
 that the client has not seen before.</p></li>
 </ul>
 </section>
 <section id="id61">
 <h3><a class="toc-backref" href="#id298">Enhancements</a><a class="headerlink" href="#id61" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>You can now configure the reply markup when using <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button" title="telethon.tl.custom.button.Button"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Button</span></code></a> as a bot.</p></li>
-<li><p>More properties for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> to make accessing media convenient.</p></li>
+<li><p>You can now configure the reply markup when using <code class="xref py py-obj docutils literal notranslate"><span class="pre">Button</span></code> as a bot.</p></li>
+<li><p>More properties for <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> to make accessing media convenient.</p></li>
 <li><p>Downloading to <code class="docutils literal notranslate"><span class="pre">file=bytes</span></code> will now return a <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bytes</span></code></a> object
 with the downloaded media.</p></li>
 </ul>
@@ -2465,7 +2465,7 @@ your code, in particular <strong>if you work with files</strong>. They have a ne
 <section id="id63">
 <h3><a class="toc-backref" href="#id301">Additions</a><a class="headerlink" href="#id63" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.is_bot" title="telethon.client.users.UserMethods.is_bot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.is_bot()</span></code></a> method.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.is_bot()</span></code> method.</p></li>
 </ul>
 </section>
 <section id="id64">
@@ -2475,7 +2475,7 @@ your code, in particular <strong>if you work with files</strong>. They have a ne
 <li><p>HTTP connection should now work correctly again.</p></li>
 <li><p>Using <code class="docutils literal notranslate"><span class="pre">caption=None</span></code> would raise an error instead of setting no caption.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">KeyError</span></code> is now handled properly when forwarding messages.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.messagebutton.MessageButton.click" title="telethon.tl.custom.messagebutton.MessageButton.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">button.click()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">button.click()</span></code>
 now works as expected for <a class="reference external" href="https://tl.telethon.dev/?q=KeyboardButtonGame">KeyboardButtonGame</a>.</p></li>
 </ul>
 </section>
@@ -2506,15 +2506,15 @@ Everyone is encouraged to help document this better!</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TimeoutError</span></code> was not handled during automatic reconnects.</p></li>
 <li><p>Getting messages by ID using <a class="reference external" href="https://tl.telethon.dev/?q=InputMessageReplyTo">InputMessageReplyTo</a> could fail.</p></li>
-<li><p>Fixed <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_reply_message" title="telethon.tl.custom.message.Message.get_reply_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.get_reply_message</span></code></a>
+<li><p>Fixed <code class="xref py py-obj docutils literal notranslate"><span class="pre">message.get_reply_message</span></code>
 as a bot when a user replied to a different bot.</p></li>
-<li><p>Accessing some document properties in a <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code></a> would fail.</p></li>
+<li><p>Accessing some document properties in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> would fail.</p></li>
 </ul>
 </section>
 <section id="id68">
 <h3><a class="toc-backref" href="#id307">Enhancements</a><a class="headerlink" href="#id68" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Accessing <a class="reference internal" href="../modules/events.html#telethon.events.chataction.ChatAction" title="telethon.events.chataction.ChatAction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code></a>
+<li><p>Accessing <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.ChatAction</span></code>
 properties such as input users may now work in more cases.</p></li>
 </ul>
 </section>
@@ -2545,7 +2545,7 @@ quick fix and didn’t really deserve an entry in the changelog.</p>
 <section id="id71">
 <h3><a class="toc-backref" href="#id311">Enhancements</a><a class="headerlink" href="#id71" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Better default behaviour for <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_read_acknowledge" title="telethon.client.messages.MessageMethods.send_read_acknowledge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_read_acknowledge</span></code></a>.</p></li>
+<li><p>Better default behaviour for <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_read_acknowledge</span></code>.</p></li>
 <li><p>Clarified some points in the documentation.</p></li>
 <li><p>Clearer errors for <code class="docutils literal notranslate"><span class="pre">utils.get_peer*</span></code>.</p></li>
 </ul>
@@ -2569,34 +2569,34 @@ any issues that you encounter with this version if any.</p>
 because it never was properly maintained anyway. If you have old code, stick
 with old versions of the library, such as <code class="docutils literal notranslate"><span class="pre">0.19.1.6</span></code>.</p></li>
 <li><p>Timeouts no longer accept <code class="docutils literal notranslate"><span class="pre">timedelta</span></code>. Simply use seconds.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">callback</span></code> parameter from <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button.inline" title="telethon.tl.custom.button.Button.inline"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.button.Button.inline()</span></code></a>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">callback</span></code> parameter from <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.button.Button.inline()</span></code>
 was removed, since it had always been a bad idea. Adding the callback there
 meant a lot of extra work for every message sent, and only registering it
 after the first message was sent! Instead, use
-<a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.callbackquery.CallbackQuery</span></code></a>.</p></li>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.callbackquery.CallbackQuery</span></code>.</p></li>
 </ul>
 </section>
 <section id="id73">
 <h3><a class="toc-backref" href="#id314">Additions</a><a class="headerlink" href="#id73" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog.delete" title="telethon.tl.custom.dialog.Dialog.delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dialog.delete()</span></code></a> method.</p></li>
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.cancel" title="telethon.tl.custom.conversation.Conversation.cancel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.cancel()</span></code></a> method.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">dialog.delete()</span></code> method.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">conversation.cancel()</span></code> method.</p></li>
 <li><p>New <code class="docutils literal notranslate"><span class="pre">retry_delay</span></code> delay for the client to be used on auto-reconnection.</p></li>
 </ul>
 </section>
 <section id="id74">
 <h3><a class="toc-backref" href="#id315">Bug fixes</a><a class="headerlink" href="#id74" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Fixed <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation.wait_event" title="telethon.tl.custom.conversation.Conversation.wait_event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation.wait_event()</span></code></a>.</p></li>
+<li><p>Fixed <code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation.wait_event()</span></code>.</p></li>
 <li><p>Fixed replying with photos/documents on inline results.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.is_user_authorized" title="telethon.client.users.UserMethods.is_user_authorized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.is_user_authorized()</span></code></a> now works
-correctly after <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.log_out" title="telethon.client.auth.AuthMethods.log_out"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.log_out()</span></code></a>.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog" title="telethon.tl.custom.dialog.Dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dialog.is_group</span></code></a> now works for
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.is_user_authorized()</span></code> now works
+correctly after <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.log_out()</span></code>.</p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dialog.is_group</span></code> now works for
 <a class="reference external" href="https://tl.telethon.dev/?q=ChatForbidden">ChatForbidden</a>.</p></li>
 <li><p>Not using <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code> when needed is now a proper error.</p></li>
-<li><p><a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.CallbackQuery</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.CallbackQuery</span></code>
 with string regex was not working properly.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_entity" title="telethon.client.users.UserMethods.get_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity('me')</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_entity('me')</span></code>
 now works again.</p></li>
 <li><p>Empty codes when signing in are no longer valid.</p></li>
 <li><p>Fixed file cache for in-memory sessions.</p></li>
@@ -2605,14 +2605,14 @@ now works again.</p></li>
 <section id="id75">
 <h3><a class="toc-backref" href="#id316">Enhancements</a><a class="headerlink" href="#id75" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Support <code class="docutils literal notranslate"><span class="pre">next_offset</span></code> in <a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery.Event.answer" title="telethon.events.inlinequery.InlineQuery.Event.answer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inline_query.answer()</span></code></a>.</p></li>
+<li><p>Support <code class="docutils literal notranslate"><span class="pre">next_offset</span></code> in <code class="xref py py-obj docutils literal notranslate"><span class="pre">inline_query.answer()</span></code>.</p></li>
 <li><p>Support <code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">href=&quot;tg://user?id=123&quot;&gt;</span></code> mentions in HTML parse mode.</p></li>
 <li><p>New auto-casts for <a class="reference external" href="https://tl.telethon.dev/?q=InputDocument">InputDocument</a> and <a class="reference external" href="https://tl.telethon.dev/?q=InputChatPhoto">InputChatPhoto</a>.</p></li>
 <li><p>Conversations are now exclusive per-chat by default.</p></li>
 <li><p>The request that caused a RPC error is now shown in the error message.</p></li>
 <li><p>New full API examples in the generated documentation.</p></li>
 <li><p>Fixed some broken links in the documentation.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code>
 is now synchronous, but you can still <code class="docutils literal notranslate"><span class="pre">await</span></code> it for consistency
 or compatibility.</p></li>
 </ul>
@@ -2633,7 +2633,7 @@ since it gives you the same features but even more conveniently:</p>
     <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="s1">&#39;Sent hello to someone&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This will <a class="reference internal" href="../modules/events.html#telethon.events.register" title="telethon.events.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register</span></code></a> the <code class="docutils literal notranslate"><span class="pre">handler</span></code> callback
+<p>This will <code class="xref py py-obj docutils literal notranslate"><span class="pre">register</span></code> the <code class="docutils literal notranslate"><span class="pre">handler</span></code> callback
 to handle new message events. Note that you didn’t add this to any client
 yet, and this is the key point: you don’t need a client to define handlers!
 You can add it later:</p>
@@ -2674,7 +2674,7 @@ will also return the media in the web preview if any, for convenience.</p></li>
 <ul class="simple">
 <li><p>Running code with <code class="xref py py-obj docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-O</span></code> would remove critical code from asserts.</p></li>
 <li><p>Fix some rare ghost disconnections after reconnecting.</p></li>
-<li><p>Fix strange behavior for <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.send_message" title="telethon.client.messages.MessageMethods.send_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message(chat,</span> <span class="pre">Message,</span> <span class="pre">reply_to=foo)</span></code></a>.</p></li>
+<li><p>Fix strange behavior for <code class="xref py py-obj docutils literal notranslate"><span class="pre">send_message(chat,</span> <span class="pre">Message,</span> <span class="pre">reply_to=foo)</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">loop=</span></code> argument was being pretty much ignored.</p></li>
 <li><p>Fix <code class="docutils literal notranslate"><span class="pre">MemorySession</span></code> file caching.</p></li>
 <li><p>The logic for getting entities from their username is now correct.</p></li>
@@ -2687,12 +2687,12 @@ will also return the media in the web preview if any, for convenience.</p></li>
 <section id="id79">
 <h3><a class="toc-backref" href="#id321">Enhancements</a><a class="headerlink" href="#id79" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.chats.ChatMethods.iter_participants" title="telethon.client.chats.ChatMethods.iter_participants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_participants</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">iter_participants</span></code>
 will now use its <code class="docutils literal notranslate"><span class="pre">search=</span></code> as a symbol set when <code class="docutils literal notranslate"><span class="pre">aggressive=True</span></code>,
 so you can do <code class="docutils literal notranslate"><span class="pre">client.get_participants(group,</span> <span class="pre">aggressive=True,</span>
 <span class="pre">search='абвгдеёжзийклмнопрст')</span></code>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">StringSession</span></code> supports custom encoding.</p></li>
-<li><p>Callbacks for <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.auth.AuthMethods.start</span></code></a> can be <code class="docutils literal notranslate"><span class="pre">async</span></code>.</p></li>
+<li><p>Callbacks for <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.client.auth.AuthMethods.start</span></code> can be <code class="docutils literal notranslate"><span class="pre">async</span></code>.</p></li>
 </ul>
 </section>
 <section id="id80">
@@ -2709,7 +2709,7 @@ otherwise improve performance and reliability.</p></li>
 <h2><a class="toc-backref" href="#id323">Conversations, String Sessions and More (v1.2)</a><a class="headerlink" href="#conversations-string-sessions-and-more-v1-2" title="Permalink to this heading"></a></h2>
 <p><em>Published at 2018/08/14</em></p>
 <p>This is a big release! Quite a few things have been added to the library,
-such as the new <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.conversation.Conversation" title="telethon.tl.custom.conversation.Conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code></a>.
+such as the new <code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code>.
 This makes it trivial to get tokens from <a class="reference external" href="https://t.me/BotFather">&#64;BotFather</a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.tl</span> <span class="kn">import</span> <span class="n">types</span>
 
@@ -2739,10 +2739,10 @@ excited about.</p>
 <section id="id81">
 <h3><a class="toc-backref" href="#id324">Additions</a><a class="headerlink" href="#id81" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>The mentioned method to start a new <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.conversation" title="telethon.client.dialogs.DialogMethods.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation</span></code></a>.</p></li>
-<li><p>Implemented global search through <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages</span></code></a>
+<li><p>The mentioned method to start a new <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation</span></code>.</p></li>
+<li><p>Implemented global search through <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages</span></code>
 with <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> entity.</p></li>
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.bots.BotMethods.inline_query" title="telethon.client.bots.BotMethods.inline_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query</span></code></a>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query</span></code>
 method to perform inline queries.</p></li>
 <li><p>Bot-API-style <code class="docutils literal notranslate"><span class="pre">file_id</span></code> can now be used to send files and download media.
 You can also access <a class="reference internal" href="../modules/utils.html#telethon.utils.resolve_bot_file_id" title="telethon.utils.resolve_bot_file_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils.resolve_bot_file_id</span></code></a> and
@@ -2755,7 +2755,7 @@ so you can’t use a bot’s <code class="docutils literal notranslate"><span cl
 <section id="id82">
 <h3><a class="toc-backref" href="#id325">Bug fixes</a><a class="headerlink" href="#id82" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>UTC timezone for <a class="reference internal" href="../modules/events.html#telethon.events.userupdate.UserUpdate" title="telethon.events.userupdate.UserUpdate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.userupdate.UserUpdate</span></code></a>.</p></li>
+<li><p>UTC timezone for <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.userupdate.UserUpdate</span></code>.</p></li>
 <li><p>Bug with certain input parameters when iterating messages.</p></li>
 <li><p>RPC errors without parent requests caused a crash, and better logging.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">incoming</span> <span class="pre">=</span> <span class="pre">outgoing</span> <span class="pre">=</span> <span class="pre">True</span></code> was not working properly.</p></li>
@@ -2763,7 +2763,7 @@ so you can’t use a bot’s <code class="docutils literal notranslate"><span cl
 <li><p>File attributes not being inferred for <code class="docutils literal notranslate"><span class="pre">open()</span></code>’ed files.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">MemorySession</span></code> if <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> is not installed by default.</p></li>
 <li><p>Self-user would not be saved to the session file after signing in.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.catch_up" title="telethon.client.updates.UpdateMethods.catch_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.catch_up()</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.catch_up()</span></code>
 seems to be functional again.</p></li>
 </ul>
 </section>
@@ -2780,7 +2780,7 @@ seems to be functional again.</p></li>
 <section id="better-custom-message-v1-1-1">
 <h2><a class="toc-backref" href="#id327">Better Custom Message (v1.1.1)</a><a class="headerlink" href="#better-custom-message-v1-1-1" title="Permalink to this heading"></a></h2>
 <p><em>Published at 2018/07/23</em></p>
-<p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom.Message</span></code></a> class has been
+<p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">custom.Message</span></code> class has been
 rewritten in a cleaner way and overall feels less hacky in the library.
 This should perform better than the previous way in which it was patched.</p>
 <p>The release is primarily intended to test this big change, but also fixes
@@ -2800,8 +2800,8 @@ authorization for the same data center, which is unsupported.</p></li>
 <h2><a class="toc-backref" href="#id329">Bot Friendly (v1.1)</a><a class="headerlink" href="#bot-friendly-v1-1" title="Permalink to this heading"></a></h2>
 <p><em>Published at 2018/07/21</em></p>
 <p>Two new event handlers to ease creating normal bots with the library,
-namely <a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery" title="telethon.events.inlinequery.InlineQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.InlineQuery</span></code></a>
-and <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.CallbackQuery</span></code></a>
+namely <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.InlineQuery</span></code>
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.CallbackQuery</span></code>
 for handling <code class="docutils literal notranslate"><span class="pre">&#64;InlineBot</span> <span class="pre">queries</span></code> or reacting to a button click. For
 this second option, there is an even better way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon.tl.custom</span> <span class="kn">import</span> <span class="n">Button</span>
@@ -2849,10 +2849,10 @@ are done testing:</p>
 <section id="id85">
 <h3><a class="toc-backref" href="#id330">Additions</a><a class="headerlink" href="#id85" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.button.Button" title="telethon.tl.custom.button.Button"><code class="xref py py-obj docutils literal notranslate"><span class="pre">custom.Button</span></code></a> class
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">custom.Button</span></code> class
 to help you create inline (or normal) reply keyboards. You
 must sign in as a bot to use the <code class="docutils literal notranslate"><span class="pre">buttons=</span></code> parameters.</p></li>
-<li><p>New events usable if you sign in as a bot: <a class="reference internal" href="../modules/events.html#telethon.events.inlinequery.InlineQuery" title="telethon.events.inlinequery.InlineQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.InlineQuery</span></code></a> and <a class="reference internal" href="../modules/events.html#telethon.events.callbackquery.CallbackQuery" title="telethon.events.callbackquery.CallbackQuery"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.CallbackQuery</span></code></a>.</p></li>
+<li><p>New events usable if you sign in as a bot: <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.InlineQuery</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.CallbackQuery</span></code>.</p></li>
 <li><p>New <code class="docutils literal notranslate"><span class="pre">silent</span></code> parameter when sending messages, usable in broadcast channels.</p></li>
 <li><p>Documentation now has an entire section dedicate to how to use
 the client’s friendly methods at <em>(removed broken link)</em>.</p></li>
@@ -2911,8 +2911,8 @@ properly. You can use it doing the following, like any other mode:</p>
 <h3><a class="toc-backref" href="#id335">Additions</a><a class="headerlink" href="#id89" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">add_mark=</span></code> is now back on <code class="docutils literal notranslate"><span class="pre">utils.get_input_peer</span></code> and also on
-<a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_input_entity" title="telethon.client.users.UserMethods.get_input_entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code></a>.</p></li>
-<li><p>New <a class="reference internal" href="../modules/client.html#telethon.client.users.UserMethods.get_peer_id" title="telethon.client.users.UserMethods.get_peer_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_peer_id</span></code></a>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_input_entity()</span></code>.</p></li>
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_peer_id</span></code>
 convenience for <code class="docutils literal notranslate"><span class="pre">utils.get_peer_id(await</span> <span class="pre">client.get_input_entity(peer))</span></code>.</p></li>
 </ul>
 </section>
@@ -2923,7 +2923,7 @@ convenience for <code class="docutils literal notranslate"><span class="pre">uti
 longer be automatically turned into one. This basically means that e.g.
 uploading 10 file parts at once will work properly again.</p></li>
 <li><p>Documentation fixes and some missing <code class="docutils literal notranslate"><span class="pre">await</span></code>.</p></li>
-<li><p>Revert named argument for <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.forward_messages" title="telethon.client.messages.MessageMethods.forward_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages</span></code></a></p></li>
+<li><p>Revert named argument for <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.forward_messages</span></code></p></li>
 </ul>
 </section>
 <section id="id91">
@@ -2953,7 +2953,7 @@ This also means re-sending packets doesn’t need to re-pack their bytes.</p></l
 </tr>
 </tbody>
 </table>
-<p>Mostly bug fixes, but now there is a new parameter on <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.iter_messages" title="telethon.client.messages.MessageMethods.iter_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages</span></code></a> to support reversing
+<p>Mostly bug fixes, but now there is a new parameter on <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_messages</span></code> to support reversing
 the order in which messages are returned.</p>
 <section id="id93">
 <h3><a class="toc-backref" href="#id340">Additions</a><a class="headerlink" href="#id93" title="Permalink to this heading"></a></h3>
@@ -2968,7 +2968,7 @@ as a script that only forwards incoming messages somewhere else.</p></li>
 <section id="id94">
 <h3><a class="toc-backref" href="#id341">Bug fixes</a><a class="headerlink" href="#id94" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Count was always <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.button_count" title="telethon.tl.custom.message.Message.button_count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.button_count</span></code></a>.</p></li>
+<li><p>Count was always <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a> for <code class="xref py py-obj docutils literal notranslate"><span class="pre">message.button_count</span></code>.</p></li>
 <li><p>Some fixes when disconnecting upon dropping the client.</p></li>
 <li><p>Support for Python 3.4 in the sync version, and fix media download.</p></li>
 <li><p>Some issues with events when accessing the input chat or their media.</p></li>
@@ -2991,7 +2991,7 @@ unusable! This quick update should fix those, namely:</p>
 <section id="id95">
 <h3><a class="toc-backref" href="#id344">Bug fixes</a><a class="headerlink" href="#id95" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code></a> was completely
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code> was completely
 broken due to a last-time change requiring named arguments everywhere.</p></li>
 <li><p>Since the rewrite, if your system clock was wrong, the connection would
 get stuck in an infinite “bad message” loop of responses from Telegram.</p></li>
@@ -3040,13 +3040,13 @@ the scenes! This means you’re now able to do both of the following:</p>
 <section id="id96">
 <h3><a class="toc-backref" href="#id346">Breaking Changes</a><a class="headerlink" href="#id96" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">message.get_fwd_sender</span></code> is now in <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.forward" title="telethon.tl.custom.message.Message.forward"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.forward</span></code></a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">client.idle</span></code> is now <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">client.add_update_handler</span></code> is now <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.add_event_handler" title="telethon.client.updates.UpdateMethods.add_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.add_event_handler</span></code></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">client.remove_update_handler</span></code> is now <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.remove_event_handler" title="telethon.client.updates.UpdateMethods.remove_event_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.remove_event_handler</span></code></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">client.list_update_handlers</span></code> is now <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.list_event_handlers" title="telethon.client.updates.UpdateMethods.list_event_handlers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.list_event_handlers</span></code></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">client.get_message_history</span></code> is now <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.get_messages" title="telethon.client.messages.MessageMethods.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages</span></code></a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">client.send_voice_note</span></code> is now <a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code></a> with <code class="docutils literal notranslate"><span class="pre">is_voice=True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message.get_fwd_sender</span></code> is now in <code class="xref py py-obj docutils literal notranslate"><span class="pre">message.forward</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client.idle</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client.add_update_handler</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.add_event_handler</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client.remove_update_handler</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.remove_event_handler</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client.list_update_handlers</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.list_event_handlers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client.get_message_history</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client.send_voice_note</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code> with <code class="docutils literal notranslate"><span class="pre">is_voice=True</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">client.invoke()</span></code> is now <code class="docutils literal notranslate"><span class="pre">client(...)</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">report_errors</span></code> has been removed since it’s currently not used,
 and <code class="docutils literal notranslate"><span class="pre">flood_sleep_threshold</span></code> is now part of the client.</p></li>
@@ -3061,11 +3061,11 @@ can also change.</p></li>
 <section id="id97">
 <h3><a class="toc-backref" href="#id347">Additions</a><a class="headerlink" href="#id97" title="Permalink to this heading"></a></h3>
 <ul>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.uploads.UploadMethods.send_file" title="telethon.client.uploads.UploadMethods.send_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code></a> now
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.send_file</span></code> now
 accepts external <code class="docutils literal notranslate"><span class="pre">http://</span></code> and <code class="docutils literal notranslate"><span class="pre">https://</span></code> URLs.</p></li>
 <li><p>You can use the <a class="reference internal" href="../modules/client.html#telethon-client"><span class="std std-ref">TelegramClient</span></a> inside of <code class="docutils literal notranslate"><span class="pre">with</span></code>
-blocks, which will <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code></a>
-and <a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect()</span></code></a>
+blocks, which will <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code>
+and <code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect()</span></code>
 the client for you:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">TelegramClient</span><span class="p">,</span> <span class="n">sync</span>
 
@@ -3073,7 +3073,7 @@ the client for you:</p>
     <span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Convenience at its maximum! You can even chain the <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">.start()</span></code></a> method since
+<p>Convenience at its maximum! You can even chain the <code class="xref py py-obj docutils literal notranslate"><span class="pre">.start()</span></code> method since
 it returns the instance of the client:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">TelegramClient</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">api_id</span><span class="p">,</span> <span class="n">api_hash</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">bot_token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span> <span class="k">as</span> <span class="n">bot</span><span class="p">:</span>
     <span class="n">bot</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">chat</span><span class="p">,</span> <span class="s1">&#39;Hello!&#39;</span><span class="p">)</span>
@@ -3090,20 +3090,20 @@ it returns the instance of the client:</p>
 <li><p>SQLite’s cursor should not be closed properly after usage.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">await</span></code> the updates task upon disconnection.</p></li>
 <li><p>Some bug in Python 3.5.2’s <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> causing 100% CPU load if you
-forgot to call <a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code></a>.
+forgot to call <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnect()</span></code>.
 The method is called for you on object destruction, but you still should
 disconnect manually or use a <code class="docutils literal notranslate"><span class="pre">with</span></code> block.</p></li>
 <li><p>Some fixes regarding disconnecting on client deletion and properly
 saving the authorization key.</p></li>
-<li><p>Passing a class to <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_entities_text" title="telethon.tl.custom.message.Message.get_entities_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.get_entities_text</span></code></a> now works properly.</p></li>
+<li><p>Passing a class to <code class="xref py py-obj docutils literal notranslate"><span class="pre">message.get_entities_text</span></code> now works properly.</p></li>
 <li><p>Iterating messages from a specific user in private messages now works.</p></li>
 </ul>
 </section>
 <section id="id99">
 <h3><a class="toc-backref" href="#id349">Enhancements</a><a class="headerlink" href="#id99" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Both <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code></a> and
-<a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code></a> can
+<li><p>Both <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.start()</span></code> and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code> can
 be ran in both a synchronous way (without starting the loop manually)
 or from an <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">def</span></code> where they need to have an <code class="docutils literal notranslate"><span class="pre">await</span></code>.</p></li>
 </ul>
@@ -3137,12 +3137,12 @@ hand-written <code class="docutils literal notranslate"><span class="pre">.svg</
 <h3><a class="toc-backref" href="#id351">Breaking Changes</a><a class="headerlink" href="#id100" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p>If you relied on internals like the <code class="docutils literal notranslate"><span class="pre">MtProtoSender</span></code> and the
-<code class="docutils literal notranslate"><span class="pre">TelegramBareClient</span></code>, both are gone. They are now <code class="xref py py-obj docutils literal notranslate"><span class="pre">MTProtoSender</span></code> and <a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient" title="telethon.client.telegrambaseclient.TelegramBaseClient"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TelegramBaseClient</span></code></a> and they behave
+<code class="docutils literal notranslate"><span class="pre">TelegramBareClient</span></code>, both are gone. They are now <code class="xref py py-obj docutils literal notranslate"><span class="pre">MTProtoSender</span></code> and <code class="xref py py-obj docutils literal notranslate"><span class="pre">TelegramBaseClient</span></code> and they behave
 differently.</p></li>
 <li><p>Underscores have been renamed from filenames. This means
 <code class="docutils literal notranslate"><span class="pre">telethon.errors.rpc_error_list</span></code> won’t work, but you should
 have been using <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.errors</span></code> all this time instead.</p></li>
-<li><p><a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.connect" title="telethon.client.telegrambaseclient.TelegramBaseClient.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.connect</span></code></a>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.connect</span></code>
 no longer returns <a class="reference external" href="https://docs.python.org/3/library/constants.html#True" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">True</span></code></a> on success. Instead, you should <code class="docutils literal notranslate"><span class="pre">except</span></code> the
 possible <code class="docutils literal notranslate"><span class="pre">ConnectionError</span></code> and act accordingly. This makes it easier to
 not ignore the error.</p></li>
@@ -3155,9 +3155,9 @@ rule is that properties are not allowed to make API calls. You should use
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">.get_sender()</span></code>,
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">.get_chat()</span></code> instead while
 using events. You can safely access properties if you get messages through
-<a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.get_messages" title="telethon.client.messages.MessageMethods.get_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages()</span></code></a>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">client.get_messages()</span></code>
 or other methods in the client.</p></li>
-<li><p>The above point means <code class="docutils literal notranslate"><span class="pre">reply_message</span></code> is now <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_reply_message" title="telethon.tl.custom.message.Message.get_reply_message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">.get_reply_message()</span></code></a>, and <code class="docutils literal notranslate"><span class="pre">fwd_from_entity</span></code>
+<li><p>The above point means <code class="docutils literal notranslate"><span class="pre">reply_message</span></code> is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">.get_reply_message()</span></code>, and <code class="docutils literal notranslate"><span class="pre">fwd_from_entity</span></code>
 is now <code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fwd_sender()</span></code>.
 Also <code class="docutils literal notranslate"><span class="pre">forward</span></code> was gone in the previous version, and you should be using
 <code class="docutils literal notranslate"><span class="pre">fwd_from</span></code> instead.</p></li>
@@ -3171,25 +3171,25 @@ This can possibly help avoid bans. This has no effect for accounts that
 were created before.</p></li>
 <li><p>The <a class="reference external" href="https://tl.telethon.dev/">method reference</a> now shows
 which methods can be used if you sign in with a <code class="docutils literal notranslate"><span class="pre">bot_token</span></code>.</p></li>
-<li><p>There’s a new <a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnected" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnected</span></code></a> future
+<li><p>There’s a new <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.disconnected</span></code> future
 which you can wait on. When a disconnection occurs, you will now, instead
 letting it happen in the background.</p></li>
 <li><p>More configurable retries parameters, such as auto-reconnection, retries
 when connecting, and retries when sending a request.</p></li>
-<li><p>You can filter <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events.NewMessage</span></code></a>
+<li><p>You can filter <code class="xref py py-obj docutils literal notranslate"><span class="pre">events.NewMessage</span></code>
 by sender ID, and also whether they are forwards or not.</p></li>
-<li><p>New <code class="docutils literal notranslate"><span class="pre">ignore_migrated</span></code> parameter for <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs</span></code></a>.</p></li>
+<li><p>New <code class="docutils literal notranslate"><span class="pre">ignore_migrated</span></code> parameter for <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs</span></code>.</p></li>
 </ul>
 </section>
 <section id="id102">
 <h3><a class="toc-backref" href="#id353">Bug fixes</a><a class="headerlink" href="#id102" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>Several fixes to <a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.newmessage.NewMessage</span></code></a>.</p></li>
+<li><p>Several fixes to <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.newmessage.NewMessage</span></code>.</p></li>
 <li><p>Removed named <code class="docutils literal notranslate"><span class="pre">length</span></code> argument in <code class="docutils literal notranslate"><span class="pre">to_bytes</span></code> for PyPy.</p></li>
 <li><p>Raw events failed due to not having <code class="docutils literal notranslate"><span class="pre">._set_client</span></code>.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.get_entities_text" title="telethon.tl.custom.message.Message.get_entities_text"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.get_entities_text</span></code></a> properly
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.get_entities_text</span></code> properly
 supports filtering, even if there are no message entities.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message.click" title="telethon.tl.custom.message.Message.click"><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.click</span></code></a> works better.</p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">message.click</span></code> works better.</p></li>
 <li><p>The server started sending <a class="reference external" href="https://tl.telethon.dev/?q=DraftMessageEmpty">DraftMessageEmpty</a> which the library
 didn’t handle correctly when getting dialogs.</p></li>
 <li><p>The “correct” chat is now always returned from returned messages.</p></li>
@@ -3198,14 +3198,14 @@ didn’t handle correctly when getting dialogs.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">fd</span></code> is removed from the reader upon closing the socket. This
 should be noticeable in Windows.</p></li>
 <li><p><a class="reference external" href="https://tl.telethon.dev/?q=MessageEmpty">MessageEmpty</a> is now handled when searching messages.</p></li>
-<li><p>Fixed a rare infinite loop bug in <a class="reference internal" href="../modules/client.html#telethon.client.dialogs.DialogMethods.iter_dialogs" title="telethon.client.dialogs.DialogMethods.iter_dialogs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs</span></code></a> for some people.</p></li>
+<li><p>Fixed a rare infinite loop bug in <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs</span></code> for some people.</p></li>
 <li><p>Fixed <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> when there is no <code class="xref py py-obj docutils literal notranslate"><span class="pre">.sender</span></code>.</p></li>
 </ul>
 </section>
 <section id="id103">
 <h3><a class="toc-backref" href="#id354">Enhancements</a><a class="headerlink" href="#id103" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>You can now delete over 100 messages at once with <a class="reference internal" href="../modules/client.html#telethon.client.messages.MessageMethods.delete_messages" title="telethon.client.messages.MessageMethods.delete_messages"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_messages</span></code></a>.</p></li>
+<li><p>You can now delete over 100 messages at once with <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.delete_messages</span></code>.</p></li>
 <li><p>Signing in now accounts for <code class="docutils literal notranslate"><span class="pre">AuthRestartError</span></code> itself, and also handles
 <code class="docutils literal notranslate"><span class="pre">PasswordHashInvalidError</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__all__</span></code> is now defined, so <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">telethon</span> <span class="pre">import</span> <span class="pre">*</span></code> imports sane
@@ -3262,7 +3262,7 @@ mostly as a proof of concept, but it might be useful for other people.</p></li>
 </tr>
 </tbody>
 </table>
-<p>This update brings a new <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.message.Message</span></code></a> object!</p>
+<p>This update brings a new <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.message.Message</span></code> object!</p>
 <p>All the methods in the <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient</span></code> that
 used to return a <a class="reference external" href="https://tl.telethon.dev/?q=Message">Message</a> will now return this object instead, which
 means you can do things like the following:</p>
@@ -3273,7 +3273,7 @@ means you can do things like the following:</p>
 </pre></div>
 </div>
 <p>Refer to its documentation to see all you can do, again, click
-<a class="reference internal" href="../modules/custom.html#telethon.tl.custom.message.Message" title="telethon.tl.custom.message.Message"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.message.Message</span></code></a> to go to its page.</p>
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.message.Message</span></code> to go to its page.</p>
 <section id="id105">
 <h3><a class="toc-backref" href="#id357">Breaking Changes</a><a class="headerlink" href="#id105" title="Permalink to this heading"></a></h3>
 <ul class="simple">
@@ -3292,7 +3292,7 @@ and the old <code class="docutils literal notranslate"><span class="pre">Connect
 </pre></div>
 </div>
 </li>
-<li><p>More convenience properties for <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog" title="telethon.tl.custom.dialog.Dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.dialog.Dialog</span></code></a>.</p></li>
+<li><p>More convenience properties for <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.dialog.Dialog</span></code>.</p></li>
 <li><p>New default <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient.parse_mode</span></code>.</p></li>
 <li><p>You can edit the media of messages that already have some media.</p></li>
 <li><p>New dark theme in the online <code class="docutils literal notranslate"><span class="pre">tl</span></code> reference, check it out at
@@ -3310,7 +3310,7 @@ was failing if no filter had been set.</p></li>
 was being ignored by Telegram. This is now worked around.</p></li>
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient.catch_up</span></code> would fail with empty
 states.</p></li>
-<li><p><a class="reference internal" href="../modules/events.html#telethon.events.newmessage.NewMessage" title="telethon.events.newmessage.NewMessage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.newmessage.NewMessage</span></code></a> supports <code class="docutils literal notranslate"><span class="pre">incoming=False</span></code>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.newmessage.NewMessage</span></code> supports <code class="docutils literal notranslate"><span class="pre">incoming=False</span></code>
 to indicate <code class="docutils literal notranslate"><span class="pre">outgoing=True</span></code>.</p></li>
 </ul>
 </section>
@@ -3383,7 +3383,7 @@ when iterating over many messages, and retrying often fixes it.</p></li>
 sleeping only as much as needed.</p></li>
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient.edit_message</span></code> now supports
 omitting the entity if you pass a <a class="reference external" href="https://tl.telethon.dev/?q=Message">Message</a>.</p></li>
-<li><p><a class="reference internal" href="../modules/events.html#telethon.events.raw.Raw" title="telethon.events.raw.Raw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.raw.Raw</span></code></a> can now be filtered by type.</p></li>
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.raw.Raw</span></code> can now be filtered by type.</p></li>
 </ul>
 </section>
 <section id="id113">
@@ -3417,7 +3417,7 @@ a single item instead of a list if the input was also a single item.</p></li>
 <section id="id115">
 <h3><a class="toc-backref" href="#id369">Additions</a><a class="headerlink" href="#id115" title="Permalink to this heading"></a></h3>
 <ul class="simple">
-<li><p>New <a class="reference internal" href="../modules/events.html#telethon.events.messageread.MessageRead" title="telethon.events.messageread.MessageRead"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.messageread.MessageRead</span></code></a> event, to find out when
+<li><p>New <code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.events.messageread.MessageRead</span></code> event, to find out when
 and who read which messages as soon as it happens.</p></li>
 <li><p>Now you can access <code class="docutils literal notranslate"><span class="pre">.chat_id</span></code> on all events and <code class="docutils literal notranslate"><span class="pre">.sender_id</span></code> on some.</p></li>
 </ul>
@@ -3443,7 +3443,7 @@ and who read which messages as soon as it happens.</p></li>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">parse_mode</span></code> for messages now accepts a callable.</p></li>
 <li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.telegram_client.TelegramClient.download_media</span></code> accepts web previews.</p></li>
-<li><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.dialog.Dialog" title="telethon.tl.custom.dialog.Dialog"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.dialog.Dialog</span></code></a> instances can now be casted into
+<li><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.tl.custom.dialog.Dialog</span></code> instances can now be casted into
 <a class="reference external" href="https://tl.telethon.dev/?q=InputPeer">InputPeer</a>.</p></li>
 <li><p>Better logging when reading packages “breaks”.</p></li>
 <li><p>Better and more powerful <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">gen</span></code> command.</p></li>

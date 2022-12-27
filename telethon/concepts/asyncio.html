@@ -371,7 +371,7 @@ which only works in the main thread.</p>
 </section>
 <section id="client-run-until-disconnected-blocks">
 <h2><a class="toc-backref" href="#id9">client.run_until_disconnected() blocks!</a><a class="headerlink" href="#client-run-until-disconnected-blocks" title="Permalink to this heading"></a></h2>
-<p>All of what <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code></a> does is
+<p>All of what <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code> does is
 run the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>’s event loop until the client is disconnected. That means
 <em>the loop is running</em>. And if the loop is running, it will run all the tasks
 in it. So if you want to run <em>other</em> code, create tasks for it:</p>
@@ -388,7 +388,7 @@ in it. So if you want to run <em>other</em> code, create tasks for it:</p>
 </pre></div>
 </div>
 <p>This creates a task for a clock that prints the time every second.
-You don’t need to use <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code></a> either!
+You don’t need to use <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code> either!
 You just need to make the loop is running, somehow. <code class="xref py py-obj docutils literal notranslate"><span class="pre">loop.run_forever()</span></code> and <a class="reference external" href="https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_until_complete" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loop.run_until_complete()</span></code></a> can also be used to run
 the loop, and Telethon will be happy with any approach.</p>
 <p>Of course, there are better tools to run code hourly or daily, see below.</p>
@@ -441,8 +441,8 @@ combine all the libraries you want. People seem to forget this simple fact!</p>
 <p>Because it’s so common that it’s really convenient to offer said
 functionality by default. This means you can set up all your event
 handlers and start the client without worrying about loops at all.</p>
-<p>Using the client in a <code class="docutils literal notranslate"><span class="pre">with</span></code> block, <a class="reference internal" href="../modules/client.html#telethon.client.auth.AuthMethods.start" title="telethon.client.auth.AuthMethods.start"><code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code></a>, <a class="reference internal" href="../modules/client.html#telethon.client.updates.UpdateMethods.run_until_disconnected" title="telethon.client.updates.UpdateMethods.run_until_disconnected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_until_disconnected</span></code></a>, and
-<a class="reference internal" href="../modules/client.html#telethon.client.telegrambaseclient.TelegramBaseClient.disconnect" title="telethon.client.telegrambaseclient.TelegramBaseClient.disconnect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code></a>
+<p>Using the client in a <code class="docutils literal notranslate"><span class="pre">with</span></code> block, <code class="xref py py-obj docutils literal notranslate"><span class="pre">start</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">run_until_disconnected</span></code>, and
+<code class="xref py py-obj docutils literal notranslate"><span class="pre">disconnect</span></code>
 all support this.</p>
 </section>
 <section id="where-can-i-read-more">
