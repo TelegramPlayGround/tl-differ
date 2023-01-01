@@ -226,15 +226,15 @@ asynchronous library.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telegram.ext</span> <span class="kn">import</span> <span class="n">Updater</span><span class="p">,</span> <span class="n">CommandHandler</span><span class="p">,</span> <span class="n">MessageHandler</span><span class="p">,</span> <span class="n">Filters</span>
 
 <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Send a message when the command /start is issued.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Send a message when the command /start is issued.&quot;&quot;&quot;</span>
     <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="s1">&#39;Hi!&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">update</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Echo the user message.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Echo the user message.&quot;&quot;&quot;</span>
     <span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">reply_text</span><span class="p">(</span><span class="n">update</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Start the bot.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Start the bot.&quot;&quot;&quot;</span>
     <span class="n">updater</span> <span class="o">=</span> <span class="n">Updater</span><span class="p">(</span><span class="s2">&quot;TOKEN&quot;</span><span class="p">)</span>
     <span class="n">dp</span> <span class="o">=</span> <span class="n">updater</span><span class="o">.</span><span class="n">dispatcher</span>
     <span class="n">dp</span><span class="o">.</span><span class="n">add_handler</span><span class="p">(</span><span class="n">CommandHandler</span><span class="p">(</span><span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="n">start</span><span class="p">))</span>
@@ -255,17 +255,17 @@ asynchronous library.</p>
 
 <span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">(</span><span class="n">pattern</span><span class="o">=</span><span class="s1">&#39;/start&#39;</span><span class="p">))</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Send a message when the command /start is issued.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Send a message when the command /start is issued.&quot;&quot;&quot;</span>
     <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">respond</span><span class="p">(</span><span class="s1">&#39;Hi!&#39;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">events</span><span class="o">.</span><span class="n">StopPropagation</span>
 
 <span class="nd">@bot</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">events</span><span class="o">.</span><span class="n">NewMessage</span><span class="p">)</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">echo</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Echo the user message.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Echo the user message.&quot;&quot;&quot;</span>
     <span class="k">await</span> <span class="n">event</span><span class="o">.</span><span class="n">respond</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;Start the bot.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Start the bot.&quot;&quot;&quot;</span>
     <span class="n">bot</span><span class="o">.</span><span class="n">run_until_disconnected</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -335,7 +335,7 @@ Note that the <code class="docutils literal notranslate"><span class="pre">event
 
 <span class="nd">@dp</span><span class="o">.</span><span class="n">message_handler</span><span class="p">(</span><span class="n">commands</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">])</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">send_welcome</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">types</span><span class="o">.</span><span class="n">Message</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    This handler will be called when client send `/start` command.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">await</span> <span class="n">message</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s2">&quot;Hi!</span><span class="se">\n</span><span class="s2">I&#39;m EchoBot!</span><span class="se">\n</span><span class="s2">Powered by aiogram.&quot;</span><span class="p">)</span>

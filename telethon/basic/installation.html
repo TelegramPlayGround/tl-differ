@@ -139,8 +139,8 @@
 <p>Telethon is a Python library, which means you need to download and install
 Python from <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> if you haven’t already. Once
 you have Python installed, <a class="reference external" href="https://pythonspeed.com/articles/upgrade-pip/">upgrade pip</a> and run:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade telethon
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>telethon
 </pre></div>
 </div>
 <p>…to install or upgrade the library to the latest version.</p>
@@ -148,7 +148,7 @@ python3 -m pip install --upgrade telethon
 <h2>Installing Development Versions<a class="headerlink" href="#installing-development-versions" title="Permalink to this heading"></a></h2>
 <p>If you want the <em>latest</em> unreleased changes,
 you can run the following command instead:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -m pip install --upgrade https://github.com/LonamiWebs/Telethon/archive/master.zip
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>https://github.com/LonamiWebs/Telethon/archive/master.zip
 </pre></div>
 </div>
 <div class="admonition note">
@@ -161,7 +161,7 @@ bug still occurs in this version.</p>
 <section id="verification">
 <h2>Verification<a class="headerlink" href="#verification" title="Permalink to this heading"></a></h2>
 <p>To verify that the library is installed correctly, run the following command:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3 -c <span class="s2">&quot;import telethon; print(telethon.__version__)&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import telethon; print(telethon.__version__)&quot;</span>
 </pre></div>
 </div>
 <p>The version number of the library should show in the output.</p>
@@ -190,10 +190,10 @@ manually.</p>
 <p>Some of the modules may require additional dependencies before being
 installed through <code class="docutils literal notranslate"><span class="pre">pip</span></code>. If you have an <code class="docutils literal notranslate"><span class="pre">apt</span></code>-based system, consider
 installing the most commonly missing dependencies (with the right <code class="docutils literal notranslate"><span class="pre">pip</span></code>):</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>apt update
-apt install clang lib<span class="o">{</span>jpeg-turbo,webp<span class="o">}</span>-dev python<span class="o">{</span>,-dev<span class="o">}</span> zlib-dev
-pip install -U --user setuptools
-pip install -U --user telethon cryptg pillow
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>clang<span class="w"> </span>lib<span class="o">{</span>jpeg-turbo,webp<span class="o">}</span>-dev<span class="w"> </span>python<span class="o">{</span>,-dev<span class="o">}</span><span class="w"> </span>zlib-dev
+pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--user<span class="w"> </span>setuptools
+pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>--user<span class="w"> </span>telethon<span class="w"> </span>cryptg<span class="w"> </span>pillow
 </pre></div>
 </div>
 <p>Thanks to <a class="reference external" href="https://static.bb010g.com">&#64;bb010g</a> for writing down this nice list.</p>
