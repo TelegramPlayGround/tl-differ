@@ -21,7 +21,8 @@ payments.canPurchasePremium#9fc19eb6 purpose:<a href="../../types/input_store_pa
 <strong>with</strong> TelegramClient(name, api_id, api_hash) <strong>as</strong> client:
     result = client(functions.payments.CanPurchasePremiumRequest(
         purpose=types.InputStorePaymentPremiumSubscription(
-            restore=<strong>True</strong>
+            restore=<strong>True</strong>,
+            upgrade=<strong>True</strong>
         )
     ))
     print(result)</pre><textarea id="c" class="invisible"></textarea><script>function cp(t){var c=document.getElementById("c");c.value=t;c.select();try{document.execCommand("copy")}catch(e){}}</script></div><script>prependPath = "../../";</script><script src="../../js/search.js"></script></body></html>
