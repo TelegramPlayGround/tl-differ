@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Events Reference &mdash; Telethon 0.145 documentation</title>
@@ -11,10 +11,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -29,14 +27,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Telethon
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Telethon
           </a>
               <div class="version">
                 0.145
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -130,7 +132,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Events Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/quick-references/events-reference.rst.txt" rel="nofollow"> View page source</a>
@@ -142,7 +144,7 @@
            <div itemprop="articleBody">
              
   <section id="events-reference">
-<h1><a class="toc-backref" href="#id1">Events Reference</a><a class="headerlink" href="#events-reference" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Events Reference</a><a class="headerlink" href="#events-reference" title="Permalink to this heading"></a></h1>
 <p>Here you will find a quick summary of all the methods
 and properties that you can access when working with events.</p>
 <p>You can access the client that creates this event by doing
@@ -154,7 +156,7 @@ its <strong>attributes</strong> (the properties will be shown here).</p>
 <p>Remember that <strong>all events base</strong> <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>! Please see <a class="reference internal" href="faq.html#faq"><span class="std std-ref">FAQ</span></a>
 if you don’t know what this means or the implications of it.</p>
 </div>
-<div class="contents topic" id="contents">
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#events-reference" id="id1">Events Reference</a></p>
@@ -172,9 +174,9 @@ if you don’t know what this means or the implications of it.</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="newmessage">
-<h2><a class="toc-backref" href="#id2">NewMessage</a><a class="headerlink" href="#newmessage" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">NewMessage</a><a class="headerlink" href="#newmessage" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a new text message or a message with media arrives.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -192,13 +194,13 @@ them. Please see the full documentation for examples.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code>.</p>
 </section>
 <section id="messageedited">
-<h2><a class="toc-backref" href="#id3">MessageEdited</a><a class="headerlink" href="#messageedited" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">MessageEdited</a><a class="headerlink" href="#messageedited" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a message is edited. Just like <code class="xref py py-obj docutils literal notranslate"><span class="pre">NewMessage</span></code>, you should treat
 this event as a <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code>.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageEdited</span></code>.</p>
 </section>
 <section id="messagedeleted">
-<h2><a class="toc-backref" href="#id4">MessageDeleted</a><a class="headerlink" href="#messagedeleted" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">MessageDeleted</a><a class="headerlink" href="#messagedeleted" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a message is deleted. Note that this event isn’t 100%
 reliable, since Telegram doesn’t always notify the clients that a message
 was deleted.</p>
@@ -207,41 +209,29 @@ was deleted.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageDeleted</span></code>.</p>
 </section>
 <section id="messageread">
-<h2><a class="toc-backref" href="#id5">MessageRead</a><a class="headerlink" href="#messageread" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">MessageRead</a><a class="headerlink" href="#messageread" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever one or more messages are read in a chat.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageRead</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="chataction">
-<h2><a class="toc-backref" href="#id6">ChatAction</a><a class="headerlink" href="#chataction" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">ChatAction</a><a class="headerlink" href="#chataction" title="Permalink to this heading"></a></h2>
 <p>Occurs on certain chat actions, such as chat title changes,
 user join or leaves, pinned messages, photo changes, etc.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatAction</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="userupdate">
-<h2><a class="toc-backref" href="#id7">UserUpdate</a><a class="headerlink" href="#userupdate" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">UserUpdate</a><a class="headerlink" href="#userupdate" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever a user goes online, starts typing, etc.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">UserUpdate</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#module-typing" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typing</span></code></a></p></td>
 <td><p>The typing module: Support for gradual typing as defined by PEP 484.</p></td>
@@ -250,48 +240,36 @@ user join or leaves, pinned messages, photo changes, etc.</p>
 </table>
 </section>
 <section id="callbackquery">
-<h2><a class="toc-backref" href="#id8">CallbackQuery</a><a class="headerlink" href="#callbackquery" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">CallbackQuery</a><a class="headerlink" href="#callbackquery" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you sign in as a bot and a user
 clicks one of the inline buttons on your messages.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">CallbackQuery</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="inlinequery">
-<h2><a class="toc-backref" href="#id9">InlineQuery</a><a class="headerlink" href="#inlinequery" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">InlineQuery</a><a class="headerlink" href="#inlinequery" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you sign in as a bot and a user
 sends an inline query such as <code class="docutils literal notranslate"><span class="pre">&#64;bot</span> <span class="pre">query</span></code>.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineQuery</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="album">
-<h2><a class="toc-backref" href="#id10">Album</a><a class="headerlink" href="#album" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Album</a><a class="headerlink" href="#album" title="Permalink to this heading"></a></h2>
 <p>Occurs whenever you receive an entire album.</p>
 <p>Full documentation for the <code class="xref py py-obj docutils literal notranslate"><span class="pre">Album</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="raw">
-<h2><a class="toc-backref" href="#id11">Raw</a><a class="headerlink" href="#raw" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Raw</a><a class="headerlink" href="#raw" title="Permalink to this heading"></a></h2>
 <p>Raw events are not actual events. Instead, they are the raw
 <a class="reference external" href="https://tl.telethon.dev/?q=Update">Update</a> object that Telegram sends. You normally shouldn’t
 need these.</p>

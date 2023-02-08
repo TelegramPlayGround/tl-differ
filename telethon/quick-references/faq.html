@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ &mdash; Telethon 0.145 documentation</title>
@@ -11,10 +11,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -29,14 +27,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Telethon
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Telethon
           </a>
               <div class="version">
                 0.145
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -131,7 +133,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">FAQ</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/quick-references/faq.rst.txt" rel="nofollow"> View page source</a>
@@ -143,11 +145,11 @@
            <div itemprop="articleBody">
              
   <section id="faq">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2">FAQ</a><a class="headerlink" href="#faq" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">FAQ</a><a class="headerlink" href="#faq" title="Permalink to this heading"></a></h1>
 <p>Let’s start the quick references section with some useful tips to keep in
 mind, with the hope that you will understand why certain things work the
 way that they do.</p>
-<div class="contents topic" id="contents">
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#faq" id="id2">FAQ</a></p>
@@ -166,9 +168,9 @@ way that they do.</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="code-without-errors-doesn-t-work">
-<h2><a class="toc-backref" href="#id3">Code without errors doesn’t work</a><a class="headerlink" href="#code-without-errors-doesn-t-work" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Code without errors doesn’t work</a><a class="headerlink" href="#code-without-errors-doesn-t-work" title="Permalink to this heading"></a></h2>
 <p>Then it probably has errors, but you haven’t enabled logging yet.
 To enable logging, at the following code to the top of your main file:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
@@ -187,7 +189,7 @@ To enable logging, at the following code to the top of your main file:</p>
 <p>See the official Python documentation for more information on <a class="reference external" href="https://docs.python.org/3/library/logging.html">logging</a>.</p>
 </section>
 <section id="how-can-i-except-floodwaiterror">
-<h2><a class="toc-backref" href="#id4">How can I except FloodWaitError?</a><a class="headerlink" href="#how-can-i-except-floodwaiterror" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">How can I except FloodWaitError?</a><a class="headerlink" href="#how-can-i-except-floodwaiterror" title="Permalink to this heading"></a></h2>
 <p>You can use all errors from the API by importing:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">errors</span>
 </pre></div>
@@ -203,7 +205,7 @@ To enable logging, at the following code to the top of your main file:</p>
 </div>
 </section>
 <section id="my-account-was-deleted-limited-when-using-the-library">
-<h2><a class="toc-backref" href="#id5">My account was deleted/limited when using the library</a><a class="headerlink" href="#my-account-was-deleted-limited-when-using-the-library" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">My account was deleted/limited when using the library</a><a class="headerlink" href="#my-account-was-deleted-limited-when-using-the-library" title="Permalink to this heading"></a></h2>
 <p>The library will only do things that you tell it to do. If you use
 the library with bad intentions, Telegram will hopefully ban you.</p>
 <p>However, you may also be part of a limited country, such as Iran or Russia.
@@ -224,11 +226,11 @@ when sending a message to some accounts but not others.</p>
 <p>For more discussion, please see <a class="reference external" href="https://github.com/LonamiWebs/Telethon/issues/297">issue 297</a>.</p>
 </section>
 <section id="how-can-i-use-a-proxy">
-<h2><a class="toc-backref" href="#id6">How can I use a proxy?</a><a class="headerlink" href="#how-can-i-use-a-proxy" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">How can I use a proxy?</a><a class="headerlink" href="#how-can-i-use-a-proxy" title="Permalink to this heading"></a></h2>
 <p>This was one of the first things described in <a class="reference internal" href="../basic/signing-in.html#signing-in"><span class="std std-ref">Signing In</span></a>.</p>
 </section>
 <section id="how-do-i-access-a-field">
-<h2><a class="toc-backref" href="#id7">How do I access a field?</a><a class="headerlink" href="#how-do-i-access-a-field" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">How do I access a field?</a><a class="headerlink" href="#how-do-i-access-a-field" title="Permalink to this heading"></a></h2>
 <p>This is basic Python knowledge. You should use the dot operator:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">me</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_me</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">me</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
@@ -258,7 +260,7 @@ when sending a message to some accounts but not others.</p>
 </div>
 </section>
 <section id="attributeerror-coroutine-object-has-no-attribute-id">
-<h2><a class="toc-backref" href="#id8">AttributeError: ‘coroutine’ object has no attribute ‘id’</a><a class="headerlink" href="#attributeerror-coroutine-object-has-no-attribute-id" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">AttributeError: ‘coroutine’ object has no attribute ‘id’</a><a class="headerlink" href="#attributeerror-coroutine-object-has-no-attribute-id" title="Permalink to this heading"></a></h2>
 <p>You either forgot to:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">telethon.sync</span>
 <span class="c1">#              ^^^^^ import sync</span>
@@ -273,7 +275,7 @@ when sending a message to some accounts but not others.</p>
 </div>
 </section>
 <section id="sqlite3-operationalerror-database-is-locked">
-<h2><a class="toc-backref" href="#id9">sqlite3.OperationalError: database is locked</a><a class="headerlink" href="#sqlite3-operationalerror-database-is-locked" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">sqlite3.OperationalError: database is locked</a><a class="headerlink" href="#sqlite3-operationalerror-database-is-locked" title="Permalink to this heading"></a></h2>
 <p>An older process is still running and is using the same <code class="docutils literal notranslate"><span class="pre">'session'</span></code> file.</p>
 <p>This error occurs when <strong>two or more clients use the same session</strong>,
 that is, when you write the same session name to be used in the client:</p>
@@ -290,7 +292,7 @@ reboot your system.</p>
 is an entire section covering that at <a class="reference internal" href="../concepts/sessions.html#sessions"><span class="std std-ref">Session Files</span></a>.</p>
 </section>
 <section id="event-chat-or-event-sender-is-none">
-<h2><a class="toc-backref" href="#id10">event.chat or event.sender is None</a><a class="headerlink" href="#event-chat-or-event-sender-is-none" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">event.chat or event.sender is None</a><a class="headerlink" href="#event-chat-or-event-sender-is-none" title="Permalink to this heading"></a></h2>
 <p>Telegram doesn’t always send this information in order to save bandwidth.
 If you need the information, you should fetch it yourself, since the library
 won’t do unnecessary work unless you need to:</p>
@@ -301,7 +303,7 @@ won’t do unnecessary work unless you need to:</p>
 </div>
 </section>
 <section id="what-does-bases-chatgetter-mean">
-<h2><a class="toc-backref" href="#id11">What does “bases ChatGetter” mean?</a><a class="headerlink" href="#what-does-bases-chatgetter-mean" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">What does “bases ChatGetter” mean?</a><a class="headerlink" href="#what-does-bases-chatgetter-mean" title="Permalink to this heading"></a></h2>
 <p>In Python, classes can base others. This is called <a class="reference external" href="https://ddg.gg/python%20inheritance">inheritance</a>. What it means is that
 “if a class bases another, you can use the other’s methods too”.</p>
 <p>For example, <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> <em>bases</em>
@@ -319,7 +321,7 @@ boilerplate, so it’s important to know this concept. For newcomers,
 this may be a problem, so we explain what it means here in the FAQ.</p>
 </section>
 <section id="can-i-use-flask-with-the-library">
-<h2><a class="toc-backref" href="#id12">Can I use Flask with the library?</a><a class="headerlink" href="#can-i-use-flask-with-the-library" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Can I use Flask with the library?</a><a class="headerlink" href="#can-i-use-flask-with-the-library" title="Permalink to this heading"></a></h2>
 <p>Yes, if you know what you are doing. However, you will probably have a
 lot of headaches to get threads and asyncio to work together. Instead,
 consider using <a class="reference external" href="https://pgjones.gitlab.io/quart/">Quart</a>, an asyncio-based
@@ -327,7 +329,7 @@ alternative to <a class="reference external" href="flask.pocoo.org/">Flask</a>.<
 <p>Check out <a class="reference external" href="https://github.com/LonamiWebs/Telethon/tree/master/telethon_examples#quart_loginpy">quart_login.py</a> for an example web-application based on Quart.</p>
 </section>
 <section id="can-i-use-anaconda-spyder-ipython-with-the-library">
-<h2><a class="toc-backref" href="#id13">Can I use Anaconda/Spyder/IPython with the library?</a><a class="headerlink" href="#can-i-use-anaconda-spyder-ipython-with-the-library" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Can I use Anaconda/Spyder/IPython with the library?</a><a class="headerlink" href="#can-i-use-anaconda-spyder-ipython-with-the-library" title="Permalink to this heading"></a></h2>
 <p>Yes, but these interpreters run the asyncio event loop implicitly,
 which interferes with the <code class="docutils literal notranslate"><span class="pre">telethon.sync</span></code> magic module.</p>
 <p>If you use them, you should <strong>not</strong> import <code class="docutils literal notranslate"><span class="pre">sync</span></code>:</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Objects Reference &mdash; Telethon 0.145 documentation</title>
@@ -11,10 +11,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -29,14 +27,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Telethon
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Telethon
           </a>
               <div class="version">
                 0.145
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -135,7 +137,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Objects Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/quick-references/objects-reference.rst.txt" rel="nofollow"> View page source</a>
@@ -147,14 +149,14 @@
            <div itemprop="articleBody">
              
   <section id="objects-reference">
-<h1><a class="toc-backref" href="#id1">Objects Reference</a><a class="headerlink" href="#objects-reference" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Objects Reference</a><a class="headerlink" href="#objects-reference" title="Permalink to this heading"></a></h1>
 <p>This is the quick reference for those objects returned by client methods
 or other useful modules that the library has to offer. They are kept in
 a separate page to help finding and discovering them.</p>
 <p>Remember that this page only shows properties and methods,
 <strong>not attributes</strong>. Make sure to open the full documentation
 to find out about the attributes.</p>
-<div class="contents topic" id="contents">
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#objects-reference" id="id1">Objects Reference</a></p>
@@ -178,110 +180,82 @@ to find out about the attributes.</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="chatgetter">
-<h2><a class="toc-backref" href="#id2">ChatGetter</a><a class="headerlink" href="#chatgetter" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">ChatGetter</a><a class="headerlink" href="#chatgetter" title="Permalink to this heading"></a></h2>
 <p>All events base <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>,
 and some of the objects below do too, so it’s important to know its methods.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="sendergetter">
-<h2><a class="toc-backref" href="#id3">SenderGetter</a><a class="headerlink" href="#sendergetter" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">SenderGetter</a><a class="headerlink" href="#sendergetter" title="Permalink to this heading"></a></h2>
 <p>Similar to <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>, a
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code> is the same,
 but it works for senders instead.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="message">
-<h2><a class="toc-backref" href="#id4">Message</a><a class="headerlink" href="#message" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Message</a><a class="headerlink" href="#message" title="Permalink to this heading"></a></h2>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> type is very important, mostly because we are working
 with a library for a <em>messaging</em> platform, so messages are widely used:
 in events, when fetching history, replies, etc.</p>
 <p>It bases <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code> and
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code>.</p>
 <section id="properties">
-<h3><a class="toc-backref" href="#id5">Properties</a><a class="headerlink" href="#properties" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Properties</a><a class="headerlink" href="#properties" title="Permalink to this heading"></a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We document <em>custom properties</em> here, not all the attributes of the
 <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message</span></code> (which is the information Telegram actually returns).</p>
 </div>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="methods">
-<h3><a class="toc-backref" href="#id6">Methods</a><a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">Methods</a><a class="headerlink" href="#methods" title="Permalink to this heading"></a></h3>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 </section>
 <section id="file">
-<h2><a class="toc-backref" href="#id7">File</a><a class="headerlink" href="#file" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">File</a><a class="headerlink" href="#file" title="Permalink to this heading"></a></h2>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">File</span></code> type is a wrapper object
 returned by <code class="xref py py-obj docutils literal notranslate"><span class="pre">Message.file</span></code>,
 and you can use it to easily access a document’s attributes, such as
 its name, bot-API style file ID, etc.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="conversation">
-<h2><a class="toc-backref" href="#id8">Conversation</a><a class="headerlink" href="#conversation" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Conversation</a><a class="headerlink" href="#conversation" title="Permalink to this heading"></a></h2>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Conversation</span></code> object
 is returned by the <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.conversation()</span></code> method to easily
 send and receive responses like a normal conversation.</p>
 <p>It bases <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="adminlogevent">
-<h2><a class="toc-backref" href="#id9">AdminLogEvent</a><a class="headerlink" href="#adminlogevent" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">AdminLogEvent</a><a class="headerlink" href="#adminlogevent" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent" title="telethon.tl.custom.adminlogevent.AdminLogEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AdminLogEvent</span></code></a> object
 is returned by the <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_admin_log()</span></code> method to easily iterate
 over past “events” (deleted messages, edits, title changes, leaving members…)</p>
 <p>These are all the properties you can find in it:</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.adminlogevent.AdminLogEvent.id" title="telethon.tl.custom.adminlogevent.AdminLogEvent.id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">id</span></code></a></p></td>
 <td><p>The ID of this event.</p></td>
@@ -359,22 +333,18 @@ over past “events” (deleted messages, edits, title changes, leaving members�
 </table>
 </section>
 <section id="button">
-<h2><a class="toc-backref" href="#id10">Button</a><a class="headerlink" href="#button" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Button</a><a class="headerlink" href="#button" title="Permalink to this heading"></a></h2>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Button</span></code> class is used when you login
 as a bot account to send messages with reply markup, such as inline buttons
 or custom keyboards.</p>
 <p>These are the static methods you can use to create instances of the markup:</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="inlineresult">
-<h2><a class="toc-backref" href="#id11">InlineResult</a><a class="headerlink" href="#inlineresult" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">InlineResult</a><a class="headerlink" href="#inlineresult" title="Permalink to this heading"></a></h2>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">InlineResult</span></code> object
 is returned inside a list by the <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.inline_query()</span></code> method to make an inline
 query to a bot that supports being used in inline mode, such as
@@ -386,36 +356,24 @@ attributes and methods.</p>
 <p>These are the constants for the types, properties and methods you
 can find the individual results:</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="dialog">
-<h2><a class="toc-backref" href="#id12">Dialog</a><a class="headerlink" href="#dialog" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Dialog</a><a class="headerlink" href="#dialog" title="Permalink to this heading"></a></h2>
 <p>The <code class="xref py py-obj docutils literal notranslate"><span class="pre">Dialog</span></code> object is returned when
 you call <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_dialogs()</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 </tbody>
 </table>
 </section>
 <section id="draft">
-<h2><a class="toc-backref" href="#id13">Draft</a><a class="headerlink" href="#draft" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id13" role="doc-backlink">Draft</a><a class="headerlink" href="#draft" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft" title="telethon.tl.custom.draft.Draft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Draft</span></code></a> object is returned when
 you call <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.iter_drafts()</span></code>.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/custom.html#telethon.tl.custom.draft.Draft.entity" title="telethon.tl.custom.draft.Draft.entity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entity</span></code></a></p></td>
 <td><p>The entity that belongs to this dialog (user, chat or channel).</p></td>
@@ -451,14 +409,10 @@ you call <code class="xref py py-obj docutils literal notranslate"><span class="
 </table>
 </section>
 <section id="utils">
-<h2><a class="toc-backref" href="#id14">Utils</a><a class="headerlink" href="#utils" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">Utils</a><a class="headerlink" href="#utils" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="../modules/utils.html#module-telethon.utils" title="telethon.utils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">telethon.utils</span></code></a> module has plenty of methods that make using the
 library a lot easier. Only the interesting ones will be listed here.</p>
 <table class="autosummary longtable docutils align-default">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../modules/utils.html#telethon.utils.get_display_name" title="telethon.utils.get_display_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_display_name</span></code></a></p></td>
 <td><p>Gets the display name for the given <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>, <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a>.</p></td>

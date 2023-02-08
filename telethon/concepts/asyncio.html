@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mastering asyncio &mdash; Telethon 0.145 documentation</title>
@@ -11,10 +11,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -29,14 +27,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Telethon
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Telethon
           </a>
               <div class="version">
                 0.145
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -130,7 +132,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Mastering asyncio</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/concepts/asyncio.rst.txt" rel="nofollow"> View page source</a>
@@ -142,8 +144,8 @@
            <div itemprop="articleBody">
              
   <section id="mastering-asyncio">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2">Mastering asyncio</a><a class="headerlink" href="#mastering-asyncio" title="Permalink to this heading"></a></h1>
-<div class="contents topic" id="contents">
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">Mastering asyncio</a><a class="headerlink" href="#mastering-asyncio" title="Permalink to this heading"></a></h1>
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#mastering-asyncio" id="id2">Mastering asyncio</a></p>
@@ -161,9 +163,9 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="what-s-asyncio">
-<h2><a class="toc-backref" href="#id3">What’s asyncio?</a><a class="headerlink" href="#what-s-asyncio" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">What’s asyncio?</a><a class="headerlink" href="#what-s-asyncio" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> is a Python 3’s built-in library. This means it’s already installed if
 you have Python 3. Since Python 3.5, it is convenient to work with asynchronous
 code. Before (Python 3.4) we didn’t have <code class="docutils literal notranslate"><span class="pre">async</span></code> or <code class="docutils literal notranslate"><span class="pre">await</span></code>, but now we do.</p>
@@ -172,7 +174,7 @@ concept to use whenever you work IO. Interacting with the web or external
 APIs such as Telegram’s makes a lot of sense this way.</p>
 </section>
 <section id="why-asyncio">
-<h2><a class="toc-backref" href="#id4">Why asyncio?</a><a class="headerlink" href="#why-asyncio" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Why asyncio?</a><a class="headerlink" href="#why-asyncio" title="Permalink to this heading"></a></h2>
 <p>Asynchronous IO makes a lot of sense in a library like Telethon.
 You send a request to the server (such as “get some message”), and
 thanks to <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>, your code won’t block while a response arrives.</p>
@@ -186,7 +188,7 @@ language that supports asynchronous IO. It will also be cheaper,
 because tasks are smaller than threads, which are smaller than processes.</p>
 </section>
 <section id="what-are-asyncio-basics">
-<h2><a class="toc-backref" href="#id5">What are asyncio basics?</a><a class="headerlink" href="#what-are-asyncio-basics" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">What are asyncio basics?</a><a class="headerlink" href="#what-are-asyncio-basics" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># First we need the asyncio library</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -205,7 +207,7 @@ because tasks are smaller than threads, which are smaller than processes.</p>
 </div>
 </section>
 <section id="what-does-telethon-sync-do">
-<h2><a class="toc-backref" href="#id6">What does telethon.sync do?</a><a class="headerlink" href="#what-does-telethon-sync-do" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">What does telethon.sync do?</a><a class="headerlink" href="#what-does-telethon-sync-do" title="Permalink to this heading"></a></h2>
 <p>The moment you import any of these:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">telethon</span> <span class="kn">import</span> <span class="n">sync</span><span class="p">,</span> <span class="o">...</span>
 <span class="c1"># or</span>
@@ -267,7 +269,7 @@ running, and if the loop is running, you must <code class="docutils literal notr
 </div>
 </section>
 <section id="what-are-async-await-and-coroutines">
-<h2><a class="toc-backref" href="#id7">What are async, await and coroutines?</a><a class="headerlink" href="#what-are-async-await-and-coroutines" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">What are async, await and coroutines?</a><a class="headerlink" href="#what-are-async-await-and-coroutines" title="Permalink to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">async</span></code> keyword lets you define asynchronous functions,
 also known as coroutines, and also iterate over asynchronous
 loops or use <code class="docutils literal notranslate"><span class="pre">async</span> <span class="pre">with</span></code>:</p>
@@ -338,7 +340,7 @@ concurrently:</p>
 </div>
 </section>
 <section id="can-i-use-threads">
-<h2><a class="toc-backref" href="#id8">Can I use threads?</a><a class="headerlink" href="#can-i-use-threads" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Can I use threads?</a><a class="headerlink" href="#can-i-use-threads" title="Permalink to this heading"></a></h2>
 <p>Yes, you can, but you must understand that the loops themselves are
 not thread safe. and you must be sure to know what is happening. The
 easiest and cleanest option is to use <a class="reference external" href="https://docs.python.org/3/library/asyncio-runner.html#asyncio.run" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio.run</span></code></a> to create and manage
@@ -370,7 +372,7 @@ pass a loop when creating the client, it uses <code class="docutils literal notr
 which only works in the main thread.</p>
 </section>
 <section id="client-run-until-disconnected-blocks">
-<h2><a class="toc-backref" href="#id9">client.run_until_disconnected() blocks!</a><a class="headerlink" href="#client-run-until-disconnected-blocks" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">client.run_until_disconnected() blocks!</a><a class="headerlink" href="#client-run-until-disconnected-blocks" title="Permalink to this heading"></a></h2>
 <p>All of what <code class="xref py py-obj docutils literal notranslate"><span class="pre">client.run_until_disconnected()</span></code> does is
 run the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>’s event loop until the client is disconnected. That means
 <em>the loop is running</em>. And if the loop is running, it will run all the tasks
@@ -394,7 +396,7 @@ the loop, and Telethon will be happy with any approach.</p>
 <p>Of course, there are better tools to run code hourly or daily, see below.</p>
 </section>
 <section id="what-else-can-asyncio-do">
-<h2><a class="toc-backref" href="#id10">What else can asyncio do?</a><a class="headerlink" href="#what-else-can-asyncio-do" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">What else can asyncio do?</a><a class="headerlink" href="#what-else-can-asyncio-do" title="Permalink to this heading"></a></h2>
 <p>Asynchronous IO is a really powerful tool, as we’ve seen. There are plenty
 of other useful libraries that also use <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a> and that you can integrate
 with Telethon.</p>
@@ -437,7 +439,7 @@ When you use a library, you’re not limited to use only its methods. You can
 combine all the libraries you want. People seem to forget this simple fact!</p>
 </section>
 <section id="why-does-client-start-work-outside-async">
-<h2><a class="toc-backref" href="#id11">Why does client.start() work outside async?</a><a class="headerlink" href="#why-does-client-start-work-outside-async" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">Why does client.start() work outside async?</a><a class="headerlink" href="#why-does-client-start-work-outside-async" title="Permalink to this heading"></a></h2>
 <p>Because it’s so common that it’s really convenient to offer said
 functionality by default. This means you can set up all your event
 handlers and start the client without worrying about loops at all.</p>
@@ -446,7 +448,7 @@ handlers and start the client without worrying about loops at all.</p>
 all support this.</p>
 </section>
 <section id="where-can-i-read-more">
-<h2><a class="toc-backref" href="#id12">Where can I read more?</a><a class="headerlink" href="#where-can-i-read-more" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Where can I read more?</a><a class="headerlink" href="#where-can-i-read-more" title="Permalink to this heading"></a></h2>
 <p><a class="reference external" href="https://lonami.dev/blog/asyncio/">Check out my blog post</a> about <a class="reference external" href="https://docs.python.org/3/library/asyncio.html#module-asyncio" title="(in Python v3.11)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asyncio</span></code></a>, which
 has some more examples and pictures to help you understand what happens
 when the loop runs.</p>

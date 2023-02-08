@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Entities &mdash; Telethon 0.145 documentation</title>
@@ -11,10 +11,8 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -29,14 +27,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Telethon
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Telethon
           </a>
               <div class="version">
                 0.145
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -126,7 +128,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">Entities</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/concepts/entities.rst.txt" rel="nofollow"> View page source</a>
@@ -138,7 +140,7 @@
            <div itemprop="articleBody">
              
   <section id="entities">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2">Entities</a><a class="headerlink" href="#entities" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1><a class="toc-backref" href="#id2" role="doc-backlink">Entities</a><a class="headerlink" href="#entities" title="Permalink to this heading"></a></h1>
 <p>The library widely uses the concept of “entities”. An entity will refer
 to any <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a>, <a class="reference external" href="https://tl.telethon.dev/?q=Chat">Chat</a> or <a class="reference external" href="https://tl.telethon.dev/?q=Channel">Channel</a> object that the API may return
 in response to certain methods, such as <a class="reference external" href="https://tl.telethon.dev/?q=GetUsersRequest">GetUsersRequest</a>.</p>
@@ -160,7 +162,7 @@ This is why sometimes you might encounter this error when working with
 the library. You should <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">ValueError</span></code> and run code that you know
 should work to find the entity.</p>
 </div>
-<div class="contents topic" id="contents">
+<nav class="contents" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#entities" id="id2">Entities</a></p>
@@ -174,9 +176,9 @@ should work to find the entity.</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="what-is-an-entity">
-<h2><a class="toc-backref" href="#id3">What is an Entity?</a><a class="headerlink" href="#what-is-an-entity" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">What is an Entity?</a><a class="headerlink" href="#what-is-an-entity" title="Permalink to this heading"></a></h2>
 <p>A lot of methods and requests require <em>entities</em> to work. For example,
 you send a message to an <em>entity</em>, get the username of an <em>entity</em>, and
 so on.</p>
@@ -223,7 +225,7 @@ you will reuse the chat a lot, consider using the following instead:</p>
 </div>
 </section>
 <section id="getting-entities">
-<h2><a class="toc-backref" href="#id4">Getting Entities</a><a class="headerlink" href="#getting-entities" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Getting Entities</a><a class="headerlink" href="#getting-entities" title="Permalink to this heading"></a></h2>
 <p>Through the use of the <a class="reference internal" href="sessions.html#sessions"><span class="std std-ref">Session Files</span></a>, the library will automatically
 remember the ID and hash pair, along with some extra information, so
 you’re able to just do this:</p>
@@ -275,7 +277,7 @@ calls like <a class="reference external" href="https://tl.telethon.dev/?q=Resolv
 made to obtain the required information.</p>
 </section>
 <section id="entities-vs-input-entities">
-<h2><a class="toc-backref" href="#id5">Entities vs. Input Entities</a><a class="headerlink" href="#entities-vs-input-entities" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Entities vs. Input Entities</a><a class="headerlink" href="#entities-vs-input-entities" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section is informative, but worth reading. The library
@@ -333,7 +335,7 @@ resolve <code class="docutils literal notranslate"><span class="pre">'username'<
 you don’t get this yet, but remember some of the details here are important.</p>
 </section>
 <section id="full-entities">
-<h2><a class="toc-backref" href="#id6">Full Entities</a><a class="headerlink" href="#full-entities" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Full Entities</a><a class="headerlink" href="#full-entities" title="Permalink to this heading"></a></h2>
 <p>In addition to <a class="reference external" href="https://tl.telethon.dev/?q=PeerUser">PeerUser</a>, <a class="reference external" href="https://tl.telethon.dev/?q=InputPeerUser">InputPeerUser</a>, <a class="reference external" href="https://tl.telethon.dev/?q=User">User</a> (and its
 variants for chats and channels), there is also the concept of <a class="reference external" href="https://tl.telethon.dev/?q=UserFull">UserFull</a>.</p>
 <p>This full variant has additional information such as whether the user is
@@ -346,7 +348,7 @@ suggest commands to use).</p>
 and <a class="reference external" href="https://tl.telethon.dev/?q=GetFullChannel">GetFullChannel</a> respectively.</p>
 </section>
 <section id="accessing-entities">
-<h2><a class="toc-backref" href="#id7">Accessing Entities</a><a class="headerlink" href="#accessing-entities" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Accessing Entities</a><a class="headerlink" href="#accessing-entities" title="Permalink to this heading"></a></h2>
 <p>Although it’s explicitly noted in the documentation that messages
 <em>subclass</em> <code class="xref py py-obj docutils literal notranslate"><span class="pre">ChatGetter</span></code>
 and <code class="xref py py-obj docutils literal notranslate"><span class="pre">SenderGetter</span></code>,
@@ -376,7 +378,7 @@ For example, all events (except raw updates) implement <code class="xref py py-o
 in some chat.</p>
 </section>
 <section id="summary">
-<h2><a class="toc-backref" href="#id8">Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">Summary</a><a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
 <p>TL;DR; If you’re here because of <em>“Could not find the input entity for”</em>,
 you must ask yourself “how did I find this entity through official
 applications”? Now do the same with the library. Use what applies:</p>
