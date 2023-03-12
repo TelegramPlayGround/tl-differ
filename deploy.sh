@@ -3,6 +3,7 @@ set +ex
 IFS="
 "
 TZ="Asia/Kolkata"
+US="https://github.com/telegramdesktop/tdesktop/raw/dev/Telegram/Resources/tl/api.tl"
 TMP=/tmp/tldiff
 rm -rf "$TMP"
 mkdir "$TMP"
@@ -15,10 +16,9 @@ ls
 rm -rf tdesktop/ deploy.sh > /dev/null 2>&1
 git add tdesktop/ deploy.sh -A > /dev/null 2>&1
 
-
 git config --global user.email "johnprestonmail@gmail.com"
 git config --global user.name "GitHub Action <John Preston>"
-wget "https://github.com/TelegramPlayGround/tg-api-spec-s/raw/data/tdesktop.tl" -O schemes/latest.tl
+wget $US -O schemes/latest.tl
 
 git add schemes/ diff.js atom.xml diffs.js diff.html index.html diff.css -Af
 # the below lines were copied from
@@ -27,51 +27,32 @@ git commit -am "${current_date} TLDiffer: Deploy new layer" > /dev/null 2>&1
 
 curpath=$(pwd)
 
-# git clone https://github.com/pyrogram/pyrogram /tmp/docgen/
-# cd /tmp/docgen/
-# sudo apt install -y pandoc latexmk
-# make clean
-# make venv
-# pip install --upgrade pip
-# pip install tox sphinx_tabs
-# make api
-# make docs
-# mv /tmp/docgen/docs/build/html /tmp/pydocs
-# cd ${curpath}
-# rm -rf pyrogram
-# mv /tmp/pydocs pyrogram
-# git config --global user.name "GitHub Action <Dan>"
-# git config --global user.email "14043624+delivrance@users.noreply.github.com"
-# rm -rf pyrogram/.doctrees/
-# git add . -A
-# git commit -m "${current_date} DocGen: Update documentation" > /dev/null 2>&1
-# rm -rf /tmp/docgen
-
-git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
+git clone https://github.com/LonamiWebs/Telethon /tmp/docgen/
 cd /tmp/docgen/
-git checkout rotcev
+git checkout v1
+cd telethon_generator/data
+rm api.tl
+wget $US -O api.tl
+cd ../..
+
 python setup.py install
 python setup.py gen docs
+
 rm -rf /tmp/docs
 mv docs/ /tmp/docs
-pip install sphinx_rtd_theme sphinx_tabs
-cd readthedocs
-make html
-rm -rf /tmp/telethonrtd
-mv _build/html /tmp/telethonrtd
-cd ${curpath}
-rm -rf telethon
-mv /tmp/telethonrtd telethon
-cd telethon
-mv /tmp/docs advanced
-cd advanced
+
+rm -rf /tmp/docgen/
+cd $curpath
+mv /tmp/docs TL
+cd TL
 git config --global user.email "totufals@hotmail.com"
 git config --global user.name "GitHub Action <Lonami Exo>"
 git add constructors/ types/ methods/ index.html js/search.js css/ img/
 cd ..
+
+rm -rf telethon pyrogram > /dev/null 2>&1
 git add . -A
 git status
-git commit -m "${current_date} DocGen: Update TeLethoN documentation" > /dev/null 2>&1
-rm -rf /tmp/docgen
+git commit -m "${current_date} DocGen: Update documentation" > /dev/null 2>&1
 
 git push -u origin gh-pages
