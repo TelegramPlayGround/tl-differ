@@ -43,6 +43,7 @@ mv docs/ /tmp/docs
 
 rm -rf /tmp/docgen/
 cd $curpath
+rm -rf TL/
 mv /tmp/docs TL
 cd TL
 git config --global user.email "totufals@hotmail.com"
