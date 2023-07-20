@@ -153,7 +153,8 @@ def extract():
     tl_paths = list(map(Path, (
         'Telegram/Resources/tl/api.tl',
         'Telegram/Resources/scheme.tl',
-        'Telegram/SourceFiles/mtproto/scheme.tl'
+        'Telegram/SourceFiles/mtproto/scheme.tl',
+	'Telegram/SourceFiles/mtproto/scheme/api.tl'   
     )))
 
     git_log = ['git', 'log', '--format=format:%H %ct', '--']
