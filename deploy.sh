@@ -3,7 +3,7 @@ set +ex
 IFS="
 "
 TZ="Asia/Kolkata"
-US="https://github.com/telegramdesktop/tdesktop/raw/dev/Telegram/Resources/tl/api.tl"
+US="https://github.com/telegramdesktop/tdesktop/raw/dev/Telegram/mtproto/scheme/api.tl"
 TMP=/tmp/tldiff
 rm -rf "$TMP"
 mkdir "$TMP"
