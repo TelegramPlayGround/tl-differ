@@ -4,6 +4,7 @@ IFS="
 "
 TZ="Asia/Kolkata"
 US="https://github.com/telegramdesktop/tdesktop/raw/dev/Telegram/SourceFiles/mtproto/scheme/api.tl"
+LSU=$(curl -kL "https://github.com/telegramdesktop/tdesktop/raw/dev/Telegram/SourceFiles/mtproto/scheme/layer.tl" 2>/dev/null)
 TMP=/tmp/tldiff
 rm -rf "$TMP"
 mkdir "$TMP"
@@ -19,6 +20,8 @@ git add tdesktop/ deploy.sh -A > /dev/null 2>&1
 git config --global user.email "johnprestonmail@gmail.com"
 git config --global user.name "GitHub Action <John Preston>"
 wget $US -O schemes/latest.tl
+echo "" >> schemes/latest.tl
+echo $LSU >> schemes/latest.tl
 
 git add schemes/ diff.js atom.xml diffs.js diff.html index.html diff.css -Af
 # the below lines were copied from
@@ -33,6 +36,8 @@ git checkout v1
 cd telethon_generator/data
 rm api.tl
 wget $US -O api.tl
+echo "" >> api.tl
+echo $LSU >> api.tl
 cd ../..
 
 python setup.py install
