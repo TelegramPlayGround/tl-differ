@@ -21,7 +21,9 @@ account.setGlobalPrivacySettings#1edaaac2 settings:<a href="../../types/global_p
 <strong>with</strong> TelegramClient(name, api_id, api_hash) <strong>as</strong> client:
     result = client(functions.account.SetGlobalPrivacySettingsRequest(
         settings=types.GlobalPrivacySettings(
-            archive_and_mute_new_noncontact_peers=<strong>False</strong>
+            archive_and_mute_new_noncontact_peers=<strong>True</strong>,
+            keep_archived_unmuted=<strong>True</strong>,
+            keep_archived_folders=<strong>True</strong>
         )
     ))
     print(result.stringify())</pre><textarea id="c" class="invisible"></textarea><script>function cp(t){var c=document.getElementById("c");c.value=t;c.select();try{document.execCommand("copy")}catch(e){}}</script></div><script>prependPath = "../../";</script><script src="../../js/search.js"></script></body></html>
