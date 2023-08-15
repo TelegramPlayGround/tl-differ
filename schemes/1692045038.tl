@@ -2118,5 +2118,3 @@ stories.exportStoryLink#16e443ce user_id:InputUser id:int = ExportedStoryLink;
 stories.report#c95be06a user_id:InputUser id:Vector<int> reason:ReportReason message:string = Bool;
 stories.activateStealthMode#57bbd166 flags:# past:flags.0?true future:flags.1?true = Updates;
 stories.sendReaction#49aaa9b3 flags:# add_to_recent:flags.0?true user_id:InputUser story_id:int reaction:Reaction = Updates;
-
-// LAYER 161
