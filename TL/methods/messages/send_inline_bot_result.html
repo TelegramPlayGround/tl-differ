@@ -26,7 +26,13 @@ messages.sendInlineBotResult#f7bc68ba flags:# silent:flags.5?<a href="../../inde
         hide_via=<strong>True</strong>,
         reply_to=types.InputReplyToMessage(
             reply_to_msg_id=42,
-            top_msg_id=42
+            top_msg_id=42,
+            reply_to_peer_id=<em>'username'</em>,
+            quote_text=<em>'some string here'</em>,
+            quote_entities=[types.MessageEntityUnknown(
+                offset=42,
+                length=42
+            )]
         ),
         schedule_date=datetime.datetime(2018, 6, 25),
         send_as=<em>'username'</em>

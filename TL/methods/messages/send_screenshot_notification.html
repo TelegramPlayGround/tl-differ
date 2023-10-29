@@ -23,7 +23,13 @@ messages.sendScreenshotNotification#a1405817 peer:<a href="../../types/input_pee
         peer=<em>'username'</em>,
         reply_to=types.InputReplyToMessage(
             reply_to_msg_id=42,
-            top_msg_id=42
+            top_msg_id=42,
+            reply_to_peer_id=<em>'username'</em>,
+            quote_text=<em>'some string here'</em>,
+            quote_entities=[types.MessageEntityUnknown(
+                offset=42,
+                length=42
+            )]
         )
     ))
     print(result.stringify())</pre><textarea id="c" class="invisible"></textarea><script>function cp(t){var c=document.getElementById("c");c.value=t;c.select();try{document.execCommand("copy")}catch(e){}}</script></div><script>prependPath = "../../";</script><script src="../../js/search.js"></script></body></html>
