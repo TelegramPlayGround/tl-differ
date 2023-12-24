@@ -30,9 +30,9 @@ git commit -am "${current_date} TLDiffer: Deploy new layer" > /dev/null 2>&1
 
 curpath=$(pwd)
 
-git clone https://github.com/LonamiWebs/Telethon /tmp/docgen/
+git clone https://github.com/TelegramPlayGround/Telethon /tmp/docgen/
 cd /tmp/docgen/
-git checkout v1
+git checkout rotcev
 cd telethon_generator/data
 rm api.tl
 wget $US -O api.tl
