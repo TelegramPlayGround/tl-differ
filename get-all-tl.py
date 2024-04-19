@@ -134,7 +134,8 @@ def ensure_dev_branch():
 @in_dir(tdesktop)
 def pull():
     if not (tdesktop / '.git').is_dir():
-        run(('git', 'clone', 'git@github.com:telegramdesktop/tdesktop.git', '.'))
+        grepo = os.environ.get("GH", 'git@github.com:telegramdesktop/tdesktop.git')
+        run(('git', 'clone', grepo, '.'))
 
     ensure_dev_branch()
     run(('git', 'reset', '--hard', 'HEAD'))
