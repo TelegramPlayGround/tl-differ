@@ -283,7 +283,9 @@ def main():
         fd.write(repr(json.dumps(deltas, separators=(',', ':'), sort_keys=True)))
         fd.write(');\n')
     fqdn_ = os.environ.get("FQDN", "https://diff.telethon.dev")
-    now = datetime.datetime.now(datetime.timezone.utc)
+    now = datetime.datetime.fromtimestamp(
+        deltas[-1]['date'], datetime.timezone.utc
+    )
     with open('atom.xml', 'w') as fd:
         fd.write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
