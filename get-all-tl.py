@@ -65,7 +65,7 @@ class Definition:
 
         left, right = line.split(maxsplit=1)
         if '#' in left:
-            self.name, self.id = left.split('#')
+            self.name, self.id, *_ = left.split('#')  # there's a mess up with multiple #ids, hence the glob
             self.id = int(self.id, 16)
         else:
             self.name, self.id = left, None
@@ -104,8 +104,7 @@ class Scheme:
         self.definitions = {}
 
         function = False
-        for m in re.finditer('.+', contents):
-            line = m.group(0)
+        for line in filter(bool, map(str.strip, contents.splitlines())):
             if line == '---functions---':
                 function = True
             elif line == '---types---':
@@ -179,7 +178,7 @@ def extract():
                     if match:
                         layer = match.group(1)
 
-            with tl_path.open('rb') as fin, out_path.open('wb') as fout:
+            with tl_path.open('rb') as fin:
                 data = fin.read()
 
                 if layer is not None:
@@ -191,8 +190,10 @@ def extract():
                     except FileNotFoundError:
                         pass
 
+            tl[date] = Scheme(data.decode('utf-8'))
+
+            with out_path.open('wb') as fout:
                 fout.write(data)
-                tl[date] = Scheme(data.decode('utf-8'))
 
 def load_tl():
     for tl_path in schemes.glob('*.tl'):
