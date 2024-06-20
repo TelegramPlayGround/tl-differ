@@ -9,11 +9,7 @@ from pathlib import Path
 from subprocess import run, PIPE
 
 # Layers which don't specify themselves in the common place
-KNOWN_LAYERS = {
-    1401439999: b'15',
-    1404472374: b'16',
-    1414003143: b'19',
-}
+KNOWN_LAYERS = {}
 
 tl = {}  # date: file contents
 
@@ -127,13 +123,13 @@ class Scheme:
 def ensure_dev_branch():
     global in_dev_branch
     if not in_dev_branch:
-        run(('git', 'checkout', 'dev', '--force'))
+        run(('git', 'checkout', 'master', '--force'))
         in_dev_branch = True
 
 @in_dir(tdesktop)
 def pull():
     if not (tdesktop / '.git').is_dir():
-        grepo = os.environ.get("GH", 'git@github.com:telegramdesktop/tdesktop.git')
+        grepo = os.environ.get("TDLIBGH", 'git@github.com:tdlib/td.git')
         run(('git', 'clone', grepo, '.'))
 
     ensure_dev_branch()
@@ -145,22 +141,21 @@ def pull():
 def extract():
     global in_dev_branch
     tl_paths = list(map(Path, (
-        'Telegram/SourceFiles/mtproto/scheme/api.tl',
-        'Telegram/Resources/tl/api.tl',
-        'Telegram/Resources/scheme.tl',
-        'Telegram/SourceFiles/mtproto/scheme.tl'
+        "td/generate/scheme/telegram_api.tl",
     )))
-
-    git_log = ['git', 'log', '--format=format:%H %ct', '--']
-    layer_file = Path('Telegram/SourceFiles/mtproto/mtpCoreTypes.h')
-    layer_re = re.compile(rb'static const mtpPrime mtpCurrentLayer = (\d+);')
+    git_log = ['git', 'log', '--format=format:%H %ct %s', '--']
+    layer_file = Path('td/telegram/Version.h')
+    layer_re = re.compile(rb'constexpr int32 MTPROTO_LAYER = (\d+);')
+    # https://regex101.com/r/AYxNf1/1
+    layer_commit_re = re.compile(r'\ \#?(\d+)(\.|\:)?')
 
     for tl_path in tl_paths:
         ensure_dev_branch()
-        layer_tl_path = tl_path.with_name('layer.tl')
 
-        for line in run(git_log + [tl_path], stdout=PIPE).stdout.decode().split('\n'):
-            commit, date = line.split()
+        for line in (
+            run(git_log + [tl_path], stdout=PIPE).stdout.decode().split('\n')
+        ):
+            commit, date, commitmesag = line.split(" ", maxsplit=2)
             date = int(date)
             out_path = schemes / f'{date}.tl'
             if out_path.is_file():
@@ -172,9 +167,14 @@ def extract():
                 continue  # last commit when this file was renamed
 
             layer = KNOWN_LAYERS.get(date)
-            if layer is None and layer_file.is_file():
-                with layer_file.open('rb') as fd:
-                    match = layer_re.search(fd.read())
+            if layer is None:
+                if layer_file.is_file():
+                    with layer_file.open('rb') as fd:
+                        match = layer_re.search(fd.read())
+                        if match:
+                            layer = match.group(1)
+                elif "Update layer" in commitmesag:
+                    match = layer_commit_re.search(commitmesag)
                     if match:
                         layer = match.group(1)
 
@@ -183,12 +183,6 @@ def extract():
 
                 if layer is not None:
                     data += b'\n// LAYER ' + layer + b'\n'
-                elif b'// LAYER' not in data:
-                    try:
-                        with layer_tl_path.open('rb') as lfin:
-                            data += b'\n' + lfin.read().strip() + b'\n'
-                    except FileNotFoundError:
-                        pass
 
             tl[date] = Scheme(data.decode('utf-8'))
 
@@ -279,7 +273,7 @@ def main():
     extract()
     load_tl()
     deltas = gen_index()
-    with open('diff.js', 'w') as fd:
+    with open('tddiff.js', 'w') as fd:
         fd.write('DIFF=JSON.parse(')
         fd.write(repr(json.dumps(deltas, separators=(',', ':'), sort_keys=True)))
         fd.write(');\n')
@@ -287,14 +281,14 @@ def main():
     now = datetime.datetime.fromtimestamp(
         deltas[-1]['date'], datetime.timezone.utc
     )
-    with open('atom.xml', 'w') as fd:
+    with open('tdatom.xml', 'w') as fd:
         fd.write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>Type Language Differ</title>
-	<link href="{fqdn_}/atom.xml" rel="self" type="application/atom+xml"/>
+	<link href="{fqdn_}/tdatom.xml" rel="self" type="application/atom+xml"/>
     <link href="{fqdn_}/"/>
     <updated>{now.isoformat()}</updated>
-    <id>{fqdn_}/atom.xml</id>''')
+    <id>{fqdn_}/tdatom.xml</id>''')
         for entry in gen_rss(fqdn_, deltas):
             fd.write(entry)
         fd.write('</feed>')
